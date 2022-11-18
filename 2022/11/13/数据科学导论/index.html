@@ -1,0 +1,1873 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>数据科学导论 | 早早起床，拥抱太阳</title><meta name="author" content="如风"><meta name="copyright" content="如风"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="数据科学导论">
+<meta property="og:type" content="article">
+<meta property="og:title" content="数据科学导论">
+<meta property="og:url" content="http://example.com/2022/11/13/%E6%95%B0%E6%8D%AE%E7%A7%91%E5%AD%A6%E5%AF%BC%E8%AE%BA/index.html">
+<meta property="og:site_name" content="早早起床，拥抱太阳">
+<meta property="og:description" content="数据科学导论">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://fastly.jsdelivr.net/gh/Leevan001/pictureBed@main/utools/166832600130917317FFACC42E4B5729AE3767B0311D0.png">
+<meta property="article:published_time" content="2022-11-13T13:48:30.000Z">
+<meta property="article:modified_time" content="2022-11-14T14:34:51.176Z">
+<meta property="article:author" content="如风">
+<meta property="article:tag" content="数据">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://fastly.jsdelivr.net/gh/Leevan001/pictureBed@main/utools/166832600130917317FFACC42E4B5729AE3767B0311D0.png"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://example.com/2022/11/13/%E6%95%B0%E6%8D%AE%E7%A7%91%E5%AD%A6%E5%AF%BC%E8%AE%BA/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":200},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: true,
+    post: true
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"limitCount":50,"languages":{"author":"作者: 如风","link":"链接: ","source":"来源: 早早起床，拥抱太阳","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"}},
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '数据科学导论',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2022-11-14 22:34:51'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.3.0"></head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://fastly.jsdelivr.net/gh/Leevan001/pictureBed@main/utools/1668273103133D8802D069515E0A42BC91FDE752B8A5C.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">5</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">2</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa fa-heartbeat"></i><span> 清单</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/Gallery/"><i class="fa-fw fas fa-images"></i><span> 照片</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://fastly.jsdelivr.net/gh/Leevan001/pictureBed@main/utools/166832600130917317FFACC42E4B5729AE3767B0311D0.png')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">早早起床，拥抱太阳</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa fa-heartbeat"></i><span> 清单</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/Gallery/"><i class="fa-fw fas fa-images"></i><span> 照片</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">数据科学导论</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2022-11-13T13:48:30.000Z" title="发表于 2022-11-13 21:48:30">2022-11-13</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2022-11-14T14:34:51.176Z" title="更新于 2022-11-14 22:34:51">2022-11-14</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">37.1k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>113分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="数据科学导论"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><p>数据科学导论</p>
+<span id="more"></span>
+<h1 id="第1章-大数据概述"><a href="#第1章-大数据概述" class="headerlink" title="第1章 大数据概述"></a><strong>第1章 大数据概述</strong></h1><p>大数据是人们获得新的认知，创造新的价值的源泉；大数据还是改变市场、组织机构，以及政府与公民关系的方法。作者认为，大数据的核心就是预测。这个核心代表着我们分析信息时的三个转变：第1个转变就是，在大数据时代，我们可以分析更多的数据，有时候甚至可以处理和某个特别现象相关的所有数据，而<strong>不再依赖于随机采样</strong>。第2个改变就是，研究数据如此之多，以至于我们<strong>不再热衷于追求精确度</strong>。第3个转变，因前两个转变而促成，即我们<strong>不再热衷于寻找因果关系</strong></p>
+<h2 id="大数据从哪里来？"><a href="#大数据从哪里来？" class="headerlink" title="大数据从哪里来？"></a><strong>大数据从哪里来？</strong></h2><p><img src="https://fastly.jsdelivr.net/gh/Leevan001/pictureBed@main/utools/16684337925301668433791777.png"></p>
+<p>1Byte &#x3D; 8 Bit</p>
+<p>1KB &#x3D; 1,024 Bytes</p>
+<p>1MB &#x3D; 1,024 KB &#x3D; 1,048,576 Bytes</p>
+<p>1GB &#x3D; 1,024 MB &#x3D; 1,048,576 KB &#x3D; 1,073,741,824 Bytes</p>
+<p>1TB &#x3D; 1,024 GB &#x3D; 1,048,576 MB &#x3D; 1,099,511,627,776 Bytes</p>
+<p>1PB &#x3D; 1,024 TB &#x3D; 1,048,576 GB &#x3D;1,125,899,906,842,624 Bytes</p>
+<p>1EB &#x3D; 1,024 PB &#x3D; 1,048,576 TB &#x3D; 1,152,921,504,606,846,976 Bytes</p>
+<p>1ZB &#x3D; 1,024 EB &#x3D; 1,180,591,620,717,411,303,424 Bytes</p>
+<p>1YB &#x3D; 1,024 ZB &#x3D; 1,208,925,819,614,629,174,706,176 Bytes</p>
+<table>
+<thead>
+<tr>
+<th>1TB</th>
+<th>1块1TB硬盘</th>
+<th>20万张照片</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1PB</td>
+<td>两个数据中心机柜</td>
+<td>16个Blackblaze  pod 存储单元</td>
+</tr>
+<tr>
+<td>1EB</td>
+<td>2000个机柜</td>
+<td>占据一个街区的4层数据中心</td>
+</tr>
+<tr>
+<td>1ZB</td>
+<td>1000个数据中心</td>
+<td>重庆高新区的4&#x2F;5区域</td>
+</tr>
+<tr>
+<td>1YB</td>
+<td>100万个数据中心</td>
+<td>两个重庆市主城九区</td>
+</tr>
+</tbody></table>
+<h2 id="大数据的发展历程"><a href="#大数据的发展历程" class="headerlink" title="大数据的发展历程"></a><strong>大数据的发展历程</strong></h2><table>
+<thead>
+<tr>
+<th><strong>信息化浪潮</strong></th>
+<th><strong>发生时间</strong></th>
+<th><strong>标志</strong></th>
+<th><strong>解决问题</strong></th>
+<th><strong>代表企业</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>第一次浪潮</td>
+<td><strong>1980</strong>年前后</td>
+<td>个人计算机</td>
+<td>信息处理</td>
+<td>Intel、AMD、IBM、苹果、微软、联想、戴尔、惠普等</td>
+</tr>
+<tr>
+<td>第二次浪潮</td>
+<td><strong>1995</strong>年前后</td>
+<td>互联网</td>
+<td>信息传输</td>
+<td>雅虎、谷歌、阿里巴巴、百度、腾讯等</td>
+</tr>
+<tr>
+<td>第三次浪潮</td>
+<td><strong>2010</strong>年前后</td>
+<td>物联网、云计算和大数据</td>
+<td>信息爆炸</td>
+<td>将涌现出一批新的市场标杆企业</td>
+</tr>
+</tbody></table>
+<p><img src="https://fastly.jsdelivr.net/gh/Leevan001/pictureBed@main/utools/16684338645291668433863849.png"></p>
+<p><img src="https://fastly.jsdelivr.net/gh/Leevan001/pictureBed@main/utools/16684338815291668433881456.png"></p>
+<h2 id="数据科学是什么？"><a href="#数据科学是什么？" class="headerlink" title="数据科学是什么？"></a>数据科学是什么？</h2><p>简单来讲：数据科学是一门将数据变得有用的学科</p>
+<h2 id="什么是大数据？"><a href="#什么是大数据？" class="headerlink" title="什么是大数据？"></a><strong>什么是大数据？</strong></h2><p><strong>维基百科：</strong>或称巨量数据、海量数据，指的是所涉及的数据量规模巨大到<strong>无法通过人工，在合理时间内</strong>达到截取、管理、处理、并整理成为人类所能解读的信息。</p>
+<p><strong>Gartner：</strong>“大数据”是需要<strong>新处理模式</strong>才能具有更强的决策力、洞察发现力和流程优化能力的海量、高增长率和多样化的信息资产。</p>
+<p><strong>IDC定义：</strong>为了更为经济的从高频率获取的、大容量的、不同结构和类型的数据中获取价值，而设计的<strong>新一代架构和技术</strong>。</p>
+<p><strong>麦肯锡：</strong>一种规模大到在获取、存储、管理、分析方面大大<strong>超出了传统数据库</strong>软件工具能力范围的数据集合，具有<strong>海量</strong>的数据规模、<strong>快速</strong>的数据流转、<strong>多样</strong>的数据类型和价值<strong>密度低</strong>四大特征。</p>
+<h2 id="大数据的特征"><a href="#大数据的特征" class="headerlink" title="大数据的特征"></a><strong>大数据的特征</strong></h2><img src="https://fastly.jsdelivr.net/gh/Leevan001/pictureBed@main/utools/16684340315291668434030792.png" style="zoom: 50%;" />
+
+<p><img src="https://fastly.jsdelivr.net/gh/Leevan001/pictureBed@main/utools/16684341725301668434171674.png"></p>
+<h2 id="大数据的技术支撑"><a href="#大数据的技术支撑" class="headerlink" title="大数据的技术支撑"></a>大数据的技术支撑</h2><p><strong>存储设备容量不断增加</strong></p>
+<p><strong>CPU处理能力大幅提升</strong></p>
+<p><strong>网络带宽不断增加</strong></p>
+<p><strong>数据产生方式的改变</strong></p>
+<h2 id="大数据的影响"><a href="#大数据的影响" class="headerlink" title="大数据的影响"></a><strong>大数据的影响</strong></h2><p><strong>大数据对科学研究的影响</strong></p>
+<p><img src="https://fastly.jsdelivr.net/gh/Leevan001/pictureBed@main/utools/16684350731961668435072261.png"></p>
+<p><strong>大数据对思维模式的影响</strong></p>
+<p><img src="https://fastly.jsdelivr.net/gh/Leevan001/pictureBed@main/utools/16684351291981668435128695.png"></p>
+<h1 id="第2章-大数据相关工程技术与应用"><a href="#第2章-大数据相关工程技术与应用" class="headerlink" title="第2章 大数据相关工程技术与应用"></a><strong>第2章 大数据相关工程技术与应用</strong></h1><p>大数据无处不在，包括金融、汽车、零售、餐饮、电信、能源、政务、医疗、体育、娱乐等在内的社会各行各业都已经融入了大数据的印迹</p>
+<h2 id="典型的大数据应用实例"><a href="#典型的大数据应用实例" class="headerlink" title="典型的大数据应用实例"></a>典型的大数据应用实例</h2><p>2009年，美国谷歌公司在《自然》上发表了关于<strong>流感预测</strong>的论文，成为大数据在医疗卫生应用的典范。</p>
+<p>利用<strong>5000****万</strong>条美国人最频繁检索的词条和美国疾病预防控制中心（CDC）流感传播时期的数据进行了比较，判断是否流感暴发。</p>
+<p>结果显示，数据<strong>不仅可以预测流感的暴发情况，而且可以具体到特定地区和州</strong>。</p>
+<p>从谷歌流感趋势看大数据的应用价值 “谷歌流感趋势”，通过跟踪搜索词相关数据来判断全美地区的流感情况</p>
+<p>麻省理工学院、密歇根大学和一家医院创建了一个数据模型，利用心脏病患者的心电图数据，<strong>预测在未来一年内患者心脏病发作的几率</strong>。</p>
+<p>在过去，<strong>缺乏对已有数据的比较分析</strong>，使得70%的心脏病患者再度发病缺乏预判。</p>
+<p>现在通过<strong>机器学习和数据挖掘</strong>，该模型可以通过累积的数据进行分析，<strong>发现高风险指标</strong>。</p>
+<p>10多年前，康奈尔大学的Sherman教授通过一些小规模食谱的分析，认为气候是影响我们选择调味品最重要的因素</p>
+<p>气候本身限制了调味食材的生长（例如八角主要生长在阴湿、土壤疏松的山地，东北就不易培植）</p>
+<p>气候条件影响我们对调味食材的需求（例如成都湿度大，大家普遍爱吃花椒，因为它散寒除湿）。</p>
+<p>通过大数据，印第安纳大学的Ahn教授分析了多个国家和地区56498份菜谱，他*发现西方和东方一些国家气候相近但饮食天差地别。</p>
+<p>西方食材：牛奶、黄油、香草、鸡蛋、蔗糖浆和小麦</p>
+<p>东方食材：酱油、葱、香油、米、大豆和姜。</p>
+<p>从美食圈国内知名网站“美食街”上下载了我国20个菜系共计8498份菜谱，包含2911种食材。</p>
+<p>地理上的相近性对于食材使用的影响远远大于气候的相近性。</p>
+<p>结果暗示，如果没有交流，即便气候条件相近，产生的文化结果也会大不一样。</p>
+<p>大数据的行业应用——<strong>交通领域</strong></p>
+<p>大数据技术可以构建城市智慧交通。车辆、行人、道路基础设施、公共服务场所都被整合在智慧交通网络中。洛杉矶利用磁性道路传感器和交通摄像头的数据来控制交通灯信号，从而优化城市的交通流量。通过控制了全市的4500个交通灯，将交通拥堵状况减少了约16%。</p>
+<p>大数据的行业应用——<strong>通讯领域</strong></p>
+<p>利用大数据的采集和分析技术进行实时追踪，例如中国移动的天盾系统能通过大数据有效识别欺诈电话，识别准确率达95%,月均诈骗电话识别总量9200个,月均识别受害人4300个,平均每月挽回客户损失800万。</p>
+<p>大数据的行业应用——<strong>医疗领域</strong></p>
+<p>大数据分析应用的计算能力可以更好的去理解和预测疾病、可以帮助病人对于病情进行更好的治疗。例如，智慧养老及慢性病管理、医药研发、基因工程等</p>
+<p>大数据的行业应用——<strong>金融领域</strong></p>
+<p>大数据在金融领域主要是应用在金融交易方面。高频交易（HFT）是大数据应用比较多的领域。其中大数据分析和挖掘算法可用于交易决策、风险控制、精准营销等。</p>
+<p>大数据的行业应用——<strong>制造领域</strong></p>
+<p>利用工业大数据提升制造业水平，包括产品故障诊断与预测、分析工艺流程、改进生产工艺、优化生产过程能耗、工业供应链分析与优化、生产计划与排程。</p>
+<p>大数据的行业应用——<strong>生活领域</strong></p>
+<p>借助大数据技术更好的了解客户以及他们的爱好和行为。通过搜集浏览器的日志和传感器数据，建立数据模型并预测。</p>
+<h1 id="第3章-大数据采集和预处理"><a href="#第3章-大数据采集和预处理" class="headerlink" title="第3章 大数据采集和预处理"></a><strong>第3章 大数据采集和预处理</strong></h1><h2 id="大数据采集"><a href="#大数据采集" class="headerlink" title="大数据采集"></a><strong>大数据采集</strong></h2><p>（1）数据采集的概念</p>
+<p>​    数据采集（Data Acquisition，DAQ），是指从传感器和其他待测设备等模拟和数字被测单元中自动采集非电量或者电量信号，送到上位机中进行分析，处理。</p>
+<p>（2）数据采集的目</p>
+<p>​    是为了测量电压、电流、温度、压力或声音等物理现象。基于PC的数据采集，通过模块化硬件、应用软件和计算机的结合进行测量。</p>
+<p>3）数据采集系统</p>
+<p>​    数据釆集系统由硬件和软件两部分组成。从硬件方向来看，目前数据采集系统的结构形式主要有两种：</p>
+<p>1）<strong>微型计算机数据采集系统</strong>。由传感器、模拟多路开关、程控放大器、采样保持器、A／D转换器、计算机及外设等部分组成。</p>
+<p>2）<strong>集散型数据采集系统</strong>。由若干个<strong>数据采集站</strong>和<strong>一台上位机</strong>及<strong>通信线路</strong>组成。</p>
+<h2 id="数据抽取转换加载技术"><a href="#数据抽取转换加载技术" class="headerlink" title="数据抽取转换加载技术"></a>数据抽取转换加载技术</h2><p><strong>ETL概述</strong></p>
+<p>数据抽取转换加载（ETL），是英文 Extract-Transform-Load的缩写，用来描述将数据从来源端经过抽取（extract）、转换（transform）、加载（load）至目的端的过程。</p>
+<p> ETL是构建数据仓库的重要一环，用户从数据源抽取出所需的数据，经过数据清洗，最终按照预先定义好的数据模型，将数据加载。</p>
+<p>ETL是用来实现异构多数据源的数据集成的工具</p>
+<p>  其主要的功能包括：</p>
+<p><strong>数据的抽取</strong></p>
+<p>将数据从不同的网络、不同的操作平台、不同的数据库及数据格式、不同的应用中抽取出来。</p>
+<p><strong>数据的转换</strong></p>
+<p>数据转换（数据的合并、汇总、过滤、转换等）、重新格式化和计算数据、重新构建关键数据以及总结与定位数据。</p>
+<p><strong>数据的装载</strong></p>
+<p>将数据跨网络、操作平台装载到目标数据库中。</p>
+<p>ETL的实现有多种方法，常用的有三种：</p>
+<p>（1）借助<strong>ETL工具</strong>(如Oracle的OWB、SQL Server 2000的DTS、SQL Server2005的SSIS服务、Informatic等)实现</p>
+<p>（2）利用<strong>SQL方式</strong>实现</p>
+<p>（3）通过<strong>ETL工具和SQL相结合</strong>。</p>
+<p>优缺点比较：</p>
+<p>借助ETL工具可以快速的建立起ETL工程，屏蔽了复杂的编码任务，提高了速度，降低了难度，但是缺少灵活性。SQL的方法优点是灵活，提高ETL运行效率，但是编码复杂，对技术要求比较高。第三种是综合了前面二种的优点，会极大地提高ETL的开发速度和效率。</p>
+<p><strong>数据抽取<strong><strong>——</strong></strong>数据抽取的概念</strong></p>
+<p>​    数据抽取就是一个从数据源中抽取数据的过程。具体来说，就是搜索整个数据源，使用某些标准选择合乎要求的数据，并把这些数据传送到目标文件中。</p>
+<p>Ø对于数据仓库来说，必须根据增量装载工作和初始完成装载的变化来抽取数据。</p>
+<p>Ø对于操作型系统来说，则需要一次性抽取和数据转换，这两个因素增加了数据抽取工作的复杂性。</p>
+<h2 id="数据爬虫技术"><a href="#数据爬虫技术" class="headerlink" title="数据爬虫技术"></a>数据爬虫技术</h2><p>爬虫是一种获取数据的工具，通过URL（统一资源定位符，互联网资源存放位置的标准地址）对互联网进行尽可能广泛的遍历。在网络爬虫的系统框架中，主过程由控制器，解析器，资源库三部分组成。</p>
+<p>Ø<strong>控制器</strong>：主要工作是负责给多线程中的各个爬虫线程分配工作任务。</p>
+<p>Ø<strong>解析器</strong>：主要工作是下载网页，进行页面的处理，主要是将一些JS脚本标签、CSS代码内容、空格字符、HTML标签等内容处理掉，爬虫的基本工作是由解析器完成。</p>
+<p>Ø<strong>资源库</strong>：用来存放下载到的网页资源，一般都采用大型的数据库存储，如Oracle数据库，并对其建立索引。</p>
+<h3 id="基本流程"><a href="#基本流程" class="headerlink" title="基本流程"></a><strong>基本流程</strong></h3><p><strong>1．发起请求</strong></p>
+<p>​    通过HTTP库向目标站点发起请求，即发送一个Request，请求可以包含额外的headers等信息，等待服务器响应。爬虫从已经初始化好的网页链接队列中取出种子链接（如<a target="_blank" rel="noopener" href="http://www.csdn.net等),通过这些种子链接不断地从互联网中获得新的网页数据./">http://www.csdn.net等），通过这些种子链接不断地从互联网中获得新的网页数据。</a></p>
+<p><strong>2．获取响应内容</strong></p>
+<p>​    如果服务器能正常响应，会得到一个Response，Response的内容便是所要获取的页面内容，类型可能有HTML，Json字符串，二进制数据（如图片视频）等类型。通过网页链接下载相应网页数据，通过分析网页数据提取新的链接存储到链接的后续队列中，且将访问过的网页链接进行已访问标记。</p>
+<p><strong>3．解析内容</strong></p>
+<p>​    依次不间断地从队列中获取链接并逐一访问，理论上链接集合中的所有链接均被访问后，爬虫将停止工作。得到的内容可能是HTML，可以用正则表达式、网页解析库进行解析。可能是Json，可以直接转为Json对象解析，可能是二进制数据，可以做保存或者进一步的处理。</p>
+<p><strong>4．保存数据</strong></p>
+<p>​    保存形式多样，可以存为文本，也可以保存至数据库，或者保存特定格式的文件。</p>
+<h3 id="不同种类的爬虫"><a href="#不同种类的爬虫" class="headerlink" title="不同种类的爬虫"></a><strong>不同种类的爬虫</strong></h3><h4 id="通用爬虫"><a href="#通用爬虫" class="headerlink" title="通用爬虫"></a><strong>通用爬虫</strong></h4><p>（1）从互联网中选出一部分网站页面，将这些页面的URL地址作为URL种子集，将URL种子集中的URL链接依次加入到URL爬取队列中</p>
+<p>（2）爬虫工作从爬取队列中读出页面的URL地址</p>
+<p>（3）将网页的URL链接地址进行DNS域名解析，变为网站服务器IP地址</p>
+<p>（4）网页下载器根据IP地址复制下载页面内容。</p>
+<p>（5）从互联网进行网页下载</p>
+<p>（6）这些页面内容被存储到页面库中，等待对其建立索引。</p>
+<p>（7）为了避免抓取到相同的页面，会有一个存放已经抓取过的网页URL信息的队列。</p>
+<p>（8）从被下载的页面中解析出其包含的URL链接，根据上文提到的已抓取URL队列，判断这些URL链接是否爬取过。</p>
+<p>（9）如果还没有被爬取，则在URL爬取队列末尾加入该链接，等待后续爬虫任务抓取该网页内容。</p>
+<p>（10）直至URL爬取队列为空，爬虫过程停止。</p>
+<p>一个通用爬虫的整体工作流程，从宏观的角度来看动态爬取网页的过程，考虑到爬虫工作和互联网所有网页之间的关系，大致可以将这些网页划分为以下五类：</p>
+<p>  1）<strong>已下载网页集合</strong>：是指爬虫系统已经从互联网下载到本地等待进行索引工作的网页集合。</p>
+<p>  2）<strong>已过期网页集合</strong>：是指考虑到爬虫过程持续时间过长而网页在这个过程中发生了改变，特别是指同一个URL链接代表的已经被爬取下载到本地的网页，和实际该URL链接在互联网中链向的网页内容不一致的情况。</p>
+<p>  3）<strong>待下载网页集合</strong>：是指处于URL待爬取队列中的URL地址指向的网页，爬虫系统网页下载器即将下载这些网页。</p>
+<p>  4）<strong>可知网页集合</strong>：是指那些没有出现在URL待爬取队列中、也没有被爬虫系统下载的网页，但是通过已被爬取下载的网页或者在URL待爬取队列中的网页的链接关系，可以发现这些可知网页，稍后会被爬虫系统抓取并建立索引。</p>
+<p>  5）<strong>不可知网页集合</strong>：是指爬虫无法爬取到的一些网页。不可知网页在实际情况中占据了很高的比例。</p>
+<h4 id="主题爬虫"><a href="#主题爬虫" class="headerlink" title="主题爬虫"></a><strong>主题爬虫</strong></h4><p>主题爬虫目的是抓取与事先规定的某个主题范围相关的网页，在主题爬虫过程中，建立初始URL集合，集合中的URL链接必须紧扣要爬取的主题</p>
+<p>与通用网络爬虫不同之处，主题爬虫对要爬取的页面使用某些算法进行主题判断，将主题无关的网页排除，在系统不断爬取网页的过程中，将与主题相关的网页URL链接加入URL待抓取队列中，然后根据指定的搜索策略选择抓取待抓取队列中网页，如此循环，直到满足爬虫停止条件。</p>
+<p>主题爬虫需要尽可能多地识别并爬取相关主题的网页，避免下载主题无关的网页。</p>
+<p><img src="https://fastly.jsdelivr.net/gh/Leevan001/pictureBed@main/utools/16684358131971668435812768.png"></p>
+<h4 id="分布式爬虫"><a href="#分布式爬虫" class="headerlink" title="分布式爬虫"></a><strong>分布式爬虫</strong></h4><p>在面对海量数据时，商业搜索引擎为了在较短的时间内抓取到尽可能多的网页数据，其后台爬虫模式离不开分布式的网络爬虫架构。分布式网路爬虫架构体系使用<strong>多层级模式</strong>，保证了爬取网页的及时性与覆盖面。</p>
+<p>一个大型分布式爬虫分为3个层级：<strong>分布式数据中心、分布式抓取服务器及分布式爬虫程序</strong>，多个爬虫程序运行在一台抓取服务器上，多个抓取服务器构成抓取集群，也就是分布式数据中心。</p>
+<p>常见的分布式爬虫系统架构，根据不同机器之间分工协同方式的差异可以分为两种：<strong>主从式分布爬虫和对等式分布爬虫</strong>。两者各有优势，也各有缺陷。</p>
+<p><strong>主从式分布爬虫</strong></p>
+<p>   对于主从式来讲，不同的机器分工明确，有一台Master机器是控制节点负责将URL任务分发到其他Slave机器、维护URL待爬取队列和管理各个Slave机器的负载均衡，Slave机器执行下载网页的工作，Slave机器与Slave机器不能直接通信。主从式分布爬虫模式下，Master机器容易成为爬虫系统的瓶颈导致整个爬虫性能的下降。</p>
+<p>Master往往容易成为系统瓶颈</p>
+<p><strong>对等分布式爬虫</strong></p>
+<p>​    对于对等式来讲，所有的抓取机器在分工上没有不同，每台机器可以独立完成网页爬取任务。每台抓取器之间的分工有一定的运算逻辑(如哈希取模，hash[域名]%m，m为抓取机器数量)，将运算值发送到对应编号相同机器上，由运算的结果来决定由哪台服务器做抓取网页的工作。</p>
+<p>这种方式的扩展性不佳，当有一台服务器死机或者添加新的服务器，那么所有URL的哈希求余的结果就都要变化。</p>
+<h3 id="大数据爬虫的相关技术"><a href="#大数据爬虫的相关技术" class="headerlink" title="大数据爬虫的相关技术"></a><strong>大数据爬虫的相关技术</strong></h3><p><strong>（1）爬虫协议</strong></p>
+<p>​    爬虫协议即Robots协议，其全称为“网络爬虫排除协议”，网站通过Robots协议告诉我们网站中哪些数据可以被爬取，哪些数据不可以被爬取。当我们使用爬虫时也应当尊重网站的意愿并帮助其保护隐私。若网站没有设置爬虫协议，那么我们就默认允许各种爬虫操作。</p>
+<p>​    爬虫协议的内容为一个robots.txt，我们在浏览器上输入“<a target="_blank" rel="noopener" href="https://www.csdn.net/robots.txt%E2%80%9D%EF%BC%8C%E5%8D%B3%E5%8F%AF%E6%9F%A5%E7%9C%8BCSDN%E8%AE%BA%E5%9D%9B%E7%9A%84%E7%88%AC%E8%99%AB%E5%8D%8F%E8%AE%AE%E4%BA%86%E3%80%82%E5%A6%82%E5%8F%B3%E5%9B%BE%E6%89%80%E7%A4%BA%E3%80%82">https://www.csdn.net/robots.txt”，即可查看CSDN论坛的爬虫协议了。如右图所示。</a></p>
+<p><img src="https://fastly.jsdelivr.net/gh/Leevan001/pictureBed@main/utools/16684358911971668435890906.png"></p>
+<p><strong>（2）链接提取</strong></p>
+<p>​    链接提取我们可以采用正则表达式的方式。对于一个链接例如“<a href=”**https://www.csdn.net/**” target=”_blank”><strong>大数据</strong></a>”需要提取两部分内容，一个是“a”标签中链接描述的信息，以及“href”中对应的链接。</p>
+<p><strong>（3）链接去重</strong></p>
+<p>   爬虫每次进行页面分析都会获取新的链接，在这些链接集合中难免会有重复，通过链接去重可以提升数据采集的准确率，提高效率。</p>
+<p><strong>（4）非网页数据获取</strong></p>
+<p>   所谓的非网页数据，主要包括Excel、txt、Word、PDF、PPT以及RSS等，除txt文件可以直接进行数据读取之外，其他非网页数据必须要借助相应的读取引擎进行内容获取。PDF的读取引擎是Apache PDFBox或者是xpdf，Word、Excel、ppt的读取引擎为Apache POI。</p>
+<p><strong>（5）网页去重</strong></p>
+<p>  对于网页相似一般有三种情况。完全相似、内容相似和局部相似。</p>
+<p>n第一种完全相似，指不仅仅内容上一致，在网页布局格式上也一致，此类完全重复一般发生在同一个站点的多个域名下。</p>
+<p>第二种内容相似，指文档内容相同，页面布局格式不同，这种情况一般发生于转载。</p>
+<p>第三种局部相似，指对于网页的内容有部分相似，这类情况大多发生于文章段落的引用。</p>
+<p>   针对这种情况，google采用了一种Simhash算法，利用赋予文档指纹的概念，来解决大数据爬虫网页去重这个问题，即指纹相似度越高，重复率越高。</p>
+<p>（具体介绍可以参考Google在2007年发表的论文《Detecting Near-Duplicates for Web Crawling》）</p>
+<p><strong>（6）广告识别</strong></p>
+<p>​    网页中存在大量噪声，包括头部导航栏、侧边栏和广告信息等。导航栏和侧边栏可以通过正文提取时，根据文字分布情况过滤，但是广告信息复杂多变，其存在不光对我们信息的读取造成影响而且占用不必要的内存空间。如何有效过滤广告也是我们应该了解的技术。</p>
+<p>   在实际应用中，我们可以借鉴Adblock plus的思想。Adblock plus是著名的广告过滤插件，其对于浏览器在对广告鉴别方式有比较好的借鉴作用：判定页面的元素是不是广告，并不需要通过分析网页结构、机器学习的方式，而是如果大家都浏览过这些页面，而且判定这些页面中某些元素是广告，那么Adblock plus则认定这就是广告。</p>
+<h2 id="数据预处理"><a href="#数据预处理" class="headerlink" title="数据预处理"></a><strong>数据预处理</strong></h2><p>实际的数据库极易受噪声、缺失值和不一致数据的侵扰，因为数据库太大，并且多半来自多个异种数据源。低质量的数据将会导致低质量的挖掘结果。因此我们需要使用数据预处理技术：<br>（1）数据清理<br>     可以用来清除数据中的噪声<br>（2）数据集成<br>     将数据由多个数据源合并成一个一致的数据存储，如数据仓库或数据立方体<br>（3）数据变换<br>     例如，规范化可以改进涉及距离度量的挖掘算法的精度和有效性，如0.0到1.0。<br>（4）数据归约<br>     可以通过如聚集、删除冗余特征或聚类等方法来降低数据的规模。</p>
+<h2 id="数据清理"><a href="#数据清理" class="headerlink" title="数据清理"></a><strong>数据清理</strong></h2><p>现实世界的数据一般是不完整的、有噪声的和不一致的。数据清理例程试图填充缺失的值、光滑噪声并识别离群点、纠正数据中的不一致。</p>
+<h3 id="缺失值"><a href="#缺失值" class="headerlink" title="缺失值"></a><strong>缺失值</strong></h3><p><img src="https://fastly.jsdelivr.net/gh/Leevan001/pictureBed@main/utools/16684360111951668436010585.png"></p>
+<h3 id="噪声数据"><a href="#噪声数据" class="headerlink" title="噪声数据"></a><strong>噪声数据</strong></h3><p>噪声(noise)是被测量的变量的随机误差或方差。我们可以使用基本的数据统计描述技术(例如，盒图或者散点图)和数据可视化方法来识别可能代表噪声的离群点。</p>
+<p><img src="https://fastly.jsdelivr.net/gh/Leevan001/pictureBed@main/utools/16684360470071668436045433.png"></p>
+<h3 id="数据集成"><a href="#数据集成" class="headerlink" title="数据集成"></a><strong>数据集成</strong></h3><p>   数据分析任务多半要涉及到数据集成。数据集成将多个数据源中的数据结合起来存放在一个一致的数据存储中。这些数据源可能包括多个数据库、数据立方体或一般文件。</p>
+<p>   将多个数据源中的数据集成起来，能够减少或避免结果数据集中数据的冗余和不一致性。这有助于提高其后挖掘的精度和速度。</p>
+<p><img src="https://fastly.jsdelivr.net/gh/Leevan001/pictureBed@main/utools/16684360712301668436071195.png"></p>
+<h3 id="数据变换"><a href="#数据变换" class="headerlink" title="数据变换"></a><strong>数据变换</strong></h3><p>数据变换就是将数据转换成适合于挖掘的形式。数据变换可能涉及到如下内容：</p>
+<p><img src="https://fastly.jsdelivr.net/gh/Leevan001/pictureBed@main/utools/16684361041961668436103586.png"></p>
+<h3 id="数据规约"><a href="#数据规约" class="headerlink" title="数据规约"></a><strong>数据规约</strong></h3><p>在数据清理、集成与变换后，我们能够得到整合了多数据源同时数据质量完好的数据集。但是，集成与清洗无法改变数据集的规模。我们依然需通过技术手段降低数据规模，这就是数据归约（Data Reduction）。</p>
+<p>  用一句话来说，数据归约就是缩小数据挖掘所需的数据集规模，具体方式有<strong>维度规约</strong>与<strong>数量规约</strong>。</p>
+<h1 id="第四章-分布式平台Hadoop"><a href="#第四章-分布式平台Hadoop" class="headerlink" title="第四章 分布式平台Hadoop"></a><strong>第四章 分布式平台Hadoop</strong></h1><h2 id="Hadoop简介"><a href="#Hadoop简介" class="headerlink" title="Hadoop简介"></a><strong>Hadoop简介</strong></h2><p>Hadoop最初是由Apache Lucene项目的创始人Doug Cutting开发的文本搜索库。Hadoop源自始于2002年的Apache Nutch项目——一个开源的网络搜索引擎并且也是Lucene项目的一部分</p>
+<p>在2004年，Nutch项目也模仿<strong>GFS</strong>开发了自己的分布式文件系统<strong>NDFS</strong>（Nutch Distributed File System），也就是HDFS的前身</p>
+<p>2004年，谷歌公司又发表了另一篇具有深远影响的论文，阐述了MapReduce分布式编程思想</p>
+<p>2005年，Nutch开源实现了谷歌的MapReduce</p>
+<p>2006年2月，Nutch中的NDFS和MapReduce开始独立出来，成为Lucene项目的一个子项目，称为Hadoop，同时，Doug Cutting加盟雅虎</p>
+<p>2008年1月，Hadoop正式成为Apache顶级项目，Hadoop也逐渐开始被雅虎之外的其他公司使用</p>
+<p>2008年4月，Hadoop打破世界纪录，成为最快排序1TB数据的系统，它采用一个由910个节点构成的集群进行运算，排序时间只用了209秒</p>
+<p>在2009年5月，Hadoop更是把1TB数据排序时间缩短到62秒。Hadoop从此名声大震，迅速发展成为大数据时代最具影响力的开源分布式开发平台，并成为事实上的大数据处理标准。</p>
+<h2 id="Hadoop的特性"><a href="#Hadoop的特性" class="headerlink" title="Hadoop的特性"></a><strong>Hadoop的特性</strong></h2><p>Hadoop是一个能够对大量数据进行分布式处理的软件框架，并且是以一种可靠、高效、可伸缩的方式进行处理的，它具有以下几个方面的特性：<br>（1）高可靠性<br>      Hadoop成立之初就是假设计算和存储会失败，它维护多个工作数据副本，确保能够针对失败的节点重新分布处理。<br>（2）高扩展性<br>      Hadoop是在可用的计算机集群间分配数据并完成计算任务的，这些集群可以方便地扩展到数以千计的节点中。<br>（3）高效性<br>      Hadoop能够在节点之间动态地移动数据，并保证各个节点的动态负载平衡，因此处理速度非常快。</p>
+<p>（4）高容错性<br>Hadoop能够自动将数据保存为多个副本，并且能够自动将失败的任务重新分配。<br>（5）低成本<br>与一体机、商用数据仓库以及QlikView、SpotView等数据集市相比，Hadoop是开源的，项目的软件成本因此大大降低。</p>
+<p>•Hadoop被视为事实上的大数据处理标准，本章介绍了Hadoop的发展历程，并阐述了Hadoop的高可靠性、高效性、高可扩展性、高容错性、成本低、运行在Linux平台上、支持多种编程语言等特性</p>
+<p>•Hadoop目前已经在各个领域得到了广泛的应用，雅虎、Facebook、百度、淘宝、网易等公司都建立了自己的Hadoop集群</p>
+<p>•经过多年发展，Hadoop项目已经变得非常成熟和完善，包括Common、Avro、Zookeeper、HDFS、MapReduce、HBase、Hive、Chukwa、Pig等子项目，其中，HDFS和MapReduce是Hadoop的两大核心组件。</p>
+<h1 id="第5章-分布式文件系统HDFS"><a href="#第5章-分布式文件系统HDFS" class="headerlink" title="第5章 分布式文件系统HDFS"></a><strong>第5章 分布式文件系统HDFS</strong></h1><p>分布式文件系统把文件分布存储到<strong>多个计算机节点上</strong>，成千上万的计算机节点构成计算机集群</p>
+<p>与之前使用多个处理器和专用高级硬件的并行化处理装置不同的是，目前的分布式文件系统所采用的<strong>计算机集群</strong>，都是由<strong>普通硬件</strong>构成的，这就大大降低了硬件上的开销</p>
+<p>分布式文件系统在物理结构上是由计算机集群中的多个节点构成的，这些节点分为两类，一类叫“主节点”(Master Node)或者也被称为“名称结点”(NameNode)，另一类叫“从节点”（Slave Node）或者也被称为“数据节点”(DataNode)</p>
+<p>总体而言，HDFS要实现以下目标：</p>
+<p>•兼容廉价的硬件设备</p>
+<p>•流数据读写</p>
+<p>•大数据集</p>
+<p>•简单的文件模型</p>
+<p>•强大的跨平台兼容性</p>
+<p>HDFS特殊的设计，在实现上述优良特性的同时，也使得自身具有一些应用局限性，主要包括以下几个方面：</p>
+<p>•不适合低延迟数据访问</p>
+<p>•无法高效存储大量小文件</p>
+<p>•不支持多用户写入及任意修改文件</p>
+<p>•分布式文件系统是大数据时代解决大规模数据存储问题的有效解决方案，HDFS开源实现了GFS，可以利用由廉价硬件构成的计算机集群实现海量数据的分布式存储</p>
+<p>•HDFS具有兼容廉价的硬件设备、流数据读写、大数据集、简单的文件模型、强大的跨平台兼容性等特点。但是，也要注意到，HDFS也有自身的局限性，比如不适合低延迟数据访问、无法高效存储大量小文件和不支持多用户写入及任意修改文件等</p>
+<p>•块是HDFS核心的概念，一个大的文件会被拆分成很多个块。HDFS采用抽象的块概念，具有支持大规模文件存储、简化系统设计、适合数据备份等优点</p>
+<p>•HDFS采用了主从（Master&#x2F;Slave）结构模型，一个HDFS集群包括一个名称节点和若干个数据节点。名称节点负责管理分布式文件系统的命名空间；数据节点是分布式文件系统HDFS的工作节点，负责数据的存储和读取</p>
+<p>•HDFS采用了冗余数据存储，增强了数据可靠性，加快了数据传输速度。HDFS还采用了相应的数据存放、数据读取和数据复制策略，来提升系统整体读写响应性能。HDFS把硬件出错看作一种常态，设计了错误恢复机制</p>
+<h1 id="第6章-MapReduce基础"><a href="#第6章-MapReduce基础" class="headerlink" title="第6章 MapReduce基础"></a><strong>第6章 MapReduce基础</strong></h1><p>在MapReduce出现之前，已经有HPC(High Performance Computing)这样非常成熟的并行计算框架了，那么为什么Google还需要MapReduce？MapReduce相较于传统的并行计算框架有什么优势？</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th><strong>传统并行计算框架</strong></th>
+<th><strong>MapReduce</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>集群架构&#x2F;容错性</td>
+<td>共享式(共享内存&#x2F;共享存储)，<strong>容错性差</strong></td>
+<td>非共享式，<strong>容错性好</strong></td>
+</tr>
+<tr>
+<td>硬件&#x2F;价格&#x2F;扩展性</td>
+<td>刀片服务器、高速网、SAN，价格贵，<strong>扩展性差</strong></td>
+<td>普通PC机，便宜，<strong>扩展性好</strong></td>
+</tr>
+<tr>
+<td>编程&#x2F;学习难度</td>
+<td>what-how，<strong>难</strong></td>
+<td>what，<strong>简单</strong></td>
+</tr>
+<tr>
+<td>适用场景</td>
+<td>实时、计算密集型</td>
+<td>非实时、数据密集型</td>
+</tr>
+</tbody></table>
+<p>高性能计算(High Performance Computing)机群，简称HPC机群。构建高性能计算系统的主要目的就是提高运算速度，要达到每秒万亿次级的计算速度，对系统的处理器、内存带宽、运算方式、系统I&#x2F;O、存储等方面的要求都十分高，这其中的每一个环节都将直接影响到系统的运算速度。</p>
+<h2 id="MapReduce模型简介"><a href="#MapReduce模型简介" class="headerlink" title="MapReduce模型简介"></a>MapReduce模型简介</h2><p>MapReduce将复杂的、运行于大规模集群上的并行计算过程高度地抽象到了两个函数：Map和Reduce</p>
+<p>编程容易，不需要掌握分布式并行编程细节，也可以很容易把自己的程序运行在分布式系统上，完成海量数据的计算</p>
+<p>MapReduce采用“<strong>分而治之</strong>”策略，一个存储在分布式文件系统中的大规模数据集，会被切分成许多独立的分片（split），这些分片可以被多个Map任务并行处理</p>
+<p>MapReduce设计的一个理念就是“<strong>计算向数据靠拢</strong>”，而不是“数据向计算靠拢”，因为，移动数据需要大量的网络传输开销</p>
+<p>MapReduce框架采用了<strong>Master&#x2F;Slave架构</strong>，包括一个Master和若干个Slave。Master上运行JobTracker，Slave上运行TaskTracker</p>
+<p>Hadoop框架是用Java实现的，但是，MapReduce应用程序则不一定要用Java来写</p>
+<table>
+<thead>
+<tr>
+<th><strong>函数</strong></th>
+<th><strong>输入</strong></th>
+<th><strong>输出</strong></th>
+<th><strong>说明</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Map</td>
+<td>&lt;*k*1,v1&gt;  如：  &lt;行号,”a b c”&gt;</td>
+<td>List(&lt;*k*2,*v*2&gt;)  如：  &lt;“a”,1&gt;  &lt;“b”,1&gt;  &lt;“c”,1&gt;</td>
+<td>1.将小数据集进一步解析成一批&lt;key,value&gt;对，输入Map函数中进行处理  2.每一个输入的&lt;*k*1,*v*1&gt;会输出一批&lt;*k*2,*v*2&gt;。&lt;*k*2,*v*2&gt;是计算的中间结果</td>
+</tr>
+<tr>
+<td>Reduce</td>
+<td>&lt;*k*2,List(*v*2)&gt;  如：&lt;“a”,&lt;1,1,1&gt;&gt;</td>
+<td>&lt;*k*3,*v*3&gt;  &lt;“a”,3&gt;</td>
+<td>输入的中间结果&lt;<em>k*2,List(<em>v</em>2)&gt;中的List(<em>v</em>2)表示是一批属于同一个</em>k*2的value</td>
+</tr>
+</tbody></table>
+<p>MapReduce体系结构主要由四个部分组成，分别是：Client、JobTracker、TaskTracker以及Task</p>
+<img src="https://fastly.jsdelivr.net/gh/Leevan001/pictureBed@main/utools/16682469591221668246958771.png" style="zoom:80%;" />
+
+<p>MapReduce主要有以下4个部分组成：</p>
+<p><strong>1</strong>）Client</p>
+<ul>
+<li>用户编写的MapReduce程序通过Client提交到JobTracker端</li>
+<li>用户可通过Client提供的一些接口查看作业运行状态</li>
+</ul>
+<p><strong>2</strong>）JobTracker</p>
+<p>JobTracker负责资源监控和作业调度</p>
+<p>JobTracker 监控所有TaskTracker与Job的健康状况，一旦发现失败，就将相应的任务转移到其他节点</p>
+<p>JobTracker 会跟踪任务的执行进度、资源使用量等信息，并将这些信息告诉任务调度器（TaskScheduler），而调度器会在资源出现空闲时，选择合适的任务去使用这些资源</p>
+<p><strong>3</strong>）TaskTracker</p>
+<p>TaskTracker 会周期性地通过<strong>“心跳”</strong>将本节点上资源的使用情况和任务的运行进度汇报给JobTracker，同时接收JobTracker 发送过来的命令并执行相应的操作（如启动新任务、杀死任务等）</p>
+<p>TaskTracker 使用<strong>slot</strong>等量划分本节点上的资源量（CPU、内存等）。一个Task 获取到一个slot 后才有机会运行，而Hadoop调度器的作用就是将各个TaskTracker上的空闲slot分配给Task使用。slot 分为<strong>Map slot</strong> 和<strong>Reduce slot</strong> 两种，分别供<strong>MapTask</strong> 和<strong>Reduce Task</strong> 使用</p>
+<p><strong>4</strong>）Task</p>
+<p>Task 分为Map Task 和Reduce Task 两种，均由TaskTracker 启动</p>
+<h2 id="MapReduce工作流程"><a href="#MapReduce工作流程" class="headerlink" title="MapReduce工作流程"></a>MapReduce工作流程</h2><img src="https://fastly.jsdelivr.net/gh/Leevan001/pictureBed@main/utools/16682470581291668247057468.png" style="zoom:80%;" />
+
+<p>不同的Map任务之间不会进行通信</p>
+<p>不同的Reduce任务之间也不会发生任何信息交换</p>
+<p>用户不能显式地从一台机器向另一台机器发送消息</p>
+<p>所有的数据交换都是通过MapReduce框架自身去实现的</p>
+<p><strong>关于Split（分片）</strong></p>
+<p>HDFS 以固定大小的block 为基本单位存储数据，而对于MapReduce 而言，其处理单位是split。split 是一个逻辑概念，它只包含一些元数据信息，比如数据起始位置、数据长度、数据所在节点等。它的划分方法完全由<strong>用户自己决定，</strong>每片的默认最大值和每块的默认值<strong>128M</strong>相同。</p>
+<p><strong>Map任务的数量</strong></p>
+<p><strong>Map任务的数量</strong></p>
+<p>•Hadoop为每个split创建一个Map任务，split 的多少决定了Map任务的数目。大多数情况下，理想的分片大小是一个HDFS块</p>
+<p><strong>Reduce任务的数量</strong></p>
+<p>•最优的Reduce任务个数取决于集群中可用的reduce任务槽(slot)的数目</p>
+<p>•通常设置比reduce任务槽数目稍微小一些的Reduce任务个数（这样可以预留一些系统资源处理可能发生的错误）</p>
+<h2 id="Shuffle"><a href="#Shuffle" class="headerlink" title="Shuffle"></a><strong>Shuffle</strong></h2><img src="https://fastly.jsdelivr.net/gh/Leevan001/pictureBed@main/utools/16682471871231668247186494.png" style="zoom:80%;" />
+
+<ul>
+<li>此阶段，将map的输出经过“整理”后给到reduce，也称为“<strong>混洗</strong>”。分为map端操作和reduce端操作。</li>
+<li>在map端，map的输出先写入缓存，当每次缓存快满时，由缓存“<strong>溢写</strong>”至磁盘，每次溢写都先进行“分区”，并对每个分区的数据进行“<strong>排序</strong>”和“<strong>合并</strong>”（可选）。一般会产生多个溢写的文件，这些文件会在map端先被“归并”为一个大的磁盘文件，通知reduce任务来领取自己的分区。</li>
+<li>在reduce端，每个reduce任务会从多个map任务领取文件，然后将这些文件进行“<strong>归并</strong>”，交给reduce任务。</li>
+</ul>
+<h2 id="Map端的Shuffle过程"><a href="#Map端的Shuffle过程" class="headerlink" title="Map端的Shuffle过程"></a><strong>Map端的Shuffle过程</strong></h2><img src="https://fastly.jsdelivr.net/gh/Leevan001/pictureBed@main/utools/16682472431311668247242784.png" style="zoom:80%;" />
+
+<p>•每个Map任务分配一个缓存</p>
+<p>•MapReduce默认100MB缓存</p>
+<p>•设置溢写比例0.8</p>
+<p>•分区默认采用哈希函数</p>
+<p>•排序是默认的操作</p>
+<p>•排序后可以合并（Combine）</p>
+<p>•合并不能改变最终结果</p>
+<p>•在Map任务全部结束之前进行归并</p>
+<p>•归并得到一个大的文件，放在本地磁盘</p>
+<p>•文件归并时，如果溢写文件数量大于预定值（默认是3）则可以再次启动Combiner，少于3不需要</p>
+<p>•JobTracker会一直监测Map任务的执行，并通知Reduce任务来领取数据</p>
+<p>合并（Combine）和归并（Merge）的区别：</p>
+<p>两个键值对&lt;“a”,1&gt;和&lt;“a”,1&gt;，如果合并，会得到&lt;“a”,2&gt;，如果归并，会得到&lt;“a”,&lt;1,1&gt;&gt;</p>
+<h2 id="Reduce端的Shuffle过程"><a href="#Reduce端的Shuffle过程" class="headerlink" title="Reduce端的Shuffle过程"></a><strong>Reduce端的Shuffle过程</strong></h2><img src="https://fastly.jsdelivr.net/gh/Leevan001/pictureBed@main/utools/16682473361261668247335655.png" style="zoom: 80%;" />
+
+<p>•Reduce任务通过RPC向JobTracker询问Map任务是否已经完成，若完成，则领取数据</p>
+<p>•Reduce领取数据先放入缓存，来自不同Map机器，先归并，再合并，写入磁盘</p>
+<p>•多个溢写文件归并成一个或多个大文件，文件中的键值对是排序的</p>
+<p>•当数据很少时，不需要溢写到磁盘，直接在缓存中归并，然后输出给Reduce</p>
+<h2 id="MapReduce应用程序执行过程"><a href="#MapReduce应用程序执行过程" class="headerlink" title="MapReduce应用程序执行过程"></a>MapReduce应用程序执行过程</h2><ol>
+<li>用户编写Map和Reduce程序，选择一个节点作为Master来运行JobTracker；选择其他若干节点作为TaskTracker运行Map或Reduce程序</li>
+<li>把Map和Reduce程序任务分发到各个Map或Reduce节点中</li>
+<li>RR从HDFS读取InputFormat产生的分片所对应的文件数据，转换为键值对</li>
+<li>Map任务处理RR产生的键值对，Map输出结果经过Shuffle(分区、排序、合并)后把分区好的数据写入Map任务所在节点的本地硬盘中(不是HDFS中，中间结果只需临时存储，不需要分布式存储)</li>
+<li>Map任务执行完毕后通知JobTracker，JobTracker通知Reduce任务读取Map输出的已分区的键值对文件中属于本Reduce任务处理的分区数据；对读取的数据归并后，执行Reduce处理</li>
+<li>Reduce输出的键值对进行归并和合并后，由OutputFormat检查并写入HDFS中</li>
+</ol>
+<h2 id="MapReduce的具体应用"><a href="#MapReduce的具体应用" class="headerlink" title="MapReduce的具体应用"></a>MapReduce的具体应用</h2><p>MapReduce可以很好地应用于各种计算问题</p>
+<p>•关系代数运算（选择、投影、并、交、差、连接）</p>
+<p>•分组与聚合运算</p>
+<p>•矩阵-向量乘法</p>
+<p>•矩阵乘法</p>
+<p><strong>用MapReduce实现关系的自然连接</strong></p>
+<p>假设有关系R(A，B)和S(B,C)，对二者进行自然连接操作</p>
+<p>使用Map过程，把来自R的每个元组&lt;a,b&gt;转换成一个键值对&lt;b, &lt;R,a&gt;&gt;，其中的键就是属性B的值。把关系R包含到值中，这样做使得我们可以在Reduce阶段，只把那些来自R的元组和来自S的元组进行匹配。类似地，使用Map过程，把来自S的每个元组&lt;b,c&gt;，转换成一个键值对&lt;b,&lt;S,c&gt;&gt;</p>
+<p>所有具有相同B值的元组被发送到同一个Reduce进程中，Reduce进程的任务是，把来自关系R和S的、具有相同属性B值的元组进行合并</p>
+<p>Reduce进程的输出则是连接后的元组&lt;a,b,c&gt;，输出被写到一个单独的输出文件中</p>
+<h2 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h2><p>•MapReduce执行的全过程包括以下几个主要阶段：从分布式文件系统读入数据、执行Map任务输出中间结果、通过 Shuffle阶段把中间结果分区排序整理后发送给Reduce任务、执行Reduce任务得到最终结果并写入分布式文件系统。在这几个阶段中，Shuffle阶段非常关键，必须深刻理解这个阶段的详细执行过程</p>
+<p>•MapReduce具有广泛的应用，比如关系代数运算、分组与聚合运算、矩阵-向量乘法、矩阵乘法等</p>
+<h1 id="第7章-大数据存储技术"><a href="#第7章-大数据存储技术" class="headerlink" title="第7章 大数据存储技术"></a><strong>第7章 大数据存储技术</strong></h1><h2 id="云计算是云数据库兴起的基础"><a href="#云计算是云数据库兴起的基础" class="headerlink" title="云计算是云数据库兴起的基础"></a>云计算是云数据库兴起的基础</h2><h3 id="云计算概念"><a href="#云计算概念" class="headerlink" title="云计算概念"></a>云计算概念</h3><p>•通过整合、管理、调配分布在网络各处的计算资源，通过互联网以统一界面，同时向大量的用户提供服务</p>
+<h3 id="云计算特点"><a href="#云计算特点" class="headerlink" title="云计算特点"></a>云计算特点</h3><p>超大规模计算、虚拟化、高可靠性和安全性、通用性、动态扩展性、按需服务、降低成本</p>
+<h3 id="云计算应用场景"><a href="#云计算应用场景" class="headerlink" title="云计算应用场景"></a>云计算应用场景</h3><ul>
+<li>Google个人云服务</li>
+<li>华为云开发环境</li>
+<li>各类云盘</li>
+</ul>
+<h3 id="云计算八大优势"><a href="#云计算八大优势" class="headerlink" title="云计算八大优势"></a>云计算八大优势</h3><ol>
+<li>按需服务</li>
+<li>随时服务</li>
+<li>通用性</li>
+<li>高可靠性</li>
+<li>极其廉价</li>
+<li>超大规模</li>
+<li>虚拟化</li>
+<li>高扩展性</li>
+</ol>
+<h2 id="云数据库概念"><a href="#云数据库概念" class="headerlink" title="云数据库概念"></a>云数据库概念</h2><p><strong>云数据库</strong>是部署和虚拟化在<strong>云计算环境中的数据库</strong>。云数据库是在云计算的大背景下发展起来的一种新兴的共享基础架构的方法，它极大地增强了数据库的存储能力，消除了人员、硬件、软件的重复配置，让软、硬件升级变得更加容易。云数据库具有<strong>高可扩展性</strong>、<strong>高可用性</strong>、采用多租形式和支持资源有效分发等特点。 </p>
+<h3 id="云数据库与云存储有什么区别？"><a href="#云数据库与云存储有什么区别？" class="headerlink" title="云数据库与云存储有什么区别？"></a><strong>云数据库与云存储有什么区别？</strong></h3><p><strong>从对应的层面来讲</strong></p>
+<ol>
+<li>云存储：是在资源层，即云的<strong>IaaS层</strong>，提供的是存储资源能力。</li>
+<li>云数据库：是在平台层，即云的<strong>PaaS层</strong>，提供的是中间件服务能力。本地的数据库迁移到云端对应云数据库，而本地的硬盘迁移到云端只能对应云存储。</li>
+</ol>
+<p><strong>从提供的服务来说</strong></p>
+<ol>
+<li>云存储：提供<strong>存储能力</strong>，更多面对的场景是非结构化类数据，如文件，图片，视频等。</li>
+<li>云数据库：提供基础的<strong>数据库和数据对象管理能力</strong>，既包括oracle, mysql,sql server等关系型数据库，也可以包括类似mongodb，hbase等半结构化数据库。</li>
+</ol>
+<p><strong>从两者的关系来说</strong></p>
+<ul>
+<li>对于云存储当前基本都基于类似hdfs分布式文件系统进行封装，提供存储服务能力接口。也可以基于hdfs上面再架构一层，形成一个数据库，再将数据库能力暴露出去，形成云数据库，类似HBase。但是对于常见的关系型数据库，也可以做为云数据库，但是他们底层可以不依赖的云存储能力。</li>
+</ul>
+<h3 id="云数据库具有以下特性："><a href="#云数据库具有以下特性：" class="headerlink" title="云数据库具有以下特性："></a>云数据库具有以下特性：</h3><ol>
+<li>动态可扩展</li>
+<li>高可用性</li>
+<li>较低的使用代价</li>
+<li>易用性</li>
+<li>高性能</li>
+<li>免维护</li>
+<li>安全</li>
+</ol>
+<h2 id="云数据库是个性化数据存储需求的理想选择"><a href="#云数据库是个性化数据存储需求的理想选择" class="headerlink" title="云数据库是个性化数据存储需求的理想选择"></a>云数据库是个性化数据存储需求的理想选择</h2><p>企业类型不同，对于存储的需求也千差万别，而云数据库可以很好地满足不同企业的个性化存储需求：</p>
+<p>•首先，云数据库可以满足大企业的海量数据存储需求</p>
+<p>•其次，云数据库可以满足中小企业的低成本数据存储需求</p>
+<p>•另外，云数据库可以满足企业动态变化的数据存储需求 </p>
+<p>到底选择自建数据库还是选择云数据库，取决于企业自身的具体需求</p>
+<p>•对于一些大型企业，目前通常采用自建数据库</p>
+<p>•对于一些财力有限的中小企业而言，IT预算比较有限，云数据库这种前期零投入、后期免维护的数据库服务，可以很好满足它们的需求 </p>
+<p>•从数据模型的角度来说，云数据库并非一种全新的数据库技术，而只是以服务的方式提供数据库功能</p>
+<p><strong>云数据库并没有专属于自己的数据模型</strong>，云数据库所采用的数据模型可以是关系数据库所使用的关系模型（微软的SQL Azure云数据库、阿里云RDS都采用了关系模型），也可以是NoSQL数据库所使用的非关系模型（Amazon Dynamo云数据库采用的是“键&#x2F;值”存储）</p>
+<p>•同一个公司也可能提供采用不同数据模型的多种云数据库服务</p>
+<p>•许多公司在开发云数据库时，后端数据库都是直接使用现有的各种关系数据库或NoSQL数据库产品</p>
+<h2 id="云数据库厂商"><a href="#云数据库厂商" class="headerlink" title="云数据库厂商"></a>云数据库厂商</h2><table>
+<thead>
+<tr>
+<th>企业</th>
+<th>产品</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Amazon</td>
+<td>Dynamo、SimpleDB、RDS</td>
+</tr>
+<tr>
+<td>Google</td>
+<td>Google  Cloud SQL</td>
+</tr>
+<tr>
+<td>Microsoft</td>
+<td>Microsoft  SQL Azure</td>
+</tr>
+<tr>
+<td>Oracle</td>
+<td>Oracle  Cloud</td>
+</tr>
+<tr>
+<td>Yahoo!</td>
+<td>PNUTS</td>
+</tr>
+<tr>
+<td>Vertica</td>
+<td>Analytic  Database v3.0 for the Cloud</td>
+</tr>
+<tr>
+<td>EnerpriseDB</td>
+<td>Postgres  Plus in the Cloud</td>
+</tr>
+<tr>
+<td>阿里</td>
+<td>阿里云RDS</td>
+</tr>
+<tr>
+<td>百度</td>
+<td>百度云数据库</td>
+</tr>
+<tr>
+<td>腾讯</td>
+<td>腾讯云数据库</td>
+</tr>
+</tbody></table>
+<p>Amazon是云数据库市场的先行者。Amazon除了提供著名的S3存储服务和EC2计算服务以外，还提供基于云的数据库服务：</p>
+<p>•Amazon RDS：云中的关系数据库</p>
+<p>•Amazon SimpleDB：云中的键值数据库</p>
+<p>•Amazon DynamoDB：云中的NoSQL数据库</p>
+<p>•Amazon Redshift：云中的数据仓库</p>
+<p>•Amazon ElastiCache：云中的分布式内存缓存</p>
+<h2 id="HBase分布式数据库"><a href="#HBase分布式数据库" class="headerlink" title="HBase分布式数据库"></a><strong>HBase</strong>分布式数据库</h2><h3 id="BigTable是一个分布式存储系统"><a href="#BigTable是一个分布式存储系统" class="headerlink" title="BigTable是一个分布式存储系统"></a>BigTable是一个分布式存储系统</h3><p>BigTable起初用于解决典型的互联网搜索问题</p>
+<p>•<strong>建立互联网索引</strong></p>
+<p>1 爬虫持续不断地抓取新页面，这些页面每页一行地存储到BigTable里</p>
+<p>2 MapReduce计算作业运行在整张表上，生成索引，为网络搜索应用做准备</p>
+<p>•<strong>搜索互联网</strong></p>
+<p>3 用户发起网络搜索请求</p>
+<p>4 网络搜索应用查询建立好的索引，从BigTable得到网页</p>
+<p>5 搜索结果提交给用户</p>
+<p>Bigtable是一个稀疏、分布式、持久化存储的多维有序映射表，表的索引是<strong>行关键字、列关键字和时间戳</strong> 。Bigtable中存储的表项都是未经解析的字节数组</p>
+<p><strong>数据模型</strong></p>
+<p><strong>行关键字</strong>可以是任意字符串，最大支持64KB。Bigtable按照行关键字的字典序组织数据，利用这个特性可以通过选择合适的行关键字，使数据访问具有良好的局部性。如Webtable中，通过将<strong>反转的URL</strong>作为行关键字，可以将同一个域名下的网页聚集在一起。</p>
+<p>​    表的行区间可以动态划分，每个行区间称为一个<strong>子表</strong>。子表是Bigtable<strong>数据分布和负载均衡的基本单位</strong>，不同的子表可以有不同的大小。为了限制子表的移动和恢复成本，每个子表默认的最大尺寸为200MB。</p>
+<p><strong>列族</strong></p>
+<p>列关键字一般都表示<strong>一种数据类型</strong>，列关键字的集合称作<strong>列族</strong>，列族是<strong>访问控制的基本单位</strong> 。存储在同一列族下的数据属于同一种类型，列族下的数据被压缩在一起保存。数据在被存储之前必须先创建列族，并且表中的列族不宜过多，通常几百个，但表中可以有无限多个列 。在Bigtable中列关键字的命名语法为：“<strong>列族：限定词</strong>”，列族名称必须是可打印的字符串，限定词则可以是任意字符串。如Webtable中名为anchor的列族，该列族的每一个列关键字代表一个锚链接；anchor列族的限定词是引用网页的站点名，每列的数据项是链接文本 。</p>
+<p><strong>时间戳</strong></p>
+<p>​    Bigtable中的表项可以包含<strong>同一数据的不同版本</strong>，采用时间戳进行索引。时间戳是64位整型，既可以由系统赋值也可由用户指定。表项的不同版本按照时间戳倒序排列，即最新的数据排在最前面。</p>
+<p><strong>体系结构</strong></p>
+<p><strong>Bigtable集群包括三个主要部分：</strong></p>
+<p><strong>供客户端使用的库</strong>，客户端需要读写数据时，直接与片服务器联系。因为客户端并不需要从主服务器获取片的位置信息，所以大多数客户端从来不需要访问主服务器，主服务器的负载一般很轻。</p>
+<p><strong>主服务器（master server）</strong>，主服务器负责将片分配给片服务器，监控片服务器的添加和删除，平衡片服务器的负载，处理表和列族的创建等。注意，主服务器不存储任何片，不提供任何数据服务，也不提供片的定位信息。</p>
+<p><strong>片服务器（tablet server）</strong>，每个片服务器负责一定量的片，处理对片的读写请求，以及片的分裂或合并。每个片实际由若干SSTable文件和memtable组成，而且这些SSTable和memtable都是已排序的。片服务器可以根据负载随时添加和删除。这里片服务器并不真实存储数据，而相当于一个连接Bigtable和GFS的代理，客户端的一些数据操作都通过片服务器代理间接访问GFS。</p>
+<p>Bigtable的实现依托于Google的几个基础组件：</p>
+<p><strong>Google File System（GFS）</strong>，一个分布式文件系统，用于存储日志和文件；</p>
+<p><strong>Google Sorted Strings Table（SSTable）</strong>，一个不可修改的有序键值映射表，提供查询、遍历的功能；</p>
+<p><strong>Chubby</strong>，一个高可靠用于分布式的锁服务，其目的是解决分布式一致性的问题，通过Paxos算法实现。Chubby用于片定位，片服务器的状态监控，访问控制列表存储等任务。</p>
+<p>HBase是一个高可靠、高性能、面向列、可伸缩的<strong>分布式数据库</strong>，是谷歌BigTable的开源实现，主要用来存储非结构化和半结构化的松散数据。HBase的目标是处理非常庞大的表，可以通过水平扩展的方式，利用廉价计算机集群处理由超过10亿行数据和数百万列元素组成的数据表 </p>
+<p>HBase和BigTable的底层技术对应关系</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th><strong>BigTable</strong></th>
+<th><strong>HBase</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>文件存储系统</td>
+<td>GFS</td>
+<td>HDFS</td>
+</tr>
+<tr>
+<td>海量数据处理</td>
+<td>MapReduce</td>
+<td>Hadoop  MapReduce</td>
+</tr>
+<tr>
+<td>协同服务管理</td>
+<td>Chubby</td>
+<td>Zookeeper</td>
+</tr>
+</tbody></table>
+<h3 id="为什么需要HBase"><a href="#为什么需要HBase" class="headerlink" title="为什么需要HBase?"></a>为什么需要HBase?</h3><p>•HBase数据库是BigTable的开源实现，和BigTable一样，支持大规模海量数据，分布式并发数据处理效率极高，易于扩展且支持动态伸缩，适用于廉价设备。</p>
+<p>•Hadoop可以很好地解决大规模数据的<strong>离线批量处理</strong>问题，但是，受限于Hadoop MapReduce编程框架的<strong>高延迟</strong>数据处理机制，使得Hadoop无法满足大规模数据实时处理应用的需求</p>
+<p>•HDFS面向批量访问模式，不是随机访问模式</p>
+<p>•传统的通用关系型数据库无法应对在数据规模剧增时导致的系统<strong>扩展性和性能问题</strong>（分库分表也不能很好解决）</p>
+<p>•传统关系数据库在数据结构变化时一般需要<strong>停机维护</strong>，空列浪费存储空间</p>
+<p>•因此，业界出现了一类面向半结构化数据存储和处理的高可扩展、低写入&#x2F;查询延迟的系统，例如，键值数据库、文档数据库和列族数据库（如BigTable和HBase等）</p>
+<p>•HBase已经成功应用于互联网服务领域和传统行业的众多在线式数据分析处理系统中。</p>
+<h3 id="HBase与传统的关系数据库的区别主要体现在以下几个方面："><a href="#HBase与传统的关系数据库的区别主要体现在以下几个方面：" class="headerlink" title="HBase与传统的关系数据库的区别主要体现在以下几个方面："></a>HBase与传统的关系数据库的区别主要体现在以下几个方面：</h3><p>（1）数据类型：关系数据库采用关系模型，具有丰富的数据类型和存储方式，HBase则采用了更加简单的数据模型，它把数据存储为<strong>未经解释的字符串</strong></p>
+<p>（2）数据操作：关系数据库中包含了丰富的操作，其中会涉及复杂的多表连接。HBase操作则<strong>不存在复杂的表与表之间的关系</strong>，只有简单的插入、查询、删除、清空等，因为HBase在设计上就避免了复杂的表和表之间的关系</p>
+<p>（3）存储模式：关系数据库是基于行模式存储的。HBase是基于<strong>列存储的</strong>，每个列族都由几个文件保存，不同列族的文件是分离的</p>
+<p>（4）数据索引：关系数据库通常可以针对不同列构建复杂的多个索引，以提高数据访问性能。HBase通过<strong>行键</strong>建立索引，通过巧妙的设计，HBase中的所有访问方法，或者通过行键访问，或者通过行键扫描，从而使得整个系统不会慢下来。</p>
+<p>（5）数据维护：在关系数据库中，更新操作会用最新的当前值去替换记录中原来的旧值，旧值被覆盖后就不会存在。而在HBase中执行更新操作时，并不会删除数据旧的版本，而是生成一个新的版本，<strong>旧有的版本仍然保留</strong></p>
+<p>（6）可伸缩性：关系数据库很难实现横向扩展，纵向扩展的空间也比较有限。相反，HBase和BigTable这些分布式数据库就是为了实现<strong>灵活的水平扩展</strong>而开发的，能够轻易地通过在集群中增加或者减少硬件数量来实现性能的伸缩。</p>
+<h3 id="HBase访问接口"><a href="#HBase访问接口" class="headerlink" title="HBase访问接口"></a>HBase访问接口</h3><table>
+<thead>
+<tr>
+<th>类型</th>
+<th>特点</th>
+<th>场合</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>Native  Java API</strong></td>
+<td>最常规和高效的访问方式</td>
+<td>适合Hadoop  MapReduce作业并行批处理HBase表数据</td>
+</tr>
+<tr>
+<td><strong>HBase  Shell</strong></td>
+<td>HBase的命令行工具，最简单的接口</td>
+<td>适合HBase管理使用</td>
+</tr>
+<tr>
+<td><strong>Thrift  Gateway</strong></td>
+<td>利用Thrift序列化技术，支持C++、PHP、Python等多种语言</td>
+<td>适合其他异构系统在线访问HBase表数据</td>
+</tr>
+<tr>
+<td><strong>REST  Gateway</strong></td>
+<td>解除了语言限制</td>
+<td>支持REST风格的Http  API访问HBase</td>
+</tr>
+<tr>
+<td><strong>Pig</strong></td>
+<td>使用Pig  Latin流式编程语言来处理HBase中的数据</td>
+<td>适合做数据统计</td>
+</tr>
+<tr>
+<td><strong>Hive</strong></td>
+<td>简单</td>
+<td>当需要以类似SQL语言方式来访问HBase的时候</td>
+</tr>
+</tbody></table>
+<h3 id="HBase数据模型"><a href="#HBase数据模型" class="headerlink" title="HBase数据模型"></a>HBase数据模型</h3><p>•HBase是一个稀疏、多维度、排序的映射表，这张表的索引是行键、列族、列限定符和时间戳</p>
+<p>•每个值是一个未经解释的字符串，没有数据类型</p>
+<p>•用户在表中存储数据，每一行都有一个可排序的行键和任意多的列</p>
+<p>•表在水平方向由一个或者多个列族组成，一个列族中可以包含任意多个列，同一个列族里面的数据存储在一起</p>
+<p>•列族支持动态扩展，可以很轻松地添加一个列族或列，无需预先定义列的数量以及类型，所有列均以字符串形式存储，用户需要自行进行数据类型转换</p>
+<p>•HBase中执行更新操作时，并不会删除数据旧的版本，而是生成一个新的版本，旧有的版本仍然保留（这是和HDFS只允许追加不允许修改的特性相关的）</p>
+<p>•<strong>表</strong>：HBase采用表来组织数据，表由行和列组成，列划分为若干个列族</p>
+<p>•<strong>行</strong>：每个HBase表都由若干行组成，每个行由行键（row key）来标识。</p>
+<p>•<strong>列族</strong>：一个HBase表被分组成许多“列族”（Column Family）的集合，它是基本的访问控制单元</p>
+<p>•<strong>列限定符</strong>：列族里的数据通过列限定符（或列）来定位</p>
+<p>•<strong>单元格</strong>：在HBase表中，通过行、列族和列限定符确定一个“单元格”（cell），单元格中存储的数据没有数据类型，总被视为字节数组byte</p>
+<p>•<strong>时间戳</strong>：每个单元格都保存着同一份数据的多个版本，这些版本采用时间戳进行索引</p>
+<p>•HBase中需要根据行键、列族、列限定符和时间戳来确定一个单元格，因此，可以视为一个“四维坐标”，即[行键, 列族, 列限定符, 时间戳]</p>
+<h2 id="NoSQL-数据库"><a href="#NoSQL-数据库" class="headerlink" title="NoSQL 数据库"></a><strong>NoSQL</strong> <strong>数据库</strong></h2><img src="https://fastly.jsdelivr.net/gh/Leevan001/pictureBed@main/utools/16682443091221668244308664.png" style="zoom:33%;" />
+
+<p>NoSQL，指的是非关系型的数据库，也称作Not Only SQL。</p>
+<p>NoSQL产生的原因</p>
+<p>① 关系数据库<strong>无法满足海量数据</strong>的管理需求；</p>
+<p>②关系数据库<strong>无法满足高并发</strong>的需求；</p>
+<p>③关系数据库<strong>无法满足高扩展性和高可用性</strong>需求。</p>
+<p>纵向扩展</p>
+<p>横向扩展：采用集群的方式，但部署、管理、配置很复杂，没有办法自动化实现。</p>
+<h3 id="CAP定理："><a href="#CAP定理：" class="headerlink" title="CAP定理："></a>CAP定理：</h3><p>又称作布鲁尔定理（Brewer‘s theorem），对于一个分布式计算系统来说，不可能同时满足以下三点，最多只能同时较好的满足两点。</p>
+<ul>
+<li><p>一致性(Consistency) (所有节点在同一时间具有相同的数据)</p>
+</li>
+<li><p>可用性(Availability) (保证每个请求不管成功或者失败都有响应)</p>
+</li>
+<li><p>分区容忍(Partition tolerance) (系统一部分节点信息的丢失或失败不会影响系统的继续运行)</p>
+</li>
+</ul>
+<p>根据 CAP 原理将 NoSQL 数据库分成了满足 CA 原则、满足 CP 原则和满足 AP 原则三 大类：</p>
+<ol>
+<li>CA - 单点集群，满足一致性，可用性的系统，通常在可扩展性上不太强大。</li>
+<li>CP - 满足一致性，分区容忍性的系统，通常性能不是特别高。</li>
+<li>AP - 满足可用性，分区容忍性的系统，通常可能对一致性要求低一些。</li>
+</ol>
+<h3 id="BASE"><a href="#BASE" class="headerlink" title="BASE"></a><strong>BASE</strong></h3><p>BASE是NoSQL数据库通常对可用性及一致性的弱要求原则，核心思想是，在保证可用性的基础上，即使无法做到强一致性，但每个应用都可以根据自身业务特点，采用适当的方式来使系统达到最终一致性。它是AP（可用性+分区容忍性）的优化方案，能满足绝大部分业务需求。</p>
+<p>BASE：Basically Available, Soft-state, Eventually Consistency。 由 Eric Brewer 定义。 </p>
+<p>Basically Available：分布式系统在出现故障时，允许损失部分可用性，即保证核心可用。</p>
+<p>Soft-state 软状态：允许系统存在中间状态（数据不一致），不会影响系统整体可用性。</p>
+<p>Eventually Consistency 最终一致性：系统中的所有数据副本经过一定时间后，最终能够达到一致的状态。</p>
+<h3 id="关系数据库与NoSQL比较"><a href="#关系数据库与NoSQL比较" class="headerlink" title="关系数据库与NoSQL比较"></a><strong>关系数据库与</strong>NoSQL比较</h3><p><strong>关系型数据库的优势：</strong></p>
+<p>1.保持数据的<strong>一致性</strong>（事务处理）[关系型数据库的最大优势]</p>
+<p>2.由于以标准化为前提，数据<strong>更新的开销很小</strong>（相同的字段基本上都只有一处）</p>
+<p>3.可以进行Join等<strong>复杂查询</strong>(不同服务器之间不能进行Join处理)</p>
+<p>4.存在很多实际成果和专业技术信息（<strong>成熟的技术</strong>）</p>
+<p>5.把所有的数据都通过行和列的二元表现形式表示出来，让人<strong>容易理解</strong></p>
+<p><strong>关系型数据库不擅长的处理</strong>：</p>
+<ol>
+<li><p>大量数据的写入处理</p>
+</li>
+<li><p>为有数据更新的表做索引或表结构（schema）变更</p>
+</li>
+<li><p>字段不固定时应用</p>
+</li>
+<li><p>对简单查询需要快速返回结果的处理</p>
+</li>
+</ol>
+<p>关系库无法满足海量数据的管理需求，无法满足高并发的需求，无法满足高扩展性和高可用性需求</p>
+<p><strong>NoSQL数据库的优势：</strong></p>
+<p>1.关系型数据库有类似Join这样的多表查询机制的限制导致扩展很艰难，NoSQL数据库不支持Join处理，各个数据都是独立设计的，<strong>很容易把数据分散在多个服务器上</strong>。</p>
+<p>2.NoSQL的存储格式是键值存储形式、面向文档形式、面向列形式等，所以可以存储基础类型以及对象或者是集合等<strong>各种格式</strong>，而关系数据库则只支持基础类型</p>
+<p>3.<strong>大量数据</strong>的写入处理</p>
+<p>4.对数据进行<strong>缓存</strong>(Cache)处理</p>
+<p>5.对数组类型的数据进行<strong>高速</strong>处理</p>
+<p>6.对数据进行<strong>全部保存</strong>处理</p>
+<p><strong>NoSQL数据库的不足：</strong></p>
+<p>1.不提供关系型数据库对事务的处理</p>
+<p>2.属于新的技术维护的工具和资料有限、将产生一定用户的学习和使用成本</p>
+<h2 id="键值数据库"><a href="#键值数据库" class="headerlink" title="键值数据库"></a>键值数据库</h2><p><strong>数据模型</strong></p>
+<p>键&#x2F;值对</p>
+<p>键是一个字符串对象</p>
+<p>值可以是任意类型的数据，比如整型、字符型、数组、列表、集合等</p>
+<p>通过键查询，不能通过值来查询。</p>
+<p>优点：扩展性好，灵活性好，大量写操作时性能高</p>
+<p>缺点：无法存储结构化信息，条件查询效率较低，不能存储数据之间的关系</p>
+<p><strong>相关产品</strong>：Redis、Riak、SimpleDB、Chordless、Scalaris、Memcached</p>
+<p><strong>典型应用：涉及频繁读写、拥有简单数据模型的应用；内容缓存，比如会话、配置文件、参数、购物车等；存储配置和用户数据信息的移动应用</strong></p>
+<p>Redis被人们称为“强化版的Memcached”，开源的使用 ANSI C 语言编写、遵守 BSD 协议、支持网络、可基于内存、分布式、可选持久性，提供多种语言的 API，数据恢复、更多数据类型。</p>
+<p>Redis内部使用一个redisObject对象来表示所有的key和value。redisObject主要的信息包括数据类型（type）、编码方式(encoding)、数据指针（ptr）、虚拟内存（vm）等。type代表一个value对象具体是何种数据类型，encoding是不同数据类型在redis内部式。</p>
+<p>与Memcached仅支持简单的key-value结构的数据记录不同，Redis支持的数据类型要丰富得多，常用的数据类型主要有五种：<strong>String、List、Hash、Set和Sorted Set</strong>。</p>
+<ol>
+<li>字符串（String）是Redis值的最基础的类型。Redis中使用的字符串是通过包装的，基于c语言字符数组实现的简单动态字符串(simple dynamic string, SDS)一个抽象数据结构。下图为C语言字符串内存结构示意图</li>
+</ol>
+<p><img src="https://fastly.jsdelivr.net/gh/Leevan001/pictureBed@main/utools/16682448881211668244887485.png"></p>
+<ol start="2">
+<li>Hash是一个String类型的field和value之间的映射表，即redis的Hash数据类型的key（hash表名称）对应的value实际的内部存储结构为一个HashMap，因此Hash特别<strong>适合存储对象</strong>。相对于把一个对象的每个属性存储为String类型，将整个对象存储在Hash类型中会占用更少内存。适用于一个对象来存储用户信息，商品信息，订单信息等等。</li>
+</ol>
+<img src="https://fastly.jsdelivr.net/gh/Leevan001/pictureBed@main/utools/16682449361221668244935146.png" style="zoom:67%;" />
+
+<ol start="3">
+<li>List类型其实就是每一个元素都是String类型的双向链表。我们可以从链表的头部和尾部添加或者删除元素。这样的List既可以作为栈，也可以作为队列使用。适用于如好友列表，粉丝列表，消息队列，最新消息排行等。</li>
+<li>Redis 集合（Set类型）是一个无序的String类型数据的集合，类似List的一个列表，与List不同的是Set不能有重复的数据。实际上，Set的内部是用HashMap实现的，Set只用了HashMap的key列来存储对象。集合有取交集、并集、差集等操作，因此可以求共同好友、共同兴趣、分类标签等。</li>
+<li>SortSet顾名思义，是一个排好序的Set，它在Set的基础上增加了一个顺序属性score，这个属性在添加修改元素时可以指定，每次指定后，SortSet会自动重新按新的值排序。SortSet的内部使用HashMap和跳跃表(SkipList)来保证数据的存储和有序，HashMap里放的是成员到score的映射，而跳跃表里存放的是所有的成员，排序依据是HashMap里存的score。适合需要有序且唯一的业务或操作，例：网易云音乐的排行榜功能</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th><strong>分值</strong></th>
+<th><strong>2.0</strong></th>
+<th><strong>3.2</strong></th>
+<th><strong>4.0</strong></th>
+<th><strong>7.0</strong></th>
+<th><strong>8.2</strong></th>
+<th><strong>9.1</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>元素</td>
+<td>歌曲1</td>
+<td>歌曲2</td>
+<td>歌曲3</td>
+<td>歌曲4</td>
+<td>歌曲5</td>
+<td>歌曲6</td>
+</tr>
+</tbody></table>
+<h2 id="列族数据库"><a href="#列族数据库" class="headerlink" title="列族数据库"></a>列族数据库</h2><p><strong>典型应用</strong>：分布式数据存储与管理；可以容忍副本中存在短期不一致情况的应用程序；拥有动态字段的应用程序：拥有潜在大量数据的应用程序，大到几百TB的数据</p>
+<p>优点：查找速度快，可扩展性强，容易进行分布式扩展，复杂性低</p>
+<p>缺点：功能较少，大都<strong>不支持强事务一致性</strong></p>
+<table>
+<thead>
+<tr>
+<th><strong>相关产品</strong></th>
+<th>BigTable、HBase、Cassandra、HadoopDB、GreenPlum、PNUTS</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>使用者</strong></td>
+<td>Ebay（Cassandra）、Instagram（Cassandra）、NASA（Cassandra）、Twitter（Cassandra  and HBase）、Facebook（HBase）、Yahoo!（HBase）</td>
+</tr>
+</tbody></table>
+<h2 id="文档数据库"><a href="#文档数据库" class="headerlink" title="文档数据库"></a>文档数据库</h2><p>文档数据库可看作特殊的键值数据库，值是文档。</p>
+<p>“文档”其实是一个数据记录，这个记录能够对包含的数据类型和内容进行自我描述。比如XML文档、HTML文档和JSON 文档。</p>
+<table>
+<thead>
+<tr>
+<th><strong>典型应用</strong></th>
+<th>存储、索引并管理面向文档的数据或者类似的半结构化数据  比如，用于后台具有大量读写操作的网站、使用JSON数据结构的应用、使用嵌套结构等非规范化数据的应用程序</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>优点</strong></td>
+<td>性能好（高并发），灵活性高，复杂性低，数据结构灵活  提供嵌入式文档功能，将经常查询的数据存储在同一个文档中；既可以根据键来构建索引，也可以根据内容构建索引</td>
+</tr>
+<tr>
+<td><strong>缺点</strong></td>
+<td>缺乏统一的查询语法，不支持文档间事务</td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th><strong>相关产品</strong></th>
+<th>MongoDB、CouchDB、Terrastore、ThruDB、RavenDB、SisoDB、RaptorDB、CloudKit、Perservere、Jackrabbit</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>使用者</strong></td>
+<td>百度云数据库（MongoDB）、SAP  （MongoDB）、Codecademy （MongoDB）、Foursquare  （MongoDB）、NBC  News （RavenDB）</td>
+</tr>
+</tbody></table>
+<p>MongoDB 将数据存储为一个文档，数据结构由键值(key&#x3D;&gt;value)对组成。MongoDB 文档类似于 JSON 对象。字段值可以包含其他文档，数组及文档数组。</p>
+<p>设计基于MongoDB的应用程序的数据模型时的关键就是选择合适的文档结构以及确定应用程序如何描述数据之间的关系。有两种方式可以用来描述这些关系： <strong>内嵌</strong>和<strong>引用</strong></p>
+<p><strong>1.Embedded Data Models 内嵌数据模型</strong></p>
+<p>内嵌方式指的是把相关联的数据保存在同一个文档结构之内。MongoDB的文档结构允许一个字段或者一个数组内的值为一个嵌套的文档。这种冗余的数据模型可以让应用程序在一个数据库操作内完成对相关数据的读取或修改。这样一来，应用程序就可以发送较少的请求给MongoDB数据库来完成常用的查询及更新请求。</p>
+<p><strong>内嵌数据模型</strong>的适用情况</p>
+<p>一般来说，下述情况建议使用内嵌数据：</p>
+<p>数据对象之间有contains(包含)关系。 </p>
+<p>数据对象之间有一对多的关系。 这些情况下 “多个”或者子文档会经常和父文档一起被显示和查看。请参见 一对多关系建模： 内嵌文档模型。</p>
+<p>通常情况下，内嵌数据会对读操作有比较好的性能提高，也可以使应用程序在一个单个操作就可以完成对数据的读取。 同时，内嵌数据也对更新相关数据提供了一个原子性写操作。</p>
+<p><strong>2.</strong> <strong>Normalized Data Models 规范化数据模型</strong></p>
+<p>规范化数据模型指的是通过使用引用来表达对象之间的关系。</p>
+<p>一般来说，在下述情况下可以使用规范化模型：</p>
+<p>当内嵌数据会导致很多数据的重复，并且读性能的优势又不足于盖过数据重复的弊端时候。</p>
+<p>需要表达比较复杂的多对多关系的时候。</p>
+<p>大型多层次结构数据集。</p>
+<p>引用比内嵌要更加灵活一些。 但客户端应用必须使用二次查询来解析文档内包含的引用。换句话说，对同样的操作来说，规范化模式会导致更多的网络请求发送到数据库服务器端。</p>
+<p><strong>MongoDB特性与数据模型</strong></p>
+<p><strong>1.</strong> <strong>原子性</strong></p>
+<p>在MongoDB中，即使操作修改单个文档中的多个嵌入文档，写操作在单个文档的级别上也是原子操作。当单个写操作修改多个文档（例如db.collection.updateMany()）时，每个文档的修改都是原子的，但整个操作不是原子操作。</p>
+<p>把相关数据定义到同一个文档里面的内嵌方式有利于这种原子性操作。对于那些使用引用来关联相关数据的数据模型，应用程序必须再用额外的读和写的操作去取回和修改相关的数据。</p>
+<p><strong>内嵌数据模型</strong></p>
+<p>嵌入式数据模型将所有相关数据组合在单个文档中，而不是跨多个文档和集合进行规范化。该数据模型有助于原子操作。</p>
+<p><strong>多文档事务</strong></p>
+<p>对于存储相关数据片段之间的引用的数据模型，应用程序必须发出单独的读取和写入操作以检索和修改这些相关的数据片段。从版本4.0开始，对于需要原子性来更新多个文档或读取多个文档之间的一致性的情况，MongoDB为副本集提供了多文档事务。</p>
+<p><strong>2.</strong> <strong>分片</strong></p>
+<p>MongoDB 使用 <strong>sharding （分片）</strong>来实现水平扩展。使用分片的集群可以支持海量的数据和高并发读写。用户可以使用分片技术把一个数据库内的某一个集合的数据进行分区，从而达到把数据分布到多个 mongod 实例（或分片上）的目的。</p>
+<p>Mongodb 依据分片键分发数据和应用程序的事务请求。选择一个合适的分片键会对性能有很大的影响，也会促进或者阻碍MongoDB的定向分片查询和增强的写性能。所以在选择分片键时候要仔细考量分片键所用的字段。</p>
+<p><strong>3.</strong> <strong>索引</strong></p>
+<p>对常用操作可以使用索引来提高性能。对查询条件中常见的字段，以及需要排序的字段创建索引。MongoDB会对 _id 字段自动创建唯一索引。</p>
+<p>创建索引时，需要考虑索引的下述特征：</p>
+<p>每个索引<strong>至少需要8kB</strong>的数据空间。</p>
+<p>添加索引会对写入操作产生一些<strong>负面的性能</strong>影响。 对于具有高写入读取比率的集合，索引的代价很大，因为每个插入也必须更新任何索引。</p>
+<p>具有高读写比的集合通常受益于其他索引。 索引不会影响未设置索引的读取操作。</p>
+<p>每个索引都会占一定的硬盘空间和内存（对于活跃的索引）。索引有可能会用到很多这样的资源，因此对这些资源要进行管理和规划，特别是在计算热点数据大小的时候</p>
+<h2 id="图数据库"><a href="#图数据库" class="headerlink" title="图数据库"></a>图数据库</h2><table>
+<thead>
+<tr>
+<th><strong>数据模型</strong></th>
+<th>图结构</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>典型应用</strong></td>
+<td>专门用于处理具有高度相互关联关系的数据，比较适合于社交网络、模式识别、依赖分析、推荐系统以及路径寻找等问题</td>
+</tr>
+<tr>
+<td><strong>优点</strong></td>
+<td>灵活性高，支持复杂的图形算法，可用于构建复杂的关系图谱</td>
+</tr>
+<tr>
+<td><strong>缺点</strong></td>
+<td>复杂性高，只能支持一定的数据规模</td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th><strong>相关产品</strong></th>
+<th>Neo4J、OrientDB、InfoGrid、Infinite  Graph、GraphDB</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>使用者</strong></td>
+<td>Adobe（Neo4J）、Cisco（Neo4J）、T-Mobile（Neo4J）</td>
+</tr>
+</tbody></table>
+<p>图由两个元素组成：节点和关系。</p>
+<p>每个节点代表一个实体（人，地，事物，类别或其他数据），每个关系代表两个节点的关联方式。</p>
+<p>Neo4J是由Java实现的开源图数据库，支持ACID，集群、备份和故障转移。Neo4J版本分为社区版和企业版，社区版只支持单机部署，功能受限。企业版支持主从复制和读写分离，包含可视化管理工具。</p>
+<p><strong>Neo4J的特点</strong></p>
+<p>它很容易表示连接的数据</p>
+<p>检索&#x2F;遍历&#x2F;导航更多的连接数据是非常容易和快速的</p>
+<p>它非常容易地表示半结构化数据</p>
+<p>Neo4j CQL查询语言命令是人性化的可读格式，非常容易学习</p>
+<p>使用简单而强大的数据模型</p>
+<p>它不需要复杂的连接来检索连接的&#x2F;相关的数据，因为它很容易检索它的相邻节点或关系细节没有连接或索引。</p>
+<p>Neo4J的使用实例</p>
+<p>例如一部电影有若干演员和导演，那么建立图数据库后，可以容易地表示电影、演员、导演之间的关系，而且在查询时也会变得很方便。</p>
+<img src="https://fastly.jsdelivr.net/gh/Leevan001/pictureBed@main/utools/16682460171281668246016634.png" style="zoom:33%;" />
+
+<p>例如一个购物网站。购物网站的业务需求大概具有这样的流程：首先商家上架了商品，然后顾客浏览或查找商品，顾客找到自己需要的商品之后，确定购买，接着使用他的账户支付款项，商家收到货款后，将商品快递给顾客，从而完成一笔交易。根据这个业务流程，也可以使用Neon4J建立数据模型。</p>
+<img src="https://fastly.jsdelivr.net/gh/Leevan001/pictureBed@main/utools/16682460441221668246043554.png" style="zoom:67%;" />
+
+
+
+
+
+<h2 id="不同类型数据库比较分析"><a href="#不同类型数据库比较分析" class="headerlink" title="不同类型数据库比较分析"></a>不同类型数据库比较分析</h2><img src="https://fastly.jsdelivr.net/gh/Leevan001/pictureBed@main/utools/16682460651211668246064749.png" style="zoom:50%;" />
+
+<p><strong>MySQL</strong>功能稳定，满足多样需求</p>
+<p><strong>MongoDB</strong>提供更灵活的数据模型，支持较多功能。</p>
+<p><strong>Hbase</strong> 依赖Hadoop的生态环境，有很好的扩展性。</p>
+<p><strong>Redis</strong>是键值存储的代表，功能最简单，提供随机数据存储，伸缩性特别好</p>
+<h1 id="第8章-大数据处理技术"><a href="#第8章-大数据处理技术" class="headerlink" title="第8章 大数据处理技术"></a>第8章 大数据处理技术</h1><h2 id="基于内存的分布式计算框架Spark"><a href="#基于内存的分布式计算框架Spark" class="headerlink" title="基于内存的分布式计算框架Spark"></a><strong>基于内存的分布式计算框架</strong>Spark</h2><p>AMP实验室于2009年开发，是<strong>基于内存计算</strong>的大数据并行计算框架，可用于构建大型的、低延迟的数据分析应用程序。</p>
+<h3 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h3><ul>
+<li><p>运行速度快：使用DAG执行引擎以支持循环数据流与内存计算。</p>
+</li>
+<li><p>容易使用：支持使用Scala、Java、Python和R语言进行编程，可以通过Spark Shell进行交互式编程 。</p>
+</li>
+<li><p>通用性：Spark提供了完整而强大的技术栈，包括SQL查询、流式计算、机器学习和图算法组件。</p>
+</li>
+<li><p>运行模式多样：可运行于独立的集群模式中，可运行于Hadoop中，也可运行于Amazon EC2等云环境中，并且可以访问HDFS、Cassandra、HBase、Hive等多种数据源</p>
+</li>
+</ul>
+<h2 id="Scala简介"><a href="#Scala简介" class="headerlink" title="Scala简介"></a>Scala简介</h2><p>Scala （Scalable Language）是一门多范式编程语言，运行于Java平台（JVM，Java 虚拟机），兼容现有的Java程序</p>
+<p><strong>Scala</strong>的特性：</p>
+<p>具备强大的并发性，支持函数式编程，可以更好地支持分布式系统；</p>
+<p>语法简洁，能提供API，自带了很多的算子，比如集合算子；</p>
+<p><strong>兼容</strong>Java，运行速度快，能融合到Hadoop生态圈中 ；</p>
+<p>Scala是Spark的主要编程语言</p>
+<p>Scala的优势是提供了<strong>REPL</strong>（Read-Eval-Print Loop，交互式解释器），提高程序开发效率。</p>
+<p>Scala解释器读到一个表达式，对它进行求值，将它打印出来，接着再继续读下一个表达式。这个过程被称做读取–求值–打印–循环，即：REPL。</p>
+<p><strong>Hadoop</strong>缺点：</p>
+<p>表达能力有限</p>
+<p>磁盘IO开销大</p>
+<p>延迟高</p>
+<p>任务之间的衔接涉及IO开销</p>
+<p>在前一个任务执行完成之前，其他任务就无法开始，难以胜任复杂、多阶段的计算任务</p>
+<p><strong>Spark</strong>优点：</p>
+<p>Spark的计算模式也属于MapReduce，但<strong>不局限于</strong>Map和Reduce操作，还提供了多种数据集操作类型，编程模型比Hadoop MapReduce更灵活</p>
+<p>Spark提供了<strong>内存计算</strong>，可将中间结果放到内存中，对于迭代运算效率更高</p>
+<p>Spark基于DAG的任务调度执行机制，要优于Hadoop MapReduce的迭代执行机制</p>
+<p>表达能力有限。Hadoop把复杂的分布式编程高度抽象到两个函数Map和Reduce上，在降低使用难度的同时，但也带来了表达能有限的问题，实际操作的时候有些问题并不能单单靠这两个函数来解决问题。</p>
+<p>执行迭代操作效率低。对于一些大型的机器学习，数据挖掘任务，往往需要更多轮次迭代才能得到结果。采用MapReduce实现这些算法的时候，每次迭代都是执行一次Map，Reduce任务的过程，这个过程的数据来源于分布式文件系统HDFS中，本此的迭代处理的结果也放在HDFS中，继续用于下一次的迭代。反复读写HDFS中的数据，大大降低了迭代操作的效率。</p>
+<p>资源浪费。在MapReduce的框架设计中，Reduce任务必须等待所有的Map任务执行完毕后再开始执行，造成不必要资源的浪费。</p>
+<p>实时性差。只是适用于离线批数据处理，无法支持交互式数据处理，实时数据的处理。</p>
+<img src="https://fastly.jsdelivr.net/gh/Leevan001/pictureBed@main/utools/16681850981531668185097574.png" style="zoom:80%;" />
+
+<p>使用Hadoop进行迭代计算非常耗资源</p>
+<p>Spark将数据载入内存后，之后的迭代计算都可以直接使用内存中的中间结果作运算，避免了从磁盘中频繁读取数据</p>
+<h3 id="大数据处理包括三个类型："><a href="#大数据处理包括三个类型：" class="headerlink" title="大数据处理包括三个类型："></a>大数据处理包括三个类型：</h3><ul>
+<li><p><strong>复杂的批量数据处理</strong>：通常时间跨度在数十分钟到数小时之间</p>
+</li>
+<li><p><strong>基于历史数据的交互式查询</strong>：通常时间跨度在数十秒到数分钟之间</p>
+</li>
+<li><p><strong>基于实时数据流的数据处理</strong>：通常时间跨度在数百毫秒到数秒之间</p>
+<p>当同时存在以上三种场景时，就需要同时部署三种不同的软件。比如: MapReduce &#x2F; Impala &#x2F; Storm</p>
+</li>
+</ul>
+<p><strong>问题：</strong> </p>
+<ul>
+<li><p>不同场景之间输入输出数据无法做到无缝共享，通常需要进行数据格式的转换</p>
+</li>
+<li><p>不同的软件需要不同的开发和维护团队，带来了较高的使用成本</p>
+</li>
+<li><p>难以对同一个集群中的各个系统进行统一的资源协调和分配</p>
+</li>
+</ul>
+<p>Spark的设计遵循“<strong>一个软件栈满足不同应用场景</strong>”的理念，逐渐形成了一套完整的生态系统</p>
+<p>既能够提供内存计算框架，也可以支持SQL即时查询、实时流式计算、机器学习和图计算等</p>
+<p>Spark可以部署在资源管理器YARN之上，提供一站式的大数据解决方案</p>
+<p>Spark所提供的生态系统足以应对上述三种场景，即同时支持批处理、交互式查询和流数据处理</p>
+<h3 id="BDAS架构"><a href="#BDAS架构" class="headerlink" title="BDAS架构"></a>BDAS架构</h3><img src="https://fastly.jsdelivr.net/gh/Leevan001/pictureBed@main/utools/16681854331521668185432924.png" style="zoom:80%;" />
+
+<h4 id="Spark生态系统组件的应用场景"><a href="#Spark生态系统组件的应用场景" class="headerlink" title="Spark生态系统组件的应用场景"></a>Spark生态系统组件的应用场景</h4><table>
+<thead>
+<tr>
+<th><strong>应用场景</strong></th>
+<th><strong>时间跨度</strong></th>
+<th><strong>其他框架</strong></th>
+<th><strong>Spark生态系统中的组件</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>复杂的批量数据处理</td>
+<td>小时级</td>
+<td>MapReduce、Hive</td>
+<td>Spark  Core</td>
+</tr>
+<tr>
+<td>基于历史数据的交互式查询</td>
+<td>分钟级、秒级</td>
+<td>Impala、Dremel、Drill</td>
+<td>Spark  SQL</td>
+</tr>
+<tr>
+<td>基于实时数据流的数据处理</td>
+<td>毫秒、秒级</td>
+<td>Storm、S4</td>
+<td>Spark  Streaming</td>
+</tr>
+<tr>
+<td>基于历史数据的数据挖掘</td>
+<td>-</td>
+<td>Mahout</td>
+<td>MLlib</td>
+</tr>
+<tr>
+<td>图结构数据的处理</td>
+<td>-</td>
+<td>Pregel、Hama</td>
+<td>GraphX</td>
+</tr>
+</tbody></table>
+<h4 id="Spark运行架构"><a href="#Spark运行架构" class="headerlink" title="Spark运行架构"></a>Spark运行架构</h4><p>①基本概念</p>
+<p>②架构设计</p>
+<p>③Spark运行基本流程</p>
+<h3 id="RDD"><a href="#RDD" class="headerlink" title="RDD"></a>RDD</h3><p>（Resillient Distributed Dataset，弹性分布式数据集），是Spark中最基本的数据抽象，代表一个不可变（只读）、可分区、分布式对象集合。</p>
+<p>只读：不能修改，只能通过转换操作生成新的 RDD。</p>
+<p>弹性：计算过程中内存不够时它会和磁盘进行数据交换。</p>
+<p>分区：不同分区可以保存到集群中不同的节点上，从而可以进行并行计算。</p>
+<p>RDD支持两种操作:</p>
+<p>转换（Transformation）：返回一个新的 RDD的操作。</p>
+<p>行动（Action）：是向驱动器程序返回结果或把结果写入外部系统的操作。</p>
+<h4 id="转换操作"><a href="#转换操作" class="headerlink" title="转换操作"></a>转换操作</h4><table>
+<thead>
+<tr>
+<th>RDD转换</th>
+<th><strong>含义</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>map(func)</td>
+<td>将一个RDD中的每个数据项，通过函数func映射变为一个新的元素</td>
+</tr>
+<tr>
+<td>filter(func)</td>
+<td>通过函数func选择过滤数据集中的成员</td>
+</tr>
+<tr>
+<td>flatMap(func)</td>
+<td>和map转换类似，但函数func可以把单个成员转换为多个成员。</td>
+</tr>
+<tr>
+<td>union(other)</td>
+<td>返回当前集合与otherDataset集合的union操作</td>
+</tr>
+<tr>
+<td>distinct</td>
+<td>去掉集合中重复成员，使新的集合中成员各不相同</td>
+</tr>
+<tr>
+<td>groupByKey</td>
+<td>对键-值（key-value）对集合按照键（key）进行groupBy操作</td>
+</tr>
+<tr>
+<td>sortByKey</td>
+<td>对键-值（key-value）对集合进行排序</td>
+</tr>
+<tr>
+<td>join(other)</td>
+<td>对两个键-值（key-value）对集合：（K,V），（K,W）进行连接操作，形成新的键-值对集合：（K，（V,W））</td>
+</tr>
+</tbody></table>
+<h4 id="行动操作"><a href="#行动操作" class="headerlink" title="行动操作"></a>行动操作</h4><table>
+<thead>
+<tr>
+<th><strong>Action</strong></th>
+<th><strong>含义</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>collect</td>
+<td>返回RDD中的所有元素</td>
+</tr>
+<tr>
+<td>count</td>
+<td>返回RDD中元素的数量</td>
+</tr>
+<tr>
+<td>countByKey</td>
+<td>计算键-值对RDD每个键（key）对应的元素个数</td>
+</tr>
+<tr>
+<td>first</td>
+<td>返回RDD中第一个元素</td>
+</tr>
+<tr>
+<td>take(n)</td>
+<td>返回RDD中前n个元素</td>
+</tr>
+<tr>
+<td>reduce(func)</td>
+<td>通过函数func对RDD进行聚合操作</td>
+</tr>
+<tr>
+<td>saveAsTextFile(path)</td>
+<td>把RDD保存为一个文本文件，可以选择保存在本地文件系统、HDFS等。文件中的一行为RDD中的一个元素</td>
+</tr>
+<tr>
+<td>foreach(func)</td>
+<td>通过函数func对RDD中的每个元素进行计算，通常在更新累加器或者使用外部存储系统时用到</td>
+</tr>
+</tbody></table>
+<h4 id="RDD典型的执行过程："><a href="#RDD典型的执行过程：" class="headerlink" title="RDD典型的执行过程："></a>RDD典型的执行过程：</h4><p>RDD读入外部数据源进行创建</p>
+<p>RDD经过一系列的转换（Transformation）操作，每一次都会产生不同的RDD，供给下一个转换操作使用</p>
+<p>最后一个RDD经过“动作”操作进行转换，并输出到外部数据源</p>
+<img src="https://fastly.jsdelivr.net/gh/Leevan001/pictureBed@main/utools/16681857341561668185733997.png" style="zoom:80%;" />
+
+<p>RDD 的最重要的特性之一就是血缘关系（Lineage )，它描述了一个 RDD 是如何从父 RDD 计算得来的。如果某个 RDD 丢失了，则可以根据血缘关系，从父 RDD 计算得来。 图 2 给出了一个 RDD 执行过程的实例。系统从输入中逻辑上生成了 A 和 C 两个 RDD， 经过一系列转换操作，逻辑上生成了 F 这个 RDD。 Spark 记录了 RDD 之间的生成和依赖关系。当 F 进行行动操作时，Spark 才会根据 RDD 的依赖关系生成 DAG，并从起点开始真正的计算。</p>
+<p>DAG（Directed Acyclic Graph，有向无环图）:RDD的每次转换都会生成一个新的RDD，RDD之间就会形成类似于流水线一样的前后依赖关系。DAG描述了整个流式计算的流程。</p>
+<p>在部分分区数据丢失时，Spark可以通过DAG重新计算丢失的分区数据，而不是对RDD的所有分区进行重新计算。</p>
+<h4 id="RDD之间的依赖关系"><a href="#RDD之间的依赖关系" class="headerlink" title="RDD之间的依赖关系"></a><strong>RDD</strong>之间的依赖关系</h4><p>窄依赖</p>
+<p>宽依赖</p>
+<p>窄依赖表现为一个父RDD的分区对应于一个子RDD的分区或多个父RDD的分区对应于一个子RDD的分区</p>
+<p>宽依赖则表现为存在一个父RDD的一个分区对应一个子RDD的多个分区，宽依赖存在Shuffle操作</p>
+<p><strong>Application</strong>：用户编写的Spark应用程序</p>
+<p><strong>Job</strong>：一个Job包含多个RDD及作用于相应RDD上的各种操作</p>
+<p><strong>Stage</strong>：是Job的基本调度单位，一个Job会分为多个Stage，或者称为TaskSet，代表了一组关联的、相互之间没有Shuffle依赖关系的任务组成的任务集。</p>
+<p><strong>Task</strong>：是运行在Executor上的工作单元 ，1个Stage包含一组Task</p>
+<p>Spark 根据DAG 图中的RDD 依赖关系，把一个作业分成多个阶段。</p>
+<p>阶段划分的依据是窄依赖和宽依赖。窄依赖对于作业的优化很有利，宽依赖包含Shuffle过程，无法实现流水线方式处理。</p>
+<p>阶段划分方法：</p>
+<p>①在DAG中进行反向解析，遇到宽依赖就断开</p>
+<p>②遇到窄依赖就把当前的RDD加入到Stage中</p>
+<p>③将窄依赖尽量划分在同一个Stage中，可以实现流水线计算</p>
+<p>Spark运行架构包括集群资源管理器（Cluster Manager）、运行任务的工作节点（Worker Node）、每个应用的任务控制节点（Driver）和每个工作节点上负责具体任务Task的执行进程（Executor）</p>
+<p>资源管理器可以自带或Mesos或YARN</p>
+<p>Executor优点：</p>
+<p>一是利用多线程来执行具体的任务，减少任务的启动开销</p>
+<p>二是Executor中有一个BlockManager存储模块，会将内存和磁盘共同作为存储设备，有效减少IO开销</p>
+<p><img src="https://fastly.jsdelivr.net/gh/Leevan001/pictureBed@main/utools/16681859551561668185954389.png"></p>
+<p>一个Application由一个Driver和若干个Job构成，一个Job由多个Stage构成，一个Stage由多个Task组成</p>
+<p>当执行一个Application时，Driver会向集群管理器申请资源，启动Executor，并向Executor发送应用程序代码和文件，然后在Executor上执行Task，运行结束后，执行结果会返回给Driver，或者写到HDFS或者其他数据库中</p>
+<h3 id="Spark运行基本流程图"><a href="#Spark运行基本流程图" class="headerlink" title="Spark运行基本流程图"></a>Spark运行基本流程图</h3><p>（1）由Driver创建一个SparkContext，为应用构建起基本的运行环境，进行资源的申请、任务的分配和监控</p>
+<p>（2）资源管理器为Executor分配资源，并启动Executor进程</p>
+<p>（3）SparkContext根据RDD的依赖关系构建DAG图，DAG图提交给DAGScheduler解析成Stage，然后把一个个TaskSet提交给底层调度器TaskScheduler处理；Executor向SparkContext申请Task，Task Scheduler将Task发放给Executor运行，并提供应用程序代码</p>
+<p>（4）Task在Executor上运行，执行结果反馈给TaskScheduler，然后反馈给DAGScheduler，运行完毕后写入数据并释放所有资源</p>
+<h3 id="Spark架构优点："><a href="#Spark架构优点：" class="headerlink" title="Spark架构优点："></a>Spark架构优点：</h3><p>实现一键式安装和配置、线程级别的任务监控和告警</p>
+<p>降低硬件集群、软件维护、任务监控和应用开发的难度</p>
+<p>便于做成统一的硬件、计算平台资源池</p>
+<p>说明：Spark Streaming是将流数据分解成一系列短小的批处理作业，无法实现毫秒级的流计算，因此，对于需要毫秒级实时响应的企业应用而言，仍然需要采用流计算框架（如Storm）</p>
+<p>由于Hadoop生态系统中的一些组件所实现的功能，目前还是无法由Spark取代的，比如，Storm</p>
+<p>现有的Hadoop组件开发的应用，完全转移到Spark上需要一定的成本</p>
+<p>不同的计算框架统一运行在YARN中，可以带来如下好处：</p>
+<p>计算资源按需伸缩</p>
+<p>不用负载应用混搭，集群利用率高</p>
+<p>共享底层存储，避免数据跨集群迁移</p>
+<h2 id="流计算框架Storm"><a href="#流计算框架Storm" class="headerlink" title="流计算框架Storm"></a><strong>流计算框架</strong>Storm</h2><p>静态数据：支持决策分析而构建的数据仓库系统存放的大量历史数据就是静态数据。</p>
+<p>流数据：数据以大量、快速、时变的流形式持续到达，比如：Web应用的电子商务网站用户点击流，网络监控的数据流、传感监测的PM2.5检测等。</p>
+<p>流数据特征：</p>
+<p>数据快速持续到达，潜在大小也许是无穷无尽的</p>
+<p>数据来源众多，格式复杂</p>
+<p>数据量大，但是不十分关注存储，一旦经过处理，要么被丢弃，要么被归档存储</p>
+<p>注重数据的整体价值，不过分关注个别数据</p>
+<p>数据顺序颠倒，或者不完整，系统无法控制将要处理的新到达的数据元素的顺序</p>
+<p>对静态数据和流数据的处理，对应着两种截然不同的计算模式：批量计算和实时计算</p>
+<p>批量计算：处理静态数据，如Hadoop</p>
+<p>流数据必须采用实时计算，响应时间为秒级</p>
+<p>大数据时代，数据格式复杂、来源众多、数据量巨大，对实时计算提出了很大的挑战。因此，针对流数据的实时计算——流计算，应运而生</p>
+<h3 id="流计算："><a href="#流计算：" class="headerlink" title="流计算："></a><strong>流计算</strong>：</h3><p>实时获取来自不同数据源的海量数据，经过实时分析处理，获得有价值的信息</p>
+<p>了及时处理流数据，就需要一个低延迟、可扩展、高可靠的处理引擎</p>
+<p><img src="https://fastly.jsdelivr.net/gh/Leevan001/pictureBed@main/utools/16681864361531668186435980.png"></p>
+<p><img src="https://fastly.jsdelivr.net/gh/Leevan001/pictureBed@main/utools/16681865171621668186516449.png"></p>
+<p>①目前有三类常见的流计算框架和平台：</p>
+<p>②商业级：IBM InfoSphere Streams和IBM StreamBase</p>
+<p>③开源流计算框架，代表如下：</p>
+<p>a)Twitter Storm：免费、开源的分布式实时计算系统，可简单、高效、可靠地处理大量的流数据</p>
+<p>b)Yahoo! S4（Simple Scalable Streaming System）：开源流计算平台，是通用的、分布式的、可扩展的、分区容错的流式系统</p>
+<p>④公司为支持自身业务开发的流计算框架：</p>
+<p>a)Facebook Puma</p>
+<p>b)Dstream（百度）</p>
+<p>c)银河流数据处理平台（淘宝）</p>
+<p>流计算的处理流程一般包含三个阶段：数据实时采集、数据实时计算、实时查询服务</p>
+<p>目前有许多互联网公司发布的开源分布式日志采集系统均可满足每秒数百MB的数据采集和传输需求，如：</p>
+<p>Facebook的Scribe</p>
+<p>LinkedIn的Kafka</p>
+<p>基于Hadoop的Chukwa和Flume</p>
+<h3 id="流计算应用场景"><a href="#流计算应用场景" class="headerlink" title="流计算应用场景"></a><strong>流计算应用场景</strong></h3><p>实时个性化内容推荐：如百度、淘宝等大型网站中，每天都会产生大量流数据，包括用户的搜索内容、用户的浏览记录等数据。采用流计算进行实时数据分析，可以了解每个时刻的流量变化情况，可以分析用户的实时浏览轨迹，从而进行实时个性化内容推荐</p>
+<p>实时交通：借助流计算的实时特性，可以根据交通情况制定路线，而且在行驶过程中，也可以根据交通情况的变化实时更新路线，为用户提供最佳的行驶路线</p>
+<p>机器翻译</p>
+<p>广告投放</p>
+<p>自然语言处理</p>
+<p>气候模拟预测等</p>
+<h3 id="Storm特点："><a href="#Storm特点：" class="headerlink" title="Storm特点："></a>Storm特点：</h3><p> 整合性：Storm可方便地与队列系统和数据库系统进行整合</p>
+<p> 简易的API：Storm的API使用简单又方便</p>
+<p> 可扩展性：Storm的并行特性使其可以运行在分布式集群中</p>
+<p> 容错性：Storm可自动进行故障节点的重启、任务的重新分配</p>
+<p> 可靠的消息处理：Storm保证每个消息都能完整处理</p>
+<p> 支持各种编程语言：Storm支持各种编程语言定义任务</p>
+<p> 快速部署：Storm可以快速进行部署和使用</p>
+<p> 免费、开源：Storm是一款开源框架，可以免费使用</p>
+<h3 id="Storm主要术语"><a href="#Storm主要术语" class="headerlink" title="Storm主要术语"></a>Storm主要术语</h3><p><strong>Streams</strong>：Storm将流数据Stream描述成一个无限的Tuple (元组)序列，这些Tuple序列会以分布式的方式并行地创建和处理</p>
+<p>每个tuple是一堆值，即Value List（值列表），每个值有一个名字，并且每个值可以是任何类型</p>
+<p><strong>Spouts</strong>：Storm认为每个Stream都有一个源头，并把这个源头抽象为Spout（出水口）</p>
+<p>通常Spout会从外部数据源（队列、数据库等）读取数据，然后封装成Tuple形式，发送到Stream中。</p>
+<p>Spout是一个主动的角色，在接口内部有个nextTuple函数，Storm框架会不停的调用该函数</p>
+<p><strong>Bolts</strong>：Storm将Streams的状态转换过程抽象为Bolt（门闩）。Bolt可以处理Tuple，也可以将处理后的Tuple作为新的Streams发送给其他Bolt</p>
+<p>Bolt可以执行过滤、聚合、查询等操作</p>
+<p><strong>Topology</strong>：<strong>Storm将Spouts和Bolts组成的网络抽象成Topology（拓扑结构），可以被提交到Storm集群执行。</strong>Topology为流转换图，图中节点是一个Spout或Bolt，边表示Bolt订阅了哪个Stream。当Spout或者Bolt发送元组时，它会把元组发送到每个订阅了该Stream的Bolt上进行处理</p>
+<p>Topology的每个处理组件（Spout或Bolt）都包含处理逻辑，都是并行运行的， 而组件之间的连接则表示数据流动的方向。</p>
+<p>Topology指定每个组件的并行度， Storm会在集群分配那么多的线程同时计算</p>
+<p><strong>Stream Groupings</strong>：用于告知Topology如何在两个组件间（如Spout和Bolt之间，或者不同的Bolt之间）进行Tuple的传送。</p>
+<p>每一个Spout和Bolt都可以有多个分布式任务，一个任务在什么时候、以什么方式发送Tuple就是由Stream Groupings来决定的</p>
+<h3 id="Storm中的Stream-Groupings有如下几种方式："><a href="#Storm中的Stream-Groupings有如下几种方式：" class="headerlink" title="Storm中的Stream Groupings有如下几种方式："></a>Storm中的Stream Groupings有如下几种方式：</h3><p>(1)<strong>ShuffleGrouping</strong>：随机分组，随机分发Stream中的Tuple，保证每个Bolt的Task接收Tuple数量大致一致</p>
+<p>(2)<strong>FieldsGrouping：按照字段分组</strong>，保证相同字段的Tuple分配到同一个Task中</p>
+<p>(3)<strong>AllGrouping：广播发送</strong>，每一个Task都会收到所有的Tuple</p>
+<p>(4)<strong>GlobalGrouping：全局分组</strong>，所有的Tuple都发送到同一个Task中</p>
+<p>(5)<strong>NonGrouping：不分组</strong>，和ShuffleGrouping类似，当前Task的执行会和它的被订阅者在同一个线程中执行</p>
+<p>(6)<strong>DirectGrouping：直接分组</strong>，直接指定由某个Task来执行Tuple的处理</p>
+<h3 id="Storm框架设计"><a href="#Storm框架设计" class="headerlink" title="Storm框架设计"></a>Storm框架设计</h3><p>Storm运行任务的方式与Hadoop类似：Hadoop运行的是MapReduce作业，而Storm运行的是“Topology”</p>
+<p>不同：MapReduce作业最终会完成计算并结束运行，而Topology将持续处理消息（直到人为终止）</p>
+<p>Storm和Hadoop架构组件功能对应关系</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th><strong>Hadoop</strong></th>
+<th><strong>Storm</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>应用名称</td>
+<td>Job</td>
+<td>Topology</td>
+</tr>
+<tr>
+<td>系统角色</td>
+<td>JobTracker</td>
+<td>Nimbus</td>
+</tr>
+<tr>
+<td>TaskTracker</td>
+<td>Supervisor</td>
+<td></td>
+</tr>
+<tr>
+<td>组件接口</td>
+<td>Map&#x2F;Reduce</td>
+<td>Spout&#x2F;Bolt</td>
+</tr>
+</tbody></table>
+<p>Storm集群采用“Master—Worker”的节点方式：</p>
+<p>Master节点运行名为<strong>Nimbus</strong>（雨云）的后台程序，负责在集群范围内分发代码、为Worker分配任务和监测故障。</p>
+<p>Worker节点运行名为“Supervisor（监管器）的后台程序，负责监听它所在机器分配的工作，即根据Nimbus分配的任务决定启动或停止Worker进程，一个Worker节点上同时运行若干个Worker进程</p>
+<p>Storm使用Zookeeper来作为分布式协调组件，负责Nimbus和多个Supervisor之间的所有协调工作。</p>
+<p>借助Zookeeper，若Nimbus进程或Supervisor进程意外终止，重启时也能读取、恢复之前的状态并继续工作，使得Storm极其稳定</p>
+<h3 id="Storm的工作流程："><a href="#Storm的工作流程：" class="headerlink" title="Storm的工作流程："></a>Storm的工作流程：</h3><p>①Storm客户端提交Topology任务到Nimbus节点；</p>
+<p>②Nimbus节点将提交的Topology分成一个个Task 写入Zookeeper</p>
+<p>③Supervisor会去Zookeeper集群上认领自己的Task，启动Worker进程；</p>
+<p>④Worker进程执行具体Task</p>
+<p><img src="https://fastly.jsdelivr.net/gh/Leevan001/pictureBed@main/utools/16681872191671668187218804.png"></p>
+<p>Spark Streaming可整合多种输入数据源，如Kafka、Flume、HDFS、TCP套接字。经处理后的数据可存储至文件系统、数据库，或显示在仪表盘里</p>
+<p><img src="https://fastly.jsdelivr.net/gh/Leevan001/pictureBed@main/utools/16681872471611668187246671.png"></p>
+<p>Spark Streaming的基本原理是将实时输入数据流以时间片（秒级）为单位进行拆分，然后经Spark引擎以类似批处理的方式处理每个时间片数据</p>
+<p><img src="https://fastly.jsdelivr.net/gh/Leevan001/pictureBed@main/utools/16681872761561668187275361.png"></p>
+<p>图 Spark Streaming执行流程</p>
+<p>Spark Streaming最主要的抽象是DStream（Discretized Stream，离散化数据流），表示连续不断的数据流。在内部实现上，Spark Streaming的输入数据按照时间片（如1秒）分成一段一段的DStream，每一段数据转换为Spark中的RDD，并且对DStream的操作最终转变为对相应的RDD的操作。</p>
+<h3 id="Spark-Streaming"><a href="#Spark-Streaming" class="headerlink" title="Spark Streaming"></a>Spark Streaming</h3><p>Spark Streaming和Storm最大的区别在于，Spark Streaming无法实现毫秒级的流计算，而Storm可以实现毫秒级响应</p>
+<p>Spark Streaming构建在Spark上，采用小批量处理方式，可以同时兼容批量和实时数据处理的逻辑和算法</p>
+<p>从编程的灵活性来讲，Storm是比较理想的选择，使用Apache Thrift，可以用任何编程语言来编写拓扑结构（Topology）</p>
+<h2 id="Hive"><a href="#Hive" class="headerlink" title="Hive"></a>Hive</h2><p> Hive是一个构建于Hadoop之上的数据仓库工具。</p>
+<p> 某种程度上可以看作是用户编程接口，本身不存储和处理数据。</p>
+<p> 依赖分布式文件系统HDFS存储数据。</p>
+<p> 依赖分布式并行计算模型MapReduce处理数据。</p>
+<p> 定义了简单的类SQL 查询语言——HiveQL</p>
+<p> 用户可以通过编写的HiveQL语句运行MapReduce任务</p>
+<p><img src="https://fastly.jsdelivr.net/gh/Leevan001/pictureBed@main/utools/16681874361521668187435625.png"></p>
+<p>Hadoop生态系统中Hive与其他部分的关系</p>
+<p>Hive在很多方面和关系数据库类似，但它的底层依赖的是HDFS和MapReduce。</p>
+<p>Hive与关系数据库的对比</p>
+<table>
+<thead>
+<tr>
+<th><strong>对比项目</strong></th>
+<th><strong>Hive</strong></th>
+<th><strong>关系数据库</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>数据插入</td>
+<td>支持批量导入</td>
+<td>支持单条和批量导入</td>
+</tr>
+<tr>
+<td>数据更新</td>
+<td>不支持</td>
+<td>支持</td>
+</tr>
+<tr>
+<td>索引</td>
+<td>支持</td>
+<td>支持</td>
+</tr>
+<tr>
+<td>分区</td>
+<td>支持</td>
+<td>支持</td>
+</tr>
+<tr>
+<td>执行延迟</td>
+<td>高</td>
+<td>低</td>
+</tr>
+<tr>
+<td>扩展性</td>
+<td>好</td>
+<td>有限</td>
+</tr>
+</tbody></table>
+<p>（1）数据插入：因为Hive主要用来支持大规模数据集上的数据仓库应用程序的运行，常见操作是全表扫描，所以单条插入功能对Hive并不实用</p>
+<p>（2）数据更新：更新是传统数据库中很重要的特性，Hive不支持数据更新。Hive是一个数据仓库工具，而数据仓库中存放的是静态数据，所以Hive不支持对数据进行更新。</p>
+<p>（3）索引：Hive在hive 0.7版本后已经可以支持索引了。但Hive不像传统的关系型数据库那样有键的概念，它只提供有限的索引功能，使用户可以在某些列上创建索引来加速一些查询操作，Hive中给一个表创建的索引数据被保存在另外的表中。</p>
+<p>•（4）分区：传统的数据库提供分区功能来改善大型表以及具有各种访问模式的表的可伸缩性，可管理性和提高数据库效率。Hive也支持分区功能，Hive表组织成分区的形式，根据分区列的值对表进行粗略的划分，使用分区可以加快数据的查询速度。</p>
+<p>•（5）执行延迟：因为Hive构建于HDFS与MapReduce上，所以对比传统数据库来说Hive的延迟比较高，传统的SQL语句的延迟少于一秒，而HiveQL语句的延迟会达到分钟级。</p>
+<p>•（6）扩展性：传统关系数据库很难横向扩展，纵向扩展的空间也很有限。相反Hive的开发环境是基于集群的，所以具有较好的可扩展性。</p>
+<h3 id="Hive系统架构"><a href="#Hive系统架构" class="headerlink" title="Hive系统架构"></a>Hive系统架构</h3><p>①Hive组成模块</p>
+<p>②Hive工作原理</p>
+<ol>
+<li><strong>用户接口模块</strong>：包括CLI、HWI、JDBC、ODBC、Thrift Server等</li>
+</ol>
+<p> CLI是Hive自带的一个命令行界面；</p>
+<p> HWI（Hive Web Interface）是Hive的一个简单网页界面；</p>
+<p> JDBC、ODBC以及Thrift Server可以向用户提供进行编程访问的接口。</p>
+<ol start="2">
+<li><p><strong>驱动模块</strong>：包括编译器、优化器、执行器等，所有命令和查询都会进入到驱动模块，通过该模块对输入进行解析编译，对需求的计算进行优化，然后按照指定的步骤执行。</p>
+</li>
+<li><p><strong>元数据存储模块（Metastore）：</strong>是一个独立的关系数据库，通常是与MySQL数据库连接后创建的一个MySQL实例，也可以是Hive自带的derby数据库实例。</p>
+<p>元数据存储模块中保存表模式和其他系统元数据，如表的名称、表的列及其属性、表的分区及其属性、表的属性、表中数据所在位置信息等。</p>
+</li>
+</ol>
+<p>a)SQL语句转换成MapReduce的基本原理</p>
+<p>b)Hive中SQL查询转换成MapReduce作业的过程</p>
+<p>Hive常见的应用场景</p>
+<p>(1)日志分析：大部分互联网公司使用hive进行日志分析，包括百度、淘宝等。</p>
+<p>•  1)统计网站一个时间段内的pv、uv</p>
+<p>•  2)多维度数据分析</p>
+<p>(2)海量结构化数据离线分析</p>
+<h1 id="第9章-数据分析方法"><a href="#第9章-数据分析方法" class="headerlink" title="第9章 数据分析方法"></a>第9章 数据分析方法</h1><h2 id="数据挖掘和机器学习简介"><a href="#数据挖掘和机器学习简介" class="headerlink" title="数据挖掘和机器学习简介"></a>数据挖掘和机器学习简介</h2><h3 id="机器学习"><a href="#机器学习" class="headerlink" title="机器学习"></a>机器学习</h3><p>研究计算机怎样模拟或实现人类的学习行为，以获取新的知识或技能，重新组织已有的知识结构使之不断改善自身的性能。它是人工智能的核心，是使计算机具有智能的根本途径，其应用遍及人工智能的各个领域。</p>
+<h3 id="数据挖掘"><a href="#数据挖掘" class="headerlink" title="数据挖掘"></a>数据挖掘</h3><p>是指从大量的数据中通过算法搜索隐藏于其中信息的过程。</p>
+<h3 id="机器学习算法的分类："><a href="#机器学习算法的分类：" class="headerlink" title="机器学习算法的分类："></a><strong>机器学习算法的分类：</strong></h3><ol>
+<li><strong>有监督学习</strong>：训练数据既有特征(feature)又<strong>有标签</strong>(label)，通过训练，让机器可以自己找到特征和标签之间的联系，在面对只有特征没有标签的数据时，可以判断出标签。</li>
+<li><strong>无监督学习</strong>：训练样本的标记信息未知，目标是通过对<strong>无标签</strong>训练样本的学习来揭示数据的内在性质及规律，为进一步的数据分析提供基础，此类学习任务中研究最多、应用最广的是”聚类” (clustering)，其他无监督算法还有：密度估计(densityestimation)、异常检测（anomaly detection) 等。</li>
+<li><strong>半监督学习</strong>：训练集同时包含<strong>有标签</strong>样本数据和<strong>无标签</strong>样本数据，不需要人工干预，让学习器不依赖外界交互、自动地利用未标记样本来提升学习性能，就是半监督学习。</li>
+</ol>
+<h2 id="典型的机器学习和数据挖掘算法"><a href="#典型的机器学习和数据挖掘算法" class="headerlink" title="典型的机器学习和数据挖掘算法"></a>典型的机器学习和数据挖掘算法</h2><p>分类，聚类，回归分析，关联规则，神经网络，深度学习</p>
+<h3 id="分类"><a href="#分类" class="headerlink" title="分类"></a>分类</h3><p>基于已有的样本预测新样本的所属类别。</p>
+<p>分类的主要用途和场景是“预测”。</p>
+<p>例如</p>
+<ul>
+<li><p>将给定的电子邮件分配给“垃圾邮件”或“非垃圾邮件”类；</p>
+</li>
+<li><p>根据观察到的患者特征（性别，血压，某些症状的存在或不存在等）为给定患者分配诊断。</p>
+</li>
+<li><p>信用评级、风险等级、欺诈预测等</p>
+</li>
+</ul>
+<p><strong>分类算法的训练和评价</strong></p>
+<ul>
+<li><em>留出法（Holdout）</em>: 将数据集D划分为两个互斥的集合，其中一个集合作为训练集S， 另一个作为测试集T。在S上训练出模型后， 用T来评估其测试误差，作为对泛化误差的估计。</li>
+<li>交叉验证（k-fold Cross-validation): 将数据集分割成k个子样本。在每次运行时，使用一个不同的子样本作为测试集，其余的K-1子样本作为训练集。 用k次运行的平均来估计这个方法的性能。这种方法减少了训练集&#x2F;测试集的随机性，有益于大数据集。</li>
+</ul>
+<p>常用的分类算法包括朴素贝叶斯、逻辑回归、决策树、随机森林、支持向量机等。</p>
+<p><strong>决策树</strong></p>
+<p>决策树是一种树形结构，其中每个内部节点表示一个属性上的判断，每个分支代表一个判断结果的输出，最后每个叶节点代表一种分类结果。</p>
+<p>决策树是一种监督学习方法，就是给出一堆样本，每个样本都有一组属性和一个分类结果，也就是分类结果已知，那么通过学习这些样本得到一个决策树，这个决策树能够对新的数据给出正确的分类。</p>
+<p>最经典的决策树算法有ID3、C4.5、CART，其中ID3算法是最早被提出的，可以处理离散属性样本的分类，C4.5和CART算法则可以处理更加复杂的分类问题。</p>
+<p><img src="https://files.catbox.moe/kiqygk.png"></p>
+<h4 id="决策树-ID3"><a href="#决策树-ID3" class="headerlink" title="决策树-ID3"></a><strong>决策树-ID3</strong></h4><p>Iterative Dichotomiser 3，迭代二叉树3代，是Ross Quinlan发明的一种决策树算法。</p>
+<p>决策树学习的关键在于如何选择最优的划分属性，即对于二元分类而言，尽量使划分的样本属于同一类别，即“纯度”最高的属性。</p>
+<p>“信息熵（information entropy）：度量特征（features）的纯度。</p>
+<p>1948年，香农 (Shannon)在他著名的《通信的数学原理》论文中指出：“信息是用来消除随机不确定性的东西”，并提出了“信息熵”的概念（借用了热力学中熵的概念），来解决信息的度量问题。</p>
+<p>变量的不确定性越大，熵也就越大，把它搞清楚所需要的信息量也就越大。</p>
+<p><img src="https://files.catbox.moe/inkwtc.png"></p>
+<p>信息增益（information gain）使用属性a对样本集D进行划分所获得的“信息增益”的计算方法是，用样本集的总信息熵减去属性a的每个分支的信息熵与权重（该分支的样本数除以总样本数）的乘积。</p>
+<p>信息增益越大，意味着用属性a进行划分所获得的“纯度提升”越大。因此，优先选择信息增益最大的属性来划分。</p>
+<p><img src="https://files.catbox.moe/2h8ywx.png"></p>
+<p><img src="https://files.catbox.moe/hhi12q.png"></p>
+<p>决策树算法在学习的过程中为了尽可能的正确的分类训练样本，不停地对结点进行划分，会导致整棵树的分支过多，也就导致了过拟合。</p>
+<p>剪枝（pruning）的目的是为了避免决策树模型的过拟合。</p>
+<p>决策树的剪枝策略：</p>
+<ul>
+<li><p><strong>预剪枝（<em>pre-pruning</em>）</strong>：在构造决策树的过程中，先对每个结点在划分前进行估计，如果当前结点的划分不能带来决策树模型<strong>泛化性能</strong>的提升，则不对当前结点进行划分并且将当前结点标记为叶结点。</p>
+</li>
+<li><p><strong>后剪枝（<em>post-pruning</em>）</strong>：先把整颗决策树构造完毕，然后自底向上的对非叶结点进行考察，若将该结点对应的子树换为叶结点能够带来<strong>泛化性能</strong>的提升，则把该子树替换为叶结点。</p>
+</li>
+</ul>
+<p>泛化能力（generalization ability）是指机器学习算法对新鲜样本的适应能力。学习的目的是学到隐含在数据背后的规律，对具有同一规律的学习集以外的数据，经过训练的网络也能给出合适的输出，该能力称为泛化能力。</p>
+<p><strong>ID3</strong>算法的缺点</p>
+<p>缺点：信息增益偏向取值较多的属性</p>
+<p>原因：当某个属性的取值较多时，根据此特征划分更容易得到确定性更强的子集划分结果，因此划分之后的熵更低，则信息增益更大，因此信息增益比较偏向取值较多的属性。</p>
+<p>解决方法 :信息增益比（ C4.5算法 ）</p>
+<h3 id="聚类"><a href="#聚类" class="headerlink" title="聚类"></a>聚类</h3><p><strong>聚类</strong>把全体数据实例组织成一些相似组，而这些相似组被称作簇。</p>
+<p>聚类技术通常又被称为无监督学习，与监督学习不同的是，在簇中那些表示数据类别的分类或者分组信息是没有的。</p>
+<p>数据之间的相似性是通过定义一个距离或者相似性系数来判别的。</p>
+<h4 id="应用场景"><a href="#应用场景" class="headerlink" title="应用场景"></a><strong>应用场景</strong></h4><ul>
+<li><strong>商业</strong>，聚类分析发现不同的客户群，通过对不同的客户群的特征的刻画，被用于研究消费者行为，寻找新的潜在市场。</li>
+<li><strong>在生物</strong>，聚类分析对动植物和基因进行分类，以获取对种群固有结构的认识。</li>
+<li><strong>在保险行业</strong>，聚类分析通过平均消费来鉴定汽车保险单持有者的分组，同时可以根据住宅类型、价值、地理位置来鉴定城市的房产分组。</li>
+<li><strong>在互联网应用</strong>，聚类分析被用来在网上进行文档归类。</li>
+<li><strong>在电子商务</strong>，聚类分析通过分组聚类出具有相似浏览行为的客户，并分析客户的共同特征，帮助企业了解客户，向客户提供更合适的服务。</li>
+<li><strong>网络社区发现</strong>，社会关系网络中，能够显示根据兴趣、职业、地域、背景而形成的真实的社会团体。从而可以进行人物分析、职业推荐、圈子推荐、好友推荐、校友发现以及精准广告投放。</li>
+</ul>
+<h4 id="什么是好的聚类方法"><a href="#什么是好的聚类方法" class="headerlink" title="什么是好的聚类方法?"></a>什么是好的聚类方法?</h4><ul>
+<li><p>好的聚类方法需要产生高质量的聚类结果，这些簇必须满足：</p>
+</li>
+<li><p>高的内部相似度（簇内越紧密越好）</p>
+</li>
+<li><p>低的外部相似度 （簇间越分离越好）</p>
+</li>
+</ul>
+<p><strong>聚类质量度量指标</strong></p>
+<ol>
+<li><p><strong>Compactness(紧密性)</strong></p>
+<p><strong>以簇内误差的平方和（Sum of the Squared Error ,SSE）</strong></p>
+<p><strong>作为度量标准(计算每一个类各点到聚类中心的距离)：</strong></p>
+</li>
+<li><p><strong>Separation(间隔性)</strong></p>
+<p><strong>如：计算各聚类中心两两之间平均距离。</strong></p>
+</li>
+</ol>
+<h4 id="聚类算法类型"><a href="#聚类算法类型" class="headerlink" title="聚类算法类型"></a><strong>聚类算法类型</strong></h4><ol>
+<li><strong>划分法 (partitioning methods)</strong></li>
+<li><strong>层次法(hierarchical methods)</strong></li>
+<li><strong>基于密度的方法(density-based methods)</strong></li>
+<li><strong>基于网格的方法(grid-based methods)</strong></li>
+</ol>
+<h4 id="划分聚类方法"><a href="#划分聚类方法" class="headerlink" title="划分聚类方法"></a><strong>划分聚类方法</strong></h4><p> 给定一个有<em>n</em>个对象的数据集，划分聚类技术将构造数据<em>k</em>个划分， 每一个划分就代表一个簇，<em>k</em>&lt;<em>n</em>。</p>
+<p> 条件：每一个簇至少包含一个对象；每一个对象属于且仅属于一个簇。</p>
+<p> 代表算法： K-means(k-均值聚类)、 K-medoids等算法。</p>
+<p>K-means步骤：</p>
+<p>1、首先确定一个k值，即希望将数据集经过聚类得到k个集合。</p>
+<p>2、从数据集中随机选择k个数据点作为质心（每个簇的均值向量，即向量各维取平均即可）。</p>
+<p>3、对数据集中每一个点，计算其与每一个质心的距离（如欧式距离），离哪个质心近，就划分到那个质心所属的集合。</p>
+<p>4、把所有数据归好集合后，一共有k个集合。然后重新计算每个集合的质心。</p>
+<p>5、如果新计算出来的质心和原来的质心之间的距离小于某一个设置的阈值（表示重新计算的质心的位置变化不大，趋于稳定，或者说收敛），算法终止。</p>
+<p>6、如果新质心和原质心距离变化很大，需要迭代3~5步骤</p>
+<p><strong>K-Means方法的优劣</strong></p>
+<p>优点:</p>
+<p>容易理解，聚类效果不错。</p>
+<p>算法复杂度低。时间复杂度为O(tkn), 其中n对样本数, k是类簇数, t是 迭代次数。通常情况下 k, t &lt;&lt; n.</p>
+<p>不足：</p>
+<p>必须事先给定簇的数量k；</p>
+<p>对初始的簇中心敏感，不同选取方式会得到不同结果；</p>
+<p>不能处理噪声和离群点；</p>
+<p>不适合于发现非凸形状的簇</p>
+<h4 id="层次聚类方法"><a href="#层次聚类方法" class="headerlink" title="层次聚类方法"></a>层次聚类方法</h4><p>凝聚的层次聚类：一种自底向上的策略，首先将每个对象作为一个簇， 然后合并这些原子簇为越来越大的簇，直到某个终结条件被满足。</p>
+<p>分裂的层次聚类：采用自顶向下的策略，首先将所有对象置于一个簇中，然后逐渐细分为越来越小的簇，直到达到了某个终结条件。</p>
+<p>代表的算法：BRICH、CURE、ROCK等算法。</p>
+<p>BIRCH 算法：利用了一个树结构来帮助快速的聚类，这个特殊的树结构叫聚类特征树（CF-tree）。</p>
+<p>BIRCH算法：适合于数据量大，类别数K也比较多的情况。运行速度很快，只需要单遍扫描数据集就能进行聚类</p>
+<h4 id="密度聚类方法"><a href="#密度聚类方法" class="headerlink" title="密度聚类方法"></a>密度聚类方法</h4><p>只要一个区域中的点的密度大于某个阈值，就把它加到与之相近的聚类中去。这类算法能克服基于距离的算法只能发现“类圆形”的聚类的缺点，可发现任意形状的聚类，且对噪声数据不敏感。**</p>
+<p><strong>代表算法：</strong></p>
+<p><strong>DBSCAN、OPTICS、DENCLUE</strong></p>
+<h5 id="DBSCAN"><a href="#DBSCAN" class="headerlink" title="DBSCAN"></a>DBSCAN</h5><h6 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h6><p>DBSCAN将簇定义为密度相连的点的最大集合，能够把具有足够高密度的区域划分为簇，并可在噪声的空间数据库中发现任意形状的聚类。</p>
+<p>①初始状态，给出一个数据集D，并设置半径ε和密度阈值MinPts，将D中的所有对象标记为”unvisited”（未被访问）</p>
+<p>②随机从D中选取一个未被访问的对象p，并标记为“visited”（已被访问）；</p>
+<p>③检查p的ε-邻域内是否至少包含MinPts个对象（即p是否是核心对象），若不是，则将p标记为噪声点；</p>
+<p>④否则，为p创建一个新的簇C，把p的ε-邻域中所有对象放入候选集合N中，并迭代的将N中不属于其它簇的对象加入到新簇C中，将N中的”unvisited”的对象q标记为”visited”，若q的ε-邻域是否至少包含MinPts个对象，则将q的ε-邻域中所有的对象加入到C中，直到C不再扩大，N为空的时候，此时簇C完成聚类，并输出。</p>
+<p>⑤继续从D中随机选取未被访问的对象s，同样使用（2）中的聚类方法，直到对象集D中所有对象都被访问。</p>
+<h6 id="优点："><a href="#优点：" class="headerlink" title="优点："></a>优点：</h6><p>能够发现任意形状的簇，并有效识别离群点；</p>
+<p>不需要事先知道要形成的簇类的数量；</p>
+<p>对数据库中样本的顺序不敏感，即Pattern的输入顺序对结果的影响不大，但对于处于簇类之间边界样本，可能会根据哪个簇类优先被探测到而其归属有所摆动；</p>
+<h6 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a>缺点</h6><p>聚类之前需要人工选择Eps和minPts这两个参数；</p>
+<p>当数据量增大时，要求较大的内存支持；</p>
+<p>不能很好地反映高维数据和数据集已变化的密度；</p>
+<p>由于算法使用了全局性表征密度的参数，因此当各个类的密度不均匀，或类间的距离相差很大时，聚类的质量较差。</p>
+<h4 id="网格聚类方法"><a href="#网格聚类方法" class="headerlink" title="网格聚类方法"></a>网格聚类方法</h4><p>基于网格的聚类算法出发点不再是平面而是空间。</p>
+<p><strong>在该空间中，有限个网格代表数据，聚类就是按一定的规则将网格合并。</strong></p>
+<p><strong>基于网格的聚类算法由于处理数据时是独立的，仅仅依赖网格结构中每一维的单位数，因此处理速度很快。</strong></p>
+<p><strong>但是此算法对参数十分敏感，速度快的代价是精确度不高，通常需要与其他聚类算法结合使用。</strong></p>
+<p><strong>代表算法： CLIQUE、STING等算法。</strong></p>
+<h3 id="回归分析"><a href="#回归分析" class="headerlink" title="回归分析"></a>回归分析</h3><p>是确定两种或两种以上变量间相互依赖的定量关系的一种统计分析方法。通常用于预测分析，时间序列模型以及发现变量之间的因果关系</p>
+<p> 回归分析分类</p>
+<p> 按照涉及的变量的多少</p>
+<p> 分为一元回归和多元回归分析；多元回归有一个以上的自变量，而一元回归只有一个自变量。</p>
+<p> 按照因变量的多少</p>
+<p> 分为简单回归分析和多重回归分析</p>
+<p> 按照自变量和因变量之间的关系类型</p>
+<p>分为线性回归分析和非线性回归分析。</p>
+<h4 id="一元线性回归"><a href="#一元线性回归" class="headerlink" title="一元线性回归"></a><strong>一元线性回归</strong></h4><p>线性回归使用最佳的拟合直线（也就是回归线） 建立因变量(Y) 和一个或多个自变量(X)之间的联系。 用一个等式来表示它。</p>
+<p>最小二乘法用于拟合回归线最常用的方法。</p>
+<h4 id="Logistic-Regression逻辑回归"><a href="#Logistic-Regression逻辑回归" class="headerlink" title="Logistic Regression逻辑回归"></a>Logistic Regression逻辑回归</h4><p>Logistic回归主要在流行病学中应用较多，比较常用的情形是探索某疾病的危险因素，根据危险因素预测某疾病发生的概率，等等。例如，想探讨胃癌发生的危险因素，可以选择两组人群，一组是胃癌组，一组是非胃癌组，两组人群肯定有不同的体征和生活方式等。这里的因变量就是是否胃癌，即“是”或“否”，自变量就可以包括很多了，例如年龄、性别、饮食习惯、幽门螺杆菌感染等。自变量既可以是连续的，也可以是分类的。</p>
+<p>逻辑回归用来计算“事件&#x3D;Success”和“事件&#x3D;Failure”的概率。</p>
+<p>常用于二分类问题。</p>
+<p>简单、可并行化、可解释强，深受工业界喜爱。</p>
+<p>逻辑回归是基于<strong>sigmoid</strong>函数构建的模型。sigmod函数公式如下：</p>
+<p>$h(x)&#x3D;\frac{1}{1+e^{-x}}$</p>
+<img src="https://fastly.jsdelivr.net/gh/Leevan001/pictureBed@main/utools/16681744821621668174481949.png" style="zoom:50%;" />
+
+<p>中间范围内函数斜率最大，对应Y的大部分数值变化</p>
+<p>Y轴数值范围在 0~1 之间</p>
+<p>X轴数值范围没有限制，当X大于一定数值后，Y无限趋近于1，小于一定数值后，Y无限趋近于0</p>
+<p>当 X&#x3D;0 时，Y&#x3D;0.5</p>
+<p>逻辑回归模型通过在线性回归模型的基础上，套一个sigmoid函数来实现，不管X取什么样的值，Y值都被非线性地映射在 0~1 之间，实现二分类。</p>
+<p>公式中，<strong>y</strong>理解为样本x为正例的概率，而<strong>1-y</strong>则可以理解为样本x为负例时的概率。二者的比值**y&#x2F;(1-y)**被称为odds，即几率，反映x作为正例的相对可能性，对几率取对数就得到了线性回归模型。</p>
+<h5 id="逻辑回归优点"><a href="#逻辑回归优点" class="headerlink" title="逻辑回归优点"></a>逻辑回归优点</h5><ol>
+<li><p>直接对分类可能性进行建模，无需实现假设数据分布，避免了假设分布不准确所带来的问题。</p>
+</li>
+<li><p>形式简单，模型的可解释性非常好，特征的权重可以看到不同的特征对最后结果的影响。</p>
+</li>
+<li><p>除了类别，还能得到近似概率预测，对许多需利用概率辅助决策的任务很有用。</p>
+</li>
+</ol>
+<h5 id="缺点："><a href="#缺点：" class="headerlink" title="缺点："></a>缺点：</h5><ol>
+<li><p>准确率不是很高，因为形式非常的简单，很难去拟合数据的真实分布。</p>
+</li>
+<li><p>本身无法筛选特征。</p>
+</li>
+</ol>
+<h3 id="关联规则Association-Rules："><a href="#关联规则Association-Rules：" class="headerlink" title="关联规则Association Rules："></a>关联规则Association Rules：</h3><p>反映一个事物与其他事物之间的相互依存性和关联性，用于从大量数据中挖掘出有价值的数据项之间的相关关系。</p>
+<p><strong>经典案例“啤酒和纸尿裤搭配售卖</strong></p>
+<p>•关联规则应用场景有：</p>
+<p>•优化货架商品摆放</p>
+<p>•交叉销售和捆绑销售 等</p>
+<p>•常用算法：Apriori 算法 FP-growth算法等</p>
+<p>关联规则:给定一组事务，寻找预测“某些项将会随其他项的出现而出现”的规则。</p>
+<p>{面包，啤酒}→{牛奶}</p>
+<p>蕴含符号“→”表现共现关系，而不是因果关系</p>
+<p><strong>规则评估标准</strong>——支持度、置信度</p>
+<p>支持度（support）：关联数据在数据集中出现的次数或所占的比重。<br>$$<br>support(X\to{Y})&#x3D;P(X\cup{Y})&#x3D;\frac{|{X\cup{Y}}|}{|D|}<br>$$<br>置信度（confidence）：置信度表示Y数据出现后，X数据出现的可能性，也可以说是数据的条件概率。<br>$$<br>confidence(X\Leftarrow{Y})&#x3D;P(X|Y)&#x3D;\frac{P(XY)}{P(Y)}<br>$$<br><strong>强关联规则</strong>：满足最小支持度和最小置信度的关联规则。</p>
+<p><img src="https://files.catbox.moe/jjciej.png"></p>
+<img src="https://files.catbox.moe/0qbfp6.png" style="zoom:50%;" />
+
+<p>候选项集:用来获取频繁项集。</p>
+<p>频繁项集:在所有训练元组中同时出现的次数超过人工定义的阈值的项集（支持度&gt;&#x3D;最小支持度的集合），即候选项集中满足支持度条件的项集保留，不满足条件的舍弃。</p>
+<p>频繁项集——基本原则</p>
+<p>1.任意一个频繁项集，它所有的非空子集都必须是频繁的。</p>
+<p>2.如果一个项集是不频繁的，那他的超集一定是不频繁的。</p>
+<p> 在Apriori算法中，通常使用支持度作为判断频繁项集的标准。</p>
+<p> Apriori算法的目标是找到<strong>最大的</strong>K项频繁集。</p>
+<p><strong>频繁项集产生：</strong>目标是发现满足最小支持度阈值的所有项集，这些项集称作频繁项集（frequent itemset)</p>
+<p> <strong>Apriori</strong>的算法步骤</p>
+<p> 输入：数据集合D，支持度阈值α</p>
+<p> 输出：最大的频繁k项集</p>
+<p> 1）扫描整个数据集，得到所有出现过的数据，作为候选频繁1项集。k&#x3D;1，频繁0项集为空集。</p>
+<p> 2）挖掘频繁k项集</p>
+<p> 　　a) 扫描数据计算候选频繁k项集的支持度</p>
+<p> 　　b) 去除候选频繁k项集中支持度低于阈值的数据集,得到频繁k项集。如果得到的频繁k项集为空，则直接返回频繁k-1项集的集合作为算法结果，算法结束。如果得到的频繁k项集只有一项，则直接返回频繁k项集的集合作为算法结果，算法结束。</p>
+<p> 　　c) 基于频繁k项集，连接生成候选频繁k+1项集。</p>
+<p> 3） 令k&#x3D;k+1，转入步骤2。</p>
+<p> FP-growth算法(FP, Frequent Pattern)</p>
+<p> FP-growth算法只需要对数据库进行两次扫描。而Apriori算法对于每个潜在的频繁项集都会扫描数据集判定给定的模式是否频繁，因此FP-growth算法要比Apriori算法快。</p>
+<p> FP-growth算法第一遍对所有数据元素出现次数进行计数，第二遍只需考虑那些频繁的元素。</p>
+<p> 发现频繁项集的基本过程分为两步，</p>
+<p> 构建FP树</p>
+<p> 从FP树中挖掘频繁项集。</p>
+<p>FP-growth的一般流程如下： </p>
+<p>•1：先扫描一遍数据集，得到频繁项为1的项目集，定义最小支持度（项目出现最少次数），删除那些小于最小支持度的项目，然后将原始数据集中的条目按项目集中降序进行排列。 </p>
+<p>•2：第二次扫描，创建项头表（从上往下降序），以及FP树。 </p>
+<p>•3：对于每个项目（可以按照从下往上的顺序）找到其条件模式基（CPB，conditional patten base）,递归调用树结构，删除小于最小支持度的项。如果最终呈现单一路径的树结构，则直接列举所有组合；非单一路径的则继续调用树结构，直到形成单一路径即可</p>
+<h3 id="神经网络"><a href="#神经网络" class="headerlink" title="神经网络"></a>神经网络</h3><p> 神经网络是一种模拟人脑的神经网络以期能够实现类人工智能的机器学习技术。</p>
+<p> 人脑中的神经网络是一个非常复杂的组织。成人的大脑中估计有1000亿个神经元之多。</p>
+<p> 神经元是神经系统最基本的结构和功能单位。</p>
+<p> 神经元模型MP结构 </p>
+<p> 神经元模型是一个包含输入，输出与计算功能的模型。</p>
+<p> 输入类比为神经元的树突，输出类比为神经元的轴突，计算则可以类比为细胞核。</p>
+<p> 一个典型的神经元模型：包含有3个输入，1个输出，以及2个计算功能。中间的箭头线称为“连接”。每个上有一个“权值”。</p>
+<p><img src="https://files.catbox.moe/nk4a3k.png"></p>
+<p> 一个神经网络的训练算法就是让权重的值调整到最佳，以使得整个网络的预测效果最好。</p>
+<p> a来表示输入，w来表示权值。每个有向箭头表示值的加权传递。</p>
+<p> 在初端，传递的信号大小仍然是a，端中间有加权参数w，经过加权后的信号会变成a<em>w，因此在连接的末端，信号的大小就变成了a</em>w。</p>
+<p><img src="https://fastly.jsdelivr.net/gh/Leevan001/pictureBed@main/utools/16681819241531668181923410.png"></p>
+<p> 如果将神经元图中的所有变量用符号表示，计算公式如图，z是在输入和权值的线性加权和叠加了一个函数g的值。MP模型中，函数g是sgn函数（阶跃函数），当x＞0时f(x)&#x3D;1，当x＜0时f(x)&#x3D;-1。</p>
+<p><img src="https://fastly.jsdelivr.net/gh/Leevan001/pictureBed@main/utools/16681820281531668182027243.png"></p>
+<h4 id="神经元模型理解："><a href="#神经元模型理解：" class="headerlink" title="神经元模型理解："></a>神经元模型理解：</h4><p> 有一个数据，称之为样本。样本有四个属性，其中三个属性已知（特征），一个属性（目标）未知。需要通过三个已知属性预测未知属性。</p>
+<p> 假设特征与目标之间确实是线性关系，并且已经得到表示这个关系的权值w1，w2，w3。那么，可以通过神经元模型预测新样本的目标。</p>
+<p> 1943年发布的MP模型，简单，但是权重的值都是预先设置的，因此不能学习。</p>
+<p> 把神经元的输入向前传递获得输出的过程称为前馈（feedforward）。</p>
+<p> 单层神经网络（感知器）</p>
+<p> 1958年，计算科学家Rosenblatt提出了由两层神经元组成的神经网络。起名为“感知器” （Perceptron）</p>
+<h4 id="感知器模型结构"><a href="#感知器模型结构" class="headerlink" title="感知器模型结构"></a>感知器模型结构</h4><p> 在原来MP模型的“输入”位置添加神经元节点，标志其为“输入单元”。其余不变。</p>
+<p> 有两个层次，输入层里的“输入单元”只负责传输数据，不做计算。</p>
+<p> 输出层里的“输出单元” 需要对前面一层的输入进行计算，叫计算层。</p>
+<p> 拥有一个计算层的网络称之为“单层神经网络”。</p>
+<p> 感知器中的权值是通过训练得到的。感知器类似一个逻辑回归模型，可以做线性分类任务。</p>
+<p> 可以用决策分界形象表达分类的效果。决策分界就是在二维的数据平面中划出一条直线，当数据的维度是3维的时候，就是划出一个平面，当数据的维度是n维时，就是划出一个n-1维的超平面。</p>
+<p><img src="https://fastly.jsdelivr.net/gh/Leevan001/pictureBed@main/utools/16681821621521668182161932.png"></p>
+<h4 id="BP神经网络"><a href="#BP神经网络" class="headerlink" title="BP神经网络"></a>BP神经网络</h4><p>•1986年，Rumelhar和Hinton等人提出了反向传播（Backpropagation，BP）算法，解决了两层神经网络所需要的复杂计算量问题，带动了业界使用两层神经网络研究的热潮。</p>
+<p><img src="https://fastly.jsdelivr.net/gh/Leevan001/pictureBed@main/utools/16681822561531668182255907.png"></p>
+<p>•假设预测目标是一个向量，只需要在“输出层”再增加节点</p>
+<p>•使用向量和矩阵来表示层次中的变量。a(1)，a(2)，z是网络中传输的向量数据。W(1)和W(2)是网络的矩阵参数。</p>
+<p>•偏置节点（bias unit）本质上是一个只含有存储功能，且存储值永远为1的单元。偏置单元与后一层的所有节点都有连接，设这些参数值为向量b。偏置的存在是为了更好的拟合数据。</p>
+<p> 在两层神经网络中，使用平滑函数sigmoid作为函数g（称作激活函数active function）</p>
+<p> 面对复杂的非线性分类任务，两层（带一个隐藏层）神经网络可以很好分类。</p>
+<p> 输入层的节点数与特征的维度匹配，输出层的节点数与目标的维度匹配。</p>
+<p> 隐藏层的节点数由设计者指定，节点数设置的多少，影响到整个模型的效果。</p>
+<p> 如何决定隐藏层的节点数？目前业界没有完善的理论来指导，一般是根据经验设置。较好的方法是预先设定几个可选值，通过切换这几个值来看整个模型的预测效果，选择效果最好的值作为最终选择。这种方法又叫做Grid Search（网格搜索）。</p>
+<p> 机器学习模型训练的目的，是使得参数尽可能的与真实的模型逼近。</p>
+<p> 具体做法：先给所有参数赋上随机值来预测训练数据中的样本。样本的预测目标为yp，真实目标为y。定义一个值损失loss，目标就是使对所有训练数据的损失和尽可能的小。均方误差（MSE）</p>
+<p> loss &#x3D; (yp - y)2</p>
+<p> 如果将神经网络预测的矩阵公式带入到yp中，可以把损失写为关于参数的函数，称为<strong>损失函数</strong>（loss function）。</p>
+<p> 问题：如何优化参数（改变网络的权重和偏置），能够让损失函数的值最小。优化问题</p>
+<p>梯度下降算法（SGD）：每次计算参数在当前的梯度（求导），然后让参数向着梯度的反方向前进一段距离，不断重复，直到梯度接近零时截止。一般这个时候，所有的参数恰好达到使损失函数达到一个最低值的状态。</p>
+<p> SGD定义了改变权重和偏置的方法：<br>$$<br>\omega _1\leftarrow\omega _1-\eta\frac{\partial{L}}{\partial{\omega_1}}<br>$$<br>η是一个常数，称为学习率（learning rate），决定了训练网络速率的快慢。当∂L&#x2F;∂w1是正数时，w1会变小；当∂L&#x2F;∂w1是负数 时，w1会变大。用这种方法去逐步改变网络的权重w和偏置b，损失函数会缓慢地降低</p>
+<p> 在神经网络模型中，由于结构复杂，每次计算梯度的代价很大。</p>
+<p> 需要使用反向传播算法（back propagation），简称BP算法，适合于多层神经元网络的一种学习算法，建立在梯度下降法的基础上。</p>
+<p> BP网络的输入输出关系实质上是一种映射关系：一个n输入m输出的BP神经网络所完成的功能是从n维欧氏空间向m维欧氏空间中一有限域的连续映射，这一映射具有高度非线性。</p>
+<p> 反向传播算法主要由两个环节(激励传播、权重更新)反复循环迭代，直到网络的对输入的响应达到预定的目标范围为止。</p>
+<p> 两层神经网络应用于语音识别，图像识别，自动驾驶等多个领域。</p>
+<h4 id="仍然存在若干的问题："><a href="#仍然存在若干的问题：" class="headerlink" title="仍然存在若干的问题："></a>仍然存在若干的问题：</h4><p> 训练耗时久，可能会出现局部最优解问题，使得神经网络的优化较为困难。</p>
+<p>隐藏层的节点数需要调参，使用不太方便。</p>
+<h4 id="多层神经网络（深度学习）"><a href="#多层神经网络（深度学习）" class="headerlink" title="多层神经网络（深度学习）"></a>多层神经网络（深度学习）</h4><p> 首先有一个“预训练”（pre-training）的过程，可以方便的让神经网络中的权值找到一个接近最优解的值，之后再使用“微调”(fine-tuning)技术来对整个网络进行优化训练。</p>
+<p> 这两个技术的运用大幅度减少了训练多层神经网络的时间。他给多层神经网络相关的学习方法赋予了一个新名词–“深度学习”。</p>
+<p> 预训练是提前已经给你一些初始化的参数，这个参数不是随机的，而是通过其他类似数据集上面学得的</p>
+<h5 id="多层神经网络中的层数增加很多有什么好处？"><a href="#多层神经网络中的层数增加很多有什么好处？" class="headerlink" title="多层神经网络中的层数增加很多有什么好处？"></a>多层神经网络中的层数增加很多有什么好处？</h5><p> 具有更深入的表示特征，随着网络的层数增加，每一层对于前一层次的抽象表示更深入。</p>
+<p> 在神经网络中，每一层神经元学习到的是前一层神经元值的更抽象的表示。例如第一个隐藏层学习到的是“边缘”的特征，第二个隐藏层学习到的是由“边缘”组成的“形状”的特征，第三个隐藏层学习到的是由“形状”组成的“图案”的特征，最后的隐藏层学习到的是由“图案”组成的“目标”的特征。通过抽取更抽象的特征来对事物进行区分，从而获得更好的区分与分类能力。</p>
+<p> 更强的函数模拟能力：由于随着层数的增加，整个网络的参数就越多。神经网络本质就是模拟特征与目标之间的真实关系函数的方法，更多的参数意味着其模拟的函数可以更加的复杂，可以有更多的容量（capcity）去拟合真正的关系。</p>
+<p> 通过研究发现，在参数数量一样的情况下，更深的网络往往具有比浅层的网络更好的识别效率。</p>
+<p> 这点在ImageNet的多次大赛中得到了证实。从2012年起，每年获得ImageNet冠军的深度神经网络的层数逐年增加，2015年最好的方法GoogleNet是一个多达22层的神经网络。</p>
+<h5 id="多层神经网络训练："><a href="#多层神经网络训练：" class="headerlink" title="多层神经网络训练："></a>多层神经网络训练：</h5><p>ReLU函数在训练多层神经网络时，更容易收敛，并且预测性能更好。</p>
+<p> ReLU函数不是传统的非线性函数，而是分段线性函数。表达式非常简单，就是y&#x3D;max(x,0)。在x大于0，输出就是输入，在x小于0时，输出保持为0。这种函数的设计启发来自于生物神经元对于激励的线性响应，当低于某个阈值后就不再响应的模拟。</p>
+<p><img src="https://fastly.jsdelivr.net/gh/Leevan001/pictureBed@main/utools/16681829671561668182966279.png"></p>
+<h5 id="训练的主题仍然是优化和泛化。"><a href="#训练的主题仍然是优化和泛化。" class="headerlink" title="训练的主题仍然是优化和泛化。"></a>训练的主题仍然是优化和泛化。</h5><p> 当使用足够强的计算芯片（例如GPU图形加速卡）时，梯度下降算法以及反向传播算法在多层神经网络中的训练仍然工作的很好。</p>
+<p> 目前学术界主要的研究既在于开发新的算法，也在于对这两个算法进行不断的优化，例如，增加了一种带动量因子（momentum）的梯度下降算法。　</p>
+<p> 在深度学习中，泛化技术变的比以往更加的重要。是因为神经网络的层数增加了，参数也增加了，表示能力大幅度增强，很容易出现过拟合现象。</p>
+<p>前馈神经网络（FF），工作原理通常遵循以下规则：</p>
+<p>1.所有节点都完全连接</p>
+<p>2.激活从输入层流向输出，无回环</p>
+<p>3.输入和输出之间有一层（隐含层）</p>
+<h4 id="RNN递归神经网络"><a href="#RNN递归神经网络" class="headerlink" title="RNN递归神经网络"></a><strong>RNN</strong>递归神经网络</h4><p>引入不同类型的神经元——递归神经元，在网络中每个隐含神经元会收到它自己的在固定延迟（一次或多次迭代）后的输出。</p>
+<p> RNN主要被使用在上下文很重要的时候——即过去的迭代结果和样本产生的决策会对当前产生影响。最常见的上下文的例子是文本——一个单词只能在前面的单词或句子的上下文中进行分析。</p>
+<p> <strong>循环神经网络</strong>很难训练，导致在实际应用中很难处理长距离的依赖。<strong>长短时记忆网络</strong>(成功解决了原始循环神经网络的缺陷，在语音识别、图片描述、自然语言处理等许多领域中成功应用。</p>
+<p> LSTM长短时记忆网络引入了一个存储单元，一个特殊的单元，当数据有时间间隔（或滞后）时可以处理数据。</p>
+<p> 存储单元实际上由一些元素组成，称为门，它们是递归性的，并控制信息如何被记住和遗忘。</p>
+<p> <strong>LSTM</strong>的结构复杂</p>
+<p> Autoncoder（AE）自动编码器，通过重建输入的神经网络训练过程，隐藏层向量具有降维的作用。特点是编码器会创建一个隐藏层（或多个隐藏层）包含了输入数据含义的低维向量。然后有一个解码器，会通过隐藏层的低维向量重建输入数据。</p>
+<p> 帮助数据分类、可视化、存储。</p>
+<h3 id="数据分析工具"><a href="#数据分析工具" class="headerlink" title="数据分析工具"></a>数据分析工具</h3><p> Excel</p>
+<p> SPSS</p>
+<p> Weka</p>
+<p> 深度学习框架</p>
+<ul>
+<li>TensorFlow</li>
+<li>Keras</li>
+<li>PyTorch</li>
+<li>Caffe</li>
+<li>Deeplearning4j</li>
+</ul>
+<p> 深度学习框架是一种界面、库或工具，无需深入了解底层算法的细节的情况下，能够更容易、更快速地构建深度学习模型。</p>
+<p> 深度学习框架利用预先构建和优化好的组件集合定义模型，为模型的实现提供了一种清晰而简洁的方法。</p>
+<p> 一个良好的深度学习框架具备关键特征：</p>
+<p> 优化的性能</p>
+<p> 易于理解和编码</p>
+<p> 良好的社区支持</p>
+<p> 并行化的进程，以减少计算</p>
+<p> 自动计算梯度</p>
+<h1 id="第10章-数据可视化"><a href="#第10章-数据可视化" class="headerlink" title="第10章 数据可视化"></a>第10章 数据可视化</h1><h2 id="10-1-数据可视化概述"><a href="#10-1-数据可视化概述" class="headerlink" title="10.1 数据可视化概述"></a><strong>10.1</strong> 数据可视化概述</h2><p>数据可视化是指将大型数据集中的数据以图形图像形式表示，并利用数据分析和开发工具发现其中未知信息的处理过程。</p>
+<p>基本思想是将数据库中每一个数据项作为单个图元素表示，大量的数据集构成数据图像，同时将数据的各个属性值以多维数据的形式表示，可以从不同的维度观察数据，从而对数据进行更深入的观察和分析。</p>
+<p>雷达图是以从同一点开始的轴上表示的三个或更多个定量变量的二维图表的形式，显示多变量数据的图形方法。</p>
+<p>依靠<strong>可视化手段进行数据分析</strong>可以<strong>让数据变得更加通俗易懂</strong>，有助于用户更加方便快捷地理解数据的深层次含义，有效参与复杂的数据分析过程，提升数据分析效率，改善数据分析效果。</p>
+<p>可视化技术可以支持实现多种不同的目标：</p>
+<ol>
+<li><strong>观测、跟踪数据</strong></li>
+<li><strong>分析数据</strong></li>
+<li><strong>辅助理解数据</strong></li>
+<li><strong>增强数据吸引力</strong></li>
+</ol>
+<p>可视化典型案例：</p>
+<ul>
+<li>安全供应商Norse打造了一张能够反映全球范围内黑客攻击频率的地图（<a target="_blank" rel="noopener" href="http://map.ipviking.com),利用/">http://map.ipviking.com），利用</a> “蜜罐”攻击陷阱显示出所有实时渗透攻击活动。地图中的每一条线代表的都是一次攻击活动，借此可以了解每一天、每一分钟甚至每一秒世界上发生了多少次恶意渗透。</li>
+</ul>
+<p><img src="https://files.catbox.moe/b3htc4.png"></p>
+<ul>
+<li>2014年1月25日晚间，央视与百度合作，启用百度地图定位可视化大数据播报春节期间全国人口迁徙情况引起广泛关注。</li>
+</ul>
+<img src="https://fastly.jsdelivr.net/gh/Leevan001/pictureBed@main/utools/16682386051231668238604428.png" style="zoom:67%;" />
+
+<ul>
+<li>“世界国家健康与财富之间的关系”利用可视化技术，把世界上200个国家，从1810年到2010年历时200年其各国国民的健康、财富变化数据（收集了1千多万个数据）制作成三维动画进行了直观展示（<a target="_blank" rel="noopener" href="http://www.moojnn.com/Index/whn%EF%BC%89%E3%80%82">http://www.moojnn.com/Index/whn）。</a></li>
+</ul>
+<img src="https://fastly.jsdelivr.net/gh/Leevan001/pictureBed@main/utools/16682386411241668238640200.png" style="zoom:67%;" />
+
+<p>3D可视化是描绘和理解数据的一种手段，是数据的一种表征形式。3D可视化以一种独特的立体视角为用户呈现数据，可以帮助用户发现一些在2D模式下无法察觉的内容。</p>
+<h2 id="大数据可视化方法"><a href="#大数据可视化方法" class="headerlink" title="大数据可视化方法"></a><strong>大数据可视化方法</strong></h2><h3 id="文本可视化"><a href="#文本可视化" class="headerlink" title="文本可视化"></a><strong>文本可视化</strong></h3><ol>
+<li>文字是传递信息最常用的载体。</li>
+<li>文本可视化的作用有以下四点：</li>
+<li><strong>理解</strong> - 理解主旨</li>
+<li><strong>组织</strong> - 组织、分类信息</li>
+<li><strong>比较</strong> - 对比文档信息</li>
+<li><strong>关联</strong> - 关联文本的 pattern 和其他信息</li>
+</ol>
+<img src="https://fastly.jsdelivr.net/gh/Leevan001/pictureBed@main/utools/16682387551221668238754888.png" style="zoom: 50%;" />
+
+<p>•对文本的理解需求分成三级：词汇级（Lexical Level）、语法级（Syntactic Level）和语义级（Semantic Level）。词汇级用各类分词算法，语法级用一些句法分析算法，语义级用主题抽取算法。</p>
+<p>•<strong>文本数据预处理</strong>将无效数据过滤，提取有效词等；<strong>文本特征抽取</strong>是指提取文本的关键词、词频分布、语法级的实体信息、语义级的主题等；<strong>文本特征的度量</strong>是指在多种环境或多个数据源所抽取的文本特征进行深层分析，如相似性、文本聚类等。</p>
+<h4 id="文本可视化类型"><a href="#文本可视化类型" class="headerlink" title="文本可视化类型"></a>文本可视化类型</h4><p>•文本数据大致分为三种：单文本、文档集合和时序文本数据。对应的文本可视化也可分为三类：</p>
+<ul>
+<li>文本内容的可视化</li>
+</ul>
+<p>标签云（Word Clouds或Tag Clouds）是一种典型的文本可视化技术。将关键词根据词频或其他规则进行排序，按照一定规律进行布局排列，用大小、颜色、字体等图形属性对关键词进行可视化。一般用字号大小代表该关键词的重要性，该技术多用于快速识别网络媒体的主题热度。</p>
+<img src="https://fastly.jsdelivr.net/gh/Leevan001/pictureBed@main/utools/16682391371211668239136903.png" style="zoom:50%;" />
+
+<p>•基于关键词的文本内容可视化</p>
+<p>•文档散（DocuBurst ）也是基于关键词的文本可视化，不过它还通过径向布局体现了词的语义等级。如下图所示，外层的词是内层词的下义祠，颜色饱和度的深浅用来体现词频的高低。</p>
+<img src="https://fastly.jsdelivr.net/gh/Leevan001/pictureBed@main/utools/16682391841301668239184076.png" style="zoom:50%;" />
+
+<p>•Document Cards</p>
+<p>•文档卡片（Document Cards） 结合了文档中的关键词和关键图片进行可视化，布局在一张小卡片中。</p>
+<p>其中的关键图片是指采用智能算法抽取并根据颜色分类后的代表性图片。</p>
+<img src="https://fastly.jsdelivr.net/gh/Leevan001/pictureBed@main/utools/16682392451221668239244865.png" style="zoom:50%;" />
+
+<p>•时序文本内容可视化</p>
+<p>•时序数据是指具有时间或顺序特性的文本，例如一篇小说故事情节的变化，或一个新闻事件随时间的演化。</p>
+<img src="https://fastly.jsdelivr.net/gh/Leevan001/pictureBed@main/utools/16682392881871668239288148.png" style="zoom:50%;" />
+
+<p>•ThemeRiver主题河流是一种经典的时序文本可视化方法。光阴似水，用河流来隐喻时间的变化几乎所有人都能非常好地理解。</p>
+<p>•横轴表示时间，每一条不同颜色线条视作一条河流，每条河流表示一个主题，河流的宽度代表在当前时间点上的一个度量（如主题的强度）。这样既可以在宏观上看出多个主题的发展变化，又能看出在特定时间点上主题的分布。</p>
+<p>•TIARA结合了标签云，通过主题分析技术（latent dirichlet allocation，LDA），将文本关键词根据时间点放置在每条色带上，用词的大小表示关键词在该时刻出现的频率。TIARA帮助用户快速分析文本具体内容随时间变化的规律，而不是仅仅一个度量带变化。</p>
+<img src="https://fastly.jsdelivr.net/gh/Leevan001/pictureBed@main/utools/16682393931241668239393076.png" style="zoom: 50%;" />
+
+
+
+<ul>
+<li>文本关系的可视化</li>
+</ul>
+<p>•文本关系可视化：研究的是文本或文档集合中的关系信息，比如文本的相似性、互相引用的情况、链接等。说到关系布局，一般都是树或图。</p>
+<p>•Word Tree单词树把文本中的句子按树形结构布局，可以很好的看出一个单词在文本中出现的频率和单词前后的联系。</p>
+<img src="https://fastly.jsdelivr.net/gh/Leevan001/pictureBed@main/utools/16682394481251668239447570.png" style="zoom:50%;" />
+
+
+
+<ul>
+<li>文本多层面信息的可视化</li>
+</ul>
+<p>•多层面或多维度是指从多个角度或提取多种特征对文本集合分析。</p>
+<p>•Parallel Tag Clouds平行标签云结合了平行坐标和标签云视图。每一列是一个层面的标签云，然后连接的折线展现了选中标签在多个层面的分布。</p>
+<h4 id="网络数据可视化"><a href="#网络数据可视化" class="headerlink" title="网络数据可视化"></a>网络数据可视化</h4><p>•网络数据，称作图数据，由节点（nodes）和边（edges）构成，用来描述实体间关系的一种结构</p>
+<p>•实体：人、事、物</p>
+<p>•例如：人与人之间的关系、城市之间的道路连接、科研论文之间的引用都组成了网络</p>
+<p>•网络数据可视化常用方法：</p>
+<p>•节点—链接法</p>
+<p>相邻矩阵法</p>
+<p>节点—链接法：节点表示对象，边表示节点之间的关系，如果图的每条边有方向，称为有向图（directed graph），如微博的关注就是有向的 如果图的每条边没有方向，称为无向图（undirected graph），如微信好友就是无向的</p>
+<p>优点：最自然直接的表达方式，易于理解、接受</p>
+<img src="https://files.catbox.moe/8u5kao.png" style="zoom:50%;" />
+
+<p>•节点—链接法的图简化</p>
+<p>•在尽量不减少图信息的前提下，用最精简的图结构去表现数据背后的特征规律</p>
+<p>•简化方法：基于节点；基于边；其它方法</p>
+<p>•边绑定：在保持信息量不变的前提下，将图上互相靠近的边捆绑成一束，达到化繁为简的效果</p>
+<p>•能够有效的减少在图绘制中边的混乱程度。能够提供给用户复杂连接图的全局概览，同时通过边的粗细与颜色深度也可以提供给用户图中主要连接关系的信息。</p>
+<p>•相邻矩阵法</p>
+<p>•N*N的矩阵，代表N个节点，矩阵内的位置(i, j)表达了第i个节点和第j个节点之间的关系</p>
+<p>可以用数值矩阵，也可以将数值映射到色彩空间，表达简单易用； </p>
+<p>节点之间的直接关系表达显著；</p>
+<p>规避边的交叉<br> 缺点：</p>
+<p>不易从相邻矩阵中挖掘去隐藏的 信息；节点之间的关系传递表达弱</p>
+<img src="https://fastly.jsdelivr.net/gh/Leevan001/pictureBed@main/utools/16682397601301668239759623.png" style="zoom:50%;" />
+
+<h4 id="时空数据可视化"><a href="#时空数据可视化" class="headerlink" title="时空数据可视化"></a><strong>时空数据可视化</strong></h4><p>•时空数据是指具有时间元素并随时间变化而变化的空间数据，是描述地球环境中地物要素信息的一种表达方式。</p>
+<p>•涉及到各式各样的数据，如地球环境地物要素的数量、形状、纹理、空间分布特征、内在联系及规律等的数字、文本、图形和图像等,不仅具有明显的空间分布特征，而且具有数据量庞大、非线性以及时变等特征。 </p>
+<p>•时空数据的可视化表达手段可分为静态可视化和动态可视化。   </p>
+<p>•时空数据静态可视化，一般是以二维地图上叠加可以描述时间变化的要素，来描述时空属性数据与空间范围内的变化特征。这些用于表达时空属性数据的要素可以通过不同的符号、注记、标绘符号、统计图表等多种方式来表达，也可以将多个时间的专题地图同时展示进行对比。    </p>
+<img src="https://fastly.jsdelivr.net/gh/Leevan001/pictureBed@main/utools/16682398411301668239840912.png" style="zoom:50%;" />
+
+<p>•时空数据动态可视化表达 ：可采用动态地图、三维GIS等多种手段展现时空数据。将时空数据在动态变化的地图或三维场景中呈现出来，可以直观生动地表示各种空间信息的变化过程。</p>
+<img src="https://fastly.jsdelivr.net/gh/Leevan001/pictureBed@main/utools/16682398751251668239874217.png" style="zoom:50%;" />
+
+<h4 id="多维数据可视化"><a href="#多维数据可视化" class="headerlink" title="多维数据可视化"></a><strong>多维数据可视化</strong></h4><p><strong>散点图</strong>（Scatter Plot）是最为常用的多维可视化方法。二维散点图将多个维度中的两个维度属性值集合映射至两条轴，在二维轴确定的平面内通过图形标记的不同视觉元素来反映其他维度属性值。</p>
+<img src="https://fastly.jsdelivr.net/gh/Leevan001/pictureBed@main/utools/16682399601331668239959431.png" style="zoom:33%;" />
+
+<p><strong>投影</strong>是能够同时展示多维的可视化方法之一。VaR将各维度属性列集合通过投影函数映射到一个方块形图形标记中，并根据维度之间的关联度对各个小方块进行布局。</p>
+<img src="https://fastly.jsdelivr.net/gh/Leevan001/pictureBed@main/utools/16682399941231668239993903.png" style="zoom:33%;" />
+
+<p><strong>平行坐标</strong>是研究和应用最为广泛的一种多维可视化技术，将维度与坐标轴建立映射，在多个平行轴之间以直线或曲线映射表示多维信息。</p>
+<h2 id="可视化工具"><a href="#可视化工具" class="headerlink" title="可视化工具"></a><strong>可视化</strong>工具</h2><h3 id="信息图表工具"><a href="#信息图表工具" class="headerlink" title="信息图表工具"></a><strong>信息图表工具</strong></h3><p><strong>Excel</strong></p>
+<p><strong>Google Chart API</strong></p>
+<p><strong>Echarts</strong></p>
+<p><strong>D3</strong></p>
+<p><strong>Visual.ly</strong></p>
+<p><strong>Tableau</strong></p>
+<p>大数据魔镜是一款优秀的国产数据分析软件，丰富的数据公式和算法可以让用户真正理解探索分析数据，用户只要通过一个直观的拖放界面就可创造交互式的图表和数据挖掘模型。</p>
+<h3 id="地图工具"><a href="#地图工具" class="headerlink" title="地图工具"></a>地图工具</h3><p>地图工具在数据可视化中较为常见，在展现数据基于空间或地理分布上有很强的表现力，可以直观地展现各分析指标的分布、区域等特征。</p>
+<p>当指标数据要表达的主题跟地域有关联时，可以选择以地图作为大背景，从而帮助用户更加直观地了解整体的数据情况，同时也可以根据地理位置快速地定位到某一地区来查看详细数据。</p>
+<p><strong>1. Google Fusion Tables</strong></p>
+<p>让一般使用者也可以轻松制作出专业的统计地图。该工具可以让数据表呈现为图表、图形和地图，帮助发现一些隐藏在数据背后的模式和趋势。</p>
+<p> <strong>2. Modest Maps</strong></p>
+<p>是一个小型、可扩展、交互式的免费库，提供了一套查看卫星地图的API，只有10KB大小，是目前最小的可用地图库，开源项目，有强大的社区支持，是在网站中整合地图应用的理想选择。</p>
+<p> <strong>3. Leaflet</strong></p>
+<p>Leaflet是一个小型化的地图框架，通过小型化和轻量化来满足移动网页的需要。</p>
+<h3 id="时间线工具"><a href="#时间线工具" class="headerlink" title="时间线工具"></a>时间线工具</h3><p>时间线是表现数据在时间维度的演变的有效方式，通过互联网技术，依据时间顺序，把一方面或多方面的事件串联起来，形成相对完整的记录体系，再运用图文的形式呈现给用户。</p>
+<p>Timetoast	Xtimeline	Gephi</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="http://example.com">如风</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http://example.com/2022/11/13/%E6%95%B0%E6%8D%AE%E7%A7%91%E5%AD%A6%E5%AF%BC%E8%AE%BA/">http://example.com/2022/11/13/%E6%95%B0%E6%8D%AE%E7%A7%91%E5%AD%A6%E5%AF%BC%E8%AE%BA/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://example.com" target="_blank">早早起床，拥抱太阳</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E6%95%B0%E6%8D%AE/">数据</a></div><div class="post_share"><div class="social-share" data-image="https://fastly.jsdelivr.net/gh/Leevan001/pictureBed@main/utools/166832600130917317FFACC42E4B5729AE3767B0311D0.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://fastly.jsdelivr.net/gh/Leevan001/pictureBed@main/utools/1668273103133D8802D069515E0A42BC91FDE752B8A5C.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">如风</div><div class="author-info__description">热爱睡觉的小笨蛋一枚吖~</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">5</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">2</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/Leevan001"><i></i><span>🛴前往小家...</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/Leevan001" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:by1249824014@gmail.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AC%AC1%E7%AB%A0-%E5%A4%A7%E6%95%B0%E6%8D%AE%E6%A6%82%E8%BF%B0"><span class="toc-number">1.</span> <span class="toc-text">第1章 大数据概述</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A4%A7%E6%95%B0%E6%8D%AE%E4%BB%8E%E5%93%AA%E9%87%8C%E6%9D%A5%EF%BC%9F"><span class="toc-number">1.1.</span> <span class="toc-text">大数据从哪里来？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A4%A7%E6%95%B0%E6%8D%AE%E7%9A%84%E5%8F%91%E5%B1%95%E5%8E%86%E7%A8%8B"><span class="toc-number">1.2.</span> <span class="toc-text">大数据的发展历程</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E7%A7%91%E5%AD%A6%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F"><span class="toc-number">1.3.</span> <span class="toc-text">数据科学是什么？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF%E5%A4%A7%E6%95%B0%E6%8D%AE%EF%BC%9F"><span class="toc-number">1.4.</span> <span class="toc-text">什么是大数据？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A4%A7%E6%95%B0%E6%8D%AE%E7%9A%84%E7%89%B9%E5%BE%81"><span class="toc-number">1.5.</span> <span class="toc-text">大数据的特征</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A4%A7%E6%95%B0%E6%8D%AE%E7%9A%84%E6%8A%80%E6%9C%AF%E6%94%AF%E6%92%91"><span class="toc-number">1.6.</span> <span class="toc-text">大数据的技术支撑</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A4%A7%E6%95%B0%E6%8D%AE%E7%9A%84%E5%BD%B1%E5%93%8D"><span class="toc-number">1.7.</span> <span class="toc-text">大数据的影响</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AC%AC2%E7%AB%A0-%E5%A4%A7%E6%95%B0%E6%8D%AE%E7%9B%B8%E5%85%B3%E5%B7%A5%E7%A8%8B%E6%8A%80%E6%9C%AF%E4%B8%8E%E5%BA%94%E7%94%A8"><span class="toc-number">2.</span> <span class="toc-text">第2章 大数据相关工程技术与应用</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%B8%E5%9E%8B%E7%9A%84%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%BA%94%E7%94%A8%E5%AE%9E%E4%BE%8B"><span class="toc-number">2.1.</span> <span class="toc-text">典型的大数据应用实例</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AC%AC3%E7%AB%A0-%E5%A4%A7%E6%95%B0%E6%8D%AE%E9%87%87%E9%9B%86%E5%92%8C%E9%A2%84%E5%A4%84%E7%90%86"><span class="toc-number">3.</span> <span class="toc-text">第3章 大数据采集和预处理</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A4%A7%E6%95%B0%E6%8D%AE%E9%87%87%E9%9B%86"><span class="toc-number">3.1.</span> <span class="toc-text">大数据采集</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E6%8A%BD%E5%8F%96%E8%BD%AC%E6%8D%A2%E5%8A%A0%E8%BD%BD%E6%8A%80%E6%9C%AF"><span class="toc-number">3.2.</span> <span class="toc-text">数据抽取转换加载技术</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E7%88%AC%E8%99%AB%E6%8A%80%E6%9C%AF"><span class="toc-number">3.3.</span> <span class="toc-text">数据爬虫技术</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E6%B5%81%E7%A8%8B"><span class="toc-number">3.3.1.</span> <span class="toc-text">基本流程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%8D%E5%90%8C%E7%A7%8D%E7%B1%BB%E7%9A%84%E7%88%AC%E8%99%AB"><span class="toc-number">3.3.2.</span> <span class="toc-text">不同种类的爬虫</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%80%9A%E7%94%A8%E7%88%AC%E8%99%AB"><span class="toc-number">3.3.2.1.</span> <span class="toc-text">通用爬虫</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%BB%E9%A2%98%E7%88%AC%E8%99%AB"><span class="toc-number">3.3.2.2.</span> <span class="toc-text">主题爬虫</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%88%86%E5%B8%83%E5%BC%8F%E7%88%AC%E8%99%AB"><span class="toc-number">3.3.2.3.</span> <span class="toc-text">分布式爬虫</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A4%A7%E6%95%B0%E6%8D%AE%E7%88%AC%E8%99%AB%E7%9A%84%E7%9B%B8%E5%85%B3%E6%8A%80%E6%9C%AF"><span class="toc-number">3.3.3.</span> <span class="toc-text">大数据爬虫的相关技术</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E9%A2%84%E5%A4%84%E7%90%86"><span class="toc-number">3.4.</span> <span class="toc-text">数据预处理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E6%B8%85%E7%90%86"><span class="toc-number">3.5.</span> <span class="toc-text">数据清理</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BC%BA%E5%A4%B1%E5%80%BC"><span class="toc-number">3.5.1.</span> <span class="toc-text">缺失值</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%99%AA%E5%A3%B0%E6%95%B0%E6%8D%AE"><span class="toc-number">3.5.2.</span> <span class="toc-text">噪声数据</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E9%9B%86%E6%88%90"><span class="toc-number">3.5.3.</span> <span class="toc-text">数据集成</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%8F%98%E6%8D%A2"><span class="toc-number">3.5.4.</span> <span class="toc-text">数据变换</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E8%A7%84%E7%BA%A6"><span class="toc-number">3.5.5.</span> <span class="toc-text">数据规约</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AC%AC%E5%9B%9B%E7%AB%A0-%E5%88%86%E5%B8%83%E5%BC%8F%E5%B9%B3%E5%8F%B0Hadoop"><span class="toc-number">4.</span> <span class="toc-text">第四章 分布式平台Hadoop</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Hadoop%E7%AE%80%E4%BB%8B"><span class="toc-number">4.1.</span> <span class="toc-text">Hadoop简介</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Hadoop%E7%9A%84%E7%89%B9%E6%80%A7"><span class="toc-number">4.2.</span> <span class="toc-text">Hadoop的特性</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AC%AC5%E7%AB%A0-%E5%88%86%E5%B8%83%E5%BC%8F%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9FHDFS"><span class="toc-number">5.</span> <span class="toc-text">第5章 分布式文件系统HDFS</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AC%AC6%E7%AB%A0-MapReduce%E5%9F%BA%E7%A1%80"><span class="toc-number">6.</span> <span class="toc-text">第6章 MapReduce基础</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#MapReduce%E6%A8%A1%E5%9E%8B%E7%AE%80%E4%BB%8B"><span class="toc-number">6.1.</span> <span class="toc-text">MapReduce模型简介</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#MapReduce%E5%B7%A5%E4%BD%9C%E6%B5%81%E7%A8%8B"><span class="toc-number">6.2.</span> <span class="toc-text">MapReduce工作流程</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Shuffle"><span class="toc-number">6.3.</span> <span class="toc-text">Shuffle</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Map%E7%AB%AF%E7%9A%84Shuffle%E8%BF%87%E7%A8%8B"><span class="toc-number">6.4.</span> <span class="toc-text">Map端的Shuffle过程</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Reduce%E7%AB%AF%E7%9A%84Shuffle%E8%BF%87%E7%A8%8B"><span class="toc-number">6.5.</span> <span class="toc-text">Reduce端的Shuffle过程</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#MapReduce%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E6%89%A7%E8%A1%8C%E8%BF%87%E7%A8%8B"><span class="toc-number">6.6.</span> <span class="toc-text">MapReduce应用程序执行过程</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#MapReduce%E7%9A%84%E5%85%B7%E4%BD%93%E5%BA%94%E7%94%A8"><span class="toc-number">6.7.</span> <span class="toc-text">MapReduce的具体应用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B0%8F%E7%BB%93"><span class="toc-number">6.8.</span> <span class="toc-text">小结</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AC%AC7%E7%AB%A0-%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%AD%98%E5%82%A8%E6%8A%80%E6%9C%AF"><span class="toc-number">7.</span> <span class="toc-text">第7章 大数据存储技术</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%91%E8%AE%A1%E7%AE%97%E6%98%AF%E4%BA%91%E6%95%B0%E6%8D%AE%E5%BA%93%E5%85%B4%E8%B5%B7%E7%9A%84%E5%9F%BA%E7%A1%80"><span class="toc-number">7.1.</span> <span class="toc-text">云计算是云数据库兴起的基础</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%91%E8%AE%A1%E7%AE%97%E6%A6%82%E5%BF%B5"><span class="toc-number">7.1.1.</span> <span class="toc-text">云计算概念</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%91%E8%AE%A1%E7%AE%97%E7%89%B9%E7%82%B9"><span class="toc-number">7.1.2.</span> <span class="toc-text">云计算特点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%91%E8%AE%A1%E7%AE%97%E5%BA%94%E7%94%A8%E5%9C%BA%E6%99%AF"><span class="toc-number">7.1.3.</span> <span class="toc-text">云计算应用场景</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%91%E8%AE%A1%E7%AE%97%E5%85%AB%E5%A4%A7%E4%BC%98%E5%8A%BF"><span class="toc-number">7.1.4.</span> <span class="toc-text">云计算八大优势</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%91%E6%95%B0%E6%8D%AE%E5%BA%93%E6%A6%82%E5%BF%B5"><span class="toc-number">7.2.</span> <span class="toc-text">云数据库概念</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%91%E6%95%B0%E6%8D%AE%E5%BA%93%E4%B8%8E%E4%BA%91%E5%AD%98%E5%82%A8%E6%9C%89%E4%BB%80%E4%B9%88%E5%8C%BA%E5%88%AB%EF%BC%9F"><span class="toc-number">7.2.1.</span> <span class="toc-text">云数据库与云存储有什么区别？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%91%E6%95%B0%E6%8D%AE%E5%BA%93%E5%85%B7%E6%9C%89%E4%BB%A5%E4%B8%8B%E7%89%B9%E6%80%A7%EF%BC%9A"><span class="toc-number">7.2.2.</span> <span class="toc-text">云数据库具有以下特性：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%91%E6%95%B0%E6%8D%AE%E5%BA%93%E6%98%AF%E4%B8%AA%E6%80%A7%E5%8C%96%E6%95%B0%E6%8D%AE%E5%AD%98%E5%82%A8%E9%9C%80%E6%B1%82%E7%9A%84%E7%90%86%E6%83%B3%E9%80%89%E6%8B%A9"><span class="toc-number">7.3.</span> <span class="toc-text">云数据库是个性化数据存储需求的理想选择</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%91%E6%95%B0%E6%8D%AE%E5%BA%93%E5%8E%82%E5%95%86"><span class="toc-number">7.4.</span> <span class="toc-text">云数据库厂商</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#HBase%E5%88%86%E5%B8%83%E5%BC%8F%E6%95%B0%E6%8D%AE%E5%BA%93"><span class="toc-number">7.5.</span> <span class="toc-text">HBase分布式数据库</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#BigTable%E6%98%AF%E4%B8%80%E4%B8%AA%E5%88%86%E5%B8%83%E5%BC%8F%E5%AD%98%E5%82%A8%E7%B3%BB%E7%BB%9F"><span class="toc-number">7.5.1.</span> <span class="toc-text">BigTable是一个分布式存储系统</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E9%9C%80%E8%A6%81HBase"><span class="toc-number">7.5.2.</span> <span class="toc-text">为什么需要HBase?</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#HBase%E4%B8%8E%E4%BC%A0%E7%BB%9F%E7%9A%84%E5%85%B3%E7%B3%BB%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E5%8C%BA%E5%88%AB%E4%B8%BB%E8%A6%81%E4%BD%93%E7%8E%B0%E5%9C%A8%E4%BB%A5%E4%B8%8B%E5%87%A0%E4%B8%AA%E6%96%B9%E9%9D%A2%EF%BC%9A"><span class="toc-number">7.5.3.</span> <span class="toc-text">HBase与传统的关系数据库的区别主要体现在以下几个方面：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#HBase%E8%AE%BF%E9%97%AE%E6%8E%A5%E5%8F%A3"><span class="toc-number">7.5.4.</span> <span class="toc-text">HBase访问接口</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#HBase%E6%95%B0%E6%8D%AE%E6%A8%A1%E5%9E%8B"><span class="toc-number">7.5.5.</span> <span class="toc-text">HBase数据模型</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#NoSQL-%E6%95%B0%E6%8D%AE%E5%BA%93"><span class="toc-number">7.6.</span> <span class="toc-text">NoSQL 数据库</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#CAP%E5%AE%9A%E7%90%86%EF%BC%9A"><span class="toc-number">7.6.1.</span> <span class="toc-text">CAP定理：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#BASE"><span class="toc-number">7.6.2.</span> <span class="toc-text">BASE</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%B3%E7%B3%BB%E6%95%B0%E6%8D%AE%E5%BA%93%E4%B8%8ENoSQL%E6%AF%94%E8%BE%83"><span class="toc-number">7.6.3.</span> <span class="toc-text">关系数据库与NoSQL比较</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%94%AE%E5%80%BC%E6%95%B0%E6%8D%AE%E5%BA%93"><span class="toc-number">7.7.</span> <span class="toc-text">键值数据库</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%97%E6%97%8F%E6%95%B0%E6%8D%AE%E5%BA%93"><span class="toc-number">7.8.</span> <span class="toc-text">列族数据库</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%96%87%E6%A1%A3%E6%95%B0%E6%8D%AE%E5%BA%93"><span class="toc-number">7.9.</span> <span class="toc-text">文档数据库</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%BE%E6%95%B0%E6%8D%AE%E5%BA%93"><span class="toc-number">7.10.</span> <span class="toc-text">图数据库</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%8D%E5%90%8C%E7%B1%BB%E5%9E%8B%E6%95%B0%E6%8D%AE%E5%BA%93%E6%AF%94%E8%BE%83%E5%88%86%E6%9E%90"><span class="toc-number">7.11.</span> <span class="toc-text">不同类型数据库比较分析</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AC%AC8%E7%AB%A0-%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86%E6%8A%80%E6%9C%AF"><span class="toc-number">8.</span> <span class="toc-text">第8章 大数据处理技术</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9F%BA%E4%BA%8E%E5%86%85%E5%AD%98%E7%9A%84%E5%88%86%E5%B8%83%E5%BC%8F%E8%AE%A1%E7%AE%97%E6%A1%86%E6%9E%B6Spark"><span class="toc-number">8.1.</span> <span class="toc-text">基于内存的分布式计算框架Spark</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%89%B9%E7%82%B9"><span class="toc-number">8.1.1.</span> <span class="toc-text">特点</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Scala%E7%AE%80%E4%BB%8B"><span class="toc-number">8.2.</span> <span class="toc-text">Scala简介</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86%E5%8C%85%E6%8B%AC%E4%B8%89%E4%B8%AA%E7%B1%BB%E5%9E%8B%EF%BC%9A"><span class="toc-number">8.2.1.</span> <span class="toc-text">大数据处理包括三个类型：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#BDAS%E6%9E%B6%E6%9E%84"><span class="toc-number">8.2.2.</span> <span class="toc-text">BDAS架构</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Spark%E7%94%9F%E6%80%81%E7%B3%BB%E7%BB%9F%E7%BB%84%E4%BB%B6%E7%9A%84%E5%BA%94%E7%94%A8%E5%9C%BA%E6%99%AF"><span class="toc-number">8.2.2.1.</span> <span class="toc-text">Spark生态系统组件的应用场景</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Spark%E8%BF%90%E8%A1%8C%E6%9E%B6%E6%9E%84"><span class="toc-number">8.2.2.2.</span> <span class="toc-text">Spark运行架构</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#RDD"><span class="toc-number">8.2.3.</span> <span class="toc-text">RDD</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%BD%AC%E6%8D%A2%E6%93%8D%E4%BD%9C"><span class="toc-number">8.2.3.1.</span> <span class="toc-text">转换操作</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%A1%8C%E5%8A%A8%E6%93%8D%E4%BD%9C"><span class="toc-number">8.2.3.2.</span> <span class="toc-text">行动操作</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#RDD%E5%85%B8%E5%9E%8B%E7%9A%84%E6%89%A7%E8%A1%8C%E8%BF%87%E7%A8%8B%EF%BC%9A"><span class="toc-number">8.2.3.3.</span> <span class="toc-text">RDD典型的执行过程：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#RDD%E4%B9%8B%E9%97%B4%E7%9A%84%E4%BE%9D%E8%B5%96%E5%85%B3%E7%B3%BB"><span class="toc-number">8.2.3.4.</span> <span class="toc-text">RDD之间的依赖关系</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Spark%E8%BF%90%E8%A1%8C%E5%9F%BA%E6%9C%AC%E6%B5%81%E7%A8%8B%E5%9B%BE"><span class="toc-number">8.2.4.</span> <span class="toc-text">Spark运行基本流程图</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Spark%E6%9E%B6%E6%9E%84%E4%BC%98%E7%82%B9%EF%BC%9A"><span class="toc-number">8.2.5.</span> <span class="toc-text">Spark架构优点：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B5%81%E8%AE%A1%E7%AE%97%E6%A1%86%E6%9E%B6Storm"><span class="toc-number">8.3.</span> <span class="toc-text">流计算框架Storm</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B5%81%E8%AE%A1%E7%AE%97%EF%BC%9A"><span class="toc-number">8.3.1.</span> <span class="toc-text">流计算：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B5%81%E8%AE%A1%E7%AE%97%E5%BA%94%E7%94%A8%E5%9C%BA%E6%99%AF"><span class="toc-number">8.3.2.</span> <span class="toc-text">流计算应用场景</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Storm%E7%89%B9%E7%82%B9%EF%BC%9A"><span class="toc-number">8.3.3.</span> <span class="toc-text">Storm特点：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Storm%E4%B8%BB%E8%A6%81%E6%9C%AF%E8%AF%AD"><span class="toc-number">8.3.4.</span> <span class="toc-text">Storm主要术语</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Storm%E4%B8%AD%E7%9A%84Stream-Groupings%E6%9C%89%E5%A6%82%E4%B8%8B%E5%87%A0%E7%A7%8D%E6%96%B9%E5%BC%8F%EF%BC%9A"><span class="toc-number">8.3.5.</span> <span class="toc-text">Storm中的Stream Groupings有如下几种方式：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Storm%E6%A1%86%E6%9E%B6%E8%AE%BE%E8%AE%A1"><span class="toc-number">8.3.6.</span> <span class="toc-text">Storm框架设计</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Storm%E7%9A%84%E5%B7%A5%E4%BD%9C%E6%B5%81%E7%A8%8B%EF%BC%9A"><span class="toc-number">8.3.7.</span> <span class="toc-text">Storm的工作流程：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Spark-Streaming"><span class="toc-number">8.3.8.</span> <span class="toc-text">Spark Streaming</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Hive"><span class="toc-number">8.4.</span> <span class="toc-text">Hive</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Hive%E7%B3%BB%E7%BB%9F%E6%9E%B6%E6%9E%84"><span class="toc-number">8.4.1.</span> <span class="toc-text">Hive系统架构</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AC%AC9%E7%AB%A0-%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E6%96%B9%E6%B3%95"><span class="toc-number">9.</span> <span class="toc-text">第9章 数据分析方法</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E6%8C%96%E6%8E%98%E5%92%8C%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AE%80%E4%BB%8B"><span class="toc-number">9.1.</span> <span class="toc-text">数据挖掘和机器学习简介</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0"><span class="toc-number">9.1.1.</span> <span class="toc-text">机器学习</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E6%8C%96%E6%8E%98"><span class="toc-number">9.1.2.</span> <span class="toc-text">数据挖掘</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AE%97%E6%B3%95%E7%9A%84%E5%88%86%E7%B1%BB%EF%BC%9A"><span class="toc-number">9.1.3.</span> <span class="toc-text">机器学习算法的分类：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%B8%E5%9E%8B%E7%9A%84%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%92%8C%E6%95%B0%E6%8D%AE%E6%8C%96%E6%8E%98%E7%AE%97%E6%B3%95"><span class="toc-number">9.2.</span> <span class="toc-text">典型的机器学习和数据挖掘算法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%86%E7%B1%BB"><span class="toc-number">9.2.1.</span> <span class="toc-text">分类</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%86%B3%E7%AD%96%E6%A0%91-ID3"><span class="toc-number">9.2.1.1.</span> <span class="toc-text">决策树-ID3</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%81%9A%E7%B1%BB"><span class="toc-number">9.2.2.</span> <span class="toc-text">聚类</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%BA%94%E7%94%A8%E5%9C%BA%E6%99%AF"><span class="toc-number">9.2.2.1.</span> <span class="toc-text">应用场景</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF%E5%A5%BD%E7%9A%84%E8%81%9A%E7%B1%BB%E6%96%B9%E6%B3%95"><span class="toc-number">9.2.2.2.</span> <span class="toc-text">什么是好的聚类方法?</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%81%9A%E7%B1%BB%E7%AE%97%E6%B3%95%E7%B1%BB%E5%9E%8B"><span class="toc-number">9.2.2.3.</span> <span class="toc-text">聚类算法类型</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%88%92%E5%88%86%E8%81%9A%E7%B1%BB%E6%96%B9%E6%B3%95"><span class="toc-number">9.2.2.4.</span> <span class="toc-text">划分聚类方法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B1%82%E6%AC%A1%E8%81%9A%E7%B1%BB%E6%96%B9%E6%B3%95"><span class="toc-number">9.2.2.5.</span> <span class="toc-text">层次聚类方法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AF%86%E5%BA%A6%E8%81%9A%E7%B1%BB%E6%96%B9%E6%B3%95"><span class="toc-number">9.2.2.6.</span> <span class="toc-text">密度聚类方法</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#DBSCAN"><span class="toc-number">9.2.2.6.1.</span> <span class="toc-text">DBSCAN</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#%E5%8E%9F%E7%90%86"><span class="toc-number">9.2.2.6.1.1.</span> <span class="toc-text">原理</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#%E4%BC%98%E7%82%B9%EF%BC%9A"><span class="toc-number">9.2.2.6.1.2.</span> <span class="toc-text">优点：</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#%E7%BC%BA%E7%82%B9"><span class="toc-number">9.2.2.6.1.3.</span> <span class="toc-text">缺点</span></a></li></ol></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BD%91%E6%A0%BC%E8%81%9A%E7%B1%BB%E6%96%B9%E6%B3%95"><span class="toc-number">9.2.2.7.</span> <span class="toc-text">网格聚类方法</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9B%9E%E5%BD%92%E5%88%86%E6%9E%90"><span class="toc-number">9.2.3.</span> <span class="toc-text">回归分析</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%80%E5%85%83%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92"><span class="toc-number">9.2.3.1.</span> <span class="toc-text">一元线性回归</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Logistic-Regression%E9%80%BB%E8%BE%91%E5%9B%9E%E5%BD%92"><span class="toc-number">9.2.3.2.</span> <span class="toc-text">Logistic Regression逻辑回归</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E9%80%BB%E8%BE%91%E5%9B%9E%E5%BD%92%E4%BC%98%E7%82%B9"><span class="toc-number">9.2.3.2.1.</span> <span class="toc-text">逻辑回归优点</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%BC%BA%E7%82%B9%EF%BC%9A"><span class="toc-number">9.2.3.2.2.</span> <span class="toc-text">缺点：</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%B3%E8%81%94%E8%A7%84%E5%88%99Association-Rules%EF%BC%9A"><span class="toc-number">9.2.4.</span> <span class="toc-text">关联规则Association Rules：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C"><span class="toc-number">9.2.5.</span> <span class="toc-text">神经网络</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%A5%9E%E7%BB%8F%E5%85%83%E6%A8%A1%E5%9E%8B%E7%90%86%E8%A7%A3%EF%BC%9A"><span class="toc-number">9.2.5.1.</span> <span class="toc-text">神经元模型理解：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%84%9F%E7%9F%A5%E5%99%A8%E6%A8%A1%E5%9E%8B%E7%BB%93%E6%9E%84"><span class="toc-number">9.2.5.2.</span> <span class="toc-text">感知器模型结构</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#BP%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C"><span class="toc-number">9.2.5.3.</span> <span class="toc-text">BP神经网络</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BB%8D%E7%84%B6%E5%AD%98%E5%9C%A8%E8%8B%A5%E5%B9%B2%E7%9A%84%E9%97%AE%E9%A2%98%EF%BC%9A"><span class="toc-number">9.2.5.4.</span> <span class="toc-text">仍然存在若干的问题：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%A4%9A%E5%B1%82%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%EF%BC%88%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%EF%BC%89"><span class="toc-number">9.2.5.5.</span> <span class="toc-text">多层神经网络（深度学习）</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%A4%9A%E5%B1%82%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E4%B8%AD%E7%9A%84%E5%B1%82%E6%95%B0%E5%A2%9E%E5%8A%A0%E5%BE%88%E5%A4%9A%E6%9C%89%E4%BB%80%E4%B9%88%E5%A5%BD%E5%A4%84%EF%BC%9F"><span class="toc-number">9.2.5.5.1.</span> <span class="toc-text">多层神经网络中的层数增加很多有什么好处？</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%A4%9A%E5%B1%82%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E8%AE%AD%E7%BB%83%EF%BC%9A"><span class="toc-number">9.2.5.5.2.</span> <span class="toc-text">多层神经网络训练：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E8%AE%AD%E7%BB%83%E7%9A%84%E4%B8%BB%E9%A2%98%E4%BB%8D%E7%84%B6%E6%98%AF%E4%BC%98%E5%8C%96%E5%92%8C%E6%B3%9B%E5%8C%96%E3%80%82"><span class="toc-number">9.2.5.5.3.</span> <span class="toc-text">训练的主题仍然是优化和泛化。</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#RNN%E9%80%92%E5%BD%92%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C"><span class="toc-number">9.2.5.6.</span> <span class="toc-text">RNN递归神经网络</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E5%B7%A5%E5%85%B7"><span class="toc-number">9.2.6.</span> <span class="toc-text">数据分析工具</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AC%AC10%E7%AB%A0-%E6%95%B0%E6%8D%AE%E5%8F%AF%E8%A7%86%E5%8C%96"><span class="toc-number">10.</span> <span class="toc-text">第10章 数据可视化</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#10-1-%E6%95%B0%E6%8D%AE%E5%8F%AF%E8%A7%86%E5%8C%96%E6%A6%82%E8%BF%B0"><span class="toc-number">10.1.</span> <span class="toc-text">10.1 数据可视化概述</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%8F%AF%E8%A7%86%E5%8C%96%E6%96%B9%E6%B3%95"><span class="toc-number">10.2.</span> <span class="toc-text">大数据可视化方法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%87%E6%9C%AC%E5%8F%AF%E8%A7%86%E5%8C%96"><span class="toc-number">10.2.1.</span> <span class="toc-text">文本可视化</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%96%87%E6%9C%AC%E5%8F%AF%E8%A7%86%E5%8C%96%E7%B1%BB%E5%9E%8B"><span class="toc-number">10.2.1.1.</span> <span class="toc-text">文本可视化类型</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BD%91%E7%BB%9C%E6%95%B0%E6%8D%AE%E5%8F%AF%E8%A7%86%E5%8C%96"><span class="toc-number">10.2.1.2.</span> <span class="toc-text">网络数据可视化</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%97%B6%E7%A9%BA%E6%95%B0%E6%8D%AE%E5%8F%AF%E8%A7%86%E5%8C%96"><span class="toc-number">10.2.1.3.</span> <span class="toc-text">时空数据可视化</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%A4%9A%E7%BB%B4%E6%95%B0%E6%8D%AE%E5%8F%AF%E8%A7%86%E5%8C%96"><span class="toc-number">10.2.1.4.</span> <span class="toc-text">多维数据可视化</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%AF%E8%A7%86%E5%8C%96%E5%B7%A5%E5%85%B7"><span class="toc-number">10.3.</span> <span class="toc-text">可视化工具</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BF%A1%E6%81%AF%E5%9B%BE%E8%A1%A8%E5%B7%A5%E5%85%B7"><span class="toc-number">10.3.1.</span> <span class="toc-text">信息图表工具</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9C%B0%E5%9B%BE%E5%B7%A5%E5%85%B7"><span class="toc-number">10.3.2.</span> <span class="toc-text">地图工具</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%97%B6%E9%97%B4%E7%BA%BF%E5%B7%A5%E5%85%B7"><span class="toc-number">10.3.3.</span> <span class="toc-text">时间线工具</span></a></li></ol></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2022/11/18/%E6%97%A5%E8%AE%B0/" title="日记"><img src="https://fastly.jsdelivr.net/gh/Leevan001/pictureBed@main/utools/1668325981308812465B3FBC4B5003BF35EA940C3FCBE.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="日记"/></a><div class="content"><a class="title" href="/2022/11/18/%E6%97%A5%E8%AE%B0/" title="日记">日记</a><time datetime="2022-11-18T15:01:27.000Z" title="发表于 2022-11-18 23:01:27">2022-11-18</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/11/16/Web%E5%BC%80%E5%8F%91%E6%8A%80%E6%9C%AF%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/" title="Web开发技术复习整理"><img src="https://fastly.jsdelivr.net/gh/Leevan001/pictureBed@main/utools/1668274206122R-C.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Web开发技术复习整理"/></a><div class="content"><a class="title" href="/2022/11/16/Web%E5%BC%80%E5%8F%91%E6%8A%80%E6%9C%AF%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/" title="Web开发技术复习整理">Web开发技术复习整理</a><time datetime="2022-11-16T14:01:49.000Z" title="发表于 2022-11-16 22:01:49">2022-11-16</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/11/16/%E8%BD%AF%E4%BB%B6%E9%9C%80%E6%B1%82%E5%88%86%E6%9E%90/" title="软件需求分析"><img src="https://fastly.jsdelivr.net/gh/Leevan001/pictureBed@main/utools/1668325987314FA3E3F866C40A665F46EF56BBD227395.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="软件需求分析"/></a><div class="content"><a class="title" href="/2022/11/16/%E8%BD%AF%E4%BB%B6%E9%9C%80%E6%B1%82%E5%88%86%E6%9E%90/" title="软件需求分析">软件需求分析</a><time datetime="2022-11-16T14:00:45.000Z" title="发表于 2022-11-16 22:00:45">2022-11-16</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/11/13/hadoop%E7%9A%84%E4%B8%80%E4%BA%9B%E5%9F%BA%E7%A1%80%E6%93%8D%E4%BD%9C/" title="hadoop的一些基础操作"><img src="https://fastly.jsdelivr.net/gh/Leevan001/pictureBed@main/utools/1668274206122R-C.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="hadoop的一些基础操作"/></a><div class="content"><a class="title" href="/2022/11/13/hadoop%E7%9A%84%E4%B8%80%E4%BA%9B%E5%9F%BA%E7%A1%80%E6%93%8D%E4%BD%9C/" title="hadoop的一些基础操作">hadoop的一些基础操作</a><time datetime="2022-11-13T14:37:52.000Z" title="发表于 2022-11-13 22:37:52">2022-11-13</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/11/13/%E6%95%B0%E6%8D%AE%E7%A7%91%E5%AD%A6%E5%AF%BC%E8%AE%BA/" title="数据科学导论"><img src="https://fastly.jsdelivr.net/gh/Leevan001/pictureBed@main/utools/166832600130917317FFACC42E4B5729AE3767B0311D0.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="数据科学导论"/></a><div class="content"><a class="title" href="/2022/11/13/%E6%95%B0%E6%8D%AE%E7%A7%91%E5%AD%A6%E5%AF%BC%E8%AE%BA/" title="数据科学导论">数据科学导论</a><time datetime="2022-11-13T13:48:30.000Z" title="发表于 2022-11-13 21:48:30">2022-11-13</time></div></div></div></div></div></div></main><footer id="footer" style="background-image: url('https://fastly.jsdelivr.net/gh/Leevan001/pictureBed@main/utools/16683306913121668330690512.png')"><div id="footer-wrap"><div class="copyright">&copy;2022 By 如风</div><div class="footer_custom_text">广阔天地，大有作为</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><div class="js-pjax"></div><script id="click-heart" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/click-heart.min.js" async="async" mobile="false"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>

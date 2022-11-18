@@ -1,0 +1,605 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>Web开发技术复习整理 | 早早起床，拥抱太阳</title><meta name="author" content="如风"><meta name="copyright" content="如风"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="[toc] Web前端src和href的区别href标识超文本引用，用在link和a等元素上，href是引用和页面关联，是在当前元素和引用资源之间建立联系 src表示引用资源，表示替换当前元素，用在img，script，iframe上，src是页面内容不可缺少的一部分。 src是source的缩写，是指向外部资源的位置，指向的内部会迁入到文档中当前标签所在的位置；在请求src资源时会将其指向的资源">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Web开发技术复习整理">
+<meta property="og:url" content="http://example.com/2022/11/16/Web%E5%BC%80%E5%8F%91%E6%8A%80%E6%9C%AF%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/index.html">
+<meta property="og:site_name" content="早早起床，拥抱太阳">
+<meta property="og:description" content="[toc] Web前端src和href的区别href标识超文本引用，用在link和a等元素上，href是引用和页面关联，是在当前元素和引用资源之间建立联系 src表示引用资源，表示替换当前元素，用在img，script，iframe上，src是页面内容不可缺少的一部分。 src是source的缩写，是指向外部资源的位置，指向的内部会迁入到文档中当前标签所在的位置；在请求src资源时会将其指向的资源">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://fastly.jsdelivr.net/gh/Leevan001/pictureBed@main/utools/1668274206122R-C.jpg">
+<meta property="article:published_time" content="2022-11-16T14:01:49.000Z">
+<meta property="article:modified_time" content="2022-11-17T03:06:59.004Z">
+<meta property="article:author" content="如风">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://fastly.jsdelivr.net/gh/Leevan001/pictureBed@main/utools/1668274206122R-C.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://example.com/2022/11/16/Web%E5%BC%80%E5%8F%91%E6%8A%80%E6%9C%AF%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":200},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: true,
+    post: true
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"limitCount":50,"languages":{"author":"作者: 如风","link":"链接: ","source":"来源: 早早起床，拥抱太阳","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"}},
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'Web开发技术复习整理',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2022-11-17 11:06:59'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.3.0"></head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://fastly.jsdelivr.net/gh/Leevan001/pictureBed@main/utools/1668273103133D8802D069515E0A42BC91FDE752B8A5C.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">5</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">2</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa fa-heartbeat"></i><span> 清单</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/Gallery/"><i class="fa-fw fas fa-images"></i><span> 照片</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://fastly.jsdelivr.net/gh/Leevan001/pictureBed@main/utools/1668274206122R-C.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">早早起床，拥抱太阳</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa fa-heartbeat"></i><span> 清单</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/Gallery/"><i class="fa-fw fas fa-images"></i><span> 照片</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">Web开发技术复习整理</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2022-11-16T14:01:49.000Z" title="发表于 2022-11-16 22:01:49">2022-11-16</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2022-11-17T03:06:59.004Z" title="更新于 2022-11-17 11:06:59">2022-11-17</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">10.9k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>36分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="Web开发技术复习整理"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><p>[toc]</p>
+<h1 id="Web前端"><a href="#Web前端" class="headerlink" title="Web前端"></a>Web前端</h1><h2 id="src和href的区别"><a href="#src和href的区别" class="headerlink" title="src和href的区别"></a>src和href的区别</h2><p>href标识超文本引用，用在link和a等元素上，href是引用和页面关联，是在当前元素和引用资源之间建立联系</p>
+<p>src表示引用资源，表示替换当前元素，用在img，script，iframe上，src是页面内容不可缺少的一部分。</p>
+<p>src是source的缩写，是指向外部资源的位置，指向的内部会迁入到文档中当前标签所在的位置；在请求src资源时会将其指向的资源下载并应用到当前文档中，例如js脚本，img图片和frame等元素。</p>
+<script src="js.js"></script>当浏览器解析到这一句的时候会暂停其他资源的下载和处理，直至将该资源加载，编译，执行完毕，图片和框架等元素也是如此，类似于该元素所指向的资源嵌套如当前标签内，这也是为什么要把js饭再底部而不是头部。
+
+<link href="common.css" rel="stylesheet"/>当浏览器解析到这一句的时候会识别该文档为css文件，会下载并且不会停止对当前文档的处理，这也是为什么建议使用link方式来加载css而不是使用@import。
+
+<h2 id="HTML-5-lt-DOCTYPE-gt-标签"><a href="#HTML-5-lt-DOCTYPE-gt-标签" class="headerlink" title="HTML 5 &lt;!DOCTYPE&gt; 标签"></a>HTML 5 &lt;!DOCTYPE&gt; 标签</h2><!DOCTYPE><p> 声明必须位于 HTML5 文档中的第一行，也就是位于 <html> 标签之前。该标签告知浏览器文档所使用的 HTML 规范。</p>
+<p>doctype 声明不属于 HTML 标签；tag; 它是一条指令，告诉浏览器编写页面所用的标记的版本。</p>
+<p>在所有 HTML 文档中规定 doctype 是非常重要的，这样浏览器就能了解预期的文档类型。</p>
+<p>注释：&lt;!DOCTYPE&gt; 标签没有结束标签！</p>
+<p>提示：&lt;!DOCTYPE&gt; 对大小写不敏感。</p>
+<h2 id="粗体"><a href="#粗体" class="headerlink" title="粗体"></a>粗体</h2><p>产生粗体字的HTML标签为<b></p>
+<h2 id="html实体符号编码解析"><a href="#html实体符号编码解析" class="headerlink" title="html实体符号编码解析"></a>html实体符号编码解析</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">!	　　　　&amp;excl;	&amp;#33;</span><br><span class="line">&quot;	　　　　&amp;quot;	&amp;#34;</span><br><span class="line">#	　　　　&amp;num;	&amp;#35;</span><br><span class="line">$	　　　　&amp;dollar;	&amp;#36;</span><br><span class="line">%	　　　　&amp;percnt;	&amp;#37;</span><br><span class="line">&amp;	　　　　&amp;amp;	&amp;#38;</span><br><span class="line">&#x27;	　　　　&amp;apos;	&amp;#39;</span><br><span class="line">(	　　　　&amp;lpar;	&amp;#40;</span><br><span class="line">)	　　　　&amp;rpar;	&amp;#41;</span><br><span class="line">*	　　　　&amp;ast;	&amp;#42;</span><br><span class="line">+	　　　　&amp;plus;	&amp;#43;</span><br><span class="line">,	　　　　&amp;comma; 	&amp;#44;</span><br><span class="line">-	　　　　&amp;hyphen; 	&amp;#45;</span><br><span class="line">.	　　　　&amp;period;	&amp;#46;</span><br><span class="line">/	　　　　&amp;sol; 	&amp;#47;</span><br><span class="line">:	　　　　&amp;colon;	&amp;#58;</span><br><span class="line">;	　　　　&amp;semi;	&amp;#59;</span><br><span class="line">&lt;	　　　　&amp;lt;	&amp;#60;</span><br><span class="line">=	　　　　&amp;equals;	&amp;#61;</span><br><span class="line">&gt;	　　　　&amp;gt;	&amp;#62;</span><br><span class="line">?	　　　　&amp;quest;	&amp;#63;</span><br><span class="line">@	　　　　&amp;commat; 	&amp;#64;</span><br><span class="line">[	　　　　&amp;lsqb; 	&amp;#91;</span><br><span class="line">\	　　　　&amp;bsol; 	&amp;#92;</span><br><span class="line">]	　　　　&amp;rsqb;	&amp;#93;</span><br><span class="line">^	　　　　&amp;circ;	&amp;#94;</span><br><span class="line">_	　　　　&amp;lowbar;	&amp;#95;</span><br><span class="line">`	　　　　&amp;grave;	&amp;#96;</span><br><span class="line">&#123;	　　　　&amp;lcub;	&amp;#123;</span><br><span class="line">|	　　　　&amp;verbar;	&amp;#124;</span><br><span class="line">&#125;	　　　　&amp;rcub;	&amp;#125;</span><br><span class="line">~	　　　　&amp;tilde;	&amp;#126;</span><br></pre></td></tr></table></figure>
+
+<h2 id="书签"><a href="#书签" class="headerlink" title="书签"></a>书签</h2><p>在HTML中定义一个书签应该使用</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;a href=&quot;#C4&quot;&gt;Jump to Chapter 4&lt;/a&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="html创建电子邮件链接"><a href="#html创建电子邮件链接" class="headerlink" title="html创建电子邮件链接"></a>html创建电子邮件链接</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;a href=&quot;mailto:xxx@yyy&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="网页中一般使用的图片格式"><a href="#网页中一般使用的图片格式" class="headerlink" title="网页中一般使用的图片格式"></a>网页中一般使用的图片格式</h2><p>常用的图片格式有JPG、GIF、PNG。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line">一、JPEG</span><br><span class="line"></span><br><span class="line">适用于：照片和复杂图像使用</span><br><span class="line"></span><br><span class="line">特点： 1.适合连续色调图像，如照片。</span><br><span class="line"></span><br><span class="line">       2.可以表示包含多达1600万种不同颜色的图像。</span><br><span class="line"></span><br><span class="line">       3.在缩小文件大小时会丢掉图像信息，是一种“有损”格式。</span><br><span class="line"></span><br><span class="line">       4.不支持透明度。</span><br><span class="line"></span><br><span class="line">       5.文件比较小，以便Web页面更高效的显示。</span><br><span class="line"></span><br><span class="line">       6.不支持动画。</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">二、PNG</span><br><span class="line"></span><br><span class="line">适用于：单色图像和线条构成的图像（如logo，剪贴画和图像中的小文本）</span><br><span class="line"></span><br><span class="line">特点：1.可以表示上百万种不同颜色的图像、PNG有3种：PNG-8、PNG-24、PNG-32.取决于需要表示多少种颜色。</span><br><span class="line"></span><br><span class="line">           2.会压缩文件来缩小文件大小，不过不会丢掉信息。是一种“无损”格式。</span><br><span class="line"></span><br><span class="line">    3.允许将颜色设置为“透明”，使图像下面的东西可以显示出来。</span><br><span class="line"></span><br><span class="line">         4.与相应的JPEG文件相比，PNG文件更大一些，不过取决的与使用的颜色数，可能比相应的GIF文件小，也可能更大。</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">三、GIF</span><br><span class="line"></span><br><span class="line">适用于：类似于PNG,GIF最适合单色图像和线条构成的图像（如logo，剪贴画和图像中的小文本）</span><br><span class="line"></span><br><span class="line">特点：  1.GIF可以表示最多256中不同颜色的图像。</span><br><span class="line"></span><br><span class="line">          2.GIF也是一种“无损”格式。</span><br><span class="line"></span><br><span class="line">      3.GIF也支持透明度，不过只允许一种颜色设置为“透明”。</span><br><span class="line"></span><br><span class="line">      4.GIF往往比相应的JPEG文件大。</span><br><span class="line"></span><br><span class="line">      5.支持动画。</span><br></pre></td></tr></table></figure>
+
+<h2 id="用于播放html5视频文件的标签"><a href="#用于播放html5视频文件的标签" class="headerlink" title="用于播放html5视频文件的标签"></a>用于播放html5视频文件的标签</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;video&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="＜audio＞标签支持的音频格式"><a href="#＜audio＞标签支持的音频格式" class="headerlink" title="＜audio＞标签支持的音频格式"></a>＜audio＞标签支持的音频格式</h2><p>wav, mp3, ogg, acc, webm</p>
+<h2 id="CSS三种样式表及其使用（内部样式表，行内样式表，外部样式表）"><a href="#CSS三种样式表及其使用（内部样式表，行内样式表，外部样式表）" class="headerlink" title="CSS三种样式表及其使用（内部样式表，行内样式表，外部样式表）"></a>CSS三种样式表及其使用（内部样式表，行内样式表，外部样式表）</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">内部样式表是将CSS代码写在HTML文档的head标签中，并且用style标签定义</span><br><span class="line"></span><br><span class="line">&lt;head&gt;</span><br><span class="line">  &lt;style type=&quot;text/css&quot;&gt;</span><br><span class="line">      选择器&#123;属性1:属性值1;属性2:属性值2;属性3:属性值3;&#125;</span><br><span class="line">  &lt;/style&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line"></span><br><span class="line"> （1）style标签一般位于head标签中title标签之后，也可以把他放在HTML文档的任何地方.</span><br><span class="line"> （2）type=&quot;text/CSS&quot;在HTML中可以省略.</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">内部样式表是将CSS代码写在HTML文档的head标签中，并且用style标签定义</span><br><span class="line"></span><br><span class="line">&lt;head&gt;</span><br><span class="line">  &lt;style type=&quot;text/css&quot;&gt;</span><br><span class="line">      选择器&#123;属性1:属性值1;属性2:属性值2;属性3:属性值3;&#125;</span><br><span class="line">  &lt;/style&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line"></span><br><span class="line"> （1）style标签一般位于head标签中title标签之后，也可以把他放在HTML文档的任何地方.</span><br><span class="line"> （2）type=&quot;text/CSS&quot;在HTML中可以省略.</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">外部样式表（外链式）</span><br><span class="line">链入式是将所有的样式放在一个或多个以.CSS为扩展名的外部样式表文件中，通过link标签将外部样式表文件链接到HTML文档中</span><br><span class="line"></span><br><span class="line">&lt;head&gt;</span><br><span class="line">  &lt;link href=&quot;CSS文件的路径&quot;  rel=&quot;stylesheet&quot; /&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line"></span><br><span class="line">注意：link是单标签</span><br><span class="line"></span><br><span class="line">link标签需要放在head头部标签中，并且必须指定link标签的三个属性</span><br><span class="line"></span><br><span class="line">（1）href:定义所链接外部样式表文件的URL，可以是相对路径，也可以是绝对路径</span><br><span class="line">（2）type:定义所链接文档的类型，在这里需要指定为&quot;text/css&quot;，表示链接的外部文件为CSS样式表。</span><br><span class="line">（3）rel:定义当前文档与被链接文档之间的关系，在这里需要指定为“stylesheet”,表示被链接的文档是一个样式表文件。</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="零碎知识点"><a href="#零碎知识点" class="headerlink" title="零碎知识点"></a>零碎知识点</h2><p>Web客户端在Internet上被称为浏览器，它一种用来浏览Web页面的软件</p>
+<p>主页( Home Page)就是网站默认的首页。主页默认的文件名通常为 index.html或default.html</p>
+<p>css指的是Cascading Style Sheets</p>
+<p>结构与样式分离依赖于css</p>
+<p>使用内部样式表示方法定义样式应该使用的标签是style</p>
+<p>在html文档中，应用外部样式表的正确位置是<head>部分</p>
+<p>链接到外部样式表使用的标签是link</p>
+<p>当编写css时，不同属性应使用；分隔</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">p &#123;</span><br><span class="line">  color: red;</span><br><span class="line">  text-align: center;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>位于<code> &lt;style&gt;</code> 元素内的 CSS 注释，以 &#x2F;* 开始，以 *&#x2F; 结束：</p>
+<p>在css中设置文本属性text-indent 主要设置的是首行缩进</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">将段落的第一行缩进 50 像素：</span><br><span class="line">p</span><br><span class="line">  &#123;</span><br><span class="line">  text-indent:50px;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+
+<p>字体粗细：font-weight</p>
+<p>overflow:hidden 容器里的内容超出容器部分隐藏</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">文本阴影 text-shadow(参数1，参数2，参数3)</span><br><span class="line">参数1：阴影距文字左右距离</span><br><span class="line">参数2：阴影距文字上下距离</span><br><span class="line">参数3：阴影的模糊程度</span><br></pre></td></tr></table></figure>
+
+<p>设置超级链接没有下划线</p>
+<p>a{<br>text-decoration:none<br>}</p>
+<h2 id="CSS尺寸设置的单位"><a href="#CSS尺寸设置的单位" class="headerlink" title="CSS尺寸设置的单位"></a>CSS尺寸设置的单位</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">px：pixel像素的缩写，绝对长度单位，它的大小取决于屏幕的分辨率，是开发网页中常常使用的单位。</span><br><span class="line"></span><br><span class="line">em：相对长度单位，在 `font-size` 中使用是相对于父元素的字体大小，在其他属性中使用是相对于自身的字体大小，如 width。如当前元素的字体尺寸未设置，由于字体大小可继承的原因，可逐级向上查找，最终找不到则相对于浏览器默认字体大小。</span><br><span class="line"></span><br><span class="line">rem：相对长度单位，相对于根元素的字体大小，根元素字体大小未设置，使用浏览器默认字体大小。</span><br><span class="line"></span><br><span class="line">vw：相对长度单位，相对于视窗宽度的1%。</span><br><span class="line"></span><br><span class="line">vh：相对长度单位，相对于视窗高度的1%。</span><br></pre></td></tr></table></figure>
+
+<h2 id="行内元素和块级元素"><a href="#行内元素和块级元素" class="headerlink" title="行内元素和块级元素"></a>行内元素和块级元素</h2><p>1、行内元素：a img span b strong input select section </p>
+<p>b, big, i, small, tt<br>abbr, acronym, cite, code, dfn, em, kbd, strong, samp, var<br>a, bdo, br, img, map, object, q, script, span, sub, sup<br>button, input, label, select, textarea</p>
+<p>2、块级元素：div p table ul lo li h1-h6 dl dt </p>
+<p>3、空元素：br hr img input link meta</p>
+<p>区别：</p>
+<p>1、块级元素会独占一行 默认的宽度占满父级元素，行内元素不会换行</p>
+<p>2、行内元素的width height 无效</p>
+<p>3、块级元素可以设置margin和padding属性，行内元素padding-left、padding-right，margin-left，margin-right（水平方向），有边距效果，padding-top，padding-bottom，margin-top，margin-bototm，（垂直方向）没有边距效果，</p>
+<p>本质（浏览器将块级元素的dispaly属性默认为block，行内元素属性默认为inline，因此行内元素与块级元素的切换可以通过修改display属性实现）</p>
+<h2 id="在页面上引用脚本文件js-js"><a href="#在页面上引用脚本文件js-js" class="headerlink" title="在页面上引用脚本文件js.js"></a>在页面上引用脚本文件js.js</h2><script src="js.js"  type="text/javascript"></script>
+
+
+
+<h2 id="jQuery"><a href="#jQuery" class="headerlink" title="jQuery"></a>jQuery</h2><p>方法get()的作用使用 http get 请求从服务器接口加载数据</p>
+<p>fadeIn()方法可以逐渐改变被选元素的不透明度，从隐藏到可见（褪色效果）</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">以下P标签经过Jquery以下操作后的标签将变成</span><br><span class="line">&lt;p&gt;你好&lt;/p&gt;</span><br><span class="line">$(&#x27;p&#x27;).append(&quot;&lt;b&gt;西南石油大学&lt;/b&gt;&quot;);</span><br><span class="line">&lt;p&gt;你好&lt;b&gt;西南石油大学&lt;/b&gt;&lt;/p&gt;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">使用Jquery给按钮添加点击事件的代码正确的是</span><br><span class="line">&lt;input id=&#x27;btnSure&#x27; type=&#x27;button&#x27;   value=&#x27;确定&#x27;&gt;</span><br><span class="line">$(&#x27;#btnSure&#x27;).click(function()&#123;</span><br><span class="line"> &#125;)</span><br></pre></td></tr></table></figure>
+
+<h2 id="javaScript"><a href="#javaScript" class="headerlink" title="javaScript"></a>javaScript</h2><p>javaScript是运行在<strong>客户端</strong>的脚本语言。</p>
+<p>在JavaScript中，把字符串”123”转换为整型值123的正确方法是</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var str=&quot;123&quot;;</span><br><span class="line">var num=parseInt(str);</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">在<span class="title class_">JavasScript</span>中，若要实现复选框全选功能，则在横线处填写的代码应为<span class="variable language_">document</span>.<span class="title function_">getElementsByName</span>(<span class="string">&quot;chk&quot;</span>);</span><br><span class="line"></span><br><span class="line">&lt;script type=&quot;text/javascript&quot;&gt;</span><br><span class="line"></span><br><span class="line">  function allChecked( )&#123;</span><br><span class="line"></span><br><span class="line">         var allck=__________</span><br><span class="line"></span><br><span class="line">         for(var i = 0 ;i&lt;allck.length;i++)&#123;</span><br><span class="line"></span><br><span class="line">                   allck[i].checked=true;</span><br><span class="line"></span><br><span class="line">          &#125;</span><br><span class="line"></span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">&lt;/script&gt;</span><br><span class="line"></span><br><span class="line">&lt;body&gt;</span><br><span class="line"></span><br><span class="line">&lt;p&gt;&lt;input name=&quot;chk&quot; type=&quot;checkbox&quot; value=&quot;滑雪&quot;&gt;滑雪</span><br><span class="line"></span><br><span class="line">&lt;p&gt;&lt;input name=&quot;chk&quot; type=&quot;checkbox&quot; value=&quot;游泳&quot;&gt;游泳</span><br><span class="line"></span><br><span class="line">&lt;p&gt;&lt;input name=&quot;chk&quot; type=&quot;checkbox&quot; value=&quot;爬山&quot;&gt;爬山</span><br><span class="line"></span><br><span class="line">&lt;p&gt;&lt;input name=&quot;btn&quot; type=&quot;button&quot; onClick=&quot;allChecked( )&quot; value=&quot;选择&quot;&gt;</span><br></pre></td></tr></table></figure>
+
+<p>getElementsByTagName() 方法可返回带有指定<strong>标签名</strong>的对象的集合。(比如input)</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">javascript获取div中的文本信息<span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&quot;one&quot;</span>).<span class="property">innerHTML</span>;</span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;one&quot;</span>&gt;</span>西南石油大学<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="variable language_">document</span>).<span class="title function_">ready</span>(<span class="keyword">function</span>(<span class="params"></span>)&#123;		</span><br><span class="line">&#125;)</span><br><span class="line">html元素加载完成后自动执行，主要用于一些初始化工作</span><br></pre></td></tr></table></figure>
+
+<p>JavaScript是支持对象的编程语言</p>
+<h3 id="JavaScript-关键字"><a href="#JavaScript-关键字" class="headerlink" title="JavaScript 关键字"></a>JavaScript 关键字</h3><table>
+<thead>
+<tr>
+<th align="left">break<br/>case<br/>catch<br/>continue<br/>default<br/>delete<br/>do<br/>else<br/>finally<br/>void<br/>while<br/>with</th>
+<th align="left">for<br/>function<br/>if<br/>in<br/>instanceofnew<br/>return<br/>switch<br/>this<br/>throw<br/>try<br/>typeof<br/>var</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+</tbody></table>
+<h2 id="XML"><a href="#XML" class="headerlink" title="XML"></a>XML</h2><p>XML（Extensible Markup Language），可扩展标记语言。是一种用于标记电子文件使其具有结构性的标记语言。</p>
+<h3 id="XML特点"><a href="#XML特点" class="headerlink" title="XML特点"></a><strong>XML特点</strong></h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">1）XML可以从HTML中分离数据。即能够在HTML文件之外将数据存储在XML文档中，这样可以使开发者集中精力使用HTML做好数据的显示和布局，并确保数据改动时不会导致HTML文件也需要改动，从而方便维护页面。XML也能够将数据以“数据岛”的形式存储在HTML页面中，开发者依然可以把精力集中到使用HTML格式化和显示数据上。</span><br><span class="line">（2）XML可用于交换数据。基于XML可以在不兼容的系统之间交换数据，计算机系统和数据库系统所存储的数据有多种形式，对于开发者来说，最耗时间的工作就是在遍布网络的系统之间交换数据。把数据转换为XML格式存储将大大减少交换数据时的复杂性，还可以使这些数据能被不同的程序读取。</span><br><span class="line">（3）XML可应用于B2B中。例如在网络中交换金融信息， 目前XML正成为遍布网络的商业系统之间交换信息所使用的主要语言，许多与B2B有关的完全基于XML的应用程序正在开发中。</span><br><span class="line">（4）利用XML可以共享数据。XML数据以纯文本格式存储，这使得XML更易读、更便于记录、更便于调试，使不同系统、不同程序之间的数据共享变得更加简单。</span><br><span class="line">（5）XML可以充分利用数据。XML是与软件、硬件和应用程序无关的，数据可以被更多的用户、设备所利用，而不仅仅限于基于HTML标准的浏览器。其他客户端和应用程序可以把XML文档作为数据源来处理，就像操作数据库一样，XML的数据可以被各种各样的“阅读器”处理。</span><br><span class="line">（6）XML可以用于创建新的语言。比如，WAP和WML语言都是由XML发展来的。WML(Wireless Markup Language，无线标记语言)是用于标识运行于手持设备上（比如手机）的Intemet程序的工具，它就采用了XML的标准。</span><br></pre></td></tr></table></figure>
+
+<p>XML使用一个简单而又灵活的标准格式，为基于Web的应用提供了一个描述数据和交换数据的有效手段。但是，XML并非是用来取代HTML的。HTML着重如何描述将文件显示在浏览器中，而XML与SGML相近，它着重描述如何将数据以结构化方式表示。</p>
+<p>XML与HTML的区别：</p>
+<ol>
+<li>可扩展性方面：HTML不允许用户自行定义他们自己的标识或属性，而在XML中，用户能够根据需要自行定义新的标识及属性名，以便更好地从语义上修饰数据。</li>
+<li>结构性方面：HTML不支持深层的结构描述，XML的文件结构嵌套可以复杂到任意程度，能表示面向对象的等级层次。</li>
+<li>可校验性方面：HTML没有提供规范文件以支持应用软件对HTML文件进行结构校验，而XML文件可以包括一个语法描述，使应用程序可以对此文件进行结构校验。</li>
+</ol>
+<p>XML对数据进行描述的方式  XML使用DTD来描述数据</p>
+<p>定义XML版本的声明中语法正确的是<?xml version="1.0"?></p>
+<p>DTD指的是Document Type Definition</p>
+<p>XML标签对大小写敏感<br>XML文档必须有根标签<br>XML元素必须被正确地嵌套</p>
+<p>XSL指的是eXtensible Stylesheet Language</p>
+<h3 id="XML语法格式"><a href="#XML语法格式" class="headerlink" title="XML语法格式"></a><strong>XML语法格式</strong></h3><ol>
+<li>必须有声明语句     <?xml version="1.0" encoding="utf-8"?><br>version：版本号，推荐使用主流版本1.0，1.1版本不向下兼容。<br>encoding：编码方式，告知解析引擎当前文档使用的字符集。·<br>standalone：是否独立，yes和no两个值，是否依赖其他文件。</li>
+<li>注意大小写。在XML文档中，大小写是有区别的。注意在写元素时，前后标记的大小写要保持一致。最好养成一种习惯，或者全部大写，或者全部小写，或者大写第一个字母，这样可以减少因为大小写不匹配而产生的文档错误</li>
+<li>XML文档有且只有一个根元素。</li>
+<li>属性值使用引号。在HTML代码里面，属性值可以加引号，也可以不加。但是XML规定，所有属性值必须加引号（可以是单引号，也可以是双引号，建议使用双引号），否则将被视为错误。</li>
+<li>所有的标记必须有相应的结束标记。</li>
+<li>所有的空标记也必须被关闭。</li>
+</ol>
+<h3 id="XML-元素必须遵循以下命名规则："><a href="#XML-元素必须遵循以下命名规则：" class="headerlink" title="XML 元素必须遵循以下命名规则："></a>XML 元素必须遵循以下命名规则：</h3><p>（1）名称可以含字母、数字以及其他的字符。<br>（2）名称不能以数字或者标点符号开始。<br>（3）名称不能以字符 “xml”（或者 XML、Xml）开始。<br>（4）名称不能包含空格。</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version=<span class="string">&quot;1.0&quot;</span> encoding=<span class="string">&quot;utf-8&quot;</span> ?&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">users</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">user</span> <span class="attr">id</span>=<span class="string">&quot;u1&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">name</span>&gt;</span>Atlantis<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">age</span>&gt;</span>23<span class="tag">&lt;/<span class="name">age</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">sex</span>&gt;</span>男<span class="tag">&lt;/<span class="name">sex</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">user</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">user</span> <span class="attr">id</span>=<span class="string">&quot;u2&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">name</span>&gt;</span>长安<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">age</span>&gt;</span>21<span class="tag">&lt;/<span class="name">age</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">sex</span>&gt;</span>女<span class="tag">&lt;/<span class="name">sex</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">user</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">users</span>&gt;</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="XML约束"><a href="#XML约束" class="headerlink" title="XML约束"></a>XML约束</h3><p>在XML技术里，可以编写一个文档来约束一个XML文档的书写规范（与xml语法无关），这称之为XML约束。目的是为了保证数据的规范性和安全性。</p>
+<p>两种约束<br>（1）DTD约束：语法简洁，共能比较单一。文件后缀名.xml<br>（2）Schema约束：语法复杂，功能比较强大。文件后缀名.xsd</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- ELEMENT定义标签 --&gt;</span><br><span class="line">&lt;!-- users (user*)：定义了一个users标签，该标签内可以出现0次或多次子标签user --&gt;</span><br><span class="line">&lt;!ELEMENT users (user*) &gt;</span><br><span class="line">&lt;!-- user (name,age,sex)：定义了一个user标签，仅可分别按顺序依次出现1次name、age、sex标签 --&gt;</span><br><span class="line">&lt;!ELEMENT user (name,age,sex)&gt;</span><br><span class="line">&lt;!-- name (#PCDATA)：定义了一个name标签，该标签内可以出现字符串 --&gt;</span><br><span class="line">&lt;!ELEMENT name (#PCDATA)&gt;</span><br><span class="line">&lt;!ELEMENT age (#PCDATA)&gt;</span><br><span class="line">&lt;!ELEMENT sex (#PCDATA)&gt;</span><br><span class="line"></span><br><span class="line">&lt;!-- ATTLIST定义属性 --&gt;</span><br><span class="line">&lt;!-- user number ID #REQUIRED：在user标签内定义了一个number属性，ID表示number属性值必须唯一，#REQUIRED标签number属性必须出现 --&gt;</span><br><span class="line">&lt;!ATTLIST user id ID #REQUIRED&gt;</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="css中的display属性有哪些值？各有什么作用？"><a href="#css中的display属性有哪些值？各有什么作用？" class="headerlink" title="css中的display属性有哪些值？各有什么作用？"></a>css中的display属性有哪些值？各有什么作用？</h2><ul>
+<li>none 此元素不会被显示。</li>
+<li>block 此元素将显示为块级元素，此元素前后会带有换行符。</li>
+<li>inline 默认。此元素会被显示为内联元素，元素前后没有换行符。</li>
+<li>inline-block 行内块元素。（CSS2.1 新增的值）</li>
+<li>list-item 此元素会作为列表显示。</li>
+<li>run-in 此元素会根据上下文作为块级元素或内联元素显示。</li>
+<li>compact CSS 中有值 compact，不过由于缺乏广泛支持，已经从 CSS2.1 中删除。</li>
+<li>marker CSS 中有值 marker，不过由于缺乏广泛支持，已经从 CSS2.1 中删除。</li>
+<li>table 此元素会作为块级表格来显示（类似 <table>），表格前后带有换行符。</li>
+<li>inline-table 此元素会作为内联表格来显示（类似 <table>），表格前后没有换行符。</li>
+<li>table-row-group 此元素会作为一个或多个行的分组来显示（类似 <tbody>）。</li>
+<li>table-header-group 此元素会作为一个或多个行的分组来显示（类似 <thead>）。</li>
+</ul>
+<p>（视频教程推荐：<a target="_blank" rel="noopener" href="https://www.php.cn/course/list/12.html">css视频教程</a>）</p>
+<ul>
+<li>table-footer-group 此元素会作为一个或多个行的分组来显示（类似 <tfoot>）。</li>
+<li>table-row 此元素会作为一个表格行显示（类似 <tr>）。</li>
+<li>table-column-group 此元素会作为一个或多个列的分组来显示（类似 <colgroup>）。</li>
+<li>table-column 此元素会作为一个单元格列显示（类似 <col>）</li>
+<li>table-cell 此元素会作为一个表格单元格显示（类似 <td> 和 <th>）</li>
+<li>table-caption 此元素会作为一个表格标题显示（类似 <caption>）</li>
+<li>inherit 规定应该从父元素继承 display 属性的值。</li>
+</ul>
+<h1 id="WebPPT知识"><a href="#WebPPT知识" class="headerlink" title="WebPPT知识"></a>WebPPT知识</h1><h2 id="第一章-Web开发技术概述"><a href="#第一章-Web开发技术概述" class="headerlink" title="第一章   Web开发技术概述"></a>第一章   Web开发技术概述</h2><h3 id="服务器"><a href="#服务器" class="headerlink" title="服务器"></a>服务器</h3><p>邮件服务器（收发电子邮件）、FTP服务器（文件传输）、域名服务器DNS（域名解析）和Web服务器（组织并展示相关的信息资源） 等。承担各种服务任务的计算机就叫做服务器。</p>
+<p>互联网+：将互联网作为工具，让互联网与传统行业进行深度融合，创造新的发展生态。滴滴打车、支付宝等等</p>
+<h3 id="Web"><a href="#Web" class="headerlink" title="Web"></a>Web</h3><ul>
+<li>全称为World Wide Web，缩写为WWW译为“万维网”,简称为Web</li>
+<li>是一个可通过互联网来访问的、由许多互相链接的超文本组成的系统。</li>
+</ul>
+<p>URI：Uniform Resource Identifier  统一资源标识符</p>
+<p>HTTP: HyperText Transfer Protocol  超文本传输协议</p>
+<p>Web 与 Internet的关系：Web不等于Internet，它只是Internet中的一个部分，而且和浏览器有关。以后只要提到Web，就一定是和浏览器有关的应用或其他事项。可以说Web是Internet中的一个子集或者说Web是互联网提供信息的一种手段。</p>
+<h3 id="Web服务器"><a href="#Web服务器" class="headerlink" title="Web服务器"></a>Web服务器</h3><ul>
+<li>又称WWW服务器、网站服务器、站点服务器或HTTP服务器</li>
+<li>为用户提供信息浏览和信息处理服务。将信息用超文本（Hypertext）组织，为用户在Internet上搜索和浏览信息提供服务。</li>
+<li>Web服务器实际上就是一个软件系统。但它必须安装在一台高性能和高可靠性的计算机上，所以人们通常将那台计算机就叫做Web服务器。</li>
+</ul>
+<p>常用的Web服务器有： ▪ Microsoft IIS  ▪ IBM  WebSphere ▪ Oracle  WebLogic        ▪ Apache 开源 									 ▪ Tomcat 开源             ▪ Jboss  开源▪ 金蝶公司 Apusic</p>
+<p>要使一台计算机成为Web服务器，必须安装上述专门的信息服务程序，并且安装UNIX、Linux或Windows 2003&#x2F;2008&#x2F;2012 Server等网络操作系统。一台计算机可以安装多个Web服务器。</p>
+<h4 id="为什么有些Web服务器需要花钱购买？"><a href="#为什么有些Web服务器需要花钱购买？" class="headerlink" title="为什么有些Web服务器需要花钱购买？"></a>为什么有些Web服务器需要花钱购买？</h4><p>IIS、Tomcat、Apache和Jboss等，支持的并发访问用户数有限，适合作中小型网站系统的Web服务器，而WebLogic、WebSphere和金蝶Apusic等专业Web服务器，在并发用户大量增加的情况下，仍可保持较高的处理性能，适合作大型网站系统的Web服务器。购买专业版时又区分5用户、10用户、25用户、100用户的Web服务器，是指Web服务器最大支持的并发用户数。</p>
+<h3 id="Web页面"><a href="#Web页面" class="headerlink" title="Web页面"></a>Web页面</h3><p>Web在提供信息服务之前，所有信息都必须以文件方式事先存放在Web服务器所管辖磁盘中某个文件夹下，其中包含了由超文本标记语言（HyperText Markup Language，HTML）组成的文本文件，这些文本文件称为超链接文件，又称网页文件或Web页面文件（Web page）。</p>
+<p>静态网页 HTM.HTML</p>
+<p>动态网页 ASP.ASPX.JSP.PHP</p>
+<p>扩展名为HTM或HTML的页面文件为静态页面，ASP、ASPX、JSP、PHP等页面文件为动态网页，或者叫Web服务器页面。	Web服务器页面需要Web服务器对它们进行重新处理后，动态生成新的HTML页面再传送给客户端供用户浏览。例如服务器动态页面中大都需要进行数据库访问的请求与处理，要将获取的数据合并处理后形成新的网页传回给浏览器。</p>
+<h3 id="统一资源定位符（URL）"><a href="#统一资源定位符（URL）" class="headerlink" title="统一资源定位符（URL）"></a>统一资源定位符（URL）</h3><p>信息资源放在Web服务器之后，需要将它的地址告诉给用户，以便让用户来访问，这个地址就叫统一资源定位符（Uniform Resource Locators，URL），俗称为网址</p>
+<p>URL字串&#x3D;协议名称（通常为http、ftp、file等）+主机名+文件名（含路径）</p>
+<p>example：</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="http://www.yahoo.com.cn/index.htm">http://www.yahoo.com.cn/index.htm</a> ，http:&#x2F;&#x2F;指采用的传输协议是http，<a target="_blank" rel="noopener" href="http://www.yahoo.com.cn为主机名,/index.htm%E4%B8%BA%E6%A0%B9%E7%9B%AE%E5%BD%95%E4%B8%8B%E7%9A%84%E6%96%87%E4%BB%B6%E3%80%82">www.yahoo.com.cn为主机名，/index.htm为根目录下的文件。</a></li>
+<li>file:&#x2F;&#x2F;&#x2F;C:&#x2F;windows&#x2F;Sandstone.htm也是一个URL地址，指向本地C盘中Windows目录下的Sandstone.htm文件， “file:&#x2F;&#x2F;”指采用的直接文件方式访问； “&#x2F;C:&#x2F;windows&#x2F;Sandstone.htm”表示文件从根目录开始的路径</li>
+</ul>
+<p>URL是对可从互联网上得到的资源的位置和访问方法的一种简洁的表示，是互联网上标准资源的地址。互联网上的每个文件都有一个唯一的URL，它包含的信息指出文件的位置以及浏览器应该怎么处理它。</p>
+<p>eg：</p>
+<p>URL地址中的主机名也可直接输入对应的IP地址，例如输入：<a target="_blank" rel="noopener" href="http://202.202.0.36/">http://202.202.0.36/</a> （有时也包括端口号 <a target="_blank" rel="noopener" href="http://202.202.0.36:81/">http://202.202.0.36:81/</a> ）  Web服务器默认TCP端口号为80，用于监听有无页面请求。   <a target="_blank" rel="noopener" href="http://202.202.0.36/">http://202.202.0.36:80/</a>   和  <a target="_blank" rel="noopener" href="http://202.202.0.36/">http://202.202.0.36/</a> 等同。</p>
+<h4 id="为什么有时URL地址中没有文件名还能照常显示页面内容呢"><a href="#为什么有时URL地址中没有文件名还能照常显示页面内容呢" class="headerlink" title="为什么有时URL地址中没有文件名还能照常显示页面内容呢"></a>为什么有时URL地址中没有文件名还能照常显示页面内容呢</h4><p>这是因为在Web服务器的配置中，可以事先设定一个或多个默认文件名，浏览器会自动查找这些默认的文件名。</p>
+<h4 id="URI和URL的区别"><a href="#URI和URL的区别" class="headerlink" title="URI和URL的区别"></a>URI和URL的区别</h4><p>统一资源标识符URI是一个用于标识某一互联网资源名称的字符串。 Web上可用的每种资源 -HTML文档、图像、视频片段、程序等都可由URI来定位。 URL网址只是属于URI的一种，用来定位所需访问的网页地址。</p>
+<p>eg</p>
+<ul>
+<li>URI、URL：<a target="_blank" rel="noopener" href="http://www.yahoo.com.cn/index.htm">http://www.yahoo.com.cn/index.htm</a>  </li>
+<li>URI: <a target="_blank" rel="noopener" href="http://www.yahoo.com.cn/gif/stone.jpg">http://www.yahoo.com.cn/gif/stone.jpg</a></li>
+</ul>
+<p>href&#x3D;“..&#x2F;Shweather.htm” 也可写成   href&#x3D;“&#x2F;web&#x2F;Shweather.htm” </p>
+<p>URI绝对地址可直接在浏览器中输入，访问相关资源；相对地址则不可用在浏览器地址栏 URI相对地址只能用在页面文件中</p>
+<h4 id="为什么需要URI相对地址"><a href="#为什么需要URI相对地址" class="headerlink" title="为什么需要URI相对地址?"></a>为什么需要URI相对地址?</h4><p>当网站目录层次较多、内容较长时，可以简化书写，避免出错，也可减少页面文件的字节数。页面内容要在浏览器中显示，从Web服务器下载到客户端，页面中的每个字节都是网络流量的组成部分。</p>
+<h3 id="Web浏览器的工作原理"><a href="#Web浏览器的工作原理" class="headerlink" title="Web浏览器的工作原理"></a>Web浏览器的工作原理</h3><p>Browser就是Web客户端程序，要浏览Web页面必须在本地计算机上安装浏览器软件，用于与Web服务器建立连接，并与之进行通信。浏览器根据访问地址确定信息资源的位置，并将用户感兴趣的信息资源取回来，对 HTML 文件进行解释，然后将文字图像显示出来，或者将多媒体信息还原出来。</p>
+<h4 id="在网络带宽相同的情况下同一台计算机使用不同的浏览器访问同一个网站，为什么访问速度会不一样？"><a href="#在网络带宽相同的情况下同一台计算机使用不同的浏览器访问同一个网站，为什么访问速度会不一样？" class="headerlink" title="在网络带宽相同的情况下同一台计算机使用不同的浏览器访问同一个网站，为什么访问速度会不一样？"></a>在网络带宽相同的情况下同一台计算机使用不同的浏览器访问同一个网站，为什么访问速度会不一样？</h4><p>浏览器是个软件，是软件就有软件复杂度的问题，就有软件运行效率的问题，如算法是否先进，代码是否简洁有效等等，另外浏览器的安全级别的设置也会大大影响访问速度。如果安全级别高了，都要去检查当然就慢了。还有如果浏览器中加载了很多插件也会拖累浏览器。</p>
+<h4 id="浏览器Cookie"><a href="#浏览器Cookie" class="headerlink" title="浏览器Cookie"></a>浏览器Cookie</h4><ul>
+<li>浏览器和服务器之间是通过HTTP进行通信的。HTTP是一种无记忆的协议，即用户目前正在浏览的页面对在此之前浏览过的页面没有丝毫的记忆和了解。</li>
+<li>实际情况是有时需要浏览器能够记住一些信息，且这些信息无需用户记住。</li>
+<li>浏览器中引入了Cookie的概念，浏览器允许用户通过Cookie读写一些信息，这在一定程度上实现了浏览器的记忆功能。</li>
+</ul>
+<h4 id="https-x2F-x2F-与-http-x2F-x2F-的区别"><a href="#https-x2F-x2F-与-http-x2F-x2F-的区别" class="headerlink" title="https:&#x2F;&#x2F;  与  http:&#x2F;&#x2F; 的区别"></a>https:&#x2F;&#x2F;  与  http:&#x2F;&#x2F; 的区别</h4><p>HTTPS（Hyper Text Transfer Protocol over Secure Socket Layer安全套接字），是以安全为目标的HTTP通道，是HTTP的安全版。即HTTP下加入套接字SSL层，对传输的网页进行加密处理，被广泛用于安全敏感的通讯，例如交易支付方面。</p>
+<h3 id="C-x2F-S模式与B-x2F-S模式"><a href="#C-x2F-S模式与B-x2F-S模式" class="headerlink" title="C&#x2F;S模式与B&#x2F;S模式"></a>C&#x2F;S模式与B&#x2F;S模式</h3><p>C&#x2F;S模式Client&#x2F;Server客户端&#x2F;服务器  需要下载安装运行的各种游戏软件   各种移动APP软件   Foxmail邮件客户端软件 ……</p>
+<p>优点:可异种平台集成；分布式管理；能充分发挥客户端PC的处理能力；运行安全、稳定、速度快，且在适当情况下可脱机操作。</p>
+<p>缺点或不足:必须在客户端安装大量的应用程序（客户端软件）；需要在客户端安装支持系统运行的动态链接库等；存在移植困难、用户界面风格不统一、操作复杂、不利于推广使用、维护和升级过程繁琐、信息内容和形式单一和不易应用新技术等不足。</p>
+<p>B&#x2F;S模式Browser&#x2F;Server浏览器&#x2F;服务器  各种页游   网易126邮箱、163邮箱、Web QQ邮箱、 gmail邮箱等等   通过浏览器运行的各种业务系统 ……</p>
+<p>B&#x2F;S模式是一种基于Web的协同计算模式，是一种三层架构的瘦客户机&#x2F;肥服务器的计算模式。在这种结构下，用户工作界面是通过Web浏览器来实现，少部分事务逻辑在前端（Browser）实现，主要事务逻辑在服务器端（Server）实现，形成所谓三层(3-tiers)结构。这样就大大简化了客户端电脑载荷，减轻了系统维护与升级的成本和工作量，降低了用户的总体成本（TCO）。</p>
+<p>优点:具有良好的开放性；无需下载安装，利用浏览器单一的访问点，用户可在任何时间和地点使用系统；系统维护方便，有效地降低了整个系统的运行和维护成本。</p>
+<p>缺点或不足:运行速度没有C&#x2F;S模式快，且受网络带宽的影响较大；会出现更多安全性问题。</p>
+<p>注意点：面向大众的网站系统应尽可能多地被各种用户访问，需考虑浏览器的兼容性，还需考虑在网络带宽在有限和不稳定的情况下，仍然可被快速访问，因此除了考虑互联网上使用的安全性外，其稳定性、可靠性、有效性等也是网站开发中必须重点考虑的问题。面向某个企业的Web App，浏览器的兼容性则可不作为重点考虑。</p>
+<h3 id="Web访问的原理"><a href="#Web访问的原理" class="headerlink" title="Web访问的原理"></a>Web访问的原理</h3><h4 id="静态网页"><a href="#静态网页" class="headerlink" title="静态网页"></a>静态网页</h4><p>该网页文件里没有特殊程序代码，只有HTML标记和客户端脚本代码，这种网页以后缀.htm或.html的文件存放，也可实现各种动态的效果，如.GIF动画、FLASH、滚动字母等，这些动态效果只是视觉上的。静态网页访问速度快，容易被搜索引擎收录。</p>
+<h4 id="动态网页"><a href="#动态网页" class="headerlink" title="动态网页"></a>动态网页</h4><p>网页文件中不仅含有HTML标记和客户端脚本代码，而且含有需Web服务器进行处理的代码（文件扩展名一般为ASPX、JSP、PHP等）。用户登录、发布新闻、发布公司产品、交流互动、博客、网上调查等都需要动态网页来实现。</p>
+<h3 id="Web开发平台的组成"><a href="#Web开发平台的组成" class="headerlink" title="Web开发平台的组成"></a>Web开发平台的组成</h3><ul>
+<li>Microsoft .NET开发平台</li>
+<li>Oracle Java EE开发平台      Servlet、JSP和EJB是J2EE平台的三大核心技术。Java EE 是在 Java SE 的基础上构建的</li>
+<li>LAMP开发平台（Linux+Apache+MySQL+PHP） ……….</li>
+</ul>
+<h3 id="Web前端开发技术"><a href="#Web前端开发技术" class="headerlink" title="Web前端开发技术"></a>Web前端开发技术</h3><p>HTML CSS  DHTML&#x2F;JavaScript    ActiveX  XML  XHTML</p>
+<p>DHTML可实现功能： 1）动态交互功能，使网页产生动态效果。 2）让用户站点易于维护。 3）可减轻服务器负荷，更大发挥网络能力</p>
+<p>微软ActiveX控件技术是一种可重用的软件技术。将一个或一组功能封装起来，以对象方式供开发者使用，例如将文件加密和解密做成一个ActiveX控件，网上银行将密码输入框做成一个ActiveX控件，防止木马读取密码等。有大量商用或免费ActiveX控件供开发人员使用，也可用VC、VB等来开发一个ActiveX控件。ActiveX控件可在页面中直接使用，例如ActiveMovie控件可用于播放声音与视频，只需在控件的属性中指定参数值，就可在Web页面中控制其播放。 IE、Netscape、Firefox等浏览器都支持ActiveX技术。</p>
+<p>当浏览的网页遇到ActiveX控件时，会检查用户本地系统的注册表，查看其是否已安装在本地机上。若已安装，浏览器显示该网页并激活控件。若未在用户本地安装，浏览器将查找并安装到本地。下载控件时，浏览器会缺省地显示一个消息框，通知用户将要开始下载，用户可以选择终止下载或继续下载（浏览器的Internet选项中设置）。</p>
+<p>HTML的不足：HTML不能适应信息检索和存档要求；无法描述矢量图形、科技符号和一些其他特殊显示效果；文档结构混乱而缺乏条理，导致浏览器的设计越来越复杂。</p>
+<p>XML弥补了HTML的不足，将网络上传输的文档规范化，并赋予标记一定的含义，与此同时，还要保留其简捷、适于网上传输和浏览的优点。XML是标记语言，可根据需要自定义新的标记。XML已在文件配置、数据存储、异构数据交换等众多方面得到广泛应用。</p>
+<h4 id="后端开发技术"><a href="#后端开发技术" class="headerlink" title="后端开发技术"></a>后端开发技术</h4><p>CGI  PHP  JSP  ASP&#x2F;ASP.NET  ADO&#x2F;ADO.NET   Web Service  WCF</p>
+<h2 id="第二章-Web开发环境的建立"><a href="#第二章-Web开发环境的建立" class="headerlink" title="第二章   Web开发环境的建立"></a>第二章   Web开发环境的建立</h2><p>每个网站的内容都存放在一个物理路径中，这个物理路径也即主目录。一个网站所有文件不一定非要将它们全部放在一个目录下，可以分散存放在不同的硬盘分区中。例如右图中将photo放到F盘中，将student放在E盘中。那我们的Web服务器如何来管理分散存放的某个网站内容呢？这就要通过创建虚拟目录来管理分散存放的网站目录。</p>
+<p>.NET Framework  有3个组成部分：CLR（Common Language Runtime，公共语言运行库）：负责管理内存、线程执行、代码执行、代码安全验证、编译和其它系统服务。托管代码:需要以CLR环境来支撑运行的程序代码；非托管代码:用VB、VC++等工具开发的程序。.NET Framework 类库：提供很多现成的方法供开发人员编程使用，如复制、移动、删除一个文件、杀死一个进程、连接数据库等ASP.NET：使用托管代码来开发网站</p>
+<p>源代码的版本控制简称为源码控制，它在多人协作开发环境中是非常重要的，它包含了对应用程序中每个源文件修改的历史记录，可对多个开发者的行为进行协调。在需要比较两种版本的文件或找回早期版本的文件时，源代码的控制是非常有用的。</p>
+<h2 id="第三章-HTML与CSS"><a href="#第三章-HTML与CSS" class="headerlink" title="第三章   HTML与CSS"></a>第三章   HTML与CSS</h2><ul>
+<li>文档类型：<!DOCTYPE HTML ……></li>
+<li>标识这是一个HTML文档：<html>  …… </html> </li>
+<li>网页头部标识：<head>  …… </head>   </li>
+<li>网页内容：<body> ……  </body></li>
+<li>浏览器窗口标题：<title> 窗口标题</title>  </li>
+<li>注释：<!-- ……  --></li>
+</ul>
+<p>HTML标记、标签（tag）和HTML元素（element）是两个不同的概念，在HTML文档对象编程模型中把HTML标记称为元素，实际使用中常常不加区分。在面向对象编程中，每个标记都是一个对象。</p>
+<p>不是所有的网页都是可以通过工具制作出来的，还需要手工编写代码。通过工具可以制作功能不太复杂的简单网页，较为复杂的页面只能通过手工编写代码来完成，有时还需要在网站后台编写网页代码动态生成网页传送给浏览器显示。</p>
+<h3 id="HTML5特性"><a href="#HTML5特性" class="headerlink" title="HTML5特性"></a>HTML5特性</h3><ul>
+<li>语义特性  HTML5可使网页有更好的结构，标签更为丰富。</li>
+<li>设备兼容特性  可获取地理位置；使外部应用与浏览器内部数据直接连接，例如视频影音可直接与麦克风及摄像头相联。</li>
+<li>本地存储特性  本地存储功能使HTML5网页运行更快，占用带宽更少。</li>
+<li>连接特性  Server-Sent Event和WebSockets可实现服务器将数据“推送”到客户端。</li>
+<li>网页多媒体特性  提供Audio、Video等多媒体功能。</li>
+<li>性能与集成特性   通过XMLHttpRequest2等技术，帮助Web应用和网站在多样化的环境中更快速地工作。</li>
+<li>三维、图形及特效特性   提供SVG、Canvas、WebGL及CSS3的3D功能，用户会惊叹于在浏览器中所呈现的惊人视觉效果。</li>
+</ul>
+<p>HTML注重的是内容本身，而不是显示方式。CSS注重解决网页字体大小、颜色、边框等格式问题，以提供给用户尽量美观、易读的网页。</p>
+<p>依优先级最高的是内联样式，其次是联入样式表，然后是导入外部样式表。外链样式和联入样式中，最后定义的样式优先级最高。内联样式会向标记中添加更多属性及内容，对于网页设计者来说很难维护，应尽量减少使用内联样式</p>
+<h3 id="使用CSS的优点"><a href="#使用CSS的优点" class="headerlink" title="使用CSS的优点"></a>使用CSS的优点</h3><ol>
+<li>网页代码和网页格式分离，外链样式被浏览器保存在缓存里，加快了网页下载速度。</li>
+<li>将网站的样式放在外部文件中，网站的各个网页都引用这个文件，只要修改这个文件中的样式，整个网站的网页格式就随之变化，保证了网站显示风格的一致。避免了一个个网页的修改，大大减少了重复工作量。</li>
+</ol>
+<h3 id="CSS的选择符"><a href="#CSS的选择符" class="headerlink" title="CSS的选择符"></a>CSS的选择符</h3><p> CSS中的选择符有：</p>
+<ul>
+<li>HTML标记</li>
+<li>具有上下文关系的HTML标记</li>
+<li>用户自定义类选择符</li>
+<li>用户定义的ID选择符</li>
+<li>虚类</li>
+<li>虚元素</li>
+</ul>
+<h4 id="虚类"><a href="#虚类" class="headerlink" title="虚类"></a>虚类</h4><p>是一种特殊的类选择符，虚类的形式为：选择符:虚类{ 属性值对 }虚类主要针对超链接A标记来使用，可指定超链接标记A以不同的方式显示链接</p>
+<p>超链接有4种不同的样式状态</p>
+<ol>
+<li>a:link    链接访问前的样式</li>
+<li>a:visited 链接访问后的样式</li>
+<li>a:active  链接活动时的样式</li>
+<li>a:hover   鼠标在链接上的样式</li>
+</ol>
+<p>可将虚类和自定义类名组合起来使用，以实现页面中各个超链接按不同样式来呈现。</p>
+<h4 id="虚元素"><a href="#虚元素" class="headerlink" title="虚元素"></a>虚元素</h4><p>有2个特殊的选择符first-letter和first-line，用于P、div、span等块级元素的首字母和首行效果。</p>
+<p>格式为：</p>
+<ul>
+<li>选择符:first-letter {属性值对}</li>
+<li>选择符.类:first-letter {属性值对}</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;ol type=&quot;A&quot;&gt;</span><br><span class="line">&lt;li&gt;  输入部件 &lt;/li&gt;</span><br><span class="line">&lt;li&gt;   输出部件 &lt;/li&gt;</span><br><span class="line">&lt;li&gt;   存储器  &lt;/li&gt;</span><br><span class="line">&lt;/ol&gt;</span><br></pre></td></tr></table></figure>
+
+<ol type="A"><li>  输入部件 </li><li>   输出部件 </li><li>   存储器  </li></ol>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;ul type=&quot;circle&quot;&gt;</span><br><span class="line"> &lt;li&gt; 算术逻辑部件(ALU)&lt;/li&gt;</span><br><span class="line">&lt;li&gt; 辅助存储器 &lt;/li&gt;</span><br><span class="line">&lt;li&gt;中央处理器(CPU)&lt;/li&gt;</span><br><span class="line">&lt;li&gt;辅助存储器 &lt;/li&gt;</span><br><span class="line">&lt;/ul&gt;</span><br></pre></td></tr></table></figure>
+
+<ul type="circle"> <li> 算术逻辑部件(ALU)</li><li> 辅助存储器 </li><li>中央处理器(CPU)</li><li>辅助存储器 </li></ul>
+
+<h3 id="定位属性"><a href="#定位属性" class="headerlink" title="定位属性"></a>定位属性</h3><table>
+<thead>
+<tr>
+<th>样式属性</th>
+<th>含义</th>
+<th>取值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>position</td>
+<td>绝对定位还是相对定位</td>
+<td>absolute：将浏览器显示区域的左上角或框架页面显示区域的左上角作为原点Origin来定位。relative：表示相对位置，相对本元素的父元素来定位。父元素左上角为原点。static（默认值）： 表示静态位置，按照HTML文件中各元素的先后顺序放置。</td>
+</tr>
+<tr>
+<td>left、top</td>
+<td>x坐标、y坐标</td>
+<td>position为absolute时，以Origin为原点的x坐标、y坐标position为relative时，以父元素左上角为原点的x坐标、y坐标。</td>
+</tr>
+<tr>
+<td>z-index</td>
+<td>设定元素的遮挡序号。</td>
+<td>取值为整数，可正可负，值较高的元素覆盖较低的元素</td>
+</tr>
+</tbody></table>
+<h3 id="表格制作"><a href="#表格制作" class="headerlink" title="表格制作"></a>表格制作</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">table</span> <span class="attr">border</span>=<span class="string">&quot;1&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">td</span>&gt;</span>row 1, cell 1<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">td</span>&gt;</span>row 1, cell 2<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">td</span>&gt;</span>row 2, cell 1<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">td</span>&gt;</span>row 2, cell 2<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">table</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+
+<table border="1">     <tr>         <td>row 1, cell 1</td>         <td>row 1, cell 2</td>     </tr>     <tr>         <td>row 2, cell 1</td>         <td>row 2, cell 2</td>     </tr> </table>
+
+<p>CSS3新增columns属性，可实现多列自动布局，自动将内容按指定的列数排列。column-count：设置列的具体个数column-gap：指定的列之间的间隙column-rule：列之间的宽度，样式和颜色的规则</p>
+<h2 id="第四章-DHTML"><a href="#第四章-DHTML" class="headerlink" title="第四章  DHTML"></a>第四章  DHTML</h2><h3 id="JavaScript编程基础"><a href="#JavaScript编程基础" class="headerlink" title="JavaScript编程基础"></a>JavaScript编程基础</h3><p>HTML和CSS可用来创建网页，用户只能查看不能修改网页内容和外观，无法和网页进行交互。如点击某按钮，执行完点击事件后，就要让它disable，不再接受用户的点击，HTML和CSS是无法实现的，必须借助客户端脚本语言JavaScript(简称JS) 以及HTML DOM来完成。</p>
+<p>JS嵌入在HTML文件中，能对鼠标点击、表单提交等用户事件做出反应和处理。</p>
+<h4 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h4><ol>
+<li>简单性    JS是简化的编程语言，变量类型简单，不声明也能使用。</li>
+<li>基于对象  JS不完全面向对象，不支持类和继承，是基于对象而不是面向对象的语言</li>
+<li>可移植性  JS可在浏览器上不经修改直接运行。</li>
+<li>动态性    可用来设计客户端交互式动态页面。</li>
+<li>安全性    JS是一种安全性语言，对本地资源的访问和操作有限，只能通过浏览器实现信息浏览或动态交互。</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">验证手机号码：&quot;^1[3|4|5|7|8][0-9]\\d&#123;8&#125;$&quot;</span><br><span class="line">验证身份证号(15或18位)：&quot;\\d&#123;14&#125;[[0-9],0-9xX]&quot;</span><br></pre></td></tr></table></figure>
+
+<p>&#x2F;\D&#x2F; 表示不是0-9</p>
+<p>!&#x2F;\D&#x2F;.test(str)</p>
+<p>我们不能像在传统的语言里那样用class来定义类, 但我们可利用JS的闭包封装机制来实现JS中的类</p>
+<p>JS自定义对象有两种方式：</p>
+<ol>
+<li>把函数function当成对象</li>
+<li>用prototype对象来实现JS的自定义对象。Prototype是函数的子对象， 很神奇，它可以给函数对象动态地添加属性和方法。</li>
+</ol>
+<h3 id="HTML-DOM基础（Document-Object-Model）"><a href="#HTML-DOM基础（Document-Object-Model）" class="headerlink" title="HTML DOM基础（Document Object Model）"></a>HTML DOM基础（Document Object Model）</h3><p> HTML DOM 是一个可让脚本程序动态访问和更新HTML文档内容、结构和样式的技术。它是跨平台、可适应不同程序语言的文件对象模型，采用直观一致的方式，将HTML文档进行模型化处理，是一种提供存取和更新文档内容、结构和样式的编程接口。</p>
+<p>prompt、alert、confirm方法实现对话框功能，其中prompt为接受用户输入字符串的对话框；confirm实现具有确认和取消按钮的对话框；alert为仅输出文本对话框。</p>
+<h3 id="cookie"><a href="#cookie" class="headerlink" title="cookie"></a>cookie</h3><p>cookie是放在浏览器缓存中的一个文件，里面存放着各个参数名及参数值。cookie的参数是以分号相隔的,例:name&#x3D;wcl;sex&#x3D;male;color&#x3D;red;expires&#x3D;Sun May 27 22:04:25 UTC+0800 2008Cookie可用来存放当前页面的参数信息，也可用来存放同一网站打开的多个页面间的共享信息。可以对cookie设置失效期限，既可永久保留，也可关闭网站后就删除，也可在指定时间内失效。expires指定cookie的失效日期，当没有失效日期时，关闭浏览器即失效。例如：用户登录时需要从学生、任课教师、班主任、辅导员中选择一种角色登录，用cookie保存选定角色后，下次登录系统，就取cookie中的保存的用户角色作为默认值。</p>
+<h3 id="文档对象"><a href="#文档对象" class="headerlink" title="文档对象"></a>文档对象</h3><h4 id="动态生成8行16列表格"><a href="#动态生成8行16列表格" class="headerlink" title="动态生成8行16列表格"></a>动态生成8行16列表格</h4><script>
+var rows = 8; cols = 16;
+for (var i = 1; i <= rows; i++){
+document.write("<tr>") :
+for (var j = 1: j <= cols; j++){
+document.write("<td>"+ i +"，”+ j + "</td>").
+}
+document.write("</tr>"):
+</script>
+
+<p>通过优化网页代码，节省网络流量——网页减肥</p>
+<p>文档对象的事件除了响应键盘、鼠标常规</p>
+<p>操作事件外，还增加了其他大量事件，例如鼠标的拖拉操作事件、浏览器鼠标右键快捷菜单事件oncontextmenu等。</p>
+<h3 id="HTML-DOM树简介"><a href="#HTML-DOM树简介" class="headerlink" title="HTML DOM树简介"></a>HTML DOM树简介</h3><p> HTML DOM是一种结构化的对象模型，采用DOM技术访问和更新HTML页面内容时，可依据HTML源代码，建立页面的树型结构模型，然后按照树型结构的层次关系来操纵Web页面。</p>
+<p>在DOM树型结构中，每个节点都是一个对象，各节点对象都有属性和方法。</p>
+<p>attributes节点属性的对象集合              chileNodes子节点的对象集合</p>
+<p>DOM树型结构节点有只读属性和读写属性两类。通过只读属性可以浏览节点，并可获得节点的类型及名称等信息；通过读写属性可以访问文字节点的内容。</p>
+<p>用DOM树方法可以动态创建HTML文档或HTML元素，并可通过JS程序随时改变文档的节点结构或内容，建立动态的网页生成效果。</p>
+<h3 id="jQuery简介"><a href="#jQuery简介" class="headerlink" title="jQuery简介"></a>jQuery简介</h3><p>把一些通用的函数事先写好，放在外部单独JS文件中，在手工编写网页代码时，就可重复使用这些通用函数，大大简化网页代码的编写工作，提高网页开发的效率。</p>
+<p>利用jQuery，也即JS开发库，HTML DOM的很多复杂编程操作都可轻松实现，大大减轻Web前端开发人员的编程难度，提高了编程效率。</p>
+<p>jQuery是一个快捷、小巧和特性丰富的avaScript库，凭借简洁语法和跨平台的兼容性，大大简化了JS开发人员遍历HTML文档、操作DOM、处理事件、执行动画和开发Ajax的操作。其独特而优雅的代码风格改变了JS程序员的设计思路和编写程序的方式。</p>
+<p>table tr:nth-child(even) 就是指表格中的偶数行，然后用jQuery的addClass方法添加CSS类名alternateColor，它已在style块中定义好了。</p>
+<h4 id="jQuery选择器"><a href="#jQuery选择器" class="headerlink" title="jQuery选择器"></a>jQuery选择器</h4><ol>
+<li>元素选择器   $(“div”)表示选择所有div元素</li>
+<li>ID选择器   $(“#button1”)将选择ID为button1的元素。<code>$(“div #main”)选中ID为main的div元素。</code></li>
+<li>类选择器   $(“.important”)将选择页面上所有应用了important类的元素。</li>
+<li>后代选择器        若在一个选择器后面有一个空格，再跟另外一个选择器，则表示选择包含在第一个选择器中的第二个选择器。   $(”div p”)将选择div中出现的所有p元素。</li>
+<li>子元素选择器  若一个选择器后面是一个大于号&gt;，后面再跟另一个选择器，则表示选择直接包在第一个选择器中的第二个选择器。  $(‘#ss &gt; li’)  选择Id为SS元素中的所有li元素。</li>
+</ol>
+<h2 id="第五章-XML基础"><a href="#第五章-XML基础" class="headerlink" title="第五章 XML基础"></a>第五章 XML基础</h2><p>XML是一种类似于HTML的标记语言XML是用来描述数据的XML的标记非预先定义，须自行定义标记</p>
+<h3 id="XML的特点"><a href="#XML的特点" class="headerlink" title="XML的特点"></a>XML的特点</h3><ol>
+<li>XML的可扩展性</li>
+<li>标记的自描述性</li>
+<li>XML语言的规则性</li>
+<li>文档的结构化</li>
+<li>允许Meta数据(元数据)</li>
+<li>XML文档的多样显示</li>
+<li>允许XML DOM操作  XML DOM的作用就是使用脚本语言如何对XML文档的节点和数据进行增删查改等各项操作。</li>
+</ol>
+<h3 id="XML中有关名词的相互关系"><a href="#XML中有关名词的相互关系" class="headerlink" title="XML中有关名词的相互关系"></a>XML中有关名词的相互关系</h3><p>XML DTD用以说明XML文档中数据的类型和格式,目前已被XML Schema所替代。</p>
+<h3 id="避免命名冲突"><a href="#避免命名冲突" class="headerlink" title="避免命名冲突"></a>避免命名冲突</h3><ol>
+<li>使用前缀</li>
+<li>使用命名空间（Namespaces）为 <table> 标签添加了一个 xmlns 属性，这样就为前缀赋予了一个与某个命名空间相关联的限定名称。&lt;f:table xmlns:f&#x3D;”<a target="_blank" rel="noopener" href="http://www.w3school.com.cn/furniture&quot;&gt;">http://www.w3school.com.cn/furniture&quot;&gt;</a></li>
+</ol>
+<h3 id="XML-DOM"><a href="#XML-DOM" class="headerlink" title="XML DOM"></a>XML DOM</h3><p>对于XML文档，可利用CSS的样式或XSLT格式转换后利用浏览器解析和浏览它，如何对XML文档进行数据的添加、删除、修改、查询等操作，就需要使用XML DOM技术了。 XML DOM实际上就是访问XML文档的标准应用程序接口。先看例子。</p>
+<p>XML DOM是W3C提出的针对XML的文档对象模型，是一个与语言无关、与平台无关的标准接口规范，定义了一套标准的用于XML的对象和一种标准的访问与处理XML文档的方法。</p>
+<p>对于XML应用开发来说，DOM 就是一个对象化的XML数据接口，它定义了XML文档的逻辑结构，可动态创建XML文档；遍历文档结构；添加、修改、删除文档内容；改变文档的显示方式等。无论是在浏览器里还是在浏览器外，无论是在服务器还是在客户端，只要有用到XML的地方，都可利用DOM接口进行编程应用。</p>
+<p>DOM将XML文档作为树结构来看待。XML文档中的每个成分都是一个节点。例如整个文档是一个文档根节点；每个XML标记是一个元素节点；包含在XML元素中的文本是文本节点；每一个XML属性是一个属性节点；注释属于注释节点。</p>
+<h3 id="XML-DOM与-SAX"><a href="#XML-DOM与-SAX" class="headerlink" title="XML DOM与 SAX"></a>XML DOM与 SAX</h3><p>访问XML文档的标准应用程序接口有两种：DOM（Document Object Model）和SAX（Simple API for XML）</p>
+<p>DOM接口中的XML分析器，在对XML文档进行分析之后，不管这个文档有多简单或者多复杂，其中的信息都会被转化成一棵对象节点树——DOM 树。在这棵节点树中，有一个Document根节点，所有其他的节点都是根节点的后代节点。节点树生成之后，就可通过XML DOM接口访问、修改、添加、删除树中的节点和属性以及文本内容等。应用程序可在任何时候访问XML文档中的任何一部分数据，也即可随机访问。与XML DOM不同，SAX提供的访问模式是一种顺序模式，这是一种快速读写XML数据的方式。当使用SAX分析器对XML文档进行分析时，会触发一系列事件，并激活相应的事件处理函数，应用程序通过编写的事件处理函数实现对XML文档的访问，因而SAX接口也被称作事件驱动接口。由于DOM分析器把整个XML文档转化成DOM树放在了内存中，当XML文档很大或结构比较复杂时，对内存的需求就比较高。SAX分析器在对XML文档进行分析时，触发了一系列的事件，由于事件触发本身是有时序性的，SAX提供的是一种顺序访问机制，对于分析过的部分，不能再倒回去重新处理，因此SAX分析器缺乏灵活性但实现简单，对内存要求比较低。</p>
+<h3 id="XML-DOM对象"><a href="#XML-DOM对象" class="headerlink" title="XML DOM对象"></a>XML DOM对象</h3><ol>
+<li>Document对象</li>
+<li>Node对象（节点对象） Node对象的子对象有Document、Element、Attribute、Text、Comment等。</li>
+<li>NodeList对象（节点列表）</li>
+<li>NamedNodeMap（有名节点映射）</li>
+</ol>
+<h3 id="XML与数据库的关系"><a href="#XML与数据库的关系" class="headerlink" title="XML与数据库的关系"></a>XML与数据库的关系</h3><ol>
+<li>XML不是数据库，数据库系统有它自己的一套管理模式，而XML仅仅是用来存放数据的文件，一个XML文档相当于数据库中的一个表。因此XML不可能取代数据库，但将数据库和XML结合起来，能够完成很多以前无法完成的工作，例如异构数据交换、应用系统集成等。</li>
+<li>数据若放在数据库中共享，则受到数据库连接请求失败、防火墙隔离等各种限制。XML是文本文件，可以穿透任何防火墙进行传输，已成为互联网上的事实数据交换标准。</li>
+<li>随着XML的广泛应用，各数据库产品都被重新设计，使之能很好支持XML，如Oracle、SQL Server、DB2、Sybase、MySQL等。另外还出现了支持native（原生） XML文档进行存储管理的专属XML数据库系统，如X-Hive、XML Repository、eXcelon、BaseX、 Sedna、 XMLDB等，提供对标签和路径的操作，文档存储和检索迅捷，可提供高质量的全文搜索。</li>
+<li>开发一个访问数据库的XML应用系统需要同时借助XML编程接口和数据库编程接口，前者用于对XML文档的解析、定位和查询，所需技术包括DOM和SAX；后者则是用于访问数据库，如数据库中数据的更新和检索等等，需要利用的技术有ODBC、JDBC、ADO&#x2F;ADO.NET等。</li>
+<li>XML文档可通过ADO.NET等各种数据接口方式存放到数据库中，也可将数据表中的数据形成一个XML文档通过XSL来呈现。</li>
+</ol>
+<h3 id="JSON"><a href="#JSON" class="headerlink" title="JSON"></a>JSON</h3><p>在XML中，需要许多开始标记和结束标记来标识数据，在互联网网上传输数据时效率不高，出现了JSON(JavaScript Object Notation) 轻量级的数据交换格式，易于阅读和编写，同时也易于机器解析和生成， 作为XML文档的一种有力补充。</p>
+<h2 id="第六章-NET-Web应用程序开发"><a href="#第六章-NET-Web应用程序开发" class="headerlink" title="第六章 .NET Web应用程序开发"></a>第六章 .NET Web应用程序开发</h2><h3 id="C"><a href="#C" class="headerlink" title="C#"></a>C#</h3><p>ASP.NET中采用强类型语言VB.NET、C#等，采用完全面向对象方式编程。C#是由C和C++发展而来的面向对象和类型安全的编程语言。C#读作C Sharp，它和Java非常相近。</p>
+<p>using System使用了由Microsoft.NET类库中提供的System名称空间，用来组织类库的分层。分层的类库之间用操作符“.”表示上下级分层关系。使用“using”后，就可无障碍地使用名称空间中的各种类型成员。名称空间除具有避免名称冲突之功能外，更重要的是在引用名称空间后，就可在程序代码中方便地使用系统提供的各种类库成员。</p>
+<p>名称空间除避免名称冲突外，也方便了程序代码的编写</p>
+<h4 id="C-中的数据类型"><a href="#C-中的数据类型" class="headerlink" title="C#中的数据类型"></a>C#中的数据类型</h4><p>数据类型变量直接包含数据，而引用类型变量存储对于对象的引用</p>
+<p>数据类型</p>
+<p><strong>简单类型</strong>（如char、int和float）枚举类型结构类型</p>
+<p><strong>引用类型</strong>类类型，接口类型，代表（delegate）类型，数组类型。</p>
+<p>对于引用类型，两个变量可引用相同的对象，因而可能出现对一个变量的操作影响到其他变量所引用对象的情况</p>
+<p>C#语言是一种强类型的语言，在使用变量前必须对该变量的类型进行声明，建议在声明变量时就对变量进行初始化。</p>
+<h4 id="变量名"><a href="#变量名" class="headerlink" title="变量名"></a>变量名</h4><p>必须以英文字母或@开头，由字母、数字、下划线组成，不能有空格、标点、运算符号、C#中关键字名、C#中库函数名，且大小写敏感。</p>
+<h4 id="常量"><a href="#常量" class="headerlink" title="常量"></a>常量</h4><p>C#中定义常量用const修饰符，例如“public const double y&#x3D;1.234;”。枚举类型是由一组特定常量构成的一种数据结构，是值类型的特殊形式。当需要一个有指定常量集合组成的数据类型时，可使用枚举类型。枚举类型不能实现接口、不能定义方法、属性、事件。</p>
+<h4 id="C-表达式"><a href="#C-表达式" class="headerlink" title="C#表达式"></a>C#表达式</h4><p>算术表达式</p>
+<p>赋值表达式</p>
+<p>关系表达式</p>
+<p>逻辑表达式。</p>
+<h4 id="控制语句"><a href="#控制语句" class="headerlink" title="控制语句"></a>控制语句</h4><p>分支语句有3种：</p>
+<p>①三元运算符，例如：a&#x3D;(b&gt;5)?100:10表示b&gt;5时a&#x3D;100，否则a&#x3D;10；</p>
+<p>②if语句（一次仅测试一个条件）；</p>
+<p>③switch语句（一次将测试变量与多个值比较）。</p>
+<p>循环语句有4种。可用break和continue语句跳出循环或继续执行循环。foreach语句可以遍历一个集合中的所有元素。</p>
+<h3 id="ASP-NET常用控件的使用介绍"><a href="#ASP-NET常用控件的使用介绍" class="headerlink" title="ASP.NET常用控件的使用介绍"></a>ASP.NET常用控件的使用介绍</h3><ul>
+<li>标准控件是和界面设计制作有关的控件</li>
+<li>数据访问操作及数据可视化方面控件 </li>
+<li>对用户输入的内容进行验证的控件</li>
+<li>提供站点导航、动态菜单、树型菜单的控件</li>
+<li>用户登录界面的设计制作控件</li>
+<li>WEB门户定制控件，可拖动区域在屏幕上重新布局</li>
+<li>提供Ajax编程的控件</li>
+<li>提供动态数据操控的的控件</li>
+<li>提供WEB页面上的报表处理控件</li>
+<li>HTML中的常规控件</li>
+</ul>
+<p><strong>客户端控件</strong>：Web服务器对客户端控件不做任何处理，交由客户端浏览器来处理。</p>
+<p><strong>服务器端控件</strong>：需要占用Web服务器的内存、CPU等系统资源等来处理服务端控件，最终转变成客户端控件，再交由客户端浏览器来处理。为提供网页访问速度，页面中尽量使用客户端控件。</p>
+<p>当某控件的EnableViewState属性为true时，表示该控件的值在页面刷新或回传重新显示页面后不会丢失，但却耗费网络资源和服务器资源。因此当页面回传后无须保值处理时应设为false。</p>
+<h2 id="第七章-AJAX技术"><a href="#第七章-AJAX技术" class="headerlink" title="第七章  AJAX技术"></a>第七章  AJAX技术</h2><p>Ajax：Asynchronous Javascript and XML</p>
+<p>该技术的目标是让用户动态地与页面进行交互，加快服务器的响应速度，减少用户的等待时间，是一种创建交互式Web应用程序的开发技术。其技术的最简单描述就是实现局部刷新。</p>
+<p>Ajax的局部刷新：通过异步数据交换和处理，显著提高Web应用程序运行效率。Ajax不是新技术，是各个已有核心技术的创新应用。</p>
+<p>Ajax的核心是支持异步请求的XmlHttpRequest对象，使开发者可使用JavaScript向服务器提出异步请求并处理响应。</p>
+<p>实现Ajax技术的应用开发主要有：直接基于XMLHttpRequest对象，利用各种Ajax框架，简化Ajax开发</p>
+<h1 id="CGI脚本"><a href="#CGI脚本" class="headerlink" title="CGI脚本"></a><strong>CGI脚本</strong></h1><p><a target="_blank" rel="noopener" href="https://www.jb51.net/article/10514.htm">https://www.jb51.net/article/10514.htm</a></p>
+<p>CGI 意思为 Common Gateway Interface, 一种基于浏览器的输入、在Web服务器上运行的程序方法. CGI脚本 使你的浏览器与用户能交互，为了在数据库中寻找一个名词, 提供你写入的评论，或者从一个表单中选择几个条目并且能得到一个明确的回答. 如果你曾经遇到过在web上填表或进行搜索, 你就是用的CGI脚本. 你那时也许没有意识到，因为大部分工作是在服务器上运行的，你看到的只是结果.</p>
+<h2 id="CGI脚本是什么"><a href="#CGI脚本是什么" class="headerlink" title="CGI脚本是什么?"></a><strong>CGI脚本是什么?</strong></h2><p>CGI脚本简单地讲是个运行在Web服务器上的程序, 有浏览器的输入触发. 这个脚本通常象服务器和系统中其他程序如数据库的桥梁。</p>
+<p>CGI 脚本难道不是一个真正的脚本?按照你的服务器的支持, 他们可能是一个编译好的程序或者批命令文件或者其他可执行的东西. 为了简单起见，我们统称他们为脚本scripts.</p>
+<hr>
+<p>CGI 脚本是任何运行在web服务器上的程序. CGI意思是Common Gateway Interface。</p>
+<hr>
+<p>CGI脚本是用下列两种方法使用的: 作为一个表单的ACTION 或 作为一个页中的直接link。</p>
+<h2 id="CGI脚本是怎样工作的"><a href="#CGI脚本是怎样工作的" class="headerlink" title="CGI脚本是怎样工作的?"></a>CGI脚本是怎样工作的?</h2><ol>
+<li>一个URL指向一个CGI脚本. 一个CGI脚本的URL能如普通的URL一样在任何地方出现。</li>
+<li>服务器接收请求, 按照那个URL指向的脚本文件(注意文件的位置和扩展名),执行脚本.</li>
+<li>脚本执行基于输入数据的操作，包括查询数据库、计算数值或调用系统中其他程序.</li>
+<li>脚本产生某种Web服务器能理解的输出结果.</li>
+<li>服务器接收来自脚本的输出并且把它传回浏览器，让用户了解结果。</li>
+</ol>
+<h1 id="一个服务器同时运行多个网站三种方式"><a href="#一个服务器同时运行多个网站三种方式" class="headerlink" title="一个服务器同时运行多个网站三种方式"></a>一个服务器同时运行多个网站三种方式</h1><p>1.IP一样，端口不一样<br>2.端口一样IP不一样<br>3.端口一样，IP一样，绑定的域名不一样</p>
+<h1 id="关于Ajax"><a href="#关于Ajax" class="headerlink" title="关于Ajax"></a>关于Ajax</h1><p>readyStae状态：</p>
+<p>0: (Uninitialized) the send( ) method has not yet been invoked.<br>1: (Loading) the send( ) method has been invoked, request in progress.<br>2: (Loaded) the send( ) method has completed, entire response received.<br>3: (Interactive) the response is being parsed.<br>4: (Completed) the response has been parsed, is ready for harvesting. </p>
+<p>0 － （未初始化）还没有调用send()方法<br>1 － （载入）已调用send()方法，正在发送请求<br>2 － （载入完成）send()方法执行完成，已经接收到全部响应内容<br>3 － （交互）正在解析响应内容<br>4 － （完成）响应内容解析完成，可以在客户端调用了</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="http://example.com">如风</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http://example.com/2022/11/16/Web%E5%BC%80%E5%8F%91%E6%8A%80%E6%9C%AF%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/">http://example.com/2022/11/16/Web%E5%BC%80%E5%8F%91%E6%8A%80%E6%9C%AF%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://example.com" target="_blank">早早起床，拥抱太阳</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"></div><div class="post_share"><div class="social-share" data-image="https://fastly.jsdelivr.net/gh/Leevan001/pictureBed@main/utools/1668274206122R-C.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://fastly.jsdelivr.net/gh/Leevan001/pictureBed@main/utools/1668273103133D8802D069515E0A42BC91FDE752B8A5C.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">如风</div><div class="author-info__description">热爱睡觉的小笨蛋一枚吖~</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">5</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">2</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/Leevan001"><i></i><span>🛴前往小家...</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/Leevan001" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:by1249824014@gmail.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Web%E5%89%8D%E7%AB%AF"><span class="toc-number">1.</span> <span class="toc-text">Web前端</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#src%E5%92%8Chref%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="toc-number">1.1.</span> <span class="toc-text">src和href的区别</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#HTML-5-lt-DOCTYPE-gt-%E6%A0%87%E7%AD%BE"><span class="toc-number">1.2.</span> <span class="toc-text">HTML 5 &lt;!DOCTYPE&gt; 标签</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%B2%97%E4%BD%93"><span class="toc-number">1.3.</span> <span class="toc-text">粗体</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#html%E5%AE%9E%E4%BD%93%E7%AC%A6%E5%8F%B7%E7%BC%96%E7%A0%81%E8%A7%A3%E6%9E%90"><span class="toc-number">1.4.</span> <span class="toc-text">html实体符号编码解析</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B9%A6%E7%AD%BE"><span class="toc-number">1.5.</span> <span class="toc-text">书签</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#html%E5%88%9B%E5%BB%BA%E7%94%B5%E5%AD%90%E9%82%AE%E4%BB%B6%E9%93%BE%E6%8E%A5"><span class="toc-number">1.6.</span> <span class="toc-text">html创建电子邮件链接</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BD%91%E9%A1%B5%E4%B8%AD%E4%B8%80%E8%88%AC%E4%BD%BF%E7%94%A8%E7%9A%84%E5%9B%BE%E7%89%87%E6%A0%BC%E5%BC%8F"><span class="toc-number">1.7.</span> <span class="toc-text">网页中一般使用的图片格式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%94%A8%E4%BA%8E%E6%92%AD%E6%94%BEhtml5%E8%A7%86%E9%A2%91%E6%96%87%E4%BB%B6%E7%9A%84%E6%A0%87%E7%AD%BE"><span class="toc-number">1.8.</span> <span class="toc-text">用于播放html5视频文件的标签</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%EF%BC%9Caudio%EF%BC%9E%E6%A0%87%E7%AD%BE%E6%94%AF%E6%8C%81%E7%9A%84%E9%9F%B3%E9%A2%91%E6%A0%BC%E5%BC%8F"><span class="toc-number">1.9.</span> <span class="toc-text">＜audio＞标签支持的音频格式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#CSS%E4%B8%89%E7%A7%8D%E6%A0%B7%E5%BC%8F%E8%A1%A8%E5%8F%8A%E5%85%B6%E4%BD%BF%E7%94%A8%EF%BC%88%E5%86%85%E9%83%A8%E6%A0%B7%E5%BC%8F%E8%A1%A8%EF%BC%8C%E8%A1%8C%E5%86%85%E6%A0%B7%E5%BC%8F%E8%A1%A8%EF%BC%8C%E5%A4%96%E9%83%A8%E6%A0%B7%E5%BC%8F%E8%A1%A8%EF%BC%89"><span class="toc-number">1.10.</span> <span class="toc-text">CSS三种样式表及其使用（内部样式表，行内样式表，外部样式表）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%9B%B6%E7%A2%8E%E7%9F%A5%E8%AF%86%E7%82%B9"><span class="toc-number">1.11.</span> <span class="toc-text">零碎知识点</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#CSS%E5%B0%BA%E5%AF%B8%E8%AE%BE%E7%BD%AE%E7%9A%84%E5%8D%95%E4%BD%8D"><span class="toc-number">1.12.</span> <span class="toc-text">CSS尺寸设置的单位</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%A1%8C%E5%86%85%E5%85%83%E7%B4%A0%E5%92%8C%E5%9D%97%E7%BA%A7%E5%85%83%E7%B4%A0"><span class="toc-number">1.13.</span> <span class="toc-text">行内元素和块级元素</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9C%A8%E9%A1%B5%E9%9D%A2%E4%B8%8A%E5%BC%95%E7%94%A8%E8%84%9A%E6%9C%AC%E6%96%87%E4%BB%B6js-js"><span class="toc-number">1.14.</span> <span class="toc-text">在页面上引用脚本文件js.js</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#jQuery"><span class="toc-number">1.15.</span> <span class="toc-text">jQuery</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#javaScript"><span class="toc-number">1.16.</span> <span class="toc-text">javaScript</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#JavaScript-%E5%85%B3%E9%94%AE%E5%AD%97"><span class="toc-number">1.16.1.</span> <span class="toc-text">JavaScript 关键字</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#XML"><span class="toc-number">1.17.</span> <span class="toc-text">XML</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#XML%E7%89%B9%E7%82%B9"><span class="toc-number">1.17.1.</span> <span class="toc-text">XML特点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#XML%E8%AF%AD%E6%B3%95%E6%A0%BC%E5%BC%8F"><span class="toc-number">1.17.2.</span> <span class="toc-text">XML语法格式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#XML-%E5%85%83%E7%B4%A0%E5%BF%85%E9%A1%BB%E9%81%B5%E5%BE%AA%E4%BB%A5%E4%B8%8B%E5%91%BD%E5%90%8D%E8%A7%84%E5%88%99%EF%BC%9A"><span class="toc-number">1.17.3.</span> <span class="toc-text">XML 元素必须遵循以下命名规则：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#XML%E7%BA%A6%E6%9D%9F"><span class="toc-number">1.17.4.</span> <span class="toc-text">XML约束</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#css%E4%B8%AD%E7%9A%84display%E5%B1%9E%E6%80%A7%E6%9C%89%E5%93%AA%E4%BA%9B%E5%80%BC%EF%BC%9F%E5%90%84%E6%9C%89%E4%BB%80%E4%B9%88%E4%BD%9C%E7%94%A8%EF%BC%9F"><span class="toc-number">1.18.</span> <span class="toc-text">css中的display属性有哪些值？各有什么作用？</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#WebPPT%E7%9F%A5%E8%AF%86"><span class="toc-number">2.</span> <span class="toc-text">WebPPT知识</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E4%B8%80%E7%AB%A0-Web%E5%BC%80%E5%8F%91%E6%8A%80%E6%9C%AF%E6%A6%82%E8%BF%B0"><span class="toc-number">2.1.</span> <span class="toc-text">第一章   Web开发技术概述</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9C%8D%E5%8A%A1%E5%99%A8"><span class="toc-number">2.1.1.</span> <span class="toc-text">服务器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Web"><span class="toc-number">2.1.2.</span> <span class="toc-text">Web</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Web%E6%9C%8D%E5%8A%A1%E5%99%A8"><span class="toc-number">2.1.3.</span> <span class="toc-text">Web服务器</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E6%9C%89%E4%BA%9BWeb%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%9C%80%E8%A6%81%E8%8A%B1%E9%92%B1%E8%B4%AD%E4%B9%B0%EF%BC%9F"><span class="toc-number">2.1.3.1.</span> <span class="toc-text">为什么有些Web服务器需要花钱购买？</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Web%E9%A1%B5%E9%9D%A2"><span class="toc-number">2.1.4.</span> <span class="toc-text">Web页面</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BB%9F%E4%B8%80%E8%B5%84%E6%BA%90%E5%AE%9A%E4%BD%8D%E7%AC%A6%EF%BC%88URL%EF%BC%89"><span class="toc-number">2.1.5.</span> <span class="toc-text">统一资源定位符（URL）</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E6%9C%89%E6%97%B6URL%E5%9C%B0%E5%9D%80%E4%B8%AD%E6%B2%A1%E6%9C%89%E6%96%87%E4%BB%B6%E5%90%8D%E8%BF%98%E8%83%BD%E7%85%A7%E5%B8%B8%E6%98%BE%E7%A4%BA%E9%A1%B5%E9%9D%A2%E5%86%85%E5%AE%B9%E5%91%A2"><span class="toc-number">2.1.5.1.</span> <span class="toc-text">为什么有时URL地址中没有文件名还能照常显示页面内容呢</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#URI%E5%92%8CURL%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="toc-number">2.1.5.2.</span> <span class="toc-text">URI和URL的区别</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E9%9C%80%E8%A6%81URI%E7%9B%B8%E5%AF%B9%E5%9C%B0%E5%9D%80"><span class="toc-number">2.1.5.3.</span> <span class="toc-text">为什么需要URI相对地址?</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Web%E6%B5%8F%E8%A7%88%E5%99%A8%E7%9A%84%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86"><span class="toc-number">2.1.6.</span> <span class="toc-text">Web浏览器的工作原理</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9C%A8%E7%BD%91%E7%BB%9C%E5%B8%A6%E5%AE%BD%E7%9B%B8%E5%90%8C%E7%9A%84%E6%83%85%E5%86%B5%E4%B8%8B%E5%90%8C%E4%B8%80%E5%8F%B0%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%BD%BF%E7%94%A8%E4%B8%8D%E5%90%8C%E7%9A%84%E6%B5%8F%E8%A7%88%E5%99%A8%E8%AE%BF%E9%97%AE%E5%90%8C%E4%B8%80%E4%B8%AA%E7%BD%91%E7%AB%99%EF%BC%8C%E4%B8%BA%E4%BB%80%E4%B9%88%E8%AE%BF%E9%97%AE%E9%80%9F%E5%BA%A6%E4%BC%9A%E4%B8%8D%E4%B8%80%E6%A0%B7%EF%BC%9F"><span class="toc-number">2.1.6.1.</span> <span class="toc-text">在网络带宽相同的情况下同一台计算机使用不同的浏览器访问同一个网站，为什么访问速度会不一样？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B5%8F%E8%A7%88%E5%99%A8Cookie"><span class="toc-number">2.1.6.2.</span> <span class="toc-text">浏览器Cookie</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#https-x2F-x2F-%E4%B8%8E-http-x2F-x2F-%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="toc-number">2.1.6.3.</span> <span class="toc-text">https:&#x2F;&#x2F;  与  http:&#x2F;&#x2F; 的区别</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#C-x2F-S%E6%A8%A1%E5%BC%8F%E4%B8%8EB-x2F-S%E6%A8%A1%E5%BC%8F"><span class="toc-number">2.1.7.</span> <span class="toc-text">C&#x2F;S模式与B&#x2F;S模式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Web%E8%AE%BF%E9%97%AE%E7%9A%84%E5%8E%9F%E7%90%86"><span class="toc-number">2.1.8.</span> <span class="toc-text">Web访问的原理</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%9D%99%E6%80%81%E7%BD%91%E9%A1%B5"><span class="toc-number">2.1.8.1.</span> <span class="toc-text">静态网页</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8A%A8%E6%80%81%E7%BD%91%E9%A1%B5"><span class="toc-number">2.1.8.2.</span> <span class="toc-text">动态网页</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Web%E5%BC%80%E5%8F%91%E5%B9%B3%E5%8F%B0%E7%9A%84%E7%BB%84%E6%88%90"><span class="toc-number">2.1.9.</span> <span class="toc-text">Web开发平台的组成</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Web%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91%E6%8A%80%E6%9C%AF"><span class="toc-number">2.1.10.</span> <span class="toc-text">Web前端开发技术</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%90%8E%E7%AB%AF%E5%BC%80%E5%8F%91%E6%8A%80%E6%9C%AF"><span class="toc-number">2.1.10.1.</span> <span class="toc-text">后端开发技术</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E4%BA%8C%E7%AB%A0-Web%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E7%9A%84%E5%BB%BA%E7%AB%8B"><span class="toc-number">2.2.</span> <span class="toc-text">第二章   Web开发环境的建立</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E4%B8%89%E7%AB%A0-HTML%E4%B8%8ECSS"><span class="toc-number">2.3.</span> <span class="toc-text">第三章   HTML与CSS</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#HTML5%E7%89%B9%E6%80%A7"><span class="toc-number">2.3.1.</span> <span class="toc-text">HTML5特性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8CSS%E7%9A%84%E4%BC%98%E7%82%B9"><span class="toc-number">2.3.2.</span> <span class="toc-text">使用CSS的优点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#CSS%E7%9A%84%E9%80%89%E6%8B%A9%E7%AC%A6"><span class="toc-number">2.3.3.</span> <span class="toc-text">CSS的选择符</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%99%9A%E7%B1%BB"><span class="toc-number">2.3.3.1.</span> <span class="toc-text">虚类</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%99%9A%E5%85%83%E7%B4%A0"><span class="toc-number">2.3.3.2.</span> <span class="toc-text">虚元素</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9A%E4%BD%8D%E5%B1%9E%E6%80%A7"><span class="toc-number">2.3.4.</span> <span class="toc-text">定位属性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A1%A8%E6%A0%BC%E5%88%B6%E4%BD%9C"><span class="toc-number">2.3.5.</span> <span class="toc-text">表格制作</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E5%9B%9B%E7%AB%A0-DHTML"><span class="toc-number">2.4.</span> <span class="toc-text">第四章  DHTML</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#JavaScript%E7%BC%96%E7%A8%8B%E5%9F%BA%E7%A1%80"><span class="toc-number">2.4.1.</span> <span class="toc-text">JavaScript编程基础</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%89%B9%E7%82%B9"><span class="toc-number">2.4.1.1.</span> <span class="toc-text">特点</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#HTML-DOM%E5%9F%BA%E7%A1%80%EF%BC%88Document-Object-Model%EF%BC%89"><span class="toc-number">2.4.2.</span> <span class="toc-text">HTML DOM基础（Document Object Model）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#cookie"><span class="toc-number">2.4.3.</span> <span class="toc-text">cookie</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%87%E6%A1%A3%E5%AF%B9%E8%B1%A1"><span class="toc-number">2.4.4.</span> <span class="toc-text">文档对象</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8A%A8%E6%80%81%E7%94%9F%E6%88%908%E8%A1%8C16%E5%88%97%E8%A1%A8%E6%A0%BC"><span class="toc-number">2.4.4.1.</span> <span class="toc-text">动态生成8行16列表格</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#HTML-DOM%E6%A0%91%E7%AE%80%E4%BB%8B"><span class="toc-number">2.4.5.</span> <span class="toc-text">HTML DOM树简介</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#jQuery%E7%AE%80%E4%BB%8B"><span class="toc-number">2.4.6.</span> <span class="toc-text">jQuery简介</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#jQuery%E9%80%89%E6%8B%A9%E5%99%A8"><span class="toc-number">2.4.6.1.</span> <span class="toc-text">jQuery选择器</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E4%BA%94%E7%AB%A0-XML%E5%9F%BA%E7%A1%80"><span class="toc-number">2.5.</span> <span class="toc-text">第五章 XML基础</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#XML%E7%9A%84%E7%89%B9%E7%82%B9"><span class="toc-number">2.5.1.</span> <span class="toc-text">XML的特点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#XML%E4%B8%AD%E6%9C%89%E5%85%B3%E5%90%8D%E8%AF%8D%E7%9A%84%E7%9B%B8%E4%BA%92%E5%85%B3%E7%B3%BB"><span class="toc-number">2.5.2.</span> <span class="toc-text">XML中有关名词的相互关系</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%81%BF%E5%85%8D%E5%91%BD%E5%90%8D%E5%86%B2%E7%AA%81"><span class="toc-number">2.5.3.</span> <span class="toc-text">避免命名冲突</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#XML-DOM"><span class="toc-number">2.5.4.</span> <span class="toc-text">XML DOM</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#XML-DOM%E4%B8%8E-SAX"><span class="toc-number">2.5.5.</span> <span class="toc-text">XML DOM与 SAX</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#XML-DOM%E5%AF%B9%E8%B1%A1"><span class="toc-number">2.5.6.</span> <span class="toc-text">XML DOM对象</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#XML%E4%B8%8E%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E5%85%B3%E7%B3%BB"><span class="toc-number">2.5.7.</span> <span class="toc-text">XML与数据库的关系</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#JSON"><span class="toc-number">2.5.8.</span> <span class="toc-text">JSON</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E5%85%AD%E7%AB%A0-NET-Web%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E5%BC%80%E5%8F%91"><span class="toc-number">2.6.</span> <span class="toc-text">第六章 .NET Web应用程序开发</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#C"><span class="toc-number">2.6.1.</span> <span class="toc-text">C#</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#C-%E4%B8%AD%E7%9A%84%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="toc-number">2.6.1.1.</span> <span class="toc-text">C#中的数据类型</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8F%98%E9%87%8F%E5%90%8D"><span class="toc-number">2.6.1.2.</span> <span class="toc-text">变量名</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B8%B8%E9%87%8F"><span class="toc-number">2.6.1.3.</span> <span class="toc-text">常量</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#C-%E8%A1%A8%E8%BE%BE%E5%BC%8F"><span class="toc-number">2.6.1.4.</span> <span class="toc-text">C#表达式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%8E%A7%E5%88%B6%E8%AF%AD%E5%8F%A5"><span class="toc-number">2.6.1.5.</span> <span class="toc-text">控制语句</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ASP-NET%E5%B8%B8%E7%94%A8%E6%8E%A7%E4%BB%B6%E7%9A%84%E4%BD%BF%E7%94%A8%E4%BB%8B%E7%BB%8D"><span class="toc-number">2.6.2.</span> <span class="toc-text">ASP.NET常用控件的使用介绍</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E4%B8%83%E7%AB%A0-AJAX%E6%8A%80%E6%9C%AF"><span class="toc-number">2.7.</span> <span class="toc-text">第七章  AJAX技术</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#CGI%E8%84%9A%E6%9C%AC"><span class="toc-number">3.</span> <span class="toc-text">CGI脚本</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#CGI%E8%84%9A%E6%9C%AC%E6%98%AF%E4%BB%80%E4%B9%88"><span class="toc-number">3.1.</span> <span class="toc-text">CGI脚本是什么?</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#CGI%E8%84%9A%E6%9C%AC%E6%98%AF%E6%80%8E%E6%A0%B7%E5%B7%A5%E4%BD%9C%E7%9A%84"><span class="toc-number">3.2.</span> <span class="toc-text">CGI脚本是怎样工作的?</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%80%E4%B8%AA%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%90%8C%E6%97%B6%E8%BF%90%E8%A1%8C%E5%A4%9A%E4%B8%AA%E7%BD%91%E7%AB%99%E4%B8%89%E7%A7%8D%E6%96%B9%E5%BC%8F"><span class="toc-number">4.</span> <span class="toc-text">一个服务器同时运行多个网站三种方式</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%85%B3%E4%BA%8EAjax"><span class="toc-number">5.</span> <span class="toc-text">关于Ajax</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2022/11/18/%E6%97%A5%E8%AE%B0/" title="日记"><img src="https://fastly.jsdelivr.net/gh/Leevan001/pictureBed@main/utools/1668325981308812465B3FBC4B5003BF35EA940C3FCBE.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="日记"/></a><div class="content"><a class="title" href="/2022/11/18/%E6%97%A5%E8%AE%B0/" title="日记">日记</a><time datetime="2022-11-18T15:01:27.000Z" title="发表于 2022-11-18 23:01:27">2022-11-18</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/11/16/Web%E5%BC%80%E5%8F%91%E6%8A%80%E6%9C%AF%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/" title="Web开发技术复习整理"><img src="https://fastly.jsdelivr.net/gh/Leevan001/pictureBed@main/utools/1668274206122R-C.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Web开发技术复习整理"/></a><div class="content"><a class="title" href="/2022/11/16/Web%E5%BC%80%E5%8F%91%E6%8A%80%E6%9C%AF%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/" title="Web开发技术复习整理">Web开发技术复习整理</a><time datetime="2022-11-16T14:01:49.000Z" title="发表于 2022-11-16 22:01:49">2022-11-16</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/11/16/%E8%BD%AF%E4%BB%B6%E9%9C%80%E6%B1%82%E5%88%86%E6%9E%90/" title="软件需求分析"><img src="https://fastly.jsdelivr.net/gh/Leevan001/pictureBed@main/utools/1668325987314FA3E3F866C40A665F46EF56BBD227395.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="软件需求分析"/></a><div class="content"><a class="title" href="/2022/11/16/%E8%BD%AF%E4%BB%B6%E9%9C%80%E6%B1%82%E5%88%86%E6%9E%90/" title="软件需求分析">软件需求分析</a><time datetime="2022-11-16T14:00:45.000Z" title="发表于 2022-11-16 22:00:45">2022-11-16</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/11/13/hadoop%E7%9A%84%E4%B8%80%E4%BA%9B%E5%9F%BA%E7%A1%80%E6%93%8D%E4%BD%9C/" title="hadoop的一些基础操作"><img src="https://fastly.jsdelivr.net/gh/Leevan001/pictureBed@main/utools/1668274206122R-C.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="hadoop的一些基础操作"/></a><div class="content"><a class="title" href="/2022/11/13/hadoop%E7%9A%84%E4%B8%80%E4%BA%9B%E5%9F%BA%E7%A1%80%E6%93%8D%E4%BD%9C/" title="hadoop的一些基础操作">hadoop的一些基础操作</a><time datetime="2022-11-13T14:37:52.000Z" title="发表于 2022-11-13 22:37:52">2022-11-13</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/11/13/%E6%95%B0%E6%8D%AE%E7%A7%91%E5%AD%A6%E5%AF%BC%E8%AE%BA/" title="数据科学导论"><img src="https://fastly.jsdelivr.net/gh/Leevan001/pictureBed@main/utools/166832600130917317FFACC42E4B5729AE3767B0311D0.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="数据科学导论"/></a><div class="content"><a class="title" href="/2022/11/13/%E6%95%B0%E6%8D%AE%E7%A7%91%E5%AD%A6%E5%AF%BC%E8%AE%BA/" title="数据科学导论">数据科学导论</a><time datetime="2022-11-13T13:48:30.000Z" title="发表于 2022-11-13 21:48:30">2022-11-13</time></div></div></div></div></div></div></main><footer id="footer" style="background-image: url('https://fastly.jsdelivr.net/gh/Leevan001/pictureBed@main/utools/16683306913121668330690512.png')"><div id="footer-wrap"><div class="copyright">&copy;2022 By 如风</div><div class="footer_custom_text">广阔天地，大有作为</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><div class="js-pjax"></div><script id="click-heart" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/click-heart.min.js" async="async" mobile="false"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
