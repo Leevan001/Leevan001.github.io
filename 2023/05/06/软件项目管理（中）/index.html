@@ -1,0 +1,656 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>软件项目管理（中） | 早早起床，拥抱太阳</title><meta name="author" content="如风"><meta name="copyright" content="如风"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="第六章 知识点 （成本计划） 软件规模单位 ➢ LOC(Line of Code) ➢ 源代码长度的测量 ➢ FP(Function Point) ➢ 用系统的功能数量来测量 软件工作量单位 人月 人天 人年 从软件程序量的角度定义项目规模 ➢与具体的编程语言有关 ➢分解足够详细 ➢有一定的经验数据 代码行技术的主要优缺点 优点： 代码是所有软件开发项目都有的“产品”，而 且很容易计算代码行数。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="软件项目管理（中）">
+<meta property="og:url" content="https://blog.liyifan001.top/2023/05/06/%E8%BD%AF%E4%BB%B6%E9%A1%B9%E7%9B%AE%E7%AE%A1%E7%90%86%EF%BC%88%E4%B8%AD%EF%BC%89/index.html">
+<meta property="og:site_name" content="早早起床，拥抱太阳">
+<meta property="og:description" content="第六章 知识点 （成本计划） 软件规模单位 ➢ LOC(Line of Code) ➢ 源代码长度的测量 ➢ FP(Function Point) ➢ 用系统的功能数量来测量 软件工作量单位 人月 人天 人年 从软件程序量的角度定义项目规模 ➢与具体的编程语言有关 ➢分解足够详细 ➢有一定的经验数据 代码行技术的主要优缺点 优点： 代码是所有软件开发项目都有的“产品”，而 且很容易计算代码行数。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://fastly.jsdelivr.net/gh/Leevan001/pictureBed@main/utools/1668325987314FA3E3F866C40A665F46EF56BBD227395.png">
+<meta property="article:published_time" content="2023-05-06T07:27:09.000Z">
+<meta property="article:modified_time" content="2023-05-06T12:36:14.585Z">
+<meta property="article:author" content="如风">
+<meta property="article:tag" content="软件项目管理">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://fastly.jsdelivr.net/gh/Leevan001/pictureBed@main/utools/1668325987314FA3E3F866C40A665F46EF56BBD227395.png"><link rel="shortcut icon" href="/%5Bobject%20Object%5D"><link rel="canonical" href="https://blog.liyifan001.top/2023/05/06/%E8%BD%AF%E4%BB%B6%E9%A1%B9%E7%9B%AE%E7%AE%A1%E7%90%86%EF%BC%88%E4%B8%AD%EF%BC%89/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":200},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: true,
+    post: true
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"limitCount":50,"languages":{"author":"作者: 如风","link":"链接: ","source":"来源: 早早起床，拥抱太阳","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"}},
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '软件项目管理（中）',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2023-05-06 20:36:14'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.3.0"><link href="https://cdn.bootcss.com/KaTeX/0.11.1/katex.min.css" rel="stylesheet" /></head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://fastly.jsdelivr.net/gh/Leevan001/pictureBed@main/utools/1668273103133D8802D069515E0A42BC91FDE752B8A5C.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">26</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">28</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">16</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa fa-heartbeat"></i><span> 清单</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/Gallery/"><i class="fa-fw fas fa-images"></i><span> 照片</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://fastly.jsdelivr.net/gh/Leevan001/pictureBed@main/utools/1668325987314FA3E3F866C40A665F46EF56BBD227395.png')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">早早起床，拥抱太阳</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa fa-heartbeat"></i><span> 清单</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/Gallery/"><i class="fa-fw fas fa-images"></i><span> 照片</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">软件项目管理（中）</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2023-05-06T07:27:09.000Z" title="发表于 2023-05-06 15:27:09">2023-05-06</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2023-05-06T12:36:14.585Z" title="更新于 2023-05-06 20:36:14">2023-05-06</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E8%BD%AF%E4%BB%B6%E9%A1%B9%E7%9B%AE%E7%AE%A1%E7%90%86/">软件项目管理</a><i class="fas fa-angle-right post-meta-separator"></i><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E8%BD%AF%E4%BB%B6%E9%A1%B9%E7%9B%AE%E7%AE%A1%E7%90%86/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/">复习整理</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">8.2k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>25分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="软件项目管理（中）"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1>第六章</h1>
+<h2 id="知识点">知识点</h2>
+<p>（成本计划）</p>
+<p>软件规模单位</p>
+<p>➢ LOC(Line of Code) ➢ 源代码长度的测量</p>
+<p>➢ FP(Function Point) ➢ 用系统的功能数量来测量</p>
+<p>软件工作量单位</p>
+<p>人月</p>
+<p>人天</p>
+<p>人年</p>
+<p>从软件程序量的角度定义项目规模</p>
+<p>➢与具体的编程语言有关 ➢分解足够详细 ➢有一定的经验数据</p>
+<p><font color='orange'>代码行技术的主要优缺点</font></p>
+<p>优点：</p>
+<p>代码是所有软件开发项目都有的“产品”，而 且很容易计算代码行数。</p>
+<p>缺陷：</p>
+<ol>
+<li>对代码行没有公认的可接受的标准定义</li>
+<li>代码行数量依赖于所用的编程语言和个人的编程风格.</li>
+<li>在项目早期,需求不稳定、设计不成熟、实现不确定的 情况下很难准确地估算代码量.</li>
+<li>代码行强调编码的工作量,只是项目实现阶段的一部分</li>
+</ol>
+<p><font color='yellow'>功能点估算</font></p>
+<p>➢ 与实现的语言和技术没有关系 ➢ 用系统的功能数量来测量其规模</p>
+<p>➢ 通过评估、加权、量化得出功能点 ➢ 估算软件规模，即软件规模度量单位</p>
+<img src="https://fastly.jsdelivr.net/gh/Leevan001/pictureBed@main/utools/16833433632471683343362582.png" style="zoom:33%;" />
+<img src="https://fastly.jsdelivr.net/gh/Leevan001/pictureBed@main/utools/16833434012671683343401214.png" style="zoom:50%;" />
+<p><img src="https://fastly.jsdelivr.net/gh/Leevan001/pictureBed@main/utools/16833445092491683344508672.png" alt=""></p>
+<p><img src="https://fastly.jsdelivr.net/gh/Leevan001/pictureBed@main/utools/16833445622521683344561321.png" alt=""></p>
+<h2 id="习题">习题</h2>
+<p>软件项目成本包括直接成本和间接成本，一般而言，项目人力成本归属于（<font color='red'>直接</font>）成本。</p>
+<p>再在项目初期，一般采用的成本估算方法是（<font color='red'>类比估算法</font>）。</p>
+<p>功能点方法中5类功能组件的计数项是（<font color='red'>外部输入</font>）、（<font color='red'>外部输出</font>）、（<font color='red'>外部查询</font>）、（<font color='red'>内部逻辑文件</font>）、（<font color='red'>外部接口文件</font>）。</p>
+<p>敏捷项目一般采用（<font color='red'>故事点</font>）估算方法。</p>
+<p>（<font color='red'>用例点</font>）方法通过分析用例角色、场景和技术与环境因子等来进行软件估算。</p>
+<p>故事点估算是一个相对的估算过程。（√）</p>
+<p>在软件项目估算中，估算结果是没有误差的。（×）</p>
+<p>.人的劳动消耗所付出的代价是软件产品的主要成本。（√）</p>
+<p>功能点估算与项目所使用的语言和技术有关。（×）</p>
+<p>COCOMO81有3个<font color='red'>等级</font>的模型：有机型、嵌入型、半嵌入型。（×）</p>
+<blockquote>
+<p>参数模型估算法一COCOMO 模型</p>
+<p>参数模型估算法一 -COCOMO 81模型</p>
+<p>COCOMO 81模型将项目的<font color='orange'>模式</font>分为有机型、嵌入型和半嵌入型3种类型。</p>
+<p>COCOMO81有3个<font color='orange'>等级</font>的模型，即基本模型、中等模型和高级模型</p>
+</blockquote>
+<p>间接成本是与一个具体项目相关的成本。（×）</p>
+<p>在进行软件估算的时候，可以直接考虑参照其他企业的模型进行项目估算。（×）</p>
+<p>三点估算法选择的3种估算值不包括（D）</p>
+<p>A．最可能成本 B.最乐观成本 C.最悲观成本 <font color='red'>D.项目经理估算值</font></p>
+<p>下面关于估算的说法，错误的是（C）</p>
+<p>A.估算是有误差的</p>
+<p>B.估算时不要太迷信数学模型</p>
+<p><font color='red'>C.经验对于估算来说不重要</font></p>
+<p>D.历史数据对于估算来说非常重要</p>
+<p>假设某项目的注册功能为3个故事点，而其中成绩录入工作量比注册功能工作量略多，如果采用Fibonacci 等级标准估算，则成绩录入功能的估算值的（A）</p>
+<p>A．5个故事点 B.4个故事点 C.6个故事点 D.7个故事点</p>
+<blockquote>
+<p>Fibonacci标准：0、1、2、3、5、8、13（一般就到13）。选了故事点预估为3的用户故事，工作量差不多 3，略少 2，更少 1，用户故事不需要完成 0.略多 5，更多 8，再多 13</p>
+</blockquote>
+<p>（B）是成本的主要因素，是成本估算的基础。</p>
+<p>A.计划<font color='red'>B.规模</font>C.风险D.利润</p>
+<p>常见的成本估算方法不包括（D）</p>
+<p>A.代码行B.功能点C.类比法<font color='red'>D.关键路径法</font></p>
+<p>下列不是UFC的功能计数项是（C）</p>
+<p>A.外部输出B.外部文件<font color='red'>C.内部输出</font>D.内部文件</p>
+<blockquote>
+<p>计算UFC，应该先计算五类功能组件的计数项：内部逻辑文件、外部输入、外部输出、外部查询、外部接口文件。</p>
+</blockquote>
+<p>成本预算的目的是（A）</p>
+<p><font color='red'>A.生产成本基线</font>B.编写报告书C.指导设计过程D.方便进度管理</p>
+<p>下列不是软件项目规模单位的是（D）</p>
+<p>A.源代码长度（LOC）B.功能点（FP）C.人天、人月、人年<font color='red'>D.小时</font></p>
+<p>在成本管理过程中，每个时间段中等各个工作单元的成本是（B）</p>
+<p>A.估算<font color='red'>B.预算</font>C.直接成本D.间接成本</p>
+<blockquote>
+<p>软件项目成本包括直接成本和间接成本（估算时需要同时考虑二者），一般而言，项目人力成本归属于直接成本。</p>
+<p>1.成本估算概述<br>
+（1）项目规模与成本的关系<br>
+软件项目成本是指完成软件项目规模相应付出的代价，是待开发的软件项目需要的资金。<br>
+软件项目规模即工作量：代码行（LOC）、功能点、人天、人月、人年等都是规模的单位。<br>
+如：项目规模20人月，公司工资1万元/月，那么成本20万元。<br>
+（2）成本估算定义<br>
+成本估算是成本管理的核心，是预测开发一个软件系统所需要的总工作量的过程。<br>
+软件产品的开发成本主要是人的劳动的消耗所需要的代价。<br>
+软件项目不存在重复制造的过程。开发成本是以一次性开发过程所花费的代价来计算的。<br>
+成本估算贯穿软件的生命周期。<br>
+估算是有误差的，估算是不要太迷信数学模型、历史数据对估算特别重要。<br>
+（3）成本估算过程<br>
+直接成本：是与开发的项目直接相关的成本，如：员工的工资、材料费等<br>
+间接成本：不能归属于一个项目，是企业的运营成本，可以分摊到各个项目中。如：房租、水电、员工福利等。</p>
+<p>2.成本估算方法<br>
+（1）代码行估算法<br>
+相关比例数据：生产率LOC/PM（人月），LOC/hour 等</p>
+<p>（2）功能点估算法：FP=UFC x TCF<br>
+功能点估算是用系统的功能数量来测量其规模，以一个标准的单位来度量软件产品的功能，与实现产品所使用的语言和技术没有关系。<br>
+UFC：未调整功能点计数。</p>
+<p>计算UFC，应该先计算五类功能组件的计数项：内部逻辑文件、外部输入、外部输出、外部查询、外部接口文件。<br>
+TCF：技术复杂度因子（即调整系数）。0~5</p>
+<p>技术复杂度因子取决于14个通用系统特征。<br>
+（3）用例点估算法<br>
+用例点估算法通过分析用例角色、场景和技术与环境因子等来进行软件估算。</p>
+<p>（4）类比估算法（自顶向下方法）<br>
+通常在项目初期 或 信息不足时采用此方法，如在合同期和市场招标时。<br>
+是基于实例推理的一种形式，即通过对一个或多个已完成的项目与新的类似项目对比来预测当前项目的成本与进度。<br>
+（5）自上而下估算法<br>
+（6）三点估算法<br>
+3种估算值：最可能成本、最乐观成本、最悲观成本。</p>
+<p>（7）参数估算法<br>
+①静态单变量模型<br>
+②动态多变模型<br>
+③COCOMO模型<br>
+④COCOMO 81模型<br>
+COCOMO 81将项目模式分为三类：有机型、嵌入型和半嵌入型。<br>
+COCOMO 81有三个等级模型：基本模型、中等模型和高级模型。<br>
+⑤COCOMO Ⅱ模型<br>
+⑥Walston-Felix模型<br>
+⑦基于神经网络估算<br>
+（8）专家估算法<br>
+（9）猜测估算法<br>
+3.敏捷项目成本估算<br>
+敏捷项目一般采用<font color='orange'>故事点</font>估算。</p>
+<p>（1）故事点估算<br>
+故事点估算是一个<font color='orange'>相对</font>的估算过程。</p>
+<p>Fibonacci标准：0、1、2、3、5、8、13（一般就到13）。选了故事点预估为3的用户故事，工作量差不多 3，略少 2，更少 1，用户故事不需要完成 0.略多 5，更多 8，再多 13.<br>
+4.成本预算<br>
+<font color='orange'>目的：产生成本基线。</font><br>
+预算是：在成本管理过程中，每个时间段的各个工作单元的成本。</p>
+</blockquote>
+<p>项目经理正在进行一个图书馆信息查询系统的项目估算，他采用<font color='orange'>Delphi</font>的专家估算方法，邀请了3位专家进行估算，第一位专家给出了<u>2万元、7万元、12万元</u>的估算值，第二位专家给出了<u>4万元、6万元、8万元</u>的估算值，第三位专家给出了<u>2万元、6万元、10万元</u>的估算值，试计算这个项目的成本估算值。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">答：</span><br><span class="line">专家一：Ei=(ai+4mi+bi)/6=（2+4 * 7+12）/6=7</span><br><span class="line"></span><br><span class="line">专家二：Ei=(ai+4mi+bi)/6=（4+4 * 6+8）/6=6</span><br><span class="line"></span><br><span class="line">专家三：Ei=(ai+4mi+bi)/6=（2+4*6+10）/6=6</span><br><span class="line"></span><br><span class="line">Ei=（7+6+6）/3=6.33(万元)</span><br></pre></td></tr></table></figure>
+<p><img src="https://fastly.jsdelivr.net/gh/Leevan001/pictureBed@main/utools/16833447122921683344712236.png" alt=""></p>
+<p>如果某软件公司正在进行一个项目，预计有<font color='orange'>50KLOC</font>的代码量，项目是<font color='orange'>中等规模</font>的<font color='orange'>半嵌入型</font>的项目，采用中等<font color='orange'>COCOMO</font>模型，项目属性中只有可靠性为很高级别（即取值为1.3），其他属性为正常（书上说，正常就是1），计算项目是多少人月的规模，如果是2万元/人月，则项目的费用是多少？</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Effort=a*（KLOC）^b*F</span><br><span class="line">查表a=3，b=1.12，F=1.3</span><br><span class="line">Effort=3.0 * 50 ^1.12 * 1.3 =311.82（人月）</span><br><span class="line">所以项目的费用为2 * Effort=623.64万元</span><br></pre></td></tr></table></figure>
+<p><img src="https://fastly.jsdelivr.net/gh/Leevan001/pictureBed@main/utools/16833449262541683344925374.png" alt=""></p>
+<p>已知某项目使用C语言完成，该项目共有85个功能点，请用IBM模型估算源代码行数、工作量、项目持续时间、人员需要量以及文档数量。</p>
+<p><img src="https://fastly.jsdelivr.net/gh/Leevan001/pictureBed@main/utools/16833450572581683345056605.png" alt=""></p>
+<p><img src="https://fastly.jsdelivr.net/gh/Leevan001/pictureBed@main/utools/16833451082481683345107991.png" alt=""></p>
+<img src="https://fastly.jsdelivr.net/gh/Leevan001/pictureBed@main/utools/16833453012501683345301063.png" style="zoom:33%;" />
+<hr>
+<h1>第七章</h1>
+<h2 id="知识点">知识点</h2>
+<p><img src="https://fastly.jsdelivr.net/gh/Leevan001/pictureBed@main/utools/16833453722461683345372050.png" alt=""></p>
+<p>进度计划的重要性</p>
+<p>➢ 按时完成项目是项目经理最大的挑战之一 ➢ 时间是项目规划中灵活性最小的因素 ➢ 进度问题是项目冲突的主要原因</p>
+<p>进度是对执行的活动和里程碑制定的工作计划日期表</p>
+<p>关键路径法估计</p>
+<p>❑ 确定项目网络图</p>
+<p>❑ 每个任务有单一的历时估算</p>
+<p>❑ 确定网络图中任务的逻辑关系</p>
+<p>❑ <font color='red'>关键路径是网络图中最长的路径。 </font></p>
+<p>❑ 关键路径可以确定项目完成时间</p>
+<img src="https://fastly.jsdelivr.net/gh/Leevan001/pictureBed@main/utools/16833454442461683345443727.png" style="zoom: 50%;" />
+<img src="https://fastly.jsdelivr.net/gh/Leevan001/pictureBed@main/utools/16833454809481683345479465.png" style="zoom:50%;" />
+<img src="https://fastly.jsdelivr.net/gh/Leevan001/pictureBed@main/utools/16833455102551683345509876.png" style="zoom:33%;" />
+<p>PERT</p>
+<img src="https://fastly.jsdelivr.net/gh/Leevan001/pictureBed@main/utools/16833456359451683345634544.png" style="zoom:50%;" />
+<img src="https://fastly.jsdelivr.net/gh/Leevan001/pictureBed@main/utools/16833456489461683345647391.png" style="zoom: 50%;" />
+<img src="https://fastly.jsdelivr.net/gh/Leevan001/pictureBed@main/utools/16833457172531683345717148.png" style="zoom:50%;" />
+<p>应急预留</p>
+<p>应急预留是包含在<font color='orange'>进度基准中的一段储备时间</font>， 用来应对已经接受的已识别风险, 以应对进度方面的不确定性 。</p>
+<p>管理预留</p>
+<p>管理预留是为管理控制的目的而特别留出的项目预算，用来应对项目范围中不可预见的风险。</p>
+<p><font color='red'><a href="%E5%B8%95%E8%82%AF%E6%A3%AE%E5%AE%9A%E5%BE%8B">帕肯森定律</a></font>（Parkinson principle） 指出工作总是拖延到它所能够允许最迟完成的那一刻。</p>
+<p>类比估算</p>
+<p>以过去类似项目的实际持续时间为依据，来估 算当前项目的持续时间.</p>
+<img src="https://fastly.jsdelivr.net/gh/Leevan001/pictureBed@main/utools/16833460712481683346070532.png" style="zoom:50%;" />
+<img src="https://fastly.jsdelivr.net/gh/Leevan001/pictureBed@main/utools/16833461092531683346108745.png" style="zoom:33%;" />
+<img src="https://fastly.jsdelivr.net/gh/Leevan001/pictureBed@main/utools/16833461389541683346137519.png" style="zoom:50%;" />
+<p>❑ 最早开始时间(Early start) ❑ 最晚开始时间(Late start) ❑ 最早完成时间(Early finish) ❑ 最晚完成时间(Late finish) ❑ 总浮动（ Total Float） ❑ 自由浮动（Free Float）</p>
+<p>浮动时间</p>
+<p>浮动时间是一个任务的机动性,它是一个任务在不 影响其它任务或者项目完成的情况下可以延迟的 时间量。</p>
+<p>总浮动（ Total Float） ❑ 在不影响项目最早完成时间的前提下，一个任务可 以延迟的时间</p>
+<p>自由浮动（Free Float） ❑ 在不影响后置任务最早开始时间的前提下，一个任 务可以延迟的时间</p>
+<img src="https://fastly.jsdelivr.net/gh/Leevan001/pictureBed@main/utools/16833462722471683346271670.png" style="zoom:33%;" />
+<p><img src="https://fastly.jsdelivr.net/gh/Leevan001/pictureBed@main/utools/16833464079491683346406554.png" alt=""></p>
+<p><img src="https://fastly.jsdelivr.net/gh/Leevan001/pictureBed@main/utools/16833586652151683358664540.png" alt=""></p>
+<p>基本概念：</p>
+<ul>
+<li>最早开始时间(Early start)ES</li>
+<li>最晚开始时间(Late start)LS</li>
+<li>最早完成时间(Early finish)EF</li>
+<li>最晚完成时间(Late finish)LF</li>
+</ul>
+<p>浮动时间：是一个任务的机动性，是一个任务在不影响其他任务或整个项目完成的情况下的可延迟的时间<br>
+总浮动TF：在不影响项目最早完成时间的前提下，一个任务可以延迟的时间<br>
+自由浮动FF：在不影响后置任务最早开始时间的前提下，一个任务可以延迟的时间<br>
+关键路径：时间浮动为0的路径，通俗理解是最长的路径，它决定了项目最短完成时间，路径上的任何一个任务有延迟都会导致整个项目延迟，可能不只一条<br>
+任务滞后Lag：</p>
+<p><img src="https://fastly.jsdelivr.net/gh/Leevan001/pictureBed@main/utools/16833587102141683358709314.png" alt=""></p>
+<p><img src="https://fastly.jsdelivr.net/gh/Leevan001/pictureBed@main/utools/16833597392201683359738827.png" alt=""></p>
+<p><img src="https://fastly.jsdelivr.net/gh/Leevan001/pictureBed@main/utools/16833597852141683359785107.png" alt=""></p>
+<p>时间压缩法是在不改变项目范围的前提下缩短项 目工期的方法</p>
+<p>进度压缩单位成本=（压缩成本-正常成本）/(正常进 度-压缩进度）</p>
+<p><img src="https://fastly.jsdelivr.net/gh/Leevan001/pictureBed@main/utools/16833598789231683359877220.png" alt=""></p>
+<h2 id="习题">习题</h2>
+<p>（<font color='red'>关键路径</font>）决定了项目在给定的金钱关系和资源条件下完成项目所需的最短时间。</p>
+<p>（<font color='red'>时间</font>）是一种特殊的资源，以其单向性、不可重复性、不可替代性而有别于其他资源。</p>
+<p>在ADM网络图中，箭线表示（<font color='red'>活动/任务</font>）。</p>
+<p>（<font color='red'>应急法</font>）和（<font color='red'>平行作业法</font>）都是时间压缩法。</p>
+<p>工程评估评审技术采用加权平均的公式是（<font color='red'>PERT历时=(O+P+4M)/6</font>），其中O是乐观值，P是悲观值，M是最可能值。</p>
+<p>在项目进行过程中，关键路径是不变的。（×）</p>
+<blockquote>
+<p>关键路径是指在项目网络图中，连接项目开始和结束点的<font color='red'>最长路径</font>，决定了整个项目的最短完成时间。在项目 进行过程中<font color='cornflowerblue'>，随着任务完成情况、资源变化、任务优先级 等因素的变化，可能会导致关键路径的改变</font>。例：资源平衡往往导致关键路径的改变。</p>
+</blockquote>
+<p>在PDM网络图中，箭线表示的是任务之间的逻辑关系，节点表示的是活动。（√）</p>
+<p>项目各项活动之间不存在相互联系与相互依赖关 系。（×）</p>
+<p>在资源冲突问题中，过度分配也属于资源冲突。 （√）</p>
+<p>浮动是在不增加项目成本的条件下，一个活动可以延迟的时间量。（×）</p>
+<blockquote>
+<p>浮动是一个活动在不影响项目完成的情况下可以延迟的时间量。</p>
+</blockquote>
+<p>在使用应急法压缩时间时，不一定要在关键路径上选择活动来进行压缩。（×）</p>
+<p>时间是项目规划中灵活性最小的因素。（√）</p>
+<p>外部依赖关系又称强制性依赖关系，指的是项目活 动与非项目活动之间的依赖关系。（×）</p>
+<blockquote>
+<p><font color='green'>外部依赖关系</font>是<font color='green'>项目活动与非项目活动之间的依赖关系</font>。</p>
+<p>强制性依赖关系又称硬逻辑关系或硬依赖关系， 是法律或合同要求的或工作的内在性质决定的依赖关系，往往与客观限制有关。例如：编写设计说明书与设计评审就是强制性依赖关系。</p>
+<p>软逻辑关系：不是硬逻辑关系，不是任务之间共有的关系，但是是主观的安排，是安排者有一定 逻辑考虑的关系。 内部依赖关系：他是内部的一种强制性关系</p>
+</blockquote>
+<p>当估算某活动时间，存在很大不确定性时应采用CPM 估计。（×）</p>
+<blockquote>
+<p>CPM: Critical Path Method 关键路径方法。 当使用CPM估计时，项目的工序时间是确定的，必须按时 完成。</p>
+</blockquote>
+<p>敏捷项目一般采用远粗近细的计划模式，敏捷的发 布计划相当于远期计划，迭代计划相当于近期计划。（√）</p>
+<p>下面说法中不正确的是（D）<br>
+A．EF=ES+duration		 	B. LS=LF-duration<br>
+C．TF=LS-ES=LF-EF 		 D. EF=ES+lag</p>
+<blockquote>
+<p>lag是本任务和后置任务之间的滞后时间。 滞后时间是指后置任务在本任务完成后开始执行之间的时间差。</p>
+<p>如果后置任务必须等到本任务完 成之后才能开始，那么滞后时间将为零。</p>
+<p>EF = ES(s) - lag</p>
+</blockquote>
+<p>“软件编码完成之后，我才可以对它进行软件测试”，这句话说明了哪种依赖关系？（A）<br>
+A．强制性依赖关系 B.软逻辑关系 C.外部依赖关系 D.里程碑</p>
+<p>(A）可以显示任务的基本信息，使用该类图能方便的查看任务的工期、开始时间、结束时间以及资源的信息。<br>
+A．甘特图 B.网络图 C.里程碑图 D. 资源图</p>
+<p>（C）是项目冲突的主要原因，尤其在项目后期。<br>
+A．优先级问题 B.人力问题 C.进度问题 D. 费用问题</p>
+<p>以下哪一项是项目计划中灵活性最小的因素？（A）<br>
+A．时间 B.人工成本 C.管理 D. 开发</p>
+<p>以下哪一项不是任务之间的关系？（D）<br>
+A．结束-开始 B.开始-开始 C.结束-结束 D. 结束-开始-结束</p>
+<p>快速跟进是指（A）<br>
+A．<font color='red'>采用并行执行任务，加速项目进展</font> B. 用一个任务取代另外的任务<br>
+C. 如有可能，减少任务数量 D. 减轻项目风险</p>
+<p>下面哪一项将延长项目的进度？（A）<br>
+A．lag B.lead C.赶工 D.快速跟进</p>
+<p>下面哪一项可以决定进度的灵活性？（B）<br>
+A．PERT B.总浮动 C.ADM D. 赶工</p>
+<p>(B）可以表示敏捷项目的进度，并且可以表示出剩余的任务</p>
+<p>A．燃起图 B.燃尽图 C.里程碑图 D.网络图</p>
+<p>对一个任务进行进度估算时，A是乐观者，估计用6 天完成，B是悲观者，估计用24天完成，C是有经验 者，认为最有可能用12天完成，那么这个任务的历 时估算介于10天到16天的概率是多少？</p>
+<blockquote>
+<p>答：E=(6+24+4*12)/6=13，δ=(24-6)/6=3 由于：E-δ=10，E+δ=16 所以任务历时估算介于10——16天的概率为： 68.3%</p>
+</blockquote>
+<p><img src="https://fastly.jsdelivr.net/gh/Leevan001/pictureBed@main/utools/16833609482161683360948084.png" alt=""></p>
+<p><img src="https://fastly.jsdelivr.net/gh/Leevan001/pictureBed@main/utools/16833612532171683361252798.png" alt=""></p>
+<p>请将下图所示的PDM（优先图法）网络图改画为ADM （箭线法）网络图。</p>
+<img src="https://fastly.jsdelivr.net/gh/Leevan001/pictureBed@main/utools/16833611052141683361104426.png" style="zoom:50%;" />
+<p><img src="https://fastly.jsdelivr.net/gh/Leevan001/pictureBed@main/utools/16833611432151683361142930.png" alt=""></p>
+<p>根据下面任务流程图和下表给出的项目历时估算值， 采用PERT方法估算，求出项目在14.57天内完成的概率的近似值。</p>
+<p><img src="https://fastly.jsdelivr.net/gh/Leevan001/pictureBed@main/utools/16833611852161683361184846.png" alt=""></p>
+<p><img src="https://fastly.jsdelivr.net/gh/Leevan001/pictureBed@main/utools/16833614722151683361472083.png" alt=""></p>
+<p><img src="https://fastly.jsdelivr.net/gh/Leevan001/pictureBed@main/utools/16833614932141683361492883.png" alt=""></p>
+<p><img src="https://fastly.jsdelivr.net/gh/Leevan001/pictureBed@main/utools/16833617182201683361717863.png" alt=""></p>
+<p><img src="https://fastly.jsdelivr.net/gh/Leevan001/pictureBed@main/utools/16833627282221683362727303.png" alt=""></p>
+<p><img src="https://fastly.jsdelivr.net/gh/Leevan001/pictureBed@main/utools/16833627382159d774c727e6735f6bb1948864fd680a.jpg" alt=""></p>
+<h1>第八章</h1>
+<h2 id="习题">习题</h2>
+<p>一、填空题</p>
+<p>1、<font color='red'>质量审计</font>是对过程或产品的一次独立质量评估。</p>
+<p>2、质量成本包括<font color='orange'>预防成本</font>和<font color='orange'>缺陷成本</font>。</p>
+<p>3、<font color='red'>软件质量</font>是软件满足明确说明或者隐含的需求的程度。</p>
+<p>4、McCall 质量模型关注的 3 个方面是<font color='red'>产品运行、产品修改、产品转移</font>。</p>
+<p>5、质量管理总是围绕着质量保证和<font color='red'>质量控制</font>过程两个方面进行。</p>
+<p>6、质量保证的主要活动是<font color='red'>项目执行过程审计和项目产品审计</font>。</p>
+<p>质量是满足要求的程度，包括符合规定的要求和客户隐含的需求。（√）</p>
+<p>软件质量是软件满足明确说明或者隐含的需求的程度。（√）</p>
+<p>软件质量可以通过后期测试得以提高。（×）</p>
+<p>质量计划可以确定质量保证人员的特殊汇报渠道。（√）</p>
+<p>软件质量是代码正确的程度。（×）</p>
+<p>敏捷项目要求全程的质量审查（×）</p>
+<blockquote>
+<p>提倡不是要求</p>
+</blockquote>
+<p>下列不属于质量管理过程的是（D）<br>
+A 质量计划 B 质量保证 C 质量控制 D 质量优化</p>
+<p>项目质量管理的目标是满足（C）的需要<br>
+A 老板 B 项目经理 <font color='red'>C 项目</font> D 组织</p>
+<p>下列属于质量成本的是（A）<br>
+A 预防成本 B 缺陷数量 C 预测成本 D 缺失成本</p>
+<p>下列不是质量计划方法的是（C）<br>
+A 质量成本分析 B 因果分析图 C 抽样分析 D 基准对照</p>
+<blockquote>
+<p>编制项目计划的方法：</p>
+<p>软件质量计划方法<br>
+1.试验设计2.基准对照3.质量成本分析4.流程图方法5.因果分析图</p>
+</blockquote>
+<p>下列不是软件质量模型的是（D）<br>
+A Boehm质量模型 B McCall 质量模型 C ISO/IEC 9216质量模型 D Mark质量模型</p>
+<p>质量控制非常重要，但是进行质量控制也需要一定的成本，（B）可以降低质量控制的成本。<br>
+A 进行过程分析 B 使用抽样统计 C 对全程进行监督 D 进行质量审计</p>
+<p>McCall 质量模型不包含（C）<br>
+A 产品修改 B 产品转移 C 产品特点 D 产品运行</p>
+<p><img src="https://fastly.jsdelivr.net/gh/Leevan001/pictureBed@main/utools/16833741861831683374185677.png" alt=""></p>
+<p>下面（D）不是敏捷项目的质量实践<br>
+A.结对编程 B.TDD C.迭代评审 D.需求规格编写过程审计</p>
+<blockquote>
+<p>敏捷项目的质量实践:</p>
+<p>结对编程<br>
+测试驱动开发 TDD<br>
+持续集成与测试<br>
+不同层面自动化测试<br>
+验收测试驱动开发<br>
+重构<br>
+（以上为质量控制，以下为质量保证）<br>
+迭代评审<br>
+迭代回顾会议</p>
+</blockquote>
+<p>简述质量保证的主要活动，以及质量保证的要点。</p>
+<p>答： 质量保证的主要活动是项目执行过程审计和项目产品审计。</p>
+<p>质量保证的要点是： （1）对项目进行客观公正的审核和评价。 （2）对过程或者产品的一次结构化评估。 （3）验证项目在软件开发过程中是否遵循了合适的过程和标准。 （4）通过评价项目整体绩效，建立对质量要求的信任。</p>
+<p>简述质量保证与质量控制的关系。</p>
+<p>（1）质量保证是审计产品和过程的质量，保证过程被正确执行，确认项目按照要求进行，属于管理职能。质量控制是检验产品的质量，保证产品符合客户的需求，是直接对项目工作结果的质量进行把关的过程，属于检查职能。</p>
+<p>（2）质量保证的焦点是过程和产品提交之后的质量监管，而质量控制的焦点是产品推出前的质量把关。</p>
+<p>（3）质量控制是针对具体产品或者具体活动的质量管理，而质量保证是针对一般的、具有普遍性的问题，或者软件开发过程中的问题进行的质量管理。质量保证促进了质量的改善，促进企业的性能产生一个突破。质量保证是从总体上提供质量信心，而质量控制是从具体环节上提高产品的质量。通过质量保证和质量控制可以提高项目和产品的质量，最终达到满意的目标。</p>
+<h1>第九章</h1>
+<h2 id="知识点">知识点</h2>
+<p>软件项目进行中面临的一个主要问题是 持续不断的变化</p>
+<p>有效的项目管理能够控制变化，以最有 效的手段应对变化,不断命中移动的目标。</p>
+<p>配置管理定义</p>
+<ul>
+<li>记录软件产品的演化过程</li>
+<li>得到精确的产品配置。</li>
+<li>最终保证软件产品的<font color='red'>完整性、一致性、追朔性、可控性</font>。</li>
+</ul>
+<p>配置管理的主要功能</p>
+<ol>
+<li>版本管理</li>
+<li>变更管理</li>
+<li>过程支持</li>
+</ol>
+<p>基线定义</p>
+<ul>
+<li>基线提供了软件生存期中各个开发阶段的一个特 定点, 标志开发过程一个阶段的结束,或者里程碑</li>
+<li>一个(些)配置项形成并通过审核，即形成基线</li>
+<li>基线修改需要按照正式的程序执行</li>
+</ul>
+<p>软件配置控制委员会(SCCB)</p>
+<blockquote>
+<p>✓ 评估变更 ✓ 批准变更申请 ✓ 在生存期内规范变更申请流程 ✓ 对变更进行反馈 ✓ 与项目管理层沟通</p>
+</blockquote>
+<p>软件配置管理库是用来存储所有基线配置项及相关文 件的等内容的系统，是在软件产品的整个生存期中建 立和维护软件产品完整性的主要手段。</p>
+<p>基线修改应受到控制，这种变化要经SCCB授 权，按程序进行控制并记录基线修改的过程。</p>
+<p>敏捷配置管理</p>
+<blockquote>
+<p> 敏捷的一个重要特征是持续交付，因此，配置 管理是重要的要素  敏捷需要全面配置管理</p>
+</blockquote>
+<p>全面配置管理的基本要求</p>
+<blockquote>
+<p> 代码和编译构建产物的配置管理  应用的配置管理  环境的配置管理</p>
+</blockquote>
+<p><img src="https://fastly.jsdelivr.net/gh/Leevan001/pictureBed@main/utools/16833752431851683375242547.png" alt=""></p>
+<h2 id="习题">习题</h2>
+<p>1、（<font color='red'>完整性和可跟踪性</font>）是软件配置管理的核心功能。<br>
+2、（<font color='red'>基线</font>）标志开发过程中一个阶段的结束和里程碑。<br>
+3、 基线变更控制包括（<font color='red'>变更请求</font>）、（<font color='red'>变更控制</font>）、（<font color='red'>变更批准/拒绝</font>）、（<font color='red'>变更实现</font>）等步骤。<br>
+4、（<font color='red'>版本管理</font>）、（<font color='red'>变更管理</font>）是配置管理的主要功能。<br>
+5、基线变更时，需要经过（<font color='red'>SCCB</font>）授权。<br>
+6、SCCB的全称是（<font color='red'>软件配置控制委员会</font>）。<br>
+一个软件配置项可能有多个标识。（×）</p>
+<p>持续支付更倾向于使用基于分支的开发模式（错）</p>
+<p>下列不属于SCCB的职责的是（D）<br>
+A 评估变更 B 与项目管理层沟通 C 对变更进行反馈 D 提出变更申请</p>
+<blockquote>
+<p>请说明软件配置控制委员会(SCCB)的基本职责<br>
+答：<br>
+<font color='cornflowerblue'>1.评估变更<br>
+2.批准变更申请<br>
+3.在生存期内规范变更申请流程<br>
+4.对变更进行反馈<br>
+5.与项目管理层沟通</font></p>
+</blockquote>
+<p>为了更好地管理变更，需要定义项目基线，关于基线的描述，下列描述正确的是（B）<br>
+A 不可变化<br>
+<font color='orange'>B 可以变化，但是必须通过基线变更控制流程处理</font><br>
+C 所以的项目必须定义基线<br>
+D 基线发生变更时，必须修改需求</p>
+<p>软件配置管理无法确保以下哪种软件产品属性（A）<br>
+A 正确性 B 完整性 C 一致性 D 可控性</p>
+<p>变更控制需要关注的是（B）<br>
+A 阻止变更 <font color='orange'>B 标识变更，提出变更，管理变更</font><br>
+C 管理SCCB D 客户的想法</p>
+<p>以下哪项不属于软件项目配置管理的问题（B）<br>
+A.找不到某个文件的历史版本<br>
+B.甲方和乙方在资金调配上存在意见差异<br>
+C.开发人员未经授权修改代码或文档<br>
+D.因协同开发中，或者异地开发，版本变更混乱导致整个项目失败</p>
+<p>1、 写出配置管理的基本过程。</p>
+<blockquote>
+<p>答： （1）配置项标识、跟踪。 （2）配置管理环境建立。 （3）基线变更管理。 （4）配置审计。 （5）配置状态统计。 （6）配置管理计划。</p>
+</blockquote>
+<p>2、 说明软件配置控制委员会（SCCB）的基本职责。</p>
+<blockquote>
+<p>答： （1）评估变更。 （2）批准变更申请。 （3）在生命周期内规范变更申请流程。 （4）对变更进行反馈。 （5）与项目管理层沟通。</p>
+</blockquote>
+<p>3、 写出几个常见的软件配置项。</p>
+<blockquote>
+<p>答： 软件项目计划、需求分析结果、软件需求规格说明书、设计规格说明书、源代码清单、测试规格说明书、测试计划、测试用例与实验结果（每个模块的可执行代码、链接到一起的代码）、可执行程序、用户手册、维护文档。</p>
+</blockquote>
+<h1>第十章</h1>
+<h2 id="知识点">知识点</h2>
+<p>组织结构的主要类型</p>
+<ol>
+<li>职能型</li>
+<li>项目型</li>
+<li>矩阵型</li>
+</ol>
+<p>干系人（stakeholder）是能影响项目决策、活动或 者结果的个人、群体或者组织，以及会受到或者自 认为会受到项目决策、活动或者结果影响的个人、 群体或者组织。</p>
+<p>项目沟通的分类</p>
+<ol>
+<li>内部沟通和外部沟通</li>
+<li>正式沟通和非正式沟通</li>
+<li>官方沟通和非官方沟通</li>
+<li>口头沟通和非口头沟通</li>
+<li>层级沟通</li>
+</ol>
+<p>项目沟通渠道</p>
+<ul>
+<li>上级沟通</li>
+<li>下级沟通</li>
+<li>横向沟通</li>
+</ul>
+<p>项目沟通的方式</p>
+<ol>
+<li>书面沟通和口头沟通</li>
+<li>语言沟通和非语言沟通</li>
+<li>正式沟通和非正式沟通</li>
+<li>单向沟通和双向沟通</li>
+<li>网络沟通</li>
+</ol>
+<p>沟通计划是确定谁需要信息，需要什么信息， 何时需要信息，以及如何将信息分发给他们。</p>
+<p>仆人式领导</p>
+<blockquote>
+<p> 仆人式领导是通过对团队服务来领导团队的</p>
+<p> 注重理解和关注团队成员的需要和发展</p>
+<p> 仆人式领导为团队赋权</p>
+<p> 旨在使团队尽可能达到最高绩效。</p>
+</blockquote>
+<p><img src="https://fastly.jsdelivr.net/gh/Leevan001/pictureBed@main/utools/16833761481901683376147392.png" alt=""></p>
+<p><img src="https://fastly.jsdelivr.net/gh/Leevan001/pictureBed@main/utools/16833762278921683376226401.png" alt=""></p>
+<p><img src="https://fastly.jsdelivr.net/gh/Leevan001/pictureBed@main/utools/16833762591831683376258700.png" alt=""></p>
+<h2 id="习题">习题</h2>
+<p>可以充分发挥部门资源优势集中的组织结构为（<font color='red'>职能型组织结构</font>）</p>
+<p>组织结构的主要类型（职能型）、（项目型）、（矩阵型）</p>
+<p>（会议形式）沟通最有可能协助解决复杂的问题。</p>
+<p>当项目中有20个人时，沟通渠道最多有（190）。</p>
+<blockquote>
+<p>N(N-1)/2</p>
+</blockquote>
+<p>项目干系人是项目计划的一部分。（√）</p>
+<blockquote>
+<p>项目干系人是项目计划的一部分，是为了有效调动项目干系人参与项目而制定的</p>
+</blockquote>
+<p>项目型的优点是可以资源共享。（×）</p>
+<blockquote>
+<p>矩阵型组织结构的优点：多个项目可以共享各个职能部门的资源</p>
+</blockquote>
+<p><img src="https://fastly.jsdelivr.net/gh/Leevan001/pictureBed@main/utools/16833758771931683375877112.png" alt=""></p>
+<p>应尽量多建立一些沟通渠道。(×)</p>
+<p>项目沟通的基本原则是及时性、准确性、完整性和可理解性(√)</p>
+<p>在IT项目中，成功的最大威胁是沟通的失败(√)</p>
+<p>责任分配矩阵是明确项目团队成员的角色与职责的有效工具(√)</p>
+<p>口头沟通不是项目沟通的方式(×)</p>
+<p>对于紧急的信息，应该通过口头的方式沟通；对于 重要的信息，应采用书面的方式沟通(√)</p>
+<p>敏捷团队的人员一般在3~9人，而且一般集中地在一 个场地开发，可以围坐一个桌子开会（√）</p>
+<p>（A）以图形方式展示项目团队成员及其报告关系这样可以减少沟通渠道，减少成本<br>
+A、<font color='red'>项目组织图</font> B、甘特图 C、网络图 D、RAM图</p>
+<p>下面不是敏捷角色的是（D）<br>
+A、产品负责人 B、团队促进者 C、跨职能团队成员 D、合同管理者</p>
+<p>在项目管理的3种组织结构中，适用于主要由一个部门完成的项目或技术比较成熟的项目组织结构是( C)<br>
+A矩阵型组织结构 B项目型组织结构<font color='red'> C职能型组织结构</font> D都一样</p>
+<p>项目经理花在沟通上的时间是(B)<br>
+A、20%-40% <font color='red'>B、75%-90%</font> C、60% D、 30%-60%</p>
+<p>在（C）组织结构中，项目成员没有安全感<br>
+A职能型B矩阵型<font color='red'>C项目型</font>D弱矩阵型</p>
+<blockquote>
+<p>对项目组织的成员缺少一种事业上的连续性和安全感</p>
+</blockquote>
+<p>下列关于干系人的描述中，不正确的是（D）<br>
+A影响项目决策的个人、群体或者组织<br>
+B影响项目活动的个人、群体或者组织<br>
+C影响项目结果的个人、群体或者组织<br>
+D所有项目人员</p>
+<p>编制沟通计划的基础是( A)<br>
+A沟通需求分析B项目范围说明书C项目管理计划D历史资料</p>
+<p>项目团队原来有5个成员，现在人员扩充，又增加了3个成员这样沟通渠道增加了（A）<br>
+A、2.8倍 B、两倍 C、4倍 D、1.6倍</p>
+<p>对于项目中比较重要的通知，最好采用（B）沟通方式<br>
+A口头B书面C网络方式D电话</p>
+<p>在一个高科技公司，项目经理正在为一个新的项目选择合适的组织结构，这个项目涉及多的领域和特性，他应该选择（A）组织结构<br>
+A矩阵型B项目型C职能型D组织型</p>
+<p>写出5种以上项目沟通方式</p>
+<blockquote>
+<p>答：沟通方式主要有书面沟通和口头沟通、语言沟通 和非语言沟通、正式沟通和非正式沟通、单向沟通和双向 沟通、网络沟通等。</p>
+</blockquote>
+<p>对于特别重要的内容，一般采用哪些方式才能确保 有效沟通。</p>
+<blockquote>
+<p>答： 对于特别重要的内容，可以采用书面的方式进行 沟通。 一般还要采用多种方式进行有效沟通确保传达到 位，除发送邮件外还要电话提醒、回执等，重要 的内容还要通过举行各种会议、撰写报告、会议 议程和记录、相关方简报和演示进行传达。</p>
+</blockquote>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a target="_blank" rel="noopener" href="https://github.com/Leevan001">如风</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://blog.liyifan001.top/2023/05/06/%E8%BD%AF%E4%BB%B6%E9%A1%B9%E7%9B%AE%E7%AE%A1%E7%90%86%EF%BC%88%E4%B8%AD%EF%BC%89/">https://blog.liyifan001.top/2023/05/06/%E8%BD%AF%E4%BB%B6%E9%A1%B9%E7%9B%AE%E7%AE%A1%E7%90%86%EF%BC%88%E4%B8%AD%EF%BC%89/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://blog.liyifan001.top" target="_blank">早早起床，拥抱太阳</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E8%BD%AF%E4%BB%B6%E9%A1%B9%E7%9B%AE%E7%AE%A1%E7%90%86/">软件项目管理</a></div><div class="post_share"><div class="social-share" data-image="https://fastly.jsdelivr.net/gh/Leevan001/pictureBed@main/utools/1668325987314FA3E3F866C40A665F46EF56BBD227395.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/2023/05/05/%E8%BD%AF%E4%BB%B6%E9%A1%B9%E7%9B%AE%E7%AE%A1%E7%90%86%EF%BC%88%E4%B8%8A%EF%BC%89/" title="软件项目管理（上）"><img class="cover" src="https://fastly.jsdelivr.net/gh/Leevan001/pictureBed@main/utools/1668274206122R-C.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-05-05</div><div class="title">软件项目管理（上）</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://fastly.jsdelivr.net/gh/Leevan001/pictureBed@main/utools/1668273103133D8802D069515E0A42BC91FDE752B8A5C.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">如风</div><div class="author-info__description">热爱睡觉的小笨蛋一枚吖~</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">26</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">28</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">16</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/Leevan001"><i></i><span>🛴前往小家...</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/Leevan001" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:by1249824014@gmail.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">第六章</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%9F%A5%E8%AF%86%E7%82%B9"><span class="toc-number">1.1.</span> <span class="toc-text">知识点</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B9%A0%E9%A2%98"><span class="toc-number">1.2.</span> <span class="toc-text">习题</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">2.</span> <span class="toc-text">第七章</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%9F%A5%E8%AF%86%E7%82%B9"><span class="toc-number">2.1.</span> <span class="toc-text">知识点</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B9%A0%E9%A2%98"><span class="toc-number">2.2.</span> <span class="toc-text">习题</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">3.</span> <span class="toc-text">第八章</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B9%A0%E9%A2%98"><span class="toc-number">3.1.</span> <span class="toc-text">习题</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">4.</span> <span class="toc-text">第九章</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%9F%A5%E8%AF%86%E7%82%B9"><span class="toc-number">4.1.</span> <span class="toc-text">知识点</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B9%A0%E9%A2%98"><span class="toc-number">4.2.</span> <span class="toc-text">习题</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">5.</span> <span class="toc-text">第十章</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%9F%A5%E8%AF%86%E7%82%B9"><span class="toc-number">5.1.</span> <span class="toc-text">知识点</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B9%A0%E9%A2%98"><span class="toc-number">5.2.</span> <span class="toc-text">习题</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2023/05/06/%E8%BD%AF%E4%BB%B6%E9%A1%B9%E7%9B%AE%E7%AE%A1%E7%90%86%EF%BC%88%E4%B8%8B%EF%BC%89/" title="软件项目管理（下）"><img src="https://fastly.jsdelivr.net/gh/Leevan001/pictureBed@main/utools/1668325981308812465B3FBC4B5003BF35EA940C3FCBE.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="软件项目管理（下）"/></a><div class="content"><a class="title" href="/2023/05/06/%E8%BD%AF%E4%BB%B6%E9%A1%B9%E7%9B%AE%E7%AE%A1%E7%90%86%EF%BC%88%E4%B8%8B%EF%BC%89/" title="软件项目管理（下）">软件项目管理（下）</a><time datetime="2023-05-06T07:27:20.000Z" title="发表于 2023-05-06 15:27:20">2023-05-06</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/05/06/%E8%BD%AF%E4%BB%B6%E9%A1%B9%E7%9B%AE%E7%AE%A1%E7%90%86%EF%BC%88%E4%B8%AD%EF%BC%89/" title="软件项目管理（中）"><img src="https://fastly.jsdelivr.net/gh/Leevan001/pictureBed@main/utools/1668325987314FA3E3F866C40A665F46EF56BBD227395.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="软件项目管理（中）"/></a><div class="content"><a class="title" href="/2023/05/06/%E8%BD%AF%E4%BB%B6%E9%A1%B9%E7%9B%AE%E7%AE%A1%E7%90%86%EF%BC%88%E4%B8%AD%EF%BC%89/" title="软件项目管理（中）">软件项目管理（中）</a><time datetime="2023-05-06T07:27:09.000Z" title="发表于 2023-05-06 15:27:09">2023-05-06</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/05/06/Grab-cut/" title="Grab_cut"><img src="https://fastly.jsdelivr.net/gh/Leevan001/pictureBed@main/utools/1668325964310EA2896391D75964E20FD6F6F2657923C.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Grab_cut"/></a><div class="content"><a class="title" href="/2023/05/06/Grab-cut/" title="Grab_cut">Grab_cut</a><time datetime="2023-05-06T07:25:46.000Z" title="发表于 2023-05-06 15:25:46">2023-05-06</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/05/06/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" title="数据结构"><img src="https://fastly.jsdelivr.net/gh/Leevan001/pictureBed@main/utools/16682742001221499171933.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="数据结构"/></a><div class="content"><a class="title" href="/2023/05/06/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" title="数据结构">数据结构</a><time datetime="2023-05-06T07:24:07.000Z" title="发表于 2023-05-06 15:24:07">2023-05-06</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/05/05/%E8%BD%AF%E4%BB%B6%E9%A1%B9%E7%9B%AE%E7%AE%A1%E7%90%86%EF%BC%88%E4%B8%8A%EF%BC%89/" title="软件项目管理（上）"><img src="https://fastly.jsdelivr.net/gh/Leevan001/pictureBed@main/utools/1668274206122R-C.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="软件项目管理（上）"/></a><div class="content"><a class="title" href="/2023/05/05/%E8%BD%AF%E4%BB%B6%E9%A1%B9%E7%9B%AE%E7%AE%A1%E7%90%86%EF%BC%88%E4%B8%8A%EF%BC%89/" title="软件项目管理（上）">软件项目管理（上）</a><time datetime="2023-05-05T11:46:43.000Z" title="发表于 2023-05-05 19:46:43">2023-05-05</time></div></div></div></div></div></div></main><footer id="footer" style="background-image: url('https://fastly.jsdelivr.net/gh/Leevan001/pictureBed@main/utools/16683306913121668330690512.png')"><div id="footer-wrap"><div class="copyright">&copy;2022 - 2023 By 如风</div><div class="footer_custom_text">广阔天地，大有作为</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div></div></div><div id="search-mask"></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><script src="/js/search/local-search.js"></script><div class="js-pjax"></div><script id="click-heart" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/click-heart.min.js" async="async" mobile="false"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
