@@ -1,0 +1,439 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>操作系统 | 早早起床，拥抱太阳</title><meta name="author" content="如风"><meta name="copyright" content="如风"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="[toc]  引用来源  操作系统 操作系统概述  无操作系统：人工操作，用户独占，CPU等待人工操作，资源利用率很低。 批处理系统：批量输入任务，无需等待人工操作，资源利用率提升，提出多道程序设计。 分时系统：人-机交互，多用户共享，资源利用率提升，及时调试程序。 关于多道程序设计：是指在计算机内存中同时存放多个程序，多道程序在计算机的管理程序之下相互穿插运行。  操作系统的定义与目标   定义">
+<meta property="og:type" content="article">
+<meta property="og:title" content="操作系统">
+<meta property="og:url" content="https://blog.liyifan001.top/2023/06/01/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/index.html">
+<meta property="og:site_name" content="早早起床，拥抱太阳">
+<meta property="og:description" content="[toc]  引用来源  操作系统 操作系统概述  无操作系统：人工操作，用户独占，CPU等待人工操作，资源利用率很低。 批处理系统：批量输入任务，无需等待人工操作，资源利用率提升，提出多道程序设计。 分时系统：人-机交互，多用户共享，资源利用率提升，及时调试程序。 关于多道程序设计：是指在计算机内存中同时存放多个程序，多道程序在计算机的管理程序之下相互穿插运行。  操作系统的定义与目标   定义">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://fastly.jsdelivr.net/gh/Leevan001/pictureBed@main/utools/1668325991403394931B30F162EA8AD66B450E0F93413.png">
+<meta property="article:published_time" content="2023-06-01T13:54:29.000Z">
+<meta property="article:modified_time" content="2023-06-01T13:56:38.676Z">
+<meta property="article:author" content="如风">
+<meta property="article:tag" content="复习资料">
+<meta property="article:tag" content="OS">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://fastly.jsdelivr.net/gh/Leevan001/pictureBed@main/utools/1668325991403394931B30F162EA8AD66B450E0F93413.png"><link rel="shortcut icon" href="/images/favicon.ico"><link rel="canonical" href="https://blog.liyifan001.top/2023/06/01/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":200},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: true,
+    post: true
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"limitCount":50,"languages":{"author":"作者: 如风","link":"链接: ","source":"来源: 早早起床，拥抱太阳","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"}},
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '操作系统',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2023-06-01 21:56:38'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.3.0"><link href="https://cdn.bootcss.com/KaTeX/0.11.1/katex.min.css" rel="stylesheet" /></head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://fastly.jsdelivr.net/gh/Leevan001/pictureBed@main/utools/1668273103133D8802D069515E0A42BC91FDE752B8A5C.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">27</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">29</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">14</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa fa-heartbeat"></i><span> 清单</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/Gallery/"><i class="fa-fw fas fa-images"></i><span> 照片</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://fastly.jsdelivr.net/gh/Leevan001/pictureBed@main/utools/1668325991403394931B30F162EA8AD66B450E0F93413.png')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">早早起床，拥抱太阳</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa fa-heartbeat"></i><span> 清单</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/Gallery/"><i class="fa-fw fas fa-images"></i><span> 照片</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">操作系统</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2023-06-01T13:54:29.000Z" title="发表于 2023-06-01 21:54:29">2023-06-01</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2023-06-01T13:56:38.676Z" title="更新于 2023-06-01 21:56:38">2023-06-01</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/">复习整理</a><i class="fas fa-angle-right post-meta-separator"></i><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E5%A4%8D%E4%B9%A0%E6%95%B4%E7%90%86/OS/">OS</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">5.6k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>16分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="操作系统"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><p>[toc]</p>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://huanglei.blog.csdn.net/article/details/99539327">引用来源</a></p>
+</blockquote>
+<h1>操作系统</h1>
+<h2 id="操作系统概述">操作系统概述</h2>
+<ul>
+<li>无操作系统：人工操作，用户独占，CPU等待人工操作，资源利用率很低。</li>
+<li>批处理系统：批量输入任务，无需等待人工操作，资源利用率提升，提出多道程序设计。</li>
+<li>分时系统：人-机交互，多用户共享，资源利用率提升，及时调试程序。</li>
+<li>关于多道程序设计：是指在计算机内存中同时存放多个程序，多道程序在计算机的管理程序之下相互穿插运行。</li>
+</ul>
+<p>操作系统的定义与目标<br>
+  定义：管理硬件，提供用户交互的软件系统。<br>
+  目标：方便性，有效性（提高系统资源的利用率、提高系统的吞吐量），可扩充性，开放性。</p>
+<p>操作系统的基本功能</p>
+<blockquote>
+<p>统一管理计算机资源：处理器资源，IO设备资源，存储器资源，文件资源…<br>
+  实现了对计算机资源的抽象：IO设备管理软件提供读写接口，文件管理软件提供操作文件接口…<br>
+  提供了用户与计算机之间的接口：图像窗口形式，命令形式，系统调用形式…</p>
+</blockquote>
+<p><img src="https://fastly.jsdelivr.net/gh/Leevan001/pictureBed@main/utools/16855845400591685584539593.png" alt=""></p>
+<p>中断的分类：</p>
+<ul>
+<li>内中断（也叫“异常”、“例外”、“陷入”）------- 信号来源：CPU内部，与当前执行指令有关；</li>
+<li>外中断（中断）----------信号来源：CPU外部，与当前执行指令无关。</li>
+</ul>
+<p>外中断的处理过程：</p>
+<ol>
+<li>每执行完一个指令后，CPU都需要检查当前是否有外部中断信号；</li>
+<li>如果检查到外部中断信号，则需要保护被中断进程的CPU环境（如程序状态字PSW，程序计数器PC、各种通用寄存器）把他们存储在PCB（进程控制块中）；</li>
+<li>根据中断信号类型转入相应的中断处理程序；</li>
+<li>恢复原进程的CPU环境并退出中断，返回原进程继续执行。</li>
+</ol>
+<p>操作系统的基本特性</p>
+<p>a.并发性<br>
+   并行：指两个或多个事件可以在同一个<font color='red'>时刻</font>发生；<br>
+   并发：指两个或多个事件可以在同一个<font color='red'>时间间隔</font>发生。</p>
+<p>b.共享性：操作系统的中资源可供多个并发的程序共同使用，这种形式称之为资源共享。<br>
+   互斥共享：当资源被程序占用时，其它想使用的程序只能等待。<br>
+   同时访问：某种资源并发的被多个程序访问。</p>
+<p>c.虚拟性：<font color='cornflowerblue'>表现为把一个物理实体转变为若干个逻辑实体。</font><br>
+   时分复用技术：资源在时间上进行复用，不同程序并发使用，多道程序分时使用计算机的硬件资源，提高资源的利用率。<br>
+   空分复用技术：用来实现虚拟磁盘（物理磁盘虚拟为逻辑磁盘，电脑上的C盘、D盘等）、虚拟内存（在逻辑上扩大程序的存储容量）等，提高资源的利用率，提高编程效率。<br>
+  d.异步性：在多道程序环境下，允许多个进程并发执行，但由于资源等因素的限制，使进程的执行以“停停走走”的方式运行，而且每个进程执行的情况（运行、暂停、速度、完成）也是未知的。</p>
+<blockquote>
+<ul>
+<li>
+<p>并发</p>
+</li>
+<li>
+<p>共享</p>
+</li>
+<li>
+<p>异步</p>
+</li>
+<li>
+<p>虚拟</p>
+</li>
+</ul>
+</blockquote>
+<h2 id="进程管理">进程管理</h2>
+<p>进程实体<br>
+  a.为什么需要进程：<br>
+   ·进程是系统进行资源分配和调度的<font color='red'>基本单位</font>；<br>
+   ·进程作为程序独立运行的载体保障程序正常执行；<br>
+   ·进程的存在使得操作系统资源的利用率大幅提升。<br>
+  b.进程控制块（PCB）：用于描述和控制进程运行的通用数据结构,记录进程当前状态和控制进程运行的全部信息,是进程存在的唯一标识。<br>
+  c.进程（Process）与线程（Thread）：<br>
+   线程：操作系统进行运行调度的最小单位。<br>
+   进程：系统进行资源分配和调度的基本单位。<br>
+   区别与联系：一个进程可以有一个或多个线程；线程包含在进程之中，是进程中实际运行工作的单位；进程的线程共享进程资源；一个进程可以并发多个线程，每个线程执行不同的任务。</p>
+<p><img src="https://fastly.jsdelivr.net/gh/Leevan001/pictureBed@main/utools/16855849540581685584953047.png" alt=""></p>
+<p>进程的五状态模型</p>
+<p>就绪状态：其它资源（进程控制块、内存、栈空间、堆空间等）都准备好、只差CPU的状态。<br>
+  执行状态：进程获得CPU，其程序正在执行。<br>
+  阻塞状态：进程因某种原因放弃CPU的状态。<br>
+  创建状态：创建进程时拥有PCB但其它资源尚未就绪。<br>
+  终止状态：进程结束由系统清理或者归还PCB的状态。</p>
+<blockquote>
+<ol>
+<li>就绪</li>
+<li>执行</li>
+<li>阻塞</li>
+<li>创建</li>
+<li>终止</li>
+</ol>
+</blockquote>
+<p><img src="https://fastly.jsdelivr.net/gh/Leevan001/pictureBed@main/utools/16855850870641685585086161.png" alt=""></p>
+<p>进程同步</p>
+<p>a.生产者-消费者问题：有一群生产者进程在生产产品，并将这些产品提供给消费者进程进行消费，生产者进程和消费者进程可以并发执行，在两者之间设置了一个具有n个缓冲区的缓冲池，生产者进程需要将所生产的产品放到缓冲区中（+1操作），消费者进程可以从缓冲区取走产品消费（-1操作）。</p>
+<p>​	b.哲学家进餐问题：有5个哲学家，他们的生活方式是交替的思考和进餐，哲学家们共同使用一张圆桌，分别坐在5张椅子上，圆桌上有5只碗和5只筷子。平时哲学家们只进行思考，饥饿时则试图取靠近他们的左右两只筷子，只有两只筷子都被拿到的时候才能进餐，否则等待，进餐完毕后，放下左右筷子进行思考。</p>
+<p>c.进程同步的作用：对竞争资源在多进程间进行使用次序的协调，使得并发执行的多个进程之间可以有效使用资源和相互合作。<br>
+  d.进程间同步的四原则：<br>
+   空闲让进：资源无占用，允许使用；<br>
+   忙则等待：资源被占用，请求进程等待；<br>
+   有限等待：保证有限等待时间能够使用资源；<br>
+   让权等待：等待时，进程需要让出CPU。<br>
+  e.进程同步的方法（重要，后面详细讲解）：消息队列，共享存储，信号量。<br>
+  f.线程同步的方法（重要，后面详细讲解）：互斥量，读写锁，自旋锁，条件变量。</p>
+<h2 id="作业管理">作业管理</h2>
+<p>进程调度<br>
+  定义：指计算机通过决策决定哪个就绪进程可以获得CPU使用权。<br>
+  方法：<br>
+   非抢占式调度：处理器一旦分配给某个进程，就让该进程一直使用下去，直到进程完成工作或IO阻塞才会让出处理器。<br>
+   抢占式调度：允许调度程序以一定的策略暂停当前运行地进程。</p>
+<p><img src="https://fastly.jsdelivr.net/gh/Leevan001/pictureBed@main/utools/16855868310641685586830865.png" alt=""></p>
+<p>步骤：<br>
+   保留旧进程的运行信息，请出旧进程（收拾包袱）；<br>
+   选择新进程，准备运行环境并分配CPU。</p>
+<p>a.三个重要的机制：<br>
+   就绪队列的排队机制：为了提高进程调度的效率，将就绪进程按照一定的方式排成队列，以便调度程序可以最快找到就绪进程。<br>
+   选择运行进程的委派机制：调度程序以一定的策略，选择就绪进程，将CPU资源分配给它。<br>
+   新老进程的上下文切换机制：保存当前进程的上下文信息，装入被委派执行进程的运行上下文。<br>
+  b.进程调度算法<br>
+   先来先服务算法：按照在就绪队列中的先后顺序执行。<br>
+   短进程优先调度算法：优先选择就绪队列中估计运行时间最短的进程，不利于长作业进程的执行。<br>
+   高优先权优先调度算法：进程附带优先权，优先选择权重高的进程，可以使得紧迫的任务优先处理。<br>
+   时间片轮转调度算法：按照FIFO的原则排列就绪进程，每次从队列头部取出待执行进程，分配一个时间片执行，是相对公平的调度算法，但是不能保证就是响应用户。<br>
+ 2.死锁：是指两个或两个以上的进程在执行过程中，由于竞争资源或者由于彼此通信而造成的一种阻塞的现象，若无外力作用，它们都将无法推进下去。 此时称系统处于死锁状态或系统产生了死锁，这些永远在互相等待的进程称为死锁进程。<br>
+  a.死锁的产生：竞争资源（共享资源数量不满足各进程需求）、进程调度顺序不当.</p>
+<p>死锁的四个必要条件：<br>
+   <font color='cornflowerblue'>互斥条件</font>：进程对资源的使用是排他性使用，某资源只能由一个进程使用，其它进程需要使用只能等待。<br>
+   <font color='cornflowerblue'>请求保持条件</font>：进程至少保持一个资源，又提出新的资源请求，新资源被占用，请求被阻塞，被阻塞的进程不释放自己保持的资源。<br>
+   <font color='cornflowerblue'>不可剥夺条件</font>：进程获得的资源在未完成使用前不能被剥夺（包括OS），只能由进程自身释放。<br>
+   <font color='cornflowerblue'>环路等待条件</font>：发生死锁时，必然存在进程-资源环形链.<br>
+  c.死锁的处理<br>
+   预防死锁的方法：破坏四个必要条件的中一个或多个。<br>
+    破坏请求保持条件：系统规定进程运行之前，一次性申请所有需要的资源。<br>
+    破坏不可剥夺条件：当一个进程请求新的资源得不到满足时，必须释放占有的资源。<br>
+    破坏环路等待条件：可用资源线性排序，申请必须按照需要递增申请。<br>
+  银行家算法：客户申请的贷款是有限的，每次申请需要申明最大资金量，银行家在能够满足贷款时，都应该给用户贷款，客户在使用贷款后，能够及时归还贷款。</p>
+<h2 id="存储管理">存储管理</h2>
+<p>内存分配与回收<br>
+  内存分配的过程：单一连续分配、固定分区分配、动态分区分配（根据实际需要，动态的分配内存）。<br>
+  动态分区分配算法：<br>
+   首次适应算法：分配内存时，从开始顺序查找适合内存区，若无合适内存区，则分配失败。<br>
+   最佳适应算法：要求空闲区链表按照容量大小排序，遍历以找到最佳适合的空闲区。<br>
+   快速适应算法：要求有多个空闲区链表，每个空闲区链表存储一种容量的空闲区。<br>
+  内存回收的过程：</p>
+<p>2.段页式存储管理<br>
+  页式存储管理：将进程逻辑空间等分成若干大小的页面，相应的把物理内存空间分成与页面大小的物理块，以页面为单位把进程空间装进物理内存中分散的物理块。<br>
+  段式存储管理：将进程逻辑空间分成若干段（不等分），段的长度由连续逻辑的长度决定。<br>
+  两者相比：</p>
+<p><img src="https://fastly.jsdelivr.net/gh/Leevan001/pictureBed@main/utools/16855873307061685587329167.png" alt=""></p>
+<p>段页式存储管理：现将逻辑空间按照段式管理分成若干段，再将内存空间按照页式管理分成若干页，分页可以有效提高内存利用率，分段可以更好的满足用户需求。</p>
+<p>三者分配内存之后的对比：</p>
+<p><img src="https://fastly.jsdelivr.net/gh/Leevan001/pictureBed@main/utools/16855874210621685587420400.png" alt="">	3.虚拟内存<br>
+  概述：实际是对物理内存的扩充，速度接近于内存，成本接近于辅存。<br>
+  局部性原理：指CPU访问存储器时，无论是存取指令还是存取数据，所访问的存储单元都趋于聚集在一个较小的连续区域中。<br>
+  虚拟内存的置换算法：先进先出（FIFO）、最不经常使用（LFU）、最近最少使用（LRU）<br>
+ 4.Linux的存储管理<br>
+  Buddy内存管理算法：为解决内存外碎片的问题，算法基于计算机处理二进制的优势具有极高的效率。<br>
+  Linux交换空间：交换空间（Swap)是磁盘的一个分区，Linux内存满时，会把一些内存交换至Swap空间，Swap空间是初始化系统时配置的。<br>
+  Swap空间与虚拟内存的对比：</p>
+<p><img src="https://fastly.jsdelivr.net/gh/Leevan001/pictureBed@main/utools/16855875400581685587539160.png" alt=""></p>
+<h2 id="文件管理">文件管理</h2>
+<p>1.文件管理概述<br>
+  a.文件的逻辑结构：<br>
+   逻辑结构的文件类型：有结构文件（文本文件，文档，媒体文件）、无结构文件（二进制文件、链接库）。<br>
+   顺序文件：按顺序放在存储介质中的文件，在逻辑文件当中存储效率最高，但不适合存储可变长文件。<br>
+   索引文件：为解决可变长文件存储而发明，需要配合索引表存储。<br>
+  b.辅存的存储空间分配：<br>
+   辅存的分配方式：连续分配（读取文件容易，速度快）、链接分配（隐式链接和显式链接）、索引分配<br>
+   辅存的存储空间管理：<br>
+  c.目录管理：<br>
+   目录树：使得任何文件或目录都有唯一的路径。<br>
+ 2.Linux文件的基本操作<br>
+  a.Linux目录：Linux一切皆文件。</p>
+<h2 id="设备管理">设备管理</h2>
+<p>1.<strong>广义的IO设备</strong>：<br>
+   按照使用特性分类：存储设备（内存、磁盘、U盘）和交互IO设备（键盘、显示器、鼠标）<br>
+   按照信息交换分类：块设备（磁盘、SD卡）和字符设备（打印机、shell终端）<br>
+   按照设备共享属性分类：独占设备，共享设备，虚拟设备<br>
+   按照传输速率分类：低速设备，高速设备<br>
+  2.<strong>IO设备的缓冲区</strong>：减少CPU处理IO请求的频率，提高CPU与IO设备之间的并行性。<br>
+  3.<strong>SPOOLing技术</strong>：虚拟设备技术，利用高速共享设备将低速的独享设备模拟为高速的共享设备，逻辑上，系统为每一个用户都分配了一台独立的高速独享设备。</p>
+<h2 id="线程同步的方法"><strong>线程同步的方法</strong></h2>
+<p>1.互斥锁<br>
+  互斥锁是最简单的线程同步的方法，也称为互斥量，处于两态之一的变量：解锁和加锁，两个状态可以保证资源访问的串行。</p>
+<p>原子性：指一系列操作不可被中断的特性，要么全部执行完成，要么全部没有执行。</p>
+<p>​    2.自旋锁<br>
+  自旋锁是一<font color='green'>种多线程同步</font>的变量，使用自旋锁的线程会反复检查锁变量是否可用，自旋锁不会让出CPU，是一种忙等待状态，即死循环等待锁被释放。<br>
+  特点：<font color='green'>避免了进程或者线程上下文切换的开销，但是不适合在单核CPU使用。</font></p>
+<p>3.读写锁<br>
+  是一种特殊的自旋锁，允许多个读操作同时访问资源以提高读性能，但是对写操作是互斥的，即对多读少写的操作效率提升很显著。</p>
+<p>4.条件变量<br>
+  是一种相对比较复杂的线程同步方法，<font color='green'>条件变量允许线程睡眠，直到满足某种条件，当满足条件时，可以给该线程信号通知唤醒。</font><br>
+  例如，在生产者-消费者问题当中，规定当缓冲区小于等于时，不允许消费者消费，消费者必须等待；缓冲区满时，不允许生产者往缓冲区生产，生产者必须等待；即当生产者生产一个产品时，唤醒可能等待的消费者，当消费者消费一个产品时，唤醒可能等待的生产者。</p>
+<p><img src="https://fastly.jsdelivr.net/gh/Leevan001/pictureBed@main/utools/16856250440261685625043471.png" alt=""></p>
+<h2 id="进程同步">进程同步</h2>
+<p>1.使用fork系统调用创建进程<br>
+  使用fork系统调用无参数，fork会返回两次，分别返回子进程id和0，返回子进程id的是父进程，返回0的是子进程。</p>
+<p>2.共享内存<br>
+  在某种程度上，多进程是共同使用物理内存的，但是由于操作系统的进程管理，进程间的内存空间是独立的，因此进程默认是不能访问进程空间之外的内存空间的。<br>
+  共享存储<font color='green'>允许不相关的进程访问同一片物理内存</font>，共享内存是两个进程之间共享和传递数据<font color='green'>最快</font>的方式，但是共享内存<font color='cornflowerblue'>未提供同步机制</font>，所以需要借助其它机制管理访问。即共享内存是高性能后台开发中最常用的进程同步方式。<br>
+ 3.Unix域套接字<br>
+ <font color='orange'> 域套接字</font>是一种高级的进程间通信的方法，可以用于<font color='orange'>同一机器进程间通信</font>。<br>
+  套接字（socket）：为网络通信中使用的术语。<br>
+  Unix系统提供的域套接字提供了网络套接字类似的功能，如Nfinx、uWSGI等。<br>
+  服务端和客户端分别使用Unix域套接字的过程：</p>
+<h2 id="线程池">线程池</h2>
+<blockquote>
+<p>线程池：线程池是存放多个线程的容器，CPU调度线程执行后不会销毁线程，将线程放回线程池重新利用。</p>
+</blockquote>
+<p>使用线程池的原因：<br>
+  1.线程是稀缺资源 ，不应该频繁创建和销毁；<br>
+  2.架构解耦，业务创建和业务处理解耦，更加优雅；<br>
+  3.线程池是使用线程的最佳实践。</p>
+<p>1.实现线程安全的队列Queue<br>
+ 队列：用于存放多个元素，是存放各种元素的“池”。<br>
+ 实现的基本功能：获取当前队列元素数量，往队列放入元素，往队列取出元素。<br>
+ 注意：队列可能有多个线程同时操作，因此需要保证线程安全，如下两种情况：</p>
+<p><img src="https://fastly.jsdelivr.net/gh/Leevan001/pictureBed@main/utools/16856255480261685625547150.png" alt=""></p>
+<p>实现基本任务对象Task<br>
+ 任务处理逻辑：<br>
+  实现的基本功能：任务参数，任务唯一标记（UUID），任务具体的执行逻辑</p>
+<p>实现任务处理线程ProcessThread<br>
+ 任务处理线程需要不断地从任务队列里取任务执行，任务处理线程需要有一个标记，标记线程什么时候应该停止。<br>
+ 实现的基本功能：基本属性（任务队列、标记），线程执行的逻辑（run），线程停止（stop）。</p>
+<h2 id="经典问题">经典问题</h2>
+<h3 id="哲学家就餐">哲学家就餐</h3>
+<img src="https://fastly.jsdelivr.net/gh/Leevan001/pictureBed@main/utools/16856261440251685626143506.png" style="zoom:50%;" />
+<ul>
+<li>5 个⽼⼤哥哲学家，闲着没事做，围绕着⼀张圆桌吃⾯；</li>
+<li>巧就巧在，这个桌⼦只有 5 ⽀叉⼦，每两个哲学家之间放⼀⽀叉⼦；</li>
+<li>哲学家围在⼀起先思考，思考中途饿了就会想进餐；</li>
+<li>吃完后，会把两⽀叉⼦放回原处，继续思考；</li>
+</ul>
+<blockquote>
+<p>让偶数编号的哲学家「先拿左边的叉⼦后拿右边的叉⼦」，奇数编号的哲学家「先拿右边的叉⼦后拿左<br>
+边的叉⼦</p>
+</blockquote>
+<p><img src="https://fastly.jsdelivr.net/gh/Leevan001/pictureBed@main/utools/16856263110381685626310165.png" alt=""></p>
+<blockquote>
+<p>另外⼀种可⾏的解决⽅案，我们⽤⼀个数组 state 来记录每⼀位哲学家在进程、思考还是饥<br>
+饿状态（正在试图拿叉⼦）。</p>
+<p>那么，<font color='orange'>⼀个哲学家只有在两个邻居都没有进餐时，才可以进⼊进餐状态。</font><br>
+第 i 个哲学家的左邻右舍，则由宏 LEFT 和 RIGHT 定义：<br>
+LEFT : ( i + 5 - 1 ) % 5<br>
+RIGHT : ( i + 1 ) % 5<br>
+⽐如 i 为 2，则 LEFT 为 1， RIGHT 为 3。</p>
+</blockquote>
+<h3 id="读者-写者问题">读者-写者问题</h3>
+<p>它为数据库访问建⽴了⼀个模型。 读者只会读取数据，不会修改数据，⽽写者即可以读也可以修改数据。 读者-写者的问题描述：</p>
+<ul>
+<li>「读-读」允许：同⼀时刻，允许多个读者同时读</li>
+<li>「读-写」互斥：没有写者时读者才能读，没有读者时写者才能写</li>
+<li>「写-写」互斥：没有其他写者时，写者才能写</li>
+</ul>
+<blockquote>
+<p>方案1</p>
+</blockquote>
+<p>使⽤信号量的⽅式来尝试解决：</p>
+<ul>
+<li>信号量 wMutex ：控制写操作的互斥信号量，初始值为 1 ；</li>
+<li>读者计数 rCount ：正在进⾏读操作的读者个数，初始化为 0；</li>
+<li>信号量 rCountMutex ：控制对 rCount 读者计数器的互斥修改，初始值为 1；</li>
+</ul>
+<p><img src="https://fastly.jsdelivr.net/gh/Leevan001/pictureBed@main/utools/16856265936811685626592190.png" alt=""></p>
+<p>上⾯的这种实现，是读者优先的策略，因为只要有读者正在读的状态，后来的读者都可以直接进⼊，如果 读者持续不断进⼊，则写者会处于饥饿状态。</p>
+<blockquote>
+<p>⽅案⼆</p>
+</blockquote>
+<p>那既然有读者优先策略，⾃然也有写者优先策略：</p>
+<ul>
+<li>
+<p>只要有写者准备要写⼊，写者应尽快执⾏写操作，后来的读者就必须阻塞；</p>
+</li>
+<li>
+<p>如果有写者持续不断写⼊，则读者就处于饥饿；</p>
+<p>在⽅案⼀的基础上新增如下变量：</p>
+<ul>
+<li>信号量 rMutex ：控制读者进⼊的互斥信号量，初始值为 1；</li>
+<li>信号量 wDataMutex ：控制写者写操作的互斥信号量，初始值为 1；</li>
+<li>写者计数 wCount ：记录写者数量，初始值为 0；</li>
+<li>信号量 wCountMutex ：控制 wCount 互斥修改，初始值为 1；</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>公平的策略</p>
+</blockquote>
+<p>公平策略：</p>
+<ul>
+<li>优先级相同；</li>
+<li>写者、读者互斥访问；</li>
+<li>只能⼀个写者访问临界区；</li>
+<li>可以有多个读者同时访问临界资源；</li>
+</ul>
+<p><img src="https://fastly.jsdelivr.net/gh/Leevan001/pictureBed@main/utools/16856272590301685627258907.png" alt=""></p>
+<p>对⽐⽅案⼀的读者优先策略，可以发现，读者优先中只要后续有读者到达，读者就可以进⼊读者队列， ⽽ 写者必须等待，直到没有读者到达。 没有读者到达会导致读者队列为空，即 rCount==0 ，此时写者才可以进⼊临界区执⾏写操作。</p>
+<p>⽽这⾥ flag 的作⽤就是阻⽌读者的这种特殊权限（特殊权限是只要读者到达，就可以进⼊读者队列）。 ⽐如：开始来了⼀些读者读数据，它们全部进⼊读者队列，此时来了⼀个写者，执⾏ P(falg) 操作，使得 后续到来的读者都阻塞在 flag 上，不能进⼊读者队列，这会使得读者队列逐渐为空，即 rCount 减为 0。 这个写者也不能⽴⻢开始写（因为此时读者队列不为空），会阻塞在信号量 wDataMutex 上，读者队列 中的读者全部读取结束后，最后⼀个读者进程执⾏ V(wDataMutex) ，唤醒刚才的写者，写者则继续开始 进⾏写操作。</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a target="_blank" rel="noopener" href="https://github.com/Leevan001">如风</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://blog.liyifan001.top/2023/06/01/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">https://blog.liyifan001.top/2023/06/01/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://blog.liyifan001.top" target="_blank">早早起床，拥抱太阳</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E5%A4%8D%E4%B9%A0%E8%B5%84%E6%96%99/">复习资料</a><a class="post-meta__tags" href="/tags/OS/">OS</a></div><div class="post_share"><div class="social-share" data-image="https://fastly.jsdelivr.net/gh/Leevan001/pictureBed@main/utools/1668325991403394931B30F162EA8AD66B450E0F93413.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/2023/05/06/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" title="数据结构"><img class="cover" src="https://fastly.jsdelivr.net/gh/Leevan001/pictureBed@main/utools/16682742001221499171933.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-05-06</div><div class="title">数据结构</div></div></a></div><div><a href="/2023/02/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%BE%E5%BD%A2%E5%AD%A6/" title="计算机图形学"><img class="cover" src="https://fastly.jsdelivr.net/gh/Leevan001/pictureBed@main/utools/1668325981308812465B3FBC4B5003BF35EA940C3FCBE.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-02-01</div><div class="title">计算机图形学</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://fastly.jsdelivr.net/gh/Leevan001/pictureBed@main/utools/1668273103133D8802D069515E0A42BC91FDE752B8A5C.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">如风</div><div class="author-info__description">热爱睡觉的小笨蛋一枚吖~</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">27</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">29</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">14</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/Leevan001"><i></i><span>🛴前往小家...</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/Leevan001" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:by1249824014@gmail.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">操作系统</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%BF%B0"><span class="toc-number">1.1.</span> <span class="toc-text">操作系统概述</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BF%9B%E7%A8%8B%E7%AE%A1%E7%90%86"><span class="toc-number">1.2.</span> <span class="toc-text">进程管理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BD%9C%E4%B8%9A%E7%AE%A1%E7%90%86"><span class="toc-number">1.3.</span> <span class="toc-text">作业管理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AD%98%E5%82%A8%E7%AE%A1%E7%90%86"><span class="toc-number">1.4.</span> <span class="toc-text">存储管理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%96%87%E4%BB%B6%E7%AE%A1%E7%90%86"><span class="toc-number">1.5.</span> <span class="toc-text">文件管理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AE%BE%E5%A4%87%E7%AE%A1%E7%90%86"><span class="toc-number">1.6.</span> <span class="toc-text">设备管理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BA%BF%E7%A8%8B%E5%90%8C%E6%AD%A5%E7%9A%84%E6%96%B9%E6%B3%95"><span class="toc-number">1.7.</span> <span class="toc-text">线程同步的方法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BF%9B%E7%A8%8B%E5%90%8C%E6%AD%A5"><span class="toc-number">1.8.</span> <span class="toc-text">进程同步</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BA%BF%E7%A8%8B%E6%B1%A0"><span class="toc-number">1.9.</span> <span class="toc-text">线程池</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BB%8F%E5%85%B8%E9%97%AE%E9%A2%98"><span class="toc-number">1.10.</span> <span class="toc-text">经典问题</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%93%B2%E5%AD%A6%E5%AE%B6%E5%B0%B1%E9%A4%90"><span class="toc-number">1.10.1.</span> <span class="toc-text">哲学家就餐</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AF%BB%E8%80%85-%E5%86%99%E8%80%85%E9%97%AE%E9%A2%98"><span class="toc-number">1.10.2.</span> <span class="toc-text">读者-写者问题</span></a></li></ol></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2023/06/01/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" title="操作系统"><img src="https://fastly.jsdelivr.net/gh/Leevan001/pictureBed@main/utools/1668325991403394931B30F162EA8AD66B450E0F93413.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="操作系统"/></a><div class="content"><a class="title" href="/2023/06/01/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" title="操作系统">操作系统</a><time datetime="2023-06-01T13:54:29.000Z" title="发表于 2023-06-01 21:54:29">2023-06-01</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/05/06/%E8%BD%AF%E4%BB%B6%E9%A1%B9%E7%9B%AE%E7%AE%A1%E7%90%86%EF%BC%88%E4%B8%8B%EF%BC%89/" title="软件项目管理（下）"><img src="https://fastly.jsdelivr.net/gh/Leevan001/pictureBed@main/utools/16682742001221499171933.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="软件项目管理（下）"/></a><div class="content"><a class="title" href="/2023/05/06/%E8%BD%AF%E4%BB%B6%E9%A1%B9%E7%9B%AE%E7%AE%A1%E7%90%86%EF%BC%88%E4%B8%8B%EF%BC%89/" title="软件项目管理（下）">软件项目管理（下）</a><time datetime="2023-05-06T07:27:20.000Z" title="发表于 2023-05-06 15:27:20">2023-05-06</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/05/06/%E8%BD%AF%E4%BB%B6%E9%A1%B9%E7%9B%AE%E7%AE%A1%E7%90%86%EF%BC%88%E4%B8%AD%EF%BC%89/" title="软件项目管理（中）"><img src="https://fastly.jsdelivr.net/gh/Leevan001/pictureBed@main/utools/166832600130917317FFACC42E4B5729AE3767B0311D0.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="软件项目管理（中）"/></a><div class="content"><a class="title" href="/2023/05/06/%E8%BD%AF%E4%BB%B6%E9%A1%B9%E7%9B%AE%E7%AE%A1%E7%90%86%EF%BC%88%E4%B8%AD%EF%BC%89/" title="软件项目管理（中）">软件项目管理（中）</a><time datetime="2023-05-06T07:27:09.000Z" title="发表于 2023-05-06 15:27:09">2023-05-06</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/05/06/Grab-cut/" title="Grab_cut"><img src="https://fastly.jsdelivr.net/gh/Leevan001/pictureBed@main/utools/1668325964310EA2896391D75964E20FD6F6F2657923C.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Grab_cut"/></a><div class="content"><a class="title" href="/2023/05/06/Grab-cut/" title="Grab_cut">Grab_cut</a><time datetime="2023-05-06T07:25:46.000Z" title="发表于 2023-05-06 15:25:46">2023-05-06</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/05/06/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" title="数据结构"><img src="https://fastly.jsdelivr.net/gh/Leevan001/pictureBed@main/utools/16682742001221499171933.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="数据结构"/></a><div class="content"><a class="title" href="/2023/05/06/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" title="数据结构">数据结构</a><time datetime="2023-05-06T07:24:07.000Z" title="发表于 2023-05-06 15:24:07">2023-05-06</time></div></div></div></div></div></div></main><footer id="footer" style="background-image: url('https://fastly.jsdelivr.net/gh/Leevan001/pictureBed@main/utools/16683306913121668330690512.png')"><div id="footer-wrap"><div class="copyright">&copy;2022 - 2023 By 如风</div><div class="footer_custom_text">广阔天地，大有作为</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div></div></div><div id="search-mask"></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><script src="/js/search/local-search.js"></script><div class="js-pjax"></div><script id="click-heart" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/click-heart.min.js" async="async" mobile="false"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
