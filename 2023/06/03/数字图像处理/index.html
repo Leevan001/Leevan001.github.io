@@ -1,0 +1,348 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>数字图像处理 | 早早起床，拥抱太阳</title><meta name="author" content="如风"><meta name="copyright" content="如风"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="[toc] 数字图像处理  zhihu  基础知识 数字图像，又称为数码图像或数位图像，是二维图像用有限数字数值像素的表示。数字图像是由模拟图像数字化得到的、以像素为基本元素的、可以用数字计算机或数字电路存储和处理的图像。 数字图像处理包括内容：  图像数字化；图像变换；图像增强；图像恢复；图像压缩编码；图像分割；图像分析与描述；图像的识别分类。  数字图像处理系统包括部分：  输入（采集）；存储">
+<meta property="og:type" content="article">
+<meta property="og:title" content="数字图像处理">
+<meta property="og:url" content="https://blog.liyifan001.top/2023/06/03/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86/index.html">
+<meta property="og:site_name" content="早早起床，拥抱太阳">
+<meta property="og:description" content="[toc] 数字图像处理  zhihu  基础知识 数字图像，又称为数码图像或数位图像，是二维图像用有限数字数值像素的表示。数字图像是由模拟图像数字化得到的、以像素为基本元素的、可以用数字计算机或数字电路存储和处理的图像。 数字图像处理包括内容：  图像数字化；图像变换；图像增强；图像恢复；图像压缩编码；图像分割；图像分析与描述；图像的识别分类。  数字图像处理系统包括部分：  输入（采集）；存储">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://fastly.jsdelivr.net/gh/Leevan001/pictureBed@main/utools/1668325964310EA2896391D75964E20FD6F6F2657923C.png">
+<meta property="article:published_time" content="2023-06-03T09:09:10.000Z">
+<meta property="article:modified_time" content="2023-06-03T12:12:58.321Z">
+<meta property="article:author" content="如风">
+<meta property="article:tag" content="图像处理">
+<meta property="article:tag" content="夏令营">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://fastly.jsdelivr.net/gh/Leevan001/pictureBed@main/utools/1668325964310EA2896391D75964E20FD6F6F2657923C.png"><link rel="shortcut icon" href="/images/favicon.ico"><link rel="canonical" href="https://blog.liyifan001.top/2023/06/03/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":200},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: true,
+    post: true
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"limitCount":50,"languages":{"author":"作者: 如风","link":"链接: ","source":"来源: 早早起床，拥抱太阳","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"}},
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '数字图像处理',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2023-06-03 20:12:58'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.3.0"><link href="https://cdn.bootcss.com/KaTeX/0.11.1/katex.min.css" rel="stylesheet" /></head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://fastly.jsdelivr.net/gh/Leevan001/pictureBed@main/utools/1668273103133D8802D069515E0A42BC91FDE752B8A5C.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">30</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">31</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">16</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa fa-heartbeat"></i><span> 清单</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/Gallery/"><i class="fa-fw fas fa-images"></i><span> 照片</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://fastly.jsdelivr.net/gh/Leevan001/pictureBed@main/utools/1668325964310EA2896391D75964E20FD6F6F2657923C.png')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">早早起床，拥抱太阳</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa fa-heartbeat"></i><span> 清单</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/Gallery/"><i class="fa-fw fas fa-images"></i><span> 照片</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">数字图像处理</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2023-06-03T09:09:10.000Z" title="发表于 2023-06-03 17:09:10">2023-06-03</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2023-06-03T12:12:58.321Z" title="更新于 2023-06-03 20:12:58">2023-06-03</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E5%A4%8F%E4%BB%A4%E8%90%A5/">夏令营</a><i class="fas fa-angle-right post-meta-separator"></i><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E5%A4%8F%E4%BB%A4%E8%90%A5/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86/">图像处理</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">3k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>8分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="数字图像处理"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><p>[toc]</p>
+<h1>数字图像处理</h1>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/464472309">zhihu</a></p>
+</blockquote>
+<h2 id="基础知识">基础知识</h2>
+<p>数字图像，又称为数码图像或数位图像，是二维图像用有限数字数值像素的表示。数字图像是由模拟图像数字化得到的、以像素为基本元素的、可以用数字计算机或数字电路存储和处理的图像。</p>
+<p>数字图像处理包括内容：</p>
+<blockquote>
+<p>图像数字化；图像变换；图像增强；图像恢复；图像压缩编码；图像分割；图像分析与描述；图像的识别分类。</p>
+</blockquote>
+<p>数字图像处理系统包括部分：</p>
+<blockquote>
+<p>输入（采集）；存储；输出（显示）；通信；图像处理与分析。</p>
+</blockquote>
+<p>从“模拟图像”到“数字图像”要经过的步骤有:</p>
+<blockquote>
+<p>图像信息的获取；图像信息的存储；图像信息处理；图像信息的传输；图像信息的输出和显示。</p>
+</blockquote>
+<p>数字图像1600x1200什么意思？灰度一般取值范围0~255，其含义是什么？</p>
+<blockquote>
+<p>数字图像1600x1200表示空间分辨率为1600x1200像素；灰度范围0~255指示图像的256阶灰阶，就是通过不同程度的灰色来来表示图像的明暗关系，8bit的灰度分辨率。</p>
+</blockquote>
+<p>图像的数字化包括哪两个过程？它们对数字化图像质量有何影响？</p>
+<blockquote>
+<p>采样；量化</p>
+<p>采样是将空间上连续的图像变换成离散的点，采样频率越高，还原的图像越真实。量化是将采样出来的像素点转换成离散的数量值，一幅数字图像中不同灰度值的个数称为灰度等级，级数越大，图像越是清晰。</p>
+</blockquote>
+<p>数字化图像的数据量与哪些因素有关？</p>
+<blockquote>
+<p>图像分辨率；采样率；采样值</p>
+</blockquote>
+<p>什么是灰度直方图？它有哪些应用？从灰度直方图中你可可以获得哪些信息？</p>
+<blockquote>
+<p>灰度直方图反映的是一幅图像中各灰度级像素出现的频率之间的关系</p>
+<p>它可以用于：</p>
+<ul>
+<li>判断图像量化是否恰当；</li>
+<li>确定图像二值化的阈值；</li>
+<li>计算图像中物体的面积；</li>
+<li>计算图像信息量。</li>
+</ul>
+<p>从灰度直方图中你可可以获得：</p>
+<ul>
+<li>暗图像对应的直方图组成成分几种在灰度值较小的左边一侧</li>
+<li>明亮的图像的直方图则倾向于灰度值较大的右边一侧</li>
+<li>对比度较低的图像对应的直方图窄而集中于灰度级的中部</li>
+<li>对比度高的图像对应的直方图分布范围很宽而且分布均匀</li>
+</ul>
+</blockquote>
+<p>什么是点处理？你所学算法中哪些属于点处理？</p>
+<blockquote>
+<p>在局部处理中，输出值仅与像素灰度有关的处理称为点处理。如：图像对比图增强，图像二值化。</p>
+</blockquote>
+<p>什么是局部处理？你所学算法中哪些属于局部处理？</p>
+<blockquote>
+<p>在对输入图像进行处理时，计算某一输出像素值由输入图像像素的小临域中的像素值确定，这种处理称为局部处理。如：图像的移动平均平滑法，空间域锐化法。</p>
+</blockquote>
+<h2 id="图像增强-空域">图像增强/空域</h2>
+<p>图像增强的目的是什么？</p>
+<blockquote>
+<p>图像增强的目的是要改善图像的视觉效果，针对给定图像的应用场合，</p>
+<ul>
+<li>有目的的增强图像的整体或局部特性，</li>
+<li>将原来不清晰的图像变得清晰或增强某些感兴趣的特征，</li>
+<li>扩大图像中不同物体的特征之间的差别，</li>
+<li>抑制不感兴趣的特征，</li>
+<li>使之改善图像质量、丰富信息量，</li>
+<li>将强图像判读和识别效果，满足某些特征分析的需求。</li>
+</ul>
+</blockquote>
+<p>什么是灰度图像的直方图？简述用它可以简单判断图像质量？</p>
+<blockquote>
+<p>灰度直方图定义为数字图像中各灰度级与其出现的频数间的统计关系，它能描述该图像的概貌，例如图像的灰度范围，每个灰度级出现的频率，灰度级的分布，整幅图像的平均明暗和对比度等</p>
+</blockquote>
+<p>常用图像增强方法有哪些？</p>
+<blockquote>
+<p>图像的线性变换；图像的非线性变化；图像的直方图均衡化和规定化。</p>
+</blockquote>
+<p>平均模板”对图像做哪种处理？写出 3x3和5x5“平均模板”？</p>
+<blockquote>
+<p>抑制噪声，改善图像质量</p>
+<p><img src="https://fastly.jsdelivr.net/gh/Leevan001/pictureBed@main/utools/16857578193241685757819114.png" alt=""></p>
+</blockquote>
+<p>“中值滤波”对图像做哪种处理？是如何运算的？</p>
+<blockquote>
+<p>中值滤波是对一个滑动窗口内的诸像素灰度值排序，用其中值代替窗口中心像素的灰度<br>
+值的滤波方法，它是一种非线性的平滑法，对脉冲干扰及椒盐噪声的抑制效果好，在抑<br>
+制随机噪声的同时能有效保护边缘少受模糊。</p>
+</blockquote>
+<p>什么叫点处理、局部处理、全局处理？3x3平均模板、直方图修正、灰度反转各属于哪种处理？</p>
+<blockquote>
+<p>点处理：输出值仅与像素灰度有关的处理称为点处理。（直方图修正）</p>
+<p>局部处理：计算某一输出像素值由输入图像像素的小领域中的像素值确定，这种处理称为局部处理。（灰度反转）</p>
+<p>全局处理：图像某一像素灰度的变化与图像全部像素灰度值有关。（3x3平均模板）</p>
+</blockquote>
+<h2 id="图像变换-频域处理">图像变换/频域处理</h2>
+<p>常用图像变换算法：</p>
+<blockquote>
+<p>图像的几何变换（图像畸变校正、图像缩放：双线性插值、旋转、拼接）</p>
+<p>图像变换（傅立叶、余弦、沃尔什－哈达玛、K-L变换、小波变换）</p>
+<p>图像频域处理（增强算法：高频率提升、同态滤波；平滑去噪：低通滤波）</p>
+</blockquote>
+<p>为什么要进行图像变换？各种变换应用在图像什么处理上？</p>
+<blockquote>
+<p>图像变换在数字图像处理与分析中起着很重要的作用，是一种常用的、有效的分析手段。图像变换的目的在于：使图像处理问题化；有利于图像特征提取；有助于从概念上增强对图像信息的理解。</p>
+</blockquote>
+<p>简述空域滤波跟频域滤波的不同</p>
+<blockquote>
+<p>空域法：</p>
+<ul>
+<li>直接对图像的像素灰度进行操作。</li>
+<li>常用算法：
+<ul>
+<li>图像的灰度变换；</li>
+<li>直方图修正（均衡化、规定化）；</li>
+<li>平滑和锐化处理；</li>
+<li>彩色增强。</li>
+</ul>
+</li>
+</ul>
+<p>频域法：</p>
+<ul>
+<li>在图像的变换域中，对图像的变换值进行操作，然后经逆变换获得所需要的增强结果。
+<ul>
+<li>常用算法：
+<ul>
+<li>低通滤波；</li>
+<li>高频提升滤波；</li>
+<li>同态滤波。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+<p>频域进行图像增强、去噪、边缘检测分别用哪种滤波器？</p>
+<blockquote>
+<p>增强————同态滤波器</p>
+<p>去噪————低通滤波器</p>
+<p>边缘检测——高通滤波器</p>
+</blockquote>
+<p>频域处理图像的步骤：</p>
+<blockquote>
+<p>a.清除噪声，改善图像的视觉效果</p>
+<p>b.突出边缘有利于识别和处理</p>
+</blockquote>
+<h2 id="图像复原">图像复原</h2>
+<p>图像在形成、传输和记录中，由于成像系统、传输介质和设备的不完善，导致图像质量下降，这一现象称为图像退化。</p>
+<p>图像复原和图像增强是有区别的，虽然二者的目的都是为了改善图像的质量，但图像增强不考虑图像是如何退化的，只通过试探各种技术来来增强图像的视觉效果。因此，图像增强可以不顾增强后的图像是否失真，只要看着舒服就行。而<font color='red'>图像复原</font>则完全不同，<font color='red'>需知道图像退化的机制和过程等先验知识</font>，据此找出一种相应的逆过程解算方法，从而得到复原的图像。如果图像已退化，应<font color='red'>先做复原处理，再做增强处理</font>。</p>
+<p>说出几种图像退化：</p>
+<blockquote>
+<p>图像模糊、失真、有噪声等</p>
+</blockquote>
+<p>什么是维纳滤波器？</p>
+<blockquote>
+<p>是一种以最小平方为最优准则的线性滤波器，在一定的约束条件下，其输出与给定函数的差的平方达到最小，通过数学运算最终可变为可变为一个拖布列兹方程的求解问题，是利用平稳随机过程的相关特性和频谱特性混有噪声的信号进行滤波。</p>
+</blockquote>
+<p>说出几种常用的图像复原方法？</p>
+<blockquote>
+<p>代数恢复方法：无约束复原；约束最小二乘法</p>
+<p>频域恢复方法：逆滤波恢复法；去除由均匀运动引起的模糊；维纳滤波复原法</p>
+</blockquote>
+<h2 id="图像压缩编码">图像压缩编码</h2>
+<p>常用图像变换算法：</p>
+<blockquote>
+<p>（1）哈夫曼编码；（2）算术编码；（3）预测编码；（4）变换编码</p>
+</blockquote>
+<p>图像为什么可以压缩？（即数字图像中存在哪几种冗余？）</p>
+<blockquote>
+<p>图像数据之所以可以被压缩，是因为数据中存在着冗余。 在图像压缩中，有三种基本的数据冗余：编码冗余；像素间冗余；视觉冗余。</p>
+</blockquote>
+<p>什么是有损和无损压缩？</p>
+<blockquote>
+<p>无损压缩：是对文件本身的压缩，和其它数据文件的压缩一样，是对文件的数据存储方式进行优化，采用某种算法表示重复的数据信息，文件可以完全还原，不影响文件内容，对于数字图像而言，也不会使图像细节有任何损失。</p>
+<p>有损压缩：是对图像本身的改变，在保存图像时保留了较多的亮度信息，而将色相和色纯度的信息和周围的像素进行合并，合并的比例不同，压缩的比例也不同，由于信息量减少了，所以压缩比可以很高，图像质量也会相应的下降。</p>
+</blockquote>
+<p>霍夫曼编码算法的基本思想是什么？</p>
+<blockquote>
+<p>是根据源数据符号发生的概率进行编码的。在源数据中出现概率越大的符号，分配的码字越短；出现概率越小的信号，其码长越长，从而达到用尽可能少的码表示源数据。</p>
+</blockquote>
+<p>无损和有损预测编码算法不同之处？各在哪个环节对数据实现了压缩？</p>
+<blockquote>
+<p>无损（亦称无失真、无误差、信息保持）编码中删除的仅仅是图像数据中冗余的数据，经解码重建的图像和原始图像没有任何失真。</p>
+<p>有损（亦称有误差、有失真）编码是指解码重建的图像与原图像相比有失真，不能精确的复原，但视觉效果上基本相同，是实现高压缩比的编码方式。</p>
+</blockquote>
+<p>简述统计编码、算术编码、预测编码、变换编码算法的基本原理</p>
+<blockquote>
+<p>统计编码：根据信源的概率分布可变长码，使平均码长非常接近于熵。</p>
+<p>算数编码：利用编码符号的联合概率，用一个单独的浮点数来代替一串输入符号。</p>
+<p>预测编码：不是直接对信号编码，而是对图像预测误差编码。实质上是对新的信息进行编码，以消除相邻像素之间的相关性和冗余性。</p>
+<p>变换编码算法：是通过正交变换把图像从空间域转化为能量比较集中的变换域系数，然后对变换系数经行编码，从而达到压缩数据的目的。</p>
+</blockquote>
+<h2 id="图像边缘检测-分割">图像边缘检测、分割</h2>
+<p>（1）边缘检测：Canny 算子、Laplacian算子、Sobel 算子</p>
+<p>（2）Hough变换检测直线和圆算法</p>
+<p>（3）图像分割：阈值分割算（也叫二值化）、区域分割算法 ：区域生长法、分裂合并法、空间聚类法。</p>
+<p>分别说出下面四种模板分别实现平滑去噪（低通滤波器）、图像锐化（梯度法）、边缘检测（高通滤波器）哪种处理？</p>
+<p><img src="https://fastly.jsdelivr.net/gh/Leevan001/pictureBed@main/utools/16857588896291685758888044.png" alt=""></p>
+<p><img src="https://fastly.jsdelivr.net/gh/Leevan001/pictureBed@main/utools/16857589559921685758955428.png" alt=""></p>
+<p><img src="https://fastly.jsdelivr.net/gh/Leevan001/pictureBed@main/utools/16857588399971685758839640.png" alt=""></p>
+<p><img src="https://fastly.jsdelivr.net/gh/Leevan001/pictureBed@main/utools/16857590019861685759001733.png" alt=""></p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a target="_blank" rel="noopener" href="https://github.com/Leevan001">如风</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://blog.liyifan001.top/2023/06/03/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86/">https://blog.liyifan001.top/2023/06/03/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://blog.liyifan001.top" target="_blank">早早起床，拥抱太阳</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86/">图像处理</a><a class="post-meta__tags" href="/tags/%E5%A4%8F%E4%BB%A4%E8%90%A5/">夏令营</a></div><div class="post_share"><div class="social-share" data-image="https://fastly.jsdelivr.net/gh/Leevan001/pictureBed@main/utools/1668325964310EA2896391D75964E20FD6F6F2657923C.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/2023/05/06/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" title="数据结构"><img class="cover" src="https://fastly.jsdelivr.net/gh/Leevan001/pictureBed@main/utools/1668325991403394931B30F162EA8AD66B450E0F93413.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-05-06</div><div class="title">数据结构</div></div></a></div><div><a href="/2023/06/03/%E6%95%B0%E6%8D%AE%E5%BA%93/" title="数据库"><img class="cover" src="https://fastly.jsdelivr.net/gh/Leevan001/pictureBed@main/utools/1668274206122R-C.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-06-03</div><div class="title">数据库</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://fastly.jsdelivr.net/gh/Leevan001/pictureBed@main/utools/1668273103133D8802D069515E0A42BC91FDE752B8A5C.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">如风</div><div class="author-info__description">热爱睡觉的小笨蛋一枚吖~</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">30</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">31</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">16</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/Leevan001"><i></i><span>🛴前往小家...</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/Leevan001" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:liyifancqu@163.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">数字图像处理</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86"><span class="toc-number">1.1.</span> <span class="toc-text">基础知识</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%BE%E5%83%8F%E5%A2%9E%E5%BC%BA-%E7%A9%BA%E5%9F%9F"><span class="toc-number">1.2.</span> <span class="toc-text">图像增强&#x2F;空域</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%BE%E5%83%8F%E5%8F%98%E6%8D%A2-%E9%A2%91%E5%9F%9F%E5%A4%84%E7%90%86"><span class="toc-number">1.3.</span> <span class="toc-text">图像变换&#x2F;频域处理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%BE%E5%83%8F%E5%A4%8D%E5%8E%9F"><span class="toc-number">1.4.</span> <span class="toc-text">图像复原</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%BE%E5%83%8F%E5%8E%8B%E7%BC%A9%E7%BC%96%E7%A0%81"><span class="toc-number">1.5.</span> <span class="toc-text">图像压缩编码</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%BE%E5%83%8F%E8%BE%B9%E7%BC%98%E6%A3%80%E6%B5%8B-%E5%88%86%E5%89%B2"><span class="toc-number">1.6.</span> <span class="toc-text">图像边缘检测、分割</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2023/06/03/%E6%95%B0%E6%8D%AE%E5%BA%93/" title="数据库"><img src="https://fastly.jsdelivr.net/gh/Leevan001/pictureBed@main/utools/1668274206122R-C.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="数据库"/></a><div class="content"><a class="title" href="/2023/06/03/%E6%95%B0%E6%8D%AE%E5%BA%93/" title="数据库">数据库</a><time datetime="2023-06-03T12:11:46.000Z" title="发表于 2023-06-03 20:11:46">2023-06-03</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/06/03/%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8%E5%A4%A7%E4%BD%9C%E4%B8%9A/" title="信息安全大作业"><img src="https://fastly.jsdelivr.net/gh/Leevan001/pictureBed@main/utools/16683257273091668325726539.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="信息安全大作业"/></a><div class="content"><a class="title" href="/2023/06/03/%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8%E5%A4%A7%E4%BD%9C%E4%B8%9A/" title="信息安全大作业">信息安全大作业</a><time datetime="2023-06-03T10:38:01.000Z" title="发表于 2023-06-03 18:38:01">2023-06-03</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/06/03/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86/" title="数字图像处理"><img src="https://fastly.jsdelivr.net/gh/Leevan001/pictureBed@main/utools/1668325964310EA2896391D75964E20FD6F6F2657923C.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="数字图像处理"/></a><div class="content"><a class="title" href="/2023/06/03/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86/" title="数字图像处理">数字图像处理</a><time datetime="2023-06-03T09:09:10.000Z" title="发表于 2023-06-03 17:09:10">2023-06-03</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/06/01/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" title="操作系统"><img src="https://fastly.jsdelivr.net/gh/Leevan001/pictureBed@main/utools/1668274206122R-C.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="操作系统"/></a><div class="content"><a class="title" href="/2023/06/01/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" title="操作系统">操作系统</a><time datetime="2023-06-01T13:54:29.000Z" title="发表于 2023-06-01 21:54:29">2023-06-01</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/05/06/%E8%BD%AF%E4%BB%B6%E9%A1%B9%E7%9B%AE%E7%AE%A1%E7%90%86%EF%BC%88%E4%B8%8B%EF%BC%89/" title="软件项目管理（下）"><img src="https://fastly.jsdelivr.net/gh/Leevan001/pictureBed@main/utools/1668325964310EA2896391D75964E20FD6F6F2657923C.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="软件项目管理（下）"/></a><div class="content"><a class="title" href="/2023/05/06/%E8%BD%AF%E4%BB%B6%E9%A1%B9%E7%9B%AE%E7%AE%A1%E7%90%86%EF%BC%88%E4%B8%8B%EF%BC%89/" title="软件项目管理（下）">软件项目管理（下）</a><time datetime="2023-05-06T07:27:20.000Z" title="发表于 2023-05-06 15:27:20">2023-05-06</time></div></div></div></div></div></div></main><footer id="footer" style="background-image: url('https://fastly.jsdelivr.net/gh/Leevan001/pictureBed@main/utools/16683306913121668330690512.png')"><div id="footer-wrap"><div class="copyright">&copy;2022 - 2023 By 如风</div><div class="footer_custom_text">广阔天地，大有作为</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div></div></div><div id="search-mask"></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><script src="/js/search/local-search.js"></script><div class="js-pjax"></div><script id="click-heart" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/click-heart.min.js" async="async" mobile="false"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
